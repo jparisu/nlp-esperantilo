@@ -349,6 +349,8 @@
       
         
       
+        
+      
     
     
     
@@ -543,6 +545,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -563,6 +593,8 @@
       
         
           
+        
+      
         
       
         
@@ -793,10 +825,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples-from-this-repository" class="md-nav__link">
+  <a href="#the-workflows-of-this-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples from this repository
+        The workflows of this repository
       
     </span>
   </a>
@@ -841,6 +873,17 @@
     <span class="md-ellipsis">
       
         Spell checking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -899,6 +942,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
   
 
     
@@ -1479,10 +1550,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples-from-this-repository" class="md-nav__link">
+  <a href="#the-workflows-of-this-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples from this repository
+        The workflows of this repository
       
     </span>
   </a>
@@ -1533,6 +1604,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1559,15 +1641,46 @@
 
 
 <h1 id="github-actions">GitHub Actions<a class="headerlink" href="#github-actions" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p><strong>GitHub Actions</strong> is GitHub's built-in automation: it runs commands on GitHub's
+servers whenever something happens in your repository — someone pushes, opens a
+pull request, or triggers a run by hand. It is how a project checks itself
+automatically instead of relying on everyone to remember.</p>
+<p>This page explains the vocabulary, then walks through the <strong>four real workflows</strong>
+of this repository as working examples.</p>
 <h2 id="what-a-workflow-is">What a workflow is<a class="headerlink" href="#what-a-workflow-is" title="Permanent link">&para;</a></h2>
-<p>Events, jobs, steps and runners; where workflow files live
-(<code>.github/workflows/</code>) and how to read a run.</p>
-<h2 id="examples-from-this-repository">Examples from this repository<a class="headerlink" href="#examples-from-this-repository" title="Permanent link">&para;</a></h2>
-<p>The three workflows of this repository are used as the working examples:</p>
+<p>A <strong>workflow</strong> is a YAML file in <code>.github/workflows/</code>. GitHub reads every file in
+that folder and runs it when its trigger fires. The pieces you need to know:</p>
+<ul>
+<li><strong>Event</strong> — <em>what</em> triggers the workflow: <code>push</code>, <code>pull_request</code>, a manual
+  <code>workflow_dispatch</code>, and so on. Declared under <code>on:</code>.</li>
+<li><strong>Job</strong> — a unit of work that runs on a fresh virtual machine. A workflow can
+  have several, running in parallel by default.</li>
+<li><strong>Runner</strong> — the machine a job runs on, e.g. <code>runs-on: ubuntu-latest</code>.</li>
+<li><strong>Step</strong> — a single command or a reusable <strong>action</strong> (<code>uses:</code>) inside a job.
+  Steps run in order and share the same machine.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    E([Event: push / pull request]) --&gt; S1
+    subgraph Job on a runner
+        direction TB
+        S1[Checkout] --&gt; S2[Set up Python]
+        S2 --&gt; S3[Install deps]
+        S3 --&gt; S4[Run the task]
+    end
+    S4 --&gt; R{Pass / fail}</code></pre>
+<p>You watch runs in the repository's <strong>Actions</strong> tab. Each run shows its jobs and
+steps with a green check or a red cross, and the full log of every command — the
+first place to look when a check fails.</p>
+<div class="admonition info">
+<p class="admonition-title">Reading a status check on a pull request</p>
+<p>On a pull request, each workflow reports back as a <strong>status check</strong>. Green
+means every step passed; red means something failed and there is a log to
+read. <a href="../repository-configuration/">Repository configuration</a> shows how to
+make these checks <em>required</em> before a merge is allowed.</p>
+</div>
+<h2 id="the-workflows-of-this-repository">The workflows of this repository<a class="headerlink" href="#the-workflows-of-this-repository" title="Permanent link">&para;</a></h2>
+<p>This repository runs four workflows, all visible in
+<a href="https://github.com/jparisu/nlp-esperantilo/tree/main/.github/workflows"><code>.github/workflows/</code></a>:</p>
 <table>
 <thead>
 <tr>
@@ -1579,42 +1692,159 @@
 <tbody>
 <tr>
 <td>Tests</td>
-<td><code>.github/workflows/tests.yml</code></td>
-<td>Runs <code>pytest</code> on several Python versions.</td>
+<td><code>tests.yml</code></td>
+<td>Runs <code>pytest</code> via a Python version matrix.</td>
 </tr>
 <tr>
 <td>Documentation</td>
-<td><code>.github/workflows/docs.yml</code></td>
+<td><code>docs.yml</code></td>
 <td>Builds the MkDocs site and publishes it to GitHub Pages from <code>main</code>.</td>
 </tr>
 <tr>
 <td>Documentation preview</td>
-<td><code>.github/workflows/docs-preview.yml</code></td>
+<td><code>docs-preview.yml</code></td>
 <td>Builds the site for a pull request and publishes it to a preview URL.</td>
 </tr>
 <tr>
 <td>Spell check</td>
-<td><code>.github/workflows/spellcheck.yml</code></td>
+<td><code>spellcheck.yml</code></td>
 <td>Runs <code>codespell</code> over the documentation and the code.</td>
 </tr>
 </tbody>
 </table>
+<p>The next sections look at each one.</p>
 <h2 id="running-python-tests">Running Python tests<a class="headerlink" href="#running-python-tests" title="Permanent link">&para;</a></h2>
-<p>Checkout, set up Python, install dependencies, run <code>pytest</code>, and use a matrix
-to cover several versions.</p>
+<p><a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/tests.yml"><code>tests.yml</code></a>
+runs the test suite on every push and pull request to <code>main</code>. Its job follows
+the canonical shape — checkout, set up Python, install, test:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">on</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">          </span><span class="c1"># also runnable by hand from the Actions tab</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">jobs</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">pytest</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.13&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -e &quot;.[test]&quot;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
+</span></code></pre></div>
+<p>Two ideas are worth highlighting:</p>
+<ul>
+<li><strong>The matrix.</strong> <code>strategy.matrix</code> runs the job once per value it lists. Here it
+  lists a single version, <code>3.13</code>, but adding more — <code>["3.11", "3.12", "3.13"]</code> —
+  would run the suite on each in parallel, catching version-specific breakage.
+  The matrix is the mechanism; the list is a project choice.</li>
+<li><strong>Installing the package itself.</strong> <code>pip install -e ".[test]"</code> installs the
+  library <em>and</em> its test extra (see
+  <a href="../../python-library/organization/">Python Library § Organization</a>), so the
+  tests import it exactly as a user would.</li>
+</ul>
 <h2 id="rendering-and-deploying-the-documentation">Rendering and deploying the documentation<a class="headerlink" href="#rendering-and-deploying-the-documentation" title="Permanent link">&para;</a></h2>
-<p>Building with <code>mkdocs build --strict</code> on every pull request, and publishing to
-GitHub Pages only from the default branch.</p>
+<p><a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/docs.yml"><code>docs.yml</code></a>
+builds this site and publishes it. It runs <strong>only on push to <code>main</code></strong>, because
+the public site should reflect merged work, not work in progress:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">on</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">permissions</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w">            </span><span class="c1"># needed to push the built site to gh-pages</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">jobs</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r docs/requirements.txt</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs build --strict --site-dir site</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JamesIves/github-pages-deploy-action@v4</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">          </span><span class="nt">folder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">          </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">          </span><span class="nt">clean-exclude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pr-preview/</span>
+</span></code></pre></div>
+<ul>
+<li><strong><code>mkdocs build --strict</code></strong> turns warnings — a broken link, a missing file —
+  into errors, so a mistake fails the build instead of shipping quietly. (This
+  is the same command you should run locally before pushing.)</li>
+<li><strong><code>permissions: contents: write</code></strong> — a workflow that <em>writes</em> to the repository
+  (here, pushing the built site to the <code>gh-pages</code> branch) needs write
+  permission; the default is read-only.</li>
+<li><strong><code>clean-exclude: pr-preview/</code></strong> — publishing the real site must not delete the
+  pull-request previews that live in the same branch. This links directly to the
+  next workflow.</li>
+</ul>
+<p>The mechanics of the <code>gh-pages</code> branch and the resulting URL are covered in
+<a href="../pages/">GitHub Pages</a>.</p>
 <h2 id="previewing-the-documentation-of-a-pull-request">Previewing the documentation of a pull request<a class="headerlink" href="#previewing-the-documentation-of-a-pull-request" title="Permanent link">&para;</a></h2>
-<p>How a pull request gets its own published copy of the site, at a URL a reviewer
-can open, without changing the public site — and how that copy is deleted when
-the pull request closes. See <a href="../pages/#previewing-a-pull-request">GitHub Pages</a>.</p>
-<p>This also covers the two workflow concepts it relies on: the <code>closed</code> event
-type, and why a workflow that writes to the repository needs
-<code>permissions: contents: write</code>.</p>
+<p><a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/docs-preview.yml"><code>docs-preview.yml</code></a>
+gives every pull request its <strong>own published copy</strong> of the site, so a reviewer
+can read the rendered documentation before it is merged — without touching the
+public site.</p>
+<p>It introduces three concepts beyond the basic workflow:</p>
+<ul>
+<li><strong>The <code>closed</code> event.</strong> It triggers on
+  <code>types: [opened, reopened, synchronize, closed]</code>. The first three (re)build and
+  publish the preview; <code>closed</code> runs a cleanup that <strong>deletes</strong> the preview when
+  the pull request is merged or closed, so previews do not accumulate.</li>
+<li><strong>Overriding configuration at build time.</strong> It sets a <code>SITE_URL</code> environment
+  variable so the preview's canonical links and language switcher point at the
+  preview, not the production site — the reason <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/mkdocs.yml">mkdocs.yml</a>
+  reads <code>site_url</code> from the environment.</li>
+<li><strong>Forks get no write token.</strong> The deploy step runs only when
+  <code>github.event.pull_request.head.repo.full_name == github.repository</code> — i.e. the
+  pull request comes from a branch of <em>this</em> repository. A fork's pull request
+  runs with a <strong>read-only token</strong> and cannot publish; its docs are still built
+  and checked, it just gets no preview URL.</li>
+</ul>
+<p>This build step is also the <strong>pull-request gate</strong>: because it runs
+<code>mkdocs build --strict</code>, a broken link fails the check before anything is
+published. See <a href="../pages/#previewing-a-pull-request">GitHub Pages § Previewing a pull request</a>
+for what the reviewer sees.</p>
 <h2 id="spell-checking">Spell checking<a class="headerlink" href="#spell-checking" title="Permanent link">&para;</a></h2>
-<p>Running a spell checker in CI, and how to teach it project-specific words
-(Esperanto terms, proper names) through an ignore list.</p>
+<p><a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/spellcheck.yml"><code>spellcheck.yml</code></a>
+runs <a href="https://github.com/codespell-project/codespell"><code>codespell</code></a> over the
+documentation and the code on every push and pull request, catching common
+typos automatically:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install codespell</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codespell</span><span class="w">            </span><span class="c1"># configuration comes from .codespellrc</span>
+</span></code></pre></div>
+<p>The interesting part is teaching the checker about words it does not know —
+Esperanto terms, proper names, technical jargon — so they are not reported as
+errors. That configuration lives in
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc"><code>.codespellrc</code></a>:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[codespell]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">skip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">./.git,./.devs,./site,./.venv,...</span><span class="w">   </span><span class="c1"># paths not to check</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ignore-words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">.codespell-ignore-words.txt</span><span class="w"> </span><span class="c1"># accepted project vocabulary</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">builtin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">clear,rare</span><span class="w">                        </span><span class="c1"># only confident corrections</span>
+</span></code></pre></div>
+<p>Keeping the configuration in a file (rather than in the workflow) means a
+<strong>local <code>codespell</code> run behaves exactly like CI</strong> — you can catch and fix a typo
+before you even push.</p>
+<div class="admonition tip">
+<p class="admonition-title">Run the checks locally first</p>
+<p>Every check here is just a command you can run yourself: <code>pytest</code>,
+<code>mkdocs build --strict</code>, <code>codespell</code>. Running them locally before pushing
+turns a red pull request into a green one on the first try.</p>
+</div>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../repository-configuration/">Repository configuration</a> — make these checks
+  <em>required</em> before merging.</li>
+<li><a href="../pages/">GitHub Pages</a> — how the documentation build reaches the web.</li>
+</ul>
 
 
 

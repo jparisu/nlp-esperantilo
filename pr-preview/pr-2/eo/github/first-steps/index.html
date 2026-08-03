@@ -349,6 +349,8 @@
       
         
       
+        
+      
     
     
     
@@ -543,6 +545,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -563,6 +593,8 @@
       
         
           
+        
+      
         
       
         
@@ -780,6 +812,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -888,6 +931,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
   
 
     
@@ -1511,6 +1582,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1537,21 +1619,131 @@
 
 
 <h1 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p>This page takes you from <em>no account</em> to <em>a repository of your own on GitHub</em>,
+ready for the <a href="../workflow/">workflow</a> that follows. If you already have an
+account and a repository, you can skim it and jump ahead.</p>
 <h2 id="create-an-account">Create an account<a class="headerlink" href="#create-an-account" title="Permanent link">&para;</a></h2>
-<p>Sign-up, profile and authentication (SSH keys or a personal access token).</p>
+<p>Go to <a href="https://github.com">github.com</a> and sign up. A free account is enough for
+everything in this guide, including private repositories and GitHub Actions.</p>
+<p>Two early steps are worth doing well:</p>
+<ul>
+<li><strong>Your profile.</strong> Use a recognisable username and a real name — on a team
+  project, your teammates and instructors need to know who is who. Your commits
+  are linked to the email address configured in
+  <a href="../../git/example/"><code>git config</code></a>, so use the same email here.</li>
+<li><strong>Authentication for pushing.</strong> Signing in to the website uses a password;
+  pushing from the command line does <strong>not</strong>. You need one of:<ul>
+<li>a <strong>Personal Access Token (PAT)</strong>, used in place of a password over HTTPS,
+  or</li>
+<li>an <strong>SSH key</strong>, a key pair whose public half you add to GitHub.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Which one should I use?</p>
+<p>For working in notebooks or occasional pushes, a <strong>PAT over HTTPS</strong> is the
+simplest: create it in <strong>Settings → Developer settings → Personal access
+tokens</strong>, and paste it when Git asks for a password. For frequent local
+work, an <strong>SSH key</strong> (added in <strong>Settings → SSH and GPG keys</strong>) avoids
+retyping anything. Either is fine — pick one and move on.</p>
+</div>
 <h2 id="create-a-repository">Create a repository<a class="headerlink" href="#create-a-repository" title="Permanent link">&para;</a></h2>
-<p>Visibility, README, license and <code>.gitignore</code> at creation time.</p>
+<p>Click <strong>New</strong> (the green button on your repositories page) and fill in:</p>
+<ul>
+<li><strong>Name</strong> — short and descriptive, e.g. <code>nlp-esperantilo</code>.</li>
+<li><strong>Visibility</strong> — <strong>public</strong> (anyone can see it) or <strong>private</strong> (only you and
+  invited collaborators). You can change this later.</li>
+<li><strong>Initialise with</strong> — GitHub can add three files for you at creation time:<ul>
+<li>a <strong>README</strong>, the front page of the repository;</li>
+<li>a <strong><code>.gitignore</code></strong>, pre-filled for a language of your choice (pick
+  <em>Python</em>);</li>
+<li>a <strong>licence</strong>, which states how others may use your code.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">README, .gitignore and licence</p>
+<p>Letting GitHub create these means the repository starts with one commit
+already in it. If instead you built the repository locally (as in the
+<a href="../../git/example/">Git example</a>), leave these unchecked and push your own
+history up.</p>
+</div>
 <h2 id="set-it-up">Set it up<a class="headerlink" href="#set-it-up" title="Permanent link">&para;</a></h2>
-<p>Description, topics, collaborators and the settings worth changing early.</p>
+<p>A few settings are worth changing early, from the repository's <strong>Settings</strong> tab
+and its main page:</p>
+<ul>
+<li><strong>Description and topics.</strong> A one-line description and a few topic tags make
+  the repository easier to find and understand.</li>
+<li><strong>Collaborators.</strong> In <strong>Settings → Collaborators</strong>, invite your teammates so
+  they can push to branches and review pull requests.</li>
+<li><strong>Default branch.</strong> Confirm it is called <code>main</code>.</li>
+</ul>
+<p>Configuration that <em>enforces</em> a healthy team workflow — protecting <code>main</code>,
+requiring reviews and passing checks — is important enough to have its own page:
+<a href="../repository-configuration/">Repository configuration</a>. Set that up once the
+workflow and Actions are in place.</p>
 <h2 id="explore">Explore<a class="headerlink" href="#explore" title="Permanent link">&para;</a></h2>
-<p>How to read someone else's repository: code, issues, pull requests, releases
-and insights.</p>
+<p>Most of your time on GitHub is spent reading <em>other people's</em> repositories.
+Every repository has the same tabs, and knowing them makes any project readable:</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What you find there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>The files, the README, the branch selector and the commit history.</td>
+</tr>
+<tr>
+<td><strong>Issues</strong></td>
+<td>Reported bugs, tasks and feature requests, open and closed.</td>
+</tr>
+<tr>
+<td><strong>Pull requests</strong></td>
+<td>Proposed changes under review, and past merged ones.</td>
+</tr>
+<tr>
+<td><strong>Actions</strong></td>
+<td>The automated runs (tests, builds) and whether they passed.</td>
+</tr>
+<tr>
+<td><strong>Insights</strong></td>
+<td>Contribution activity, and a picture of how the project moves.</td>
+</tr>
+</tbody>
+</table>
+<p>Browsing a well-run project — reading how its pull requests are described and how
+its issues are discussed — is one of the best ways to learn the conventions of
+software collaboration.</p>
 <h2 id="issues-and-pull-requests">Issues and pull requests<a class="headerlink" href="#issues-and-pull-requests" title="Permanent link">&para;</a></h2>
-<p>What each one is for, and how they reference each other.</p>
+<p>These two are the backbone of collaboration on GitHub, and they play different
+roles:</p>
+<ul>
+<li>An <strong>issue</strong> describes <em>something to do or fix</em>: a bug, a task, a question. It
+  is a conversation, not code. Issues are numbered (<code>#12</code>) and can be labelled
+  and assigned.</li>
+<li>A <strong>pull request</strong> (PR) proposes <em>an actual change to the code</em>: "here is a
+  branch with commits, please review and merge it." It is also numbered and
+  discussed, but it carries a diff.</li>
+</ul>
+<p>The two reference each other. A pull request can say <em>"Closes #12"</em> in its
+description, and when it is merged, GitHub automatically closes issue #12 and
+links the two together. This is what ties the <em>plan</em> (issues) to the <em>work</em>
+(pull requests) into a traceable history.</p>
+<pre class="mermaid"><code>flowchart LR
+    I["Issue: Add stop-word list"] -.-&gt; PR["Pull request: Closes the issue"]
+    PR --&gt;|merged| M[main]
+    PR -.-&gt;|auto-closes| I</code></pre>
+<p>The pull request itself — how to open, describe, review and merge it — is the
+subject of the next page.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../workflow/">Workflow</a> — the full branch → commit → pull request → merge
+  cycle.</li>
+</ul>
 
 
 

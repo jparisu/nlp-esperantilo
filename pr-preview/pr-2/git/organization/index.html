@@ -351,6 +351,8 @@
       
         
       
+        
+      
     
     
     
@@ -543,6 +545,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -636,6 +649,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -654,6 +695,8 @@
       
         
           
+        
+      
         
       
         
@@ -877,6 +920,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
   
 
     
@@ -1489,6 +1560,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1515,30 +1597,125 @@
 
 
 <h1 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p>To use Git with confidence, it helps to know what it stores under the hood. This
+page explains the three ideas everything else is built on: <strong>commits</strong>,
+<strong>diffs</strong> and <strong>branches</strong> — and how they add up to a project <strong>history</strong>.</p>
 <h2 id="commits-as-snapshots">Commits as snapshots<a class="headerlink" href="#commits-as-snapshots" title="Permanent link">&para;</a></h2>
-<p>What a commit actually stores, and why Git is described as a series of
-snapshots rather than a series of differences.</p>
+<p>A <strong>commit</strong> is a saved point in the project's history. The most common
+misconception is that a commit stores <em>the changes</em> you made. It does not: a
+commit stores a <strong>complete snapshot of every tracked file</strong> at the moment you
+committed.</p>
+<p>Each commit records:</p>
+<ul>
+<li>a snapshot of all tracked files,</li>
+<li>the <strong>author</strong> and the <strong>date</strong>,</li>
+<li>a <strong>message</strong> describing the change,</li>
+<li>a reference to its <strong>parent</strong> commit (the one that came before it),</li>
+<li>a unique identifier: a 40-character <strong>hash</strong> such as
+  <code>772a47a…</code>, computed from the content itself.</li>
+</ul>
+<p>Because every commit points to its parent, the history forms a chain. Following
+the parent links backwards takes you all the way to the very first commit.</p>
+<pre class="mermaid"><code>flowchart RL
+    C3["772a47a&lt;br/&gt;Only test in python 3.11"] --&gt; C2["a1976d8&lt;br/&gt;Add PR previews"]
+    C2 --&gt; C1["92c1041&lt;br/&gt;Add project skeleton"]
+    C1 --&gt; C0["7b0978f&lt;br/&gt;Add README"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Snapshots, but not wasteful</p>
+<p>Storing a full snapshot per commit sounds like it would waste enormous
+space. It does not: if a file did not change between two commits, Git stores
+it only once and both snapshots point to the same content. You get the
+simplicity of snapshots with the efficiency of not duplicating unchanged
+files.</p>
+</div>
+<p>The hash is worth a second look. It is derived from the commit's content, so it
+is effectively unique and it <em>cannot</em> be forged: if a single byte of history
+changed, every hash from that point on would change too. In practice you rarely
+type a full hash — the first 7 characters (<code>772a47a</code>) are enough to identify a
+commit.</p>
 <h2 id="diffs">Diffs<a class="headerlink" href="#diffs" title="Permanent link">&para;</a></h2>
-<p>How Git presents the difference between two states, and how to read a diff.</p>
+<p>While a commit stores a snapshot, what you usually <em>want to see</em> is the
+<strong>difference</strong> between two snapshots. That difference is called a <strong>diff</strong>, and
+Git computes it on demand.</p>
+<p>A diff is read like this:</p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gd">--- a/README.md</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gi">+++ b/README.md</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">@@ -1,3 +1,4 @@</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span># NLP Esperantilo
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gd">-A small project.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gi">+A rule-based NLP library for Esperanto.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gi">+See the documentation for details.</span>
+</span></code></pre></div>
+<ul>
+<li>The <code>---</code> / <code>+++</code> lines name the old and new versions of the file.</li>
+<li>The <code>@@ … @@</code> line locates the change (the line numbers involved).</li>
+<li>Lines starting with <code>-</code> were <strong>removed</strong>, lines starting with <code>+</code> were
+  <strong>added</strong>. A changed line shows up as one removal and one addition.</li>
+<li>Unmarked lines are unchanged context, shown to help you locate the change.</li>
+</ul>
+<p>Diffs are everywhere in Git: they are how <code>git diff</code> shows your uncommitted
+work, how <code>git log -p</code> shows what each commit changed, and how a pull request on
+GitHub shows what it proposes.</p>
 <h2 id="branches">Branches<a class="headerlink" href="#branches" title="Permanent link">&para;</a></h2>
-<p>What a branch is (a pointer to a commit), how branches diverge, and what
-happens on a merge.</p>
+<p>A <strong>branch</strong> is simply a <strong>movable pointer to a commit</strong>. Creating a branch does
+<em>not</em> copy any files; it just writes down "this name points at this commit".
+This is why branches in Git are cheap and fast, and why creating one for every
+piece of work is normal practice.</p>
+<p>There is a special pointer called <strong><code>HEAD</code></strong> that indicates <em>which branch you are
+currently on</em>. When you commit, the current branch pointer moves forward to the
+new commit, and <code>HEAD</code> follows it.</p>
+<p>The default branch is conventionally called <strong><code>main</code></strong>. When you start a new
+piece of work, you create a branch off <code>main</code>, commit on it, and later bring it
+back. While two branches exist in parallel, the history <strong>diverges</strong>:</p>
 <pre class="mermaid"><code>gitGraph
-    commit id: "initial"
-    commit id: "readme"
+    commit id: "Add README"
+    commit id: "Add skeleton"
     branch feature
-    commit id: "work"
-    commit id: "more work"
+    commit id: "Write git page"
+    commit id: "Write git FAQ"
     checkout main
-    commit id: "fix"
+    commit id: "Fix typo"
     merge feature</code></pre>
+<p>Bringing a branch back into <code>main</code> is a <strong>merge</strong>. There are two shapes:</p>
+<ul>
+<li><strong>Fast-forward.</strong> If <code>main</code> has not moved since the branch was created, Git
+  can simply slide the <code>main</code> pointer forward to the branch's latest commit. No
+  new commit is created; the history stays linear.</li>
+<li><strong>Merge commit.</strong> If <em>both</em> branches gained commits (as in the diagram above),
+  Git creates a new <strong>merge commit</strong> with <strong>two parents</strong>, tying the two lines
+  of history back together.</li>
+</ul>
+<p>When the two branches changed <strong>the same lines</strong> of the same file, Git cannot
+decide which version wins. This is a <strong>merge conflict</strong>: Git pauses and asks you
+to edit the file and choose. Conflicts are a normal part of collaboration, not
+an error — the <a href="../example/">Example</a> page walks through resolving one.</p>
 <h2 id="history">History<a class="headerlink" href="#history" title="Permanent link">&para;</a></h2>
-<p>How commits chain into a history, and what makes a history easy or hard to
-read.</p>
+<p>Chaining commits produces the project's <strong>history</strong> — the story of how it
+reached its current state. A good history is an asset: it lets a teammate (or
+you, in six months) understand <em>why</em> the code looks the way it does.</p>
+<p>What makes a history easy to read:</p>
+<ul>
+<li><strong>Atomic commits.</strong> Each commit does one coherent thing, so it can be
+  understood, reviewed or reverted on its own.</li>
+<li><strong>Meaningful messages.</strong> A message like <code>Add stop-word list</code> says what
+  changed and why; <code>stuff</code> or <code>fix2</code> does not.</li>
+<li><strong>A tidy shape.</strong> Short-lived branches that merge back cleanly are easier to
+  follow than a tangle of long-running branches.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Commit messages and history hygiene are covered as a workflow topic in the
+<a href="../../github/workflow/">GitHub section</a>, because in practice that is where a
+clean history pays off: in pull requests and code review.</p>
+</div>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../commands/">Commands</a> — the commands that create commits, branches and
+  diffs.</li>
+<li><a href="../undoing-changes/">Undoing changes</a> — how to move pointers and discard work
+  safely.</li>
+</ul>
 
 
 

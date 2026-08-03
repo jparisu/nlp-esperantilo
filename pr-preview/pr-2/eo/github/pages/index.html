@@ -18,7 +18,7 @@
         <link rel="prev" href="../repository-configuration/">
       
       
-        <link rel="next" href="../../python-library/">
+        <link rel="next" href="../github-faq/">
       
       
         
@@ -349,6 +349,8 @@
       
         
       
+        
+      
     
     
     
@@ -543,6 +545,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -563,6 +593,8 @@
       
         
           
+        
+      
         
       
         
@@ -892,10 +924,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1511,6 +1582,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1537,19 +1619,38 @@
 
 
 <h1 id="github-pages">GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p><strong>GitHub Pages</strong> is free static-website hosting served directly from a
+repository. It is how the documentation you are reading right now is published:
+the <a href="../../python-library/">MkDocs</a> site is built by a
+<a href="../actions/">workflow</a> and served by Pages, with no separate web server to
+maintain.</p>
+<p>This page explains what Pages is, how it is enabled, and how this repository
+uses it both for the public site and for per-pull-request previews.</p>
 <h2 id="what-github-pages-is">What GitHub Pages is<a class="headerlink" href="#what-github-pages-is" title="Permanent link">&para;</a></h2>
-<p>Free static hosting served directly from a repository, and the URL it produces:
-<code>https://&lt;user&gt;.github.io/&lt;repository&gt;/</code>.</p>
+<p>Point Pages at a branch of your repository, and GitHub serves the HTML in it as a
+public website at:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://&lt;user&gt;.github.io/&lt;repository&gt;/
+</span></code></pre></div>
+<p>For this project that is
+<a href="https://jparisu.github.io/nlp-esperantilo/">https://jparisu.github.io/nlp-esperantilo/</a>.</p>
+<p>Pages serves <strong>static</strong> files — HTML, CSS, JavaScript, images. It does not run a
+backend, which is exactly right for documentation: MkDocs turns the Markdown in
+<code>docs/</code> into a folder of static HTML, and Pages serves that folder.</p>
 <h2 id="enabling-it">Enabling it<a class="headerlink" href="#enabling-it" title="Permanent link">&para;</a></h2>
-<p>In <strong>Settings → Pages</strong>, set the source to <strong>Deploy from a branch</strong>, branch
-<code>gh-pages</code>, folder <code>/ (root)</code>. The workflows create and update that branch;
-nothing has to be committed there by hand.</p>
+<p>In <strong>Settings → Pages</strong>, set the source to <strong>Deploy from a branch</strong>, choose the
+branch <strong><code>gh-pages</code></strong> and the folder <strong><code>/ (root)</code></strong>.</p>
+<p>You do <strong>not</strong> create or edit that branch by hand. The workflows build the site
+and push the result to <code>gh-pages</code> for you; your job is only to author Markdown in
+<code>docs/</code> on <code>main</code>. The <code>gh-pages</code> branch is machine-managed output, not something
+humans commit to.</p>
+<div class="admonition info">
+<p class="admonition-title">One branch, two purposes</p>
+<p>Everything Pages serves lives on the single <code>gh-pages</code> branch: the public
+site at its root, and the pull-request previews in subfolders. The two
+workflows below are careful never to overwrite each other.</p>
+</div>
 <h2 id="how-this-site-is-deployed">How this site is deployed<a class="headerlink" href="#how-this-site-is-deployed" title="Permanent link">&para;</a></h2>
-<p>Two workflows write to the same <code>gh-pages</code> branch, to different places:</p>
+<p>Two workflows write to the same <code>gh-pages</code> branch, to different locations:</p>
 <table>
 <thead>
 <tr>
@@ -1575,38 +1676,57 @@ nothing has to be committed there by hand.</p>
 </tbody>
 </table>
 <pre class="mermaid"><code>flowchart LR
-    PR[Pull request] --&gt; BP[mkdocs build --strict]
+    PR[Pull request] --&gt; BP["mkdocs build --strict"]
     BP --&gt; PV["gh-pages:/pr-preview/pr-N/"]
     PV --&gt; C[Comment with the preview URL]
-    M[Push to main] --&gt; BM[mkdocs build --strict]
+    M[Push to main] --&gt; BM["mkdocs build --strict"]
     BM --&gt; RT["gh-pages:/ (root)"]
     RT --&gt; S[Public site]</code></pre>
+<p>So the lifecycle of a documentation change is: open a pull request → a preview is
+published for reviewers → merge → the public site updates. Both paths run
+<code>mkdocs build --strict</code>, so a broken link never reaches either. The workflow
+mechanics are described in <a href="../actions/">GitHub Actions</a>.</p>
 <h2 id="previewing-a-pull-request">Previewing a pull request<a class="headerlink" href="#previewing-a-pull-request" title="Permanent link">&para;</a></h2>
 <p>Every pull request gets its own copy of the whole site, built from the branch
 under review, at:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://jparisu.github.io/nlp-esperantilo/pr-preview/pr-&lt;number&gt;/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://jparisu.github.io/nlp-esperantilo/pr-preview/pr-&lt;number&gt;/
 </span></code></pre></div>
 <p>A bot comment on the pull request links to it, and the link updates on every
 push. The preview is deleted when the pull request is merged or closed.</p>
-<p>Two details make this work without ever touching the public site:</p>
+<p>Two details make this safe — the public site is <em>never</em> touched by a preview:</p>
 <ul>
-<li>the production deployment runs with <code>clean-exclude: pr-preview/</code>, so
-  publishing the real site does not delete the previews;</li>
-<li>the preview build overrides <code>site_url</code>, so canonical links and the language
-  switcher stay inside the preview.</li>
+<li>the production deployment runs with <strong><code>clean-exclude: pr-preview/</code></strong>, so
+  publishing the real site does not delete the previews sitting in subfolders;</li>
+<li>the preview build overrides <strong><code>site_url</code></strong>, so its canonical links, sitemap and
+  language switcher stay inside the preview instead of pointing at production.</li>
 </ul>
-<p>Nothing reaches the front page until the pull request is merged — that is what
+<p>Nothing reaches the front page until the pull request is merged — which is what
 makes a preview safe to hand to a reviewer.</p>
 <div class="admonition warning">
 <p class="admonition-title">Pull requests from forks</p>
 <p>A fork's pull request runs with a read-only token and cannot publish. Its
-documentation is still built and checked, it just gets no preview URL.</p>
+documentation is still built and checked (so the link-check still gates the
+merge), it just gets no preview URL. See
+<a href="../actions/#previewing-the-documentation-of-a-pull-request">GitHub Actions § Previewing the documentation of a pull request</a>.</p>
 </div>
 <h2 id="publishing-your-own">Publishing your own<a class="headerlink" href="#publishing-your-own" title="Permanent link">&para;</a></h2>
-<p>The steps to reproduce this setup in another repository: enable Pages on a
-<code>gh-pages</code> branch, allow workflows to write to the repository
-(<strong>Settings → Actions → General → Workflow permissions</strong>), and copy the two
-workflows.</p>
+<p>To reproduce this setup in another repository:</p>
+<ol>
+<li><strong>Enable Pages</strong> on a <code>gh-pages</code> branch (<strong>Settings → Pages</strong>), as above.</li>
+<li><strong>Allow workflows to write to the repository</strong>, so the deploy step can push to
+   <code>gh-pages</code>: <strong>Settings → Actions → General → Workflow permissions → Read and
+   write permissions</strong>.</li>
+<li><strong>Copy the two workflows</strong> — <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/docs.yml"><code>docs.yml</code></a>
+   and <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.github/workflows/docs-preview.yml"><code>docs-preview.yml</code></a>
+   — and adjust the URLs to your repository.</li>
+</ol>
+<p>From then on, writing documentation is just editing Markdown and opening a pull
+request; publishing happens on its own.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../python-library/">Python Library</a> — the other half of the project:
+  the library this documentation describes how to build.</li>
+</ul>
 
 
 
@@ -1659,13 +1779,13 @@ workflows.</p>
         
         
           
-          <a href="../../python-library/" class="md-footer__link md-footer__link--next" aria-label="Sekva: Python Library">
+          <a href="../github-faq/" class="md-footer__link md-footer__link--next" aria-label="Sekva: Oftaj demandoj">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Sekva
               </span>
               <div class="md-ellipsis">
-                Python Library
+                Oftaj demandoj
               </div>
             </div>
             <div class="md-footer__button md-icon">

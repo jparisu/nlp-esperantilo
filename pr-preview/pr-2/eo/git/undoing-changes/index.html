@@ -351,6 +351,8 @@
       
         
       
+        
+      
     
     
     
@@ -556,10 +558,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-restore" class="md-nav__link">
+  <a href="#git-restore-discard-changes-in-the-working-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git restore
+        git restore — discard changes in the working directory
       
     </span>
   </a>
@@ -567,10 +569,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
+  <a href="#git-reset-move-the-branch-pointer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git reset
+        git reset — move the branch pointer
       
     </span>
   </a>
@@ -578,10 +580,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-stash" class="md-nav__link">
+  <a href="#git-stash-set-changes-aside" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git stash
+        git stash — set changes aside
       
     </span>
   </a>
@@ -593,6 +595,17 @@
     <span class="md-ellipsis">
       
         Which one do I need?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -636,6 +649,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -654,6 +695,8 @@
       
         
           
+        
+      
         
       
         
@@ -877,6 +920,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
   
 
     
@@ -1446,10 +1517,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-restore" class="md-nav__link">
+  <a href="#git-restore-discard-changes-in-the-working-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git restore
+        git restore — discard changes in the working directory
       
     </span>
   </a>
@@ -1457,10 +1528,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
+  <a href="#git-reset-move-the-branch-pointer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git reset
+        git reset — move the branch pointer
       
     </span>
   </a>
@@ -1468,10 +1539,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-stash" class="md-nav__link">
+  <a href="#git-stash-set-changes-aside" class="md-nav__link">
     <span class="md-ellipsis">
       
-        git stash
+        git stash — set changes aside
       
     </span>
   </a>
@@ -1483,6 +1554,17 @@
     <span class="md-ellipsis">
       
         Which one do I need?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -1515,20 +1597,159 @@
 
 
 <h1 id="undoing-changes">Undoing changes<a class="headerlink" href="#undoing-changes" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
+<p>Sooner or later you will want to <strong>go back</strong>: discard an edit, unstage a file, or
+set your work aside to deal with something urgent. Git has a command for each
+case. This page covers the three you actually need — <code>restore</code>, <code>reset</code> and
+<code>stash</code> — and a decision guide to pick the right one.</p>
+<div class="admonition warning">
+<p class="admonition-title">Some of these throw work away</p>
+<p>Discarding changes in the working directory (<code>git restore &lt;file&gt;</code>,
+<code>git reset --hard</code>) <strong>permanently deletes</strong> those changes: they were never
+committed, so Git cannot bring them back. When in doubt, prefer <code>git stash</code>,
+which sets work aside without destroying it.</p>
 </div>
-<p>Three practical ways to "go back", with a small example of each and guidance on
-when to use which.</p>
-<h2 id="git-restore"><code>git restore</code><a class="headerlink" href="#git-restore" title="Permanent link">&para;</a></h2>
-<p>Discard changes in the working directory.</p>
-<h2 id="git-reset"><code>git reset</code><a class="headerlink" href="#git-reset" title="Permanent link">&para;</a></h2>
-<p>Move the branch pointer, or unstage changes.</p>
-<h2 id="git-stash"><code>git stash</code><a class="headerlink" href="#git-stash" title="Permanent link">&para;</a></h2>
-<p>Temporarily set changes aside and get a clean working directory.</p>
+<h2 id="git-restore-discard-changes-in-the-working-directory"><code>git restore</code> — discard changes in the working directory<a class="headerlink" href="#git-restore-discard-changes-in-the-working-directory" title="Permanent link">&para;</a></h2>
+<p>Use <code>restore</code> to throw away edits you have <strong>not committed</strong> and go back to the
+last committed version of a file.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>git<span class="w"> </span>status
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">Changes not staged for commit:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">        modified:   README.md</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">$ </span>git<span class="w"> </span>restore<span class="w"> </span>README.md
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">$ </span>git<span class="w"> </span>status
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">On branch main</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="go">nothing to commit, working tree clean</span>
+</span></code></pre></div>
+<p><code>restore</code> also <strong>unstages</strong> a file (take it out of the staging area, but keep
+your edits) with the <code>--staged</code> flag:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>README.md<span class="w">   </span><span class="c1"># unstage, keep the changes</span>
+</span></code></pre></div>
+<ul>
+<li><code>git restore &lt;file&gt;</code> → discard uncommitted edits to that file.</li>
+<li><code>git restore --staged &lt;file&gt;</code> → unstage, but keep the edits.</li>
+</ul>
+<h2 id="git-reset-move-the-branch-pointer"><code>git reset</code> — move the branch pointer<a class="headerlink" href="#git-reset-move-the-branch-pointer" title="Permanent link">&para;</a></h2>
+<p><code>reset</code> operates on <strong>commits and staging</strong>, not individual file edits. Its most
+common everyday use is the opposite direction of <code>add</code>: unstaging.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>README.md
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gp">$ </span>git<span class="w"> </span>reset<span class="w"> </span>README.md<span class="w">      </span><span class="c1"># unstage README.md (equivalent to restore --staged)</span>
+</span></code></pre></div>
+<p>Used with a commit, <code>reset</code> <strong>moves the current branch pointer</strong> to an earlier
+commit — effectively removing the commits after it from the branch. What happens
+to the changes in those commits depends on the mode:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Branch pointer</th>
+<th>Staging area</th>
+<th>Working directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--soft</code></td>
+<td>moved back</td>
+<td>kept</td>
+<td>kept</td>
+</tr>
+<tr>
+<td><code>--mixed</code> <em>(default)</em></td>
+<td>moved back</td>
+<td>reset</td>
+<td>kept</td>
+</tr>
+<tr>
+<td><code>--hard</code></td>
+<td>moved back</td>
+<td>reset</td>
+<td><strong>discarded</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>git reset --soft HEAD~1</code> — undo the <strong>last commit</strong> but keep its changes
+  staged, ready to re-commit (great for fixing a commit message or splitting a
+  commit).</li>
+<li><code>git reset --mixed HEAD~1</code> — undo the last commit and unstage its changes, but
+  keep them in your files.</li>
+<li><code>git reset --hard HEAD~1</code> — undo the last commit <strong>and throw its changes
+  away</strong>. Fast, and irreversible.</li>
+</ul>
+<p>Here <code>HEAD~1</code> means "one commit before the current one".</p>
+<div class="admonition danger">
+<p class="admonition-title"><code>--hard</code> and shared history</p>
+<p>Never <code>reset</code> commits that you have already <strong>pushed and shared</strong> with
+others: you rewrite history that they already have, and their next <code>pull</code>
+will conflict. On shared branches, undo a commit with <code>git revert</code> (which
+records a <em>new</em> commit that undoes an old one) instead.</p>
+</div>
+<h2 id="git-stash-set-changes-aside"><code>git stash</code> — set changes aside<a class="headerlink" href="#git-stash-set-changes-aside" title="Permanent link">&para;</a></h2>
+<p>Sometimes you are in the middle of something when you need a clean working
+directory right now — to pull, to switch branches, or to try a quick fix.
+<code>stash</code> tucks your uncommitted changes away safely and gives you back a clean
+tree.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>git<span class="w"> </span>stash
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">Saved working directory and index state WIP on main: 92c1041 Add skeleton</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="gp">$ </span>git<span class="w"> </span>status
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">On branch main</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">nothing to commit, working tree clean</span>
+</span></code></pre></div>
+<p>Your changes are not lost — they are on a stack. Bring them back when you are
+ready:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">      </span><span class="c1"># re-apply the most recent stash and remove it from the stack</span>
+</span></code></pre></div>
+<ul>
+<li><code>git stash</code> → save changes and clean the working directory.</li>
+<li><code>git stash list</code> → see what you have stashed.</li>
+<li><code>git stash pop</code> → re-apply the latest stash and drop it.</li>
+<li><code>git stash drop</code> → discard a stash without applying it.</li>
+</ul>
+<p>Unlike <code>reset --hard</code>, <code>stash</code> is <strong>safe</strong>: nothing is destroyed, so it is the
+right first reflex whenever you just need to park your work for a moment.</p>
 <h2 id="which-one-do-i-need">Which one do I need?<a class="headerlink" href="#which-one-do-i-need" title="Permanent link">&para;</a></h2>
-<p>A short decision guide mapping common situations to the right command.</p>
+<table>
+<thead>
+<tr>
+<th>Your situation</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I edited a file and want to throw the edit away</td>
+<td><code>git restore &lt;file&gt;</code></td>
+</tr>
+<tr>
+<td>I staged a file by mistake</td>
+<td><code>git restore --staged &lt;file&gt;</code> (or <code>git reset &lt;file&gt;</code>)</td>
+</tr>
+<tr>
+<td>I want to redo my last commit (message, or add a file)</td>
+<td><code>git reset --soft HEAD~1</code></td>
+</tr>
+<tr>
+<td>I need a clean tree <em>right now</em> but want my work back later</td>
+<td><code>git stash</code> → <code>git stash pop</code></td>
+</tr>
+<tr>
+<td>I want to undo a commit I already <strong>pushed</strong></td>
+<td><code>git revert &lt;commit&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">The safety-first rule of thumb</p>
+<p>If the change is <strong>committed</strong>, you can almost always get it back, so undoing
+is safe. If it is <strong>uncommitted</strong>, Git has no copy — so <code>stash</code> before you do
+anything destructive.</p>
+</div>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../example/">Example</a> — a full walkthrough that puts commits, branches and
+  merges together.</li>
+</ul>
 
 
 

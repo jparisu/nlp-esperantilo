@@ -349,6 +349,8 @@
       
         
       
+        
+      
     
     
     
@@ -543,6 +545,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -563,6 +593,8 @@
       
         
           
+        
+      
         
       
         
@@ -864,6 +896,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -888,6 +931,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
   
 
     
@@ -1511,6 +1582,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1537,31 +1619,97 @@
 
 
 <h1 id="repository-configuration">Repository configuration<a class="headerlink" href="#repository-configuration" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
-<p>How to configure a repository so that the workflow of <a href="../workflow/">§ Workflow</a>
-is actually enforced, which matters most when working as a team.</p>
-<h2 id="branch-protection-and-rulesets">Branch protection and rulesets<a class="headerlink" href="#branch-protection-and-rulesets" title="Permanent link">&para;</a></h2>
-<p>Block direct pushes to <code>main</code> and force every change through a pull request.</p>
-<h2 id="required-reviews">Required reviews<a class="headerlink" href="#required-reviews" title="Permanent link">&para;</a></h2>
-<p>Ask for at least one approval before merging, and what "stale review dismissal"
-means.</p>
-<h2 id="required-status-checks">Required status checks<a class="headerlink" href="#required-status-checks" title="Permanent link">&para;</a></h2>
-<p>Make the <a href="../actions/">GitHub Actions</a> checks — tests, spell check, docs build —
-mandatory before a merge is allowed.</p>
-<h2 id="other-useful-settings">Other useful settings<a class="headerlink" href="#other-useful-settings" title="Permanent link">&para;</a></h2>
-<p>Linear history, conversation resolution, auto-delete of merged branches.</p>
-<h2 id="good-practices">Good practices<a class="headerlink" href="#good-practices" title="Permanent link">&para;</a></h2>
-<p>Pull requests with well-written commits, linter and test gates, and balanced
-contribution from every team member.</p>
+<p>The <a href="../workflow/">workflow</a> and the <a href="../actions/">Actions</a> only <em>help</em> if the team
+actually follows them. This page is about making them <strong>enforced</strong>: configuring
+the repository so that <code>main</code> cannot be broken by accident, and every change goes
+through a reviewed, tested pull request.</p>
+<p>This matters most in a team, where "please remember to open a pull request" is
+not a reliable safeguard.</p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Protecting <code>main</code> only makes sense once branches, pull requests and CI
-checks exist — that is why this page comes after
-<a href="../workflow/">Workflow</a> and <a href="../actions/">GitHub Actions</a>.</p>
+<p class="admonition-title">Order matters</p>
+<p>Protecting <code>main</code> only makes sense once branches, pull requests and CI checks
+exist — which is why this page comes after <a href="../workflow/">Workflow</a> and
+<a href="../actions/">GitHub Actions</a>. Set the rules up once those are in place.</p>
 </div>
+<h2 id="branch-protection-and-rulesets">Branch protection and rulesets<a class="headerlink" href="#branch-protection-and-rulesets" title="Permanent link">&para;</a></h2>
+<p>By default, anyone with write access can push straight to <code>main</code>. A <strong>ruleset</strong>
+(the modern replacement for classic <em>branch protection rules</em>) locks that down.
+In <strong>Settings → Rules → Rulesets → New branch ruleset</strong>, target the <code>main</code> branch
+and enable, at minimum:</p>
+<ul>
+<li><strong>Restrict deletions</strong> and <strong>Block force pushes</strong> — <code>main</code>'s history cannot be
+  deleted or rewritten.</li>
+<li><strong>Require a pull request before merging</strong> — no direct pushes to <code>main</code>; every
+  change arrives as a pull request.</li>
+</ul>
+<p>With just these two, <code>main</code> is safe from accidental direct commits, and the
+<a href="../workflow/">workflow</a> becomes the <em>only</em> way in.</p>
+<pre class="mermaid"><code>flowchart LR
+    D[Direct push to main] --&gt;|blocked| X((✗))
+    B[Branch] --&gt; PR[Pull request]
+    PR --&gt;|review + checks pass| M[main]</code></pre>
+<h2 id="required-reviews">Required reviews<a class="headerlink" href="#required-reviews" title="Permanent link">&para;</a></h2>
+<p>Inside the "Require a pull request" rule, set <strong>Require approvals</strong> to at least
+<strong>1</strong>. Now a pull request cannot be merged until a teammate has reviewed and
+approved it — the four-eyes principle, enforced.</p>
+<p>Two related options are worth knowing:</p>
+<ul>
+<li><strong>Dismiss stale approvals when new commits are pushed.</strong> If the author pushes
+  more changes after an approval, the approval is cleared and the reviewer must
+  look again — so nobody merges code that was never actually reviewed.</li>
+<li><strong>Require review from Code Owners.</strong> If you add a <code>CODEOWNERS</code> file, changes to
+  certain paths must be approved by their designated owner.</li>
+</ul>
+<h2 id="required-status-checks">Required status checks<a class="headerlink" href="#required-status-checks" title="Permanent link">&para;</a></h2>
+<p>This is where the <a href="../actions/">Actions</a> come in. Enable <strong>Require status checks
+to pass before merging</strong>, then select the checks that must be green — for this
+repository, the <strong>tests</strong>, the <strong>spell check</strong> and the <strong>documentation build</strong>.</p>
+<p>A pull request whose checks are red can then no longer be merged, no matter who
+approves it. Automated quality gates and human review reinforce each other:</p>
+<ul>
+<li>the machine catches what humans miss (a failing test, a typo, a broken link);</li>
+<li>the human catches what machines miss (bad design, unclear code, wrong
+  approach).</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Also require the branch to be up to date</p>
+<p>The option <strong>Require branches to be up to date before merging</strong> forces a pull
+request to include the latest <code>main</code> before it can merge, so the checks ran
+against what will actually land — not against a stale base.</p>
+</div>
+<h2 id="other-useful-settings">Other useful settings<a class="headerlink" href="#other-useful-settings" title="Permanent link">&para;</a></h2>
+<p>A few more settings keep the repository tidy, mostly under <strong>Settings → General</strong>
+and the ruleset:</p>
+<ul>
+<li><strong>Automatically delete head branches.</strong> After a pull request is merged, its
+  branch is removed — no manual cleanup, no clutter of dead branches.</li>
+<li><strong>Require linear history.</strong> Forbids merge commits on <code>main</code>, keeping the
+  history a straight line (pairs well with <em>squash</em> merges).</li>
+<li><strong>Require conversation resolution before merging.</strong> Every review comment must
+  be marked resolved before the merge button unlocks, so no feedback is silently
+  dropped.</li>
+</ul>
+<h2 id="good-practices">Good practices<a class="headerlink" href="#good-practices" title="Permanent link">&para;</a></h2>
+<p>Configuration enforces rules, but a healthy project also depends on habits the
+settings cannot check:</p>
+<ul>
+<li><strong>Pull requests with well-written commits.</strong> Small, atomic commits with clear
+  messages (see <a href="../workflow/#commit-best-practices">Workflow § Commit best practices</a>)
+  make review fast and the history readable.</li>
+<li><strong>Green before review.</strong> Get the checks passing before you ask a teammate to
+  review — do not spend their time on something CI would have caught.</li>
+<li><strong>Balanced contribution.</strong> On a team assignment, everyone should open pull
+  requests and everyone should review them. The <strong>Insights → Contributors</strong> page
+  makes the balance (or imbalance) visible.</li>
+<li><strong>Review kindly and concretely.</strong> Comment on the code, not the person; suggest,
+  do not just reject.</li>
+</ul>
+<p>Together, the enforced rules and these habits are what let a team move quickly
+<em>without</em> breaking <code>main</code> or stepping on each other's work.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../pages/">GitHub Pages</a> — publishing the documentation from the repository.</li>
+</ul>
 
 
 

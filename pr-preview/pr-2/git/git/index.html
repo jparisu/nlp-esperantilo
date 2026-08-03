@@ -351,6 +351,8 @@
       
         
       
+        
+      
     
     
     
@@ -494,10 +496,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-in-one-picture" class="md-nav__link">
+  <a href="#the-three-areas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Git in one picture
+        The three areas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -625,6 +638,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -643,6 +684,8 @@
       
         
           
+        
+      
         
       
         
@@ -866,6 +909,34 @@
     
   
     GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
   
 
     
@@ -1457,10 +1528,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-in-one-picture" class="md-nav__link">
+  <a href="#the-three-areas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Git in one picture
+        The three areas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -1493,25 +1575,116 @@
 
 
 <h1 id="what-is-git">What is Git<a class="headerlink" href="#what-is-git" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p><strong>Git</strong> is a <em>version control system</em>: a tool that records the history of a set
+of files, so that every change can be inspected, shared and, if needed, undone.
+It is the standard way software is written today, and it is the foundation on
+top of which GitHub, pull requests and continuous integration are built.</p>
+<p>This page explains where Git comes from, what problem it solves, and the mental
+model you need before learning any command.</p>
 <h2 id="a-bit-of-history">A bit of history<a class="headerlink" href="#a-bit-of-history" title="Permanent link">&para;</a></h2>
-<p>Where Git comes from, the problem it was created to solve, and why distributed
-version control replaced the previous generation of tools.</p>
-<h2 id="why-version-control">Why version control<a class="headerlink" href="#why-version-control" title="Permanent link">&para;</a></h2>
-<p>What a developer gains from tracking versions: a readable history, the ability
-to go back, and a way for several people to work on the same files without
-overwriting each other.</p>
-<h2 id="git-in-one-picture">Git in one picture<a class="headerlink" href="#git-in-one-picture" title="Permanent link">&para;</a></h2>
-<p>A diagram of the three areas a file moves through — working directory, staging
-area and repository — plus the remote.</p>
+<p>Before version control, keeping the history of a project meant copying folders
+by hand: <code>project/</code>, <code>project-final/</code>, <code>project-final-REAL/</code>. This does not
+scale, it is error-prone, and it makes collaboration painful.</p>
+<p>Git was created in <strong>2005</strong> by <strong>Linus Torvalds</strong>, the same person who started
+the Linux kernel. The kernel is developed by thousands of contributors, and the
+tool they had been using stopped being available for free. Torvalds needed
+something that was <strong>fast</strong>, <strong>distributed</strong>, and able to handle a huge history
+without slowing down. No existing tool fit, so he wrote his own in a few weeks.</p>
+<p>The key word is <strong>distributed</strong>. In the older generation of tools (such as
+Subversion or CVS), there was a single central server that held <em>the</em> history;
+you had to be connected to it to commit. In Git, <strong>every clone of a repository
+is a full copy of the entire history</strong>. You can commit, branch, inspect the log
+and go back in time without a network connection. Sharing with others is a
+separate, explicit step.</p>
 <pre class="mermaid"><code>flowchart LR
-    W[Working directory] --&gt;|add| S[Staging area]
-    S --&gt;|commit| L[Local repository]
-    L --&gt;|push| R[(Remote repository)]
-    R --&gt;|pull| W</code></pre>
+    subgraph Centralized
+        direction TB
+        CS[(Central server)]
+        CA[Developer A] --&gt;|commit| CS
+        CB[Developer B] --&gt;|commit| CS
+    end
+    subgraph Distributed
+        direction TB
+        DR[(Shared remote)]
+        DA["Developer A&lt;br/&gt;(full history)"] &lt;--&gt;|push / pull| DR
+        DB["Developer B&lt;br/&gt;(full history)"] &lt;--&gt;|push / pull| DR
+    end</code></pre>
+<p>Today Git is, by a wide margin, the most used version control system in the
+world, and knowing it is a basic professional skill.</p>
+<h2 id="why-version-control">Why version control<a class="headerlink" href="#why-version-control" title="Permanent link">&para;</a></h2>
+<p>Even working alone, version control gives you three things that are hard to live
+without once you have them:</p>
+<ul>
+<li><strong>A history.</strong> Every saved change is recorded with an author, a date and a
+  message. You can read <em>how</em> and <em>why</em> the project reached its current state.</li>
+<li><strong>A safety net.</strong> Because every state is stored, you can always go back to a
+  version that worked. Experiments become cheap: try something, and if it goes
+  wrong, discard it.</li>
+<li><strong>Collaboration without overwriting.</strong> Several people can work on the same
+  files at the same time. Git merges their changes together and, when two people
+  edit the same lines, tells you exactly where a human decision is needed.</li>
+</ul>
+<p>For a team project like this one, that last point is the important one: version
+control is what makes it possible for everybody to contribute without stepping
+on each other's work.</p>
+<h2 id="the-three-areas">The three areas<a class="headerlink" href="#the-three-areas" title="Permanent link">&para;</a></h2>
+<p>The single most useful thing to understand before touching a command is that a
+file in a Git project lives in one of <strong>three areas</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Working directory</strong></td>
+<td>The actual files on your disk, the ones you edit.</td>
+</tr>
+<tr>
+<td><strong>Staging area</strong> (or <em>index</em>)</td>
+<td>A drafting space where you assemble the <em>next</em> commit.</td>
+</tr>
+<tr>
+<td><strong>Repository</strong></td>
+<td>The permanent, recorded history of commits.</td>
+</tr>
+</tbody>
+</table>
+<p>Changes flow from one area to the next through commands, and a fourth area — the
+<strong>remote</strong> — is a copy of the repository shared with other people (this is where
+GitHub comes in).</p>
+<pre class="mermaid"><code>flowchart LR
+    W[Working directory] --&gt;|git add| S[Staging area]
+    S --&gt;|git commit| L[Local repository]
+    L --&gt;|git push| R[(Remote repository)]
+    R --&gt;|git pull| W</code></pre>
+<p>Reading the diagram left to right:</p>
+<ol>
+<li>You <strong>edit</strong> files in the working directory.</li>
+<li><code>git add</code> moves a snapshot of the changes you want to keep into the <strong>staging
+   area</strong>. This lets you commit <em>part</em> of your work and leave the rest for
+   later.</li>
+<li><code>git commit</code> records everything staged as a permanent point in the <strong>local
+   repository</strong>, with a message describing it.</li>
+<li><code>git push</code> sends your commits to the <strong>remote</strong>, so others can see them; <code>git
+   pull</code> brings their commits down to you.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Why a staging area?</p>
+<p>The staging area feels like an extra step at first, but it is what lets you
+craft clean commits: you can review exactly what will be recorded and split
+unrelated changes into separate, meaningful commits instead of one big
+dump.</p>
+</div>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../organization/">Organization</a> — how commits, branches and history are
+  actually structured.</li>
+<li><a href="../commands/">Commands</a> — the everyday command set, one by one.</li>
+<li><a href="../example/">Example</a> — the whole workflow applied to this very repository.</li>
+</ul>
 
 
 
