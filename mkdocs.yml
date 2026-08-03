@@ -1,7 +1,9 @@
 site_name: NLP Esperantilo
 site_description: A guide to build an Esperanto NLP library, and the library itself
 site_author: jparisu
-site_url: https://jparisu.github.io/nlp-esperantilo/
+# Overridden by the pull request preview workflow, so that canonical links and
+# the language switcher point at the preview instead of the production site.
+site_url: !ENV [SITE_URL, "https://jparisu.github.io/nlp-esperantilo/"]
 
 repo_name: jparisu/nlp-esperantilo
 repo_url: https://github.com/jparisu/nlp-esperantilo
@@ -55,6 +57,10 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+# Generates the "Word lists" pages of the Esperanto section from resources/*.json.
+hooks:
+  - hooks/word_lists.py
+
 plugins:
   - search
   # Internationalization: new languages are added here, and their pages as
@@ -80,6 +86,7 @@ plugins:
             GitHub: GitHub
             Python Library: Python-Biblioteko
             Esperanto: Esperanto
+            Word lists: Vortlistoj
 
 markdown_extensions:
   - abbr

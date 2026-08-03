@@ -1,27 +1,30 @@
 name: docs
 
+# Production documentation: builds the site and publishes it at the root of the
+# `gh-pages` branch, which GitHub Pages serves at
+# https://jparisu.github.io/nlp-esperantilo/
+#
+# Pull request previews are handled by docs-preview.yml, which publishes to
+# subdirectories of the same branch. That is why this workflow never wipes the
+# `pr-preview/` directory.
+
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
 
-# Allow the deploy job to publish to GitHub Pages via OIDC.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Only one deployment at a time; do not cancel a running one.
+# Never let two deployments push to gh-pages at the same time.
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: false
 
 jobs:
 
-  build:
-    name: Build documentation
+  deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
 
@@ -44,22 +47,13 @@ jobs:
         # --strict turns warnings (broken links, missing files) into errors.
         run: mkdocs build --strict --site-dir site
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: site
-
-  deploy:
-    name: Deploy to GitHub Pages
-    # Pull requests only build; deployment happens from the default branch.
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-
-      - name: Deploy artifact
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: site
+          branch: gh-pages
+          # Keep the pull request previews published by docs-preview.yml.
+          clean-exclude: pr-preview/
+          # Rebase instead of force-pushing, so a preview deployed meanwhile
+          # is not overwritten.
+          force: false

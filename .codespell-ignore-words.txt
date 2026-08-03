@@ -1,5 +1,12 @@
 # Words codespell must accept, one per line, lowercase.
 # Mostly Esperanto vocabulary and proper names used in the documentation.
+#
+# Esperanto words that collide with an English typo (from resources/*.json):
+tre
+dum
+mian
+nin
+#
 esperantilo
 zamenhof
 fundamento

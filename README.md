@@ -14,8 +14,10 @@ It will also host a guide on how to build a similar NLP toolchain, for education
 
 ```text
 nlp-esperantilo/
-├── .github/workflows/    # Continuous integration: tests, docs, spell check
+├── .github/workflows/    # Continuous integration: tests, docs, previews, spell check
 ├── docs/                 # Documentation sources (MkDocs)
+├── hooks/                # Build-time hooks that turn resources/ into doc pages
+├── resources/            # Machine-readable word lists (JSON)
 ├── src/esperantilo/      # The Python library
 ├── tests/                # Test suite (pytest)
 ├── mkdocs.yml            # Documentation configuration
@@ -59,6 +61,23 @@ The site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-
 and published to GitHub Pages on every push to `main`.
 Translations live next to the English pages as `<page>.<locale>.md`; missing
 translations fall back to English.
+
+Every pull request also gets a **live preview** of the whole site at
+`https://jparisu.github.io/nlp-esperantilo/pr-preview/pr-<number>/`, linked from
+a comment on the pull request. The public site is not touched until the pull
+request is merged, and the preview is removed when it closes.
+
+### Word lists
+
+The linguistic data lives in [`resources/`](resources/README.md) as JSON, and
+the documentation pages under *Esperanto → Word lists* are generated from those
+files at build time by [`hooks/word_lists.py`](hooks/word_lists.py). Adding a
+new list (say `resources/prepozicioj.json`) is enough for a new page to appear —
+no page to write, no navigation entry to add.
+
+| List | Entries |
+| --- | --- |
+| [`ignorindaj-vortoj.json`](resources/ignorindaj-vortoj.json) — stop-words with English translations | 250 |
 
 ### Spell check
 

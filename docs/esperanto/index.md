@@ -15,5 +15,17 @@ library can be implemented from it.
 - [**Grammar**](grammar.md) — the regular rules the library encodes.
 - [**Vocabulary**](vocabulary.md) — stop-words, affixes and common roots.
 - [**Resources**](resources.md) — books, courses and websites.
+- [**Word lists**](word-lists/index.md) — the data the library actually reads.
 
 </div>
+
+## Word lists
+
+The reference lists live as JSON files under `resources/` in the repository and
+are rendered here automatically, so the documentation and the data the library
+loads can never disagree:
+
+- [Stop-words](word-lists/ignorindaj-vortoj.md) — 250 words with their English
+  translation and grammatical category.
+
+See [all word lists](word-lists/index.md).
