@@ -10,11 +10,11 @@ otherwise, the pages are meant to be read in order.
 
 <div class="grid cards" markdown>
 
-- [**What is Git**](git.md) — history and motivation.
-- [**Organization**](organization.md) — branches, commits, diffs and snapshots.
-- [**Commands**](commands.md) — the everyday command set, and `.gitignore`.
-- [**Undoing changes**](undoing-changes.md) — `restore`, `reset` and `stash`.
-- [**Example**](example.md) — a complete step-by-step walkthrough.
+- [**1. What is Git**](git.md) — history and motivation.
+- [**2. Organization**](organization.md) — branches, commits, diffs and snapshots.
+- [**3. Commands**](commands.md) — the everyday command set, and `.gitignore`.
+- [**4. Undoing changes**](undoing-changes.md) — `restore`, `reset` and `stash`.
+- [**5. Example**](example.md) — a complete step-by-step walkthrough.
 - [**FAQ**](git-faq.md) — quick answers to common doubts.
 
 </div>

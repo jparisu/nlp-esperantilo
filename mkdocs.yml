@@ -47,7 +47,11 @@ theme:
     - navigation.indexes
     # navigation.instant is intentionally not enabled: it is incompatible with
     # the language switcher of mkdocs-static-i18n.
-    - navigation.sections
+    #
+    # navigation.sections and navigation.expand are intentionally NOT enabled:
+    # both keep the whole navigation open at once. Leaving them off gives a
+    # collapsible tree where only the active section is expanded and the others
+    # stay collapsed to their titles.
     - navigation.top
     - navigation.tracking
     - search.highlight
@@ -152,6 +156,7 @@ nav:
       - Installation and usage: python-library/installation-and-usage.md
       - API: python-library/api.md
       - Testing: python-library/testing.md
+      - FAQ: python-library/python-faq.md
   - Esperanto:
       - esperanto/index.md
       - History: esperanto/history.md
