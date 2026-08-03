@@ -37,6 +37,8 @@ Students are expected to have prior technical knowledge and a good understanding
 
 For that reason, the documentation must be sober, clear and concise, with a writing style that is easy to read and understand. The use of diagrams, examples, internal cross-references and links to external resources is strongly encouraged.
 
+Every section will count with a FAQ subsection, where the most common questions and doubts will be answered.
+
 ## Language
 
 The documentation must be written in English, but in a way that makes it easy to translate into any other language.

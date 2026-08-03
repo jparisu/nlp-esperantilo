@@ -87,6 +87,7 @@ plugins:
             Python Library: Python-Biblioteko
             Esperanto: Esperanto
             Word lists: Vortlistoj
+            FAQ: Oftaj demandoj
 
 markdown_extensions:
   - abbr
@@ -134,6 +135,7 @@ nav:
       - Commands: git/commands.md
       - Undoing changes: git/undoing-changes.md
       - Example: git/example.md
+      - FAQ: git/git-faq.md
   - GitHub:
       - github/index.md
       - What is GitHub: github/github.md
