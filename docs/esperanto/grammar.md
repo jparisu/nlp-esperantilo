@@ -9,6 +9,12 @@ The guiding idea: an Esperanto word is built from a **root** plus **grammatical
 endings** and optional **affixes**. Strip the endings and affixes and you have
 the lemma; read the endings and you have the part of speech and the inflection.
 
+!!! quote "Reference"
+    The rules and examples on this page follow the classic **_A Complete Grammar
+    of Esperanto_** by Ivy Kellerman Reed (1910), a public-domain work included
+    in the repository at `resources/books/esperanto_grammar.txt`. See
+    [Resources § Books](resources.md#books) for the full citation.
+
 ## Alphabet
 
 Esperanto uses a **28-letter** Latin alphabet. It is strictly **phonetic**: every

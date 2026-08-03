@@ -5,16 +5,17 @@ vocabulary and learning resources. It is strongly oriented towards the
 linguistics and the regular rules of Esperanto, so that a rule-based NLP
 library can be implemented from it.
 
-!!! note "Under construction"
-    The pages below are scaffolds. Their headings describe the contents that
-    will be written.
+The pages are ordered from context to data: the story of the language, then its
+rules, then the lists those rules produce. If you only need the linguistic data
+for the library, jump to [Grammar](grammar.md) and [Vocabulary](vocabulary.md).
 
 <div class="grid cards" markdown>
 
-- [**History**](history.md) — creator, motivation and evolution.
-- [**Grammar**](grammar.md) — the regular rules the library encodes.
-- [**Vocabulary**](vocabulary.md) — stop-words, affixes and common roots.
-- [**Resources**](resources.md) — books, courses and websites.
+- [**1. History**](history.md) — creator, motivation and evolution.
+- [**2. Grammar**](grammar.md) — the regular rules the library encodes.
+- [**3. Vocabulary**](vocabulary.md) — stop-words, affixes and common roots.
+- [**4. Resources**](resources.md) — books, courses and websites.
+- [**FAQ**](esperanto-faq.md) — quick answers to common doubts.
 - [**Word lists**](word-lists/index.md) — the data the library actually reads.
 
 </div>
