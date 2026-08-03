@@ -144,6 +144,7 @@ nav:
       - GitHub Actions: github/actions.md
       - Repository configuration: github/repository-configuration.md
       - GitHub Pages: github/pages.md
+      - FAQ: github/github-faq.md
   - Python Library:
       - python-library/index.md
       - What is a library: python-library/library.md
