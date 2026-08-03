@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esperantilo"
+version = "0.1.0"
+description = "A rule-based Natural Language Processing library for Esperanto"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "jparisu" }]
+keywords = ["nlp", "esperanto", "linguistics", "tokenizer", "lemmatizer"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: Esperanto",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocs-static-i18n>=1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/jparisu/nlp-esperantilo"
+Documentation = "https://jparisu.github.io/nlp-esperantilo/"
+Repository = "https://github.com/jparisu/nlp-esperantilo"
+Issues = "https://github.com/jparisu/nlp-esperantilo/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,0 +1,8 @@
+[codespell]
+# Paths that must not be spell checked.
+skip = ./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock
+# Project-specific vocabulary (Esperanto words, proper names, technical terms).
+ignore-words = .codespell-ignore-words.txt
+# Only report words the checker is confident about.
+builtin = clear,rare
+check-filenames =

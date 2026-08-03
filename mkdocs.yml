@@ -1,0 +1,150 @@
+site_name: NLP Esperantilo
+site_description: A guide to build an Esperanto NLP library, and the library itself
+site_author: jparisu
+site_url: https://jparisu.github.io/nlp-esperantilo/
+
+repo_name: jparisu/nlp-esperantilo
+repo_url: https://github.com/jparisu/nlp-esperantilo
+edit_uri: edit/main/docs/
+
+copyright: Licensed under the Apache License 2.0
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - content.action.edit
+    - content.code.annotate
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    # navigation.instant is intentionally not enabled: it is incompatible with
+    # the language switcher of mkdocs-static-i18n.
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  # Internationalization: new languages are added here, and their pages as
+  # `<page>.<locale>.md` next to the English ones. Missing translations fall
+  # back to the English page, so translations can be added incrementally.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: eo
+          name: Esperanto
+          build: true
+          site_name: NLP Esperantilo
+          nav_translations:
+            Home: Hejmo
+            Git: Git
+            GitHub: GitHub
+            Python Library: Python-Biblioteko
+            Esperanto: Esperanto
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jparisu/nlp-esperantilo
+      name: NLP Esperantilo on GitHub
+
+nav:
+  - Home: index.md
+  - Git:
+      - git/index.md
+      - What is Git: git/git.md
+      - Organization: git/organization.md
+      - Commands: git/commands.md
+      - Undoing changes: git/undoing-changes.md
+      - Example: git/example.md
+  - GitHub:
+      - github/index.md
+      - What is GitHub: github/github.md
+      - First steps: github/first-steps.md
+      - Workflow: github/workflow.md
+      - GitHub Actions: github/actions.md
+      - Repository configuration: github/repository-configuration.md
+      - GitHub Pages: github/pages.md
+  - Python Library:
+      - python-library/index.md
+      - What is a library: python-library/library.md
+      - Organization: python-library/organization.md
+      - Installation and usage: python-library/installation-and-usage.md
+      - API: python-library/api.md
+      - Testing: python-library/testing.md
+  - Esperanto:
+      - esperanto/index.md
+      - History: esperanto/history.md
+      - Grammar: esperanto/grammar.md
+      - Vocabulary: esperanto/vocabulary.md
+      - Resources: esperanto/resources.md
