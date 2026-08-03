@@ -354,13 +354,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -386,7 +381,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -610,13 +605,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -642,7 +632,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -887,16 +877,13 @@
       
         
       
-    
-    
-    
-      
-        
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -922,7 +909,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1081,6 +1068,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/python-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1116,13 +1131,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
@@ -1148,7 +1158,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1347,6 +1357,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Affixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suffixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suffixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1365,6 +1403,17 @@
     <span class="md-ellipsis">
       
         Worked examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -1453,8 +1502,6 @@
       
     
     
-    
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1657,6 +1704,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Affixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suffixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suffixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1675,6 +1750,17 @@
     <span class="md-ellipsis">
       
         Worked examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -1707,121 +1793,660 @@
 
 
 <h1 id="grammar">Grammar<a class="headerlink" href="#grammar" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below. This page must end up containing <strong>all</strong>
-the regular rules needed to implement the rule-based library: tokenizer,
-lemmatizer, POS tagger and stop-word handling.</p>
-</div>
+<p>This is the core reference page of the Esperanto section. It collects <strong>all the
+regular rules</strong> a rule-based pipeline needs — for the tokenizer, the lemmatizer,
+the POS tagger and stop-word handling. Because Esperanto has no exceptions, each
+rule below can be turned almost directly into code.</p>
+<p>The guiding idea: an Esperanto word is built from a <strong>root</strong> plus <strong>grammatical
+endings</strong> and optional <strong>affixes</strong>. Strip the endings and affixes and you have
+the lemma; read the endings and you have the part of speech and the inflection.</p>
 <h2 id="alphabet">Alphabet<a class="headerlink" href="#alphabet" title="Permanent link">&para;</a></h2>
-<p>The 28 letters, including the six diacritics <code>ĉ</code>, <code>ĝ</code>, <code>ĥ</code>, <code>ĵ</code>, <code>ŝ</code>, <code>ŭ</code>, and
-what they imply for tokenization and text encoding (Unicode, the <code>x</code>- and
-<code>h</code>-systems).</p>
+<p>Esperanto uses a <strong>28-letter</strong> Latin alphabet. It is strictly <strong>phonetic</strong>: every
+letter is always pronounced the same way, and every sound is written with exactly
+one letter. Six letters carry diacritics found in no other language:</p>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Name</th>
+<th>Sound (approx.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ĉ</code></td>
+<td>ĉo</td>
+<td><em>ch</em> in "church"</td>
+</tr>
+<tr>
+<td><code>ĝ</code></td>
+<td>ĝo</td>
+<td><em>g</em> in "gem"</td>
+</tr>
+<tr>
+<td><code>ĥ</code></td>
+<td>ĥo</td>
+<td><em>ch</em> in Scottish "loch"</td>
+</tr>
+<tr>
+<td><code>ĵ</code></td>
+<td>ĵo</td>
+<td><em>s</em> in "measure"</td>
+</tr>
+<tr>
+<td><code>ŝ</code></td>
+<td>ŝo</td>
+<td><em>sh</em> in "ship"</td>
+</tr>
+<tr>
+<td><code>ŭ</code></td>
+<td>ŭo</td>
+<td><em>w</em> in "how" (used in diphthongs)</td>
+</tr>
+</tbody>
+</table>
+<p>The letters <code>q</code>, <code>w</code>, <code>x</code>, <code>y</code> are <strong>not</strong> part of the alphabet.</p>
+<div class="admonition warning">
+<p class="admonition-title">Encoding matters for tokenization</p>
+<p>The diacritics are real Unicode letters (<code>ĉ</code> is U+0109), not <code>c</code> plus a
+combining mark — but text found in the wild may use either form. Two ASCII
+fallbacks also exist for keyboards that cannot type the diacritics:</p>
+<ul>
+<li>the <strong>x-system</strong>: <code>cx gx hx jx sx ux</code> for <code>ĉ ĝ ĥ ĵ ŝ ŭ</code>;</li>
+<li>the <strong>h-system</strong> (from the <em>Fundamento</em>): <code>ch gh hh jh sh u</code>.</li>
+</ul>
+<p>A robust tokenizer should <strong>normalise</strong> input to a single canonical form
+(Unicode NFC, real diacritics) before applying any other rule. This
+project's data files keep the real diacritics and never the x-system (see
+<a href="../vocabulary/#format"><code>resources/README.md</code></a>).</p>
+</div>
 <h2 id="word-class-endings">Word-class endings<a class="headerlink" href="#word-class-endings" title="Permanent link">&para;</a></h2>
-<p>The core of POS tagging and lemmatization.</p>
+<p>This is the single most useful rule for POS tagging and lemmatization: the
+<strong>final vowel of a full word marks its part of speech</strong>.</p>
 <table>
 <thead>
 <tr>
 <th>Ending</th>
 <th>Word class</th>
+<th>Example</th>
+<th>Root</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-o</code></td>
 <td>noun</td>
+<td><code>libro</code></td>
+<td><code>libr-</code></td>
+<td>book</td>
 </tr>
 <tr>
 <td><code>-a</code></td>
 <td>adjective</td>
+<td><code>bona</code></td>
+<td><code>bon-</code></td>
+<td>good</td>
 </tr>
 <tr>
 <td><code>-e</code></td>
-<td>adverb</td>
+<td>adverb (derived)</td>
+<td><code>rapide</code></td>
+<td><code>rapid-</code></td>
+<td>quickly</td>
 </tr>
 <tr>
 <td><code>-i</code></td>
 <td>verb (infinitive)</td>
+<td><code>kanti</code></td>
+<td><code>kant-</code></td>
+<td>to sing</td>
 </tr>
 </tbody>
 </table>
+<p>From one root you get the whole family: <code>muziko</code> (music), <code>muzika</code> (musical),
+<code>muzike</code> (musically). To <strong>lemmatize</strong>, strip the grammatical ending (and any
+inflection below) to recover the root, then re-attach the class vowel to get the
+dictionary form.</p>
 <h2 id="grammatical-inflections">Grammatical inflections<a class="headerlink" href="#grammatical-inflections" title="Permanent link">&para;</a></h2>
+<p>Nouns and adjectives take two optional endings, always <strong>after</strong> the class vowel:</p>
 <table>
 <thead>
 <tr>
 <th>Ending</th>
 <th>Meaning</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-j</code></td>
 <td>plural</td>
+<td><code>libroj</code> (books), <code>bonaj</code> (good, pl.)</td>
 </tr>
 <tr>
 <td><code>-n</code></td>
-<td>accusative</td>
+<td>accusative (direct object)</td>
+<td><code>libron</code>, <code>bonan</code></td>
 </tr>
 <tr>
 <td><code>-jn</code></td>
-<td>plural accusative</td>
+<td>plural <strong>and</strong> accusative</td>
+<td><code>bonajn librojn</code></td>
 </tr>
 </tbody>
 </table>
+<p>Two rules make these fully regular:</p>
+<ul>
+<li><strong>Adjectives agree</strong> with their noun in both number and case: <em>"la bonaj
+  libroj"</em>, <em>"mi legas interesajn librojn"</em>.</li>
+<li>The order is fixed: root → class vowel → <code>-j</code> → <code>-n</code>. So the parse of
+  <code>librojn</code> is <code>libr-</code> + <code>-o</code> (noun) + <code>-j</code> (plural) + <code>-n</code> (accusative).</li>
+</ul>
+<p>The accusative also marks direction of motion, but for morphological analysis the
+<code>-n</code> suffix is what matters.</p>
 <h2 id="verb-system">Verb system<a class="headerlink" href="#verb-system" title="Permanent link">&para;</a></h2>
+<p>Verbs do <strong>not</strong> conjugate for person or number — only for tense and mood, with a
+single ending each. The same root takes any of these:</p>
 <table>
 <thead>
 <tr>
 <th>Ending</th>
-<th>Tense or mood</th>
+<th>Tense / mood</th>
+<th>Example (<code>kant-</code>, sing)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-as</code></td>
 <td>present</td>
+<td><code>kantas</code> (sing / sings)</td>
 </tr>
 <tr>
 <td><code>-is</code></td>
 <td>past</td>
+<td><code>kantis</code> (sang)</td>
 </tr>
 <tr>
 <td><code>-os</code></td>
 <td>future</td>
+<td><code>kantos</code> (will sing)</td>
 </tr>
 <tr>
 <td><code>-us</code></td>
 <td>conditional</td>
+<td><code>kantus</code> (would sing)</td>
 </tr>
 <tr>
 <td><code>-u</code></td>
 <td>imperative / volitive</td>
+<td><code>kantu!</code> (sing!)</td>
 </tr>
 <tr>
 <td><code>-i</code></td>
 <td>infinitive</td>
+<td><code>kanti</code> (to sing)</td>
 </tr>
 </tbody>
 </table>
+<p><code>mi kantas</code>, <code>vi kantas</code>, <code>ili kantas</code> — the verb never changes for the subject.
+To lemmatize a verb, replace its tense/mood ending with <code>-i</code> (<code>kantis → kanti</code>).</p>
 <h2 id="the-article">The article<a class="headerlink" href="#the-article" title="Permanent link">&para;</a></h2>
-<p><code>la</code>, invariable. There is no indefinite article.</p>
-<h2 id="personal-pronouns">Personal pronouns<a class="headerlink" href="#personal-pronouns" title="Permanent link">&para;</a></h2>
-<p><code>mi</code>, <code>vi</code>, <code>li</code>, <code>ŝi</code>, <code>ĝi</code>, <code>ni</code>, <code>ili</code>, <code>oni</code>, <code>si</code> — plus their possessive
-and accusative forms.</p>
-<h2 id="correlatives">Correlatives<a class="headerlink" href="#correlatives" title="Permanent link">&para;</a></h2>
-<p>The full 5 × 9 table: the prefixes <code>ki-</code>, <code>ti-</code>, <code>i-</code>, <code>ĉi-</code>, <code>neni-</code> combined
-with the endings <code>-o</code>, <code>-u</code>, <code>-a</code>, <code>-e</code>, <code>-es</code>, <code>-am</code>, <code>-al</code>, <code>-el</code>, <code>-om</code>.</p>
-<h2 id="affixes">Affixes<a class="headerlink" href="#affixes" title="Permanent link">&para;</a></h2>
-<p>Essential for lemmatization.</p>
+<p>There is <strong>one</strong> article, the definite <code>la</code> ("the"). It is <strong>invariable</strong> — no
+plural, no gender, no case:</p>
 <ul>
-<li><strong>Prefixes</strong>: <code>mal-</code>, <code>ge-</code>, <code>ek-</code>, <code>re-</code>, <code>dis-</code>, <code>mis-</code>, <code>bo-</code>, <code>pra-</code>.</li>
-<li><strong>Suffixes</strong>: <code>-in-</code>, <code>-ist-</code>, <code>-ej-</code>, <code>-il-</code>, <code>-ar-</code>, <code>-et-</code>, <code>-eg-</code>,
-  <code>-ul-</code>, <code>-an-</code>, <code>-ec-</code>, <code>-ig-</code>, <code>-iĝ-</code>, <code>-ind-</code>, <code>-em-</code>, <code>-aĉ-</code>.</li>
+<li><code>la libro</code> (the book), <code>la libroj</code> (the books), <code>la bona libro</code> (the good book).</li>
 </ul>
+<p>There is <strong>no indefinite article</strong>: <code>libro</code> means both "a book" and simply
+"book". <code>la</code> is a natural stop-word (see <a href="../vocabulary/#stop-words">Vocabulary</a>).</p>
+<h2 id="personal-pronouns">Personal pronouns<a class="headerlink" href="#personal-pronouns" title="Permanent link">&para;</a></h2>
+<p>The pronouns are a small, closed set — ideal to hard-code:</p>
+<table>
+<thead>
+<tr>
+<th>Pronoun</th>
+<th>Meaning</th>
+<th>Possessive (<code>+ -a</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mi</code></td>
+<td>I</td>
+<td><code>mia</code></td>
+</tr>
+<tr>
+<td><code>vi</code></td>
+<td>you (sg. &amp; pl.)</td>
+<td><code>via</code></td>
+</tr>
+<tr>
+<td><code>li</code></td>
+<td>he</td>
+<td><code>lia</code></td>
+</tr>
+<tr>
+<td><code>ŝi</code></td>
+<td>she</td>
+<td><code>ŝia</code></td>
+</tr>
+<tr>
+<td><code>ĝi</code></td>
+<td>it</td>
+<td><code>ĝia</code></td>
+</tr>
+<tr>
+<td><code>ni</code></td>
+<td>we</td>
+<td><code>nia</code></td>
+</tr>
+<tr>
+<td><code>ili</code></td>
+<td>they</td>
+<td><code>ilia</code></td>
+</tr>
+<tr>
+<td><code>oni</code></td>
+<td>one / people (impersonal)</td>
+<td><code>onia</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td>reflexive (himself/herself/itself/themselves)</td>
+<td><code>sia</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>accusative</strong> of a pronoun adds <code>-n</code>: <code>min</code> (me), <code>vin</code>, <code>lin</code>, <code>ŝin</code>, <code>nin</code>,
+<code>ilin</code>. The possessives are ordinary adjectives, so they also inflect: <code>miajn
+librojn</code> (my books, acc. pl.).</p>
+<h2 id="correlatives">Correlatives<a class="headerlink" href="#correlatives" title="Permanent link">&para;</a></h2>
+<p>The <strong>correlatives</strong> are a strikingly regular 5 × 9 grid of 45 common words
+(this/that/which/some/every/no + thing/person/place/time/reason…). Each is a
+<strong>prefix</strong> (the meaning category) plus an <strong>ending</strong> (the type). Learn the grid
+and you get all 45 for free.</p>
+<p>The five prefixes:</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ki-</code></td>
+<td>interrogative / relative (<em>wh-</em>, "which")</td>
+</tr>
+<tr>
+<td><code>ti-</code></td>
+<td>demonstrative ("that")</td>
+</tr>
+<tr>
+<td><code>i-</code></td>
+<td>indefinite ("some")</td>
+</tr>
+<tr>
+<td><code>ĉi-</code></td>
+<td>universal ("every", "all")</td>
+</tr>
+<tr>
+<td><code>neni-</code></td>
+<td>negative ("no", "none")</td>
+</tr>
+</tbody>
+</table>
+<p>The nine endings and the full table:</p>
+<table>
+<thead>
+<tr>
+<th>Ending → type</th>
+<th><code>ki-</code></th>
+<th><code>ti-</code></th>
+<th><code>i-</code></th>
+<th><code>ĉi-</code></th>
+<th><code>neni-</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o</code> thing</td>
+<td>kio</td>
+<td>tio</td>
+<td>io</td>
+<td>ĉio</td>
+<td>nenio</td>
+</tr>
+<tr>
+<td><code>-u</code> individual</td>
+<td>kiu</td>
+<td>tiu</td>
+<td>iu</td>
+<td>ĉiu</td>
+<td>neniu</td>
+</tr>
+<tr>
+<td><code>-a</code> kind</td>
+<td>kia</td>
+<td>tia</td>
+<td>ia</td>
+<td>ĉia</td>
+<td>nenia</td>
+</tr>
+<tr>
+<td><code>-es</code> possession</td>
+<td>kies</td>
+<td>ties</td>
+<td>ies</td>
+<td>ĉies</td>
+<td>nenies</td>
+</tr>
+<tr>
+<td><code>-e</code> place</td>
+<td>kie</td>
+<td>tie</td>
+<td>ie</td>
+<td>ĉie</td>
+<td>nenie</td>
+</tr>
+<tr>
+<td><code>-am</code> time</td>
+<td>kiam</td>
+<td>tiam</td>
+<td>iam</td>
+<td>ĉiam</td>
+<td>neniam</td>
+</tr>
+<tr>
+<td><code>-al</code> reason</td>
+<td>kial</td>
+<td>tial</td>
+<td>ial</td>
+<td>ĉial</td>
+<td>nenial</td>
+</tr>
+<tr>
+<td><code>-el</code> manner</td>
+<td>kiel</td>
+<td>tiel</td>
+<td>iel</td>
+<td>ĉiel</td>
+<td>neniel</td>
+</tr>
+<tr>
+<td><code>-om</code> quantity</td>
+<td>kiom</td>
+<td>tiom</td>
+<td>iom</td>
+<td>ĉiom</td>
+<td>neniom</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>-u</code>, <code>-o</code> and <code>-a</code> correlatives can themselves take <code>-j</code> and <code>-n</code> (<code>tiujn</code>,
+<code>kiuj</code>), like the nouns and adjectives they resemble. Most correlatives are
+stop-words.</p>
+<h2 id="affixes">Affixes<a class="headerlink" href="#affixes" title="Permanent link">&para;</a></h2>
+<p>Affixes are what make Esperanto vocabulary <strong>compositional</strong> — and they are the
+heart of lemmatization, because a long word is usually a root wrapped in
+affixes. They attach <em>between</em> the root and the grammatical ending.</p>
+<h3 id="prefixes">Prefixes<a class="headerlink" href="#prefixes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mal-</code></td>
+<td>direct opposite</td>
+<td><code>bona</code> → <code>malbona</code> (good → bad)</td>
+</tr>
+<tr>
+<td><code>ge-</code></td>
+<td>both sexes together</td>
+<td><code>patro</code> → <code>gepatroj</code> (father → parents)</td>
+</tr>
+<tr>
+<td><code>ek-</code></td>
+<td>sudden start / brief action</td>
+<td><code>iri</code> → <code>ekiri</code> (to go → to set off)</td>
+</tr>
+<tr>
+<td><code>re-</code></td>
+<td>again / back</td>
+<td><code>veni</code> → <code>reveni</code> (to come → to return)</td>
+</tr>
+<tr>
+<td><code>dis-</code></td>
+<td>separation, scattering</td>
+<td><code>doni</code> → <code>disdoni</code> (to give → to distribute)</td>
+</tr>
+<tr>
+<td><code>mis-</code></td>
+<td>wrongly</td>
+<td><code>kompreni</code> → <code>miskompreni</code> (to misunderstand)</td>
+</tr>
+<tr>
+<td><code>bo-</code></td>
+<td>relation by marriage</td>
+<td><code>patro</code> → <code>bopatro</code> (father-in-law)</td>
+</tr>
+<tr>
+<td><code>pra-</code></td>
+<td>primordial / great- (kinship)</td>
+<td><code>avo</code> → <code>praavo</code> (great-grandfather)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suffixes">Suffixes<a class="headerlink" href="#suffixes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Suffix</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-in-</code></td>
+<td>female</td>
+<td><code>patro</code> → <code>patrino</code> (father → mother)</td>
+</tr>
+<tr>
+<td><code>-ist-</code></td>
+<td>professional / adherent</td>
+<td><code>instrui</code> → <code>instruisto</code> (teacher)</td>
+</tr>
+<tr>
+<td><code>-ej-</code></td>
+<td>place for</td>
+<td><code>lerni</code> → <code>lernejo</code> (to learn → school)</td>
+</tr>
+<tr>
+<td><code>-il-</code></td>
+<td>tool / instrument</td>
+<td><code>tranĉi</code> → <code>tranĉilo</code> (to cut → knife)</td>
+</tr>
+<tr>
+<td><code>-ar-</code></td>
+<td>collection / set</td>
+<td><code>arbo</code> → <code>arbaro</code> (tree → forest)</td>
+</tr>
+<tr>
+<td><code>-et-</code></td>
+<td>diminutive (smaller)</td>
+<td><code>domo</code> → <code>dometo</code> (house → cottage)</td>
+</tr>
+<tr>
+<td><code>-eg-</code></td>
+<td>augmentative (bigger)</td>
+<td><code>domo</code> → <code>domego</code> (house → mansion)</td>
+</tr>
+<tr>
+<td><code>-ul-</code></td>
+<td>person characterised by</td>
+<td><code>juna</code> → <code>junulo</code> (young → youth)</td>
+</tr>
+<tr>
+<td><code>-an-</code></td>
+<td>member / inhabitant</td>
+<td><code>urbo</code> → <code>urbano</code> (city → citizen)</td>
+</tr>
+<tr>
+<td><code>-ec-</code></td>
+<td>abstract quality</td>
+<td><code>bona</code> → <code>boneco</code> (good → goodness)</td>
+</tr>
+<tr>
+<td><code>-ig-</code></td>
+<td>to make / cause</td>
+<td><code>granda</code> → <code>grandigi</code> (big → to enlarge)</td>
+</tr>
+<tr>
+<td><code>-iĝ-</code></td>
+<td>to become</td>
+<td><code>ruĝa</code> → <code>ruĝiĝi</code> (red → to blush)</td>
+</tr>
+<tr>
+<td><code>-ind-</code></td>
+<td>worthy of</td>
+<td><code>ami</code> → <code>aminda</code> (to love → lovable)</td>
+</tr>
+<tr>
+<td><code>-em-</code></td>
+<td>inclined to</td>
+<td><code>labori</code> → <code>laborema</code> (to work → hardworking)</td>
+</tr>
+<tr>
+<td><code>-aĉ-</code></td>
+<td>pejorative (bad quality)</td>
+<td><code>domo</code> → <code>domaĉo</code> (house → hovel)</td>
+</tr>
+</tbody>
+</table>
+<p>Affixes stack. <code>mal-san-ul-ej-o</code> = <code>mal-</code> (opposite) + <code>san-</code> (health) + <code>-ul-</code>
+(person) + <code>-ej-</code> (place) + <code>-o</code> (noun) = <strong>hospital</strong> (literally "place for
+unhealthy persons"). A lemmatizer that knows this affix table can decompose such
+words by rule.</p>
 <h2 id="numbers-and-compounding">Numbers and compounding<a class="headerlink" href="#numbers-and-compounding" title="Permanent link">&para;</a></h2>
-<p>Cardinal and ordinal numbers, and the rules for building compound words.</p>
+<p>The cardinal numbers are built from a handful of roots:</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nul</code></td>
+<td><code>unu</code></td>
+<td><code>du</code></td>
+<td><code>tri</code></td>
+<td><code>kvar</code></td>
+<td><code>kvin</code></td>
+<td><code>ses</code></td>
+<td><code>sep</code></td>
+<td><code>ok</code></td>
+<td><code>naŭ</code></td>
+<td><code>dek</code></td>
+<td><code>cent</code></td>
+<td><code>mil</code></td>
+</tr>
+</tbody>
+</table>
+<p>Larger numbers are <strong>compounded</strong> by juxtaposition: <code>dek du</code> (12), <code>dudek</code> (20),
+<code>dudek unu</code> (21), <code>cent tridek kvin</code> (135). Adding endings derives related words:</p>
+<ul>
+<li>ordinals with <code>-a</code>: <code>unua</code> (first), <code>dua</code> (second);</li>
+<li>multiples with <code>-obl-</code>: <code>duobla</code> (double);</li>
+<li>fractions with <code>-on-</code>: <code>duono</code> (a half), <code>kvarono</code> (a quarter);</li>
+<li>collectives with <code>-op-</code>: <code>duope</code> (in twos).</li>
+</ul>
+<p>More generally, <strong>any two roots can compound</strong> into one word, with the last root
+as the head: <code>vapor-ŝipo</code> (steamship), <code>dorm-oĉambro</code> (bedroom, with a connecting
+<code>-o-</code> for pronounceability). The compound's word class comes from its final
+ending, exactly as for a single root.</p>
 <h2 id="worked-examples">Worked examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
-<p>Short translated texts that illustrate the rules above, annotated word by word.</p>
+<p>Putting the rules together, here is a sentence parsed word by word:</p>
+<blockquote>
+<p><strong>La juna instruistino legas interesan libron.</strong>
+<em>"The young (female) teacher is reading an interesting book."</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Decomposition</th>
+<th>Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>La</code></td>
+<td><code>la</code></td>
+<td>article (stop-word)</td>
+</tr>
+<tr>
+<td><code>juna</code></td>
+<td><code>jun-</code> + <code>-a</code></td>
+<td>adjective — "young"</td>
+</tr>
+<tr>
+<td><code>instruistino</code></td>
+<td><code>instru-</code> + <code>-ist-</code> + <code>-in-</code> + <code>-o</code></td>
+<td>noun — "female teacher"</td>
+</tr>
+<tr>
+<td><code>legas</code></td>
+<td><code>leg-</code> + <code>-as</code></td>
+<td>verb, present — "reads" (lemma <code>legi</code>)</td>
+</tr>
+<tr>
+<td><code>interesan</code></td>
+<td><code>interes-</code> + <code>-a</code> + <code>-n</code></td>
+<td>adjective, accusative — "interesting"</td>
+</tr>
+<tr>
+<td><code>libron</code></td>
+<td><code>libr-</code> + <code>-o</code> + <code>-n</code></td>
+<td>noun, accusative — "book" (lemma <code>libro</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>A second example shows plural, accusative agreement and a correlative:</p>
+<blockquote>
+<p><strong>Ĉiuj miaj amikoj legas tiujn librojn.</strong>
+<em>"All my friends are reading those books."</em></p>
+</blockquote>
+<p><code>Ĉiuj</code> (correlative <code>ĉiu</code> + <code>-j</code>), <code>miaj</code> (possessive <code>mia</code> + <code>-j</code>), <code>amikoj</code>
+(<code>amik-o-j</code>) — the subject is plural, so nothing takes <code>-n</code>; <code>tiujn librojn</code>
+(<code>tiu-j-n</code>, <code>libr-o-j-n</code>) is the plural accusative object, and the demonstrative
+agrees with its noun. This regular agreement is precisely what a rule-based
+tagger can verify and exploit.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../vocabulary/">Vocabulary</a> — the affix and stop-word lists in full, ready to
+  feed the library.</li>
+<li><a href="../../python-library/api/">Python Library § API</a> — how these rules become a
+  <code>Doc</code> / <code>Token</code> interface.</li>
+</ul>
 
 
 
@@ -1934,7 +2559,7 @@ with the endings <code>-o</code>, <code>-u</code>, <code>-a</code>, <code>-e</co
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

@@ -354,13 +354,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -386,7 +381,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -610,13 +605,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -642,7 +632,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -889,16 +879,13 @@
       
         
       
-    
-    
-    
-      
-        
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
@@ -924,7 +911,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1036,6 +1023,17 @@
     <span class="md-ellipsis">
       
         A concrete example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
       
     </span>
   </a>
@@ -1163,6 +1161,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1196,13 +1222,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1228,7 +1249,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1376,8 +1397,6 @@
       
     
     
-    
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1527,6 +1546,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1553,17 +1583,100 @@
 
 
 <h1 id="what-is-a-library">What is a library<a class="headerlink" href="#what-is-a-library" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p>A <strong>library</strong> is a piece of code written to be <em>reused</em> by other code. Instead of
+copying functions between projects, you package them once, give them a clear
+public interface, and let any project install and import them. <code>esperantilo</code> —
+the library this guide builds — is one: a rule-based NLP toolkit for Esperanto
+that a notebook can install and use in a couple of lines.</p>
+<p>This page sorts out the vocabulary, explains what a library buys you, and looks
+at a well-known example to imitate.</p>
 <h2 id="module-package-library-distribution">Module, package, library, distribution<a class="headerlink" href="#module-package-library-distribution" title="Permanent link">&para;</a></h2>
-<p>The vocabulary, and what each term means in Python.</p>
+<p>These four words are often used loosely. In Python they mean specific things:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Module</strong></td>
+<td>A single <code>.py</code> file. Importing it runs it once and exposes its names.</td>
+</tr>
+<tr>
+<td><strong>Package</strong></td>
+<td>A <em>folder</em> of modules with an <code>__init__.py</code>, imported as one unit.</td>
+</tr>
+<tr>
+<td><strong>Library</strong></td>
+<td>A package (or set of packages) meant to be reused by other code.</td>
+</tr>
+<tr>
+<td><strong>Distribution</strong></td>
+<td>The packaged artifact you install — what <code>pip install</code> fetches.</td>
+</tr>
+</tbody>
+</table>
+<p>The progression is one of scale: a <strong>module</strong> is a file, a <strong>package</strong> groups
+modules into a folder, a <strong>library</strong> is a package designed for reuse, and a
+<strong>distribution</strong> is that library bundled up so it can be installed elsewhere.</p>
+<pre class="mermaid"><code>flowchart LR
+    M["Module&lt;br/&gt;(tokenizer.py)"] --&gt; P["Package&lt;br/&gt;(esperantilo/)"]
+    P --&gt; L["Library&lt;br/&gt;(reusable API)"]
+    L --&gt; D["Distribution&lt;br/&gt;(pip install esperantilo)"]</code></pre>
+<p>In this project, <code>src/esperantilo/</code> is the <strong>package</strong>, the API it exposes makes
+it a <strong>library</strong>, and <code>pyproject.toml</code> is what turns it into an installable
+<strong>distribution</strong> (see <a href="../organization/">Organization</a>).</p>
 <h2 id="what-a-library-gives-you">What a library gives you<a class="headerlink" href="#what-a-library-gives-you" title="Permanent link">&para;</a></h2>
-<p>Reuse, a stable interface, versioning and distribution.</p>
+<p>Why package code instead of just keeping a <code>utils.py</code> around? A library gives
+you four things:</p>
+<ul>
+<li><strong>Reuse.</strong> Write the Esperanto tokenizer once; import it from every notebook,
+  script and test without copy-pasting.</li>
+<li><strong>A stable interface.</strong> Users depend on the <em>public</em> API, not on the internal
+  details. You can rewrite the internals freely as long as the interface holds
+  (this is what <a href="../api/">the API page</a> is about).</li>
+<li><strong>Versioning.</strong> Releases are numbered (<code>0.1.0</code>, <code>0.2.0</code>, …), so users can say
+  "I need version 0.1" and get reproducible behaviour.</li>
+<li><strong>Distribution.</strong> A single <code>pip install</code> command delivers the code and its
+  dependencies to anyone, anywhere — including a Google Colab notebook.</li>
+</ul>
 <h2 id="a-concrete-example">A concrete example<a class="headerlink" href="#a-concrete-example" title="Permanent link">&para;</a></h2>
-<p><code>scikit-learn</code> as a reference: how it is installed, imported and used, and what
-makes it pleasant to work with.</p>
+<p>The clearest way to see what "a good library" means is to use one. <strong>scikit-learn</strong>
+is a widely used machine-learning library and a model of pleasant design. You
+install it once:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>scikit-learn
+</span></code></pre></div>
+<p>import a small, well-named piece of it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>      <span class="c1"># train</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>  <span class="c1"># use</span>
+</span></code></pre></div>
+<p>and you are productive immediately — without reading its source code. That is
+the whole point of a library. What makes it work is worth naming, because these
+are exactly the qualities to aim for in <code>esperantilo</code>:</p>
+<ul>
+<li><strong>A consistent interface.</strong> Almost every scikit-learn estimator has the same
+  <code>.fit()</code> / <code>.predict()</code> methods, so once you learn one, you can guess the
+  others.</li>
+<li><strong>Sensible defaults.</strong> <code>LogisticRegression()</code> works with no arguments; you
+  only touch parameters when you need to.</li>
+<li><strong>Clear names and documentation.</strong> <code>fit</code>, <code>predict</code>, <code>LogisticRegression</code> say
+  what they do, and every public object has documentation.</li>
+</ul>
+<p>The NLP library <strong>spaCy</strong> — the design reference for this project's own API —
+has the same qualities, applied to text. We return to it in detail on
+<a href="../api/">the API page</a>.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../organization/">Organization</a> — the files and folders that turn this code
+  into an installable library.</li>
+<li><a href="../installation-and-usage/">Installation and usage</a> — installing <code>esperantilo</code>
+  from GitHub and using it in a notebook.</li>
+</ul>
 
 
 
@@ -1676,7 +1789,7 @@ makes it pleasant to work with.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopiado al klipo", "clipboard.copy": "Kopii al tondujo", "search.result.more.one": "1 pli sur \u0109i tiu pa\u011do", "search.result.more.other": "# pli sur \u0109i tiu pa\u011do", "search.result.none": "Neniuj kongruaj dokumentoj", "search.result.one": "1 kongrua dokumento", "search.result.other": "# kongruaj dokumentoj", "search.result.placeholder": "Tajpu por komenci ser\u0109adon", "search.result.term.missing": "Mankanta", "select.version": "Elekti version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopiado al klipo", "clipboard.copy": "Kopii al tondujo", "search.result.more.one": "1 pli sur \u0109i tiu pa\u011do", "search.result.more.other": "# pli sur \u0109i tiu pa\u011do", "search.result.none": "Neniuj kongruaj dokumentoj", "search.result.one": "1 kongrua dokumento", "search.result.other": "# kongruaj dokumentoj", "search.result.placeholder": "Tajpu por komenci ser\u0109adon", "search.result.term.missing": "Mankanta", "select.version": "Elekti version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>

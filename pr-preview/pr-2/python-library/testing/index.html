@@ -18,7 +18,7 @@
         <link rel="prev" href="../api/">
       
       
-        <link rel="next" href="../../esperanto/">
+        <link rel="next" href="../python-faq/">
       
       
         
@@ -354,13 +354,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -386,7 +381,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -610,13 +605,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -642,7 +632,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -889,16 +879,13 @@
       
         
       
-    
-    
-    
-      
-        
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
@@ -924,7 +911,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1165,10 +1152,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1207,13 +1233,8 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1239,7 +1260,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1387,8 +1408,6 @@
       
     
     
-    
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1549,6 +1568,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1575,25 +1605,122 @@
 
 
 <h1 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Under construction</p>
-<p>Planned contents are listed below.</p>
-</div>
+<p>Tests are code that checks your code. They are what let you change a library with
+confidence: if a change breaks something, a test catches it immediately instead
+of a user finding out later. This page explains why they matter, how the
+<code>tests/</code> folder is organised, how to write and run them with <strong>pytest</strong>, and how
+they become an automatic gate on every pull request.</p>
 <h2 id="why-unit-tests">Why unit tests<a class="headerlink" href="#why-unit-tests" title="Permanent link">&para;</a></h2>
-<p>What they protect against, and why they are what makes refactoring safe.</p>
+<p>A <strong>unit test</strong> exercises one small piece of the library in isolation and asserts
+that it behaves as expected. Their real value shows up over time:</p>
+<ul>
+<li><strong>They catch regressions.</strong> When you change the tokenizer, the tests tell you at
+  once whether you broke the lemmatizer that depends on it.</li>
+<li><strong>They make refactoring safe.</strong> You can rewrite the internals of the
+  <a href="../api/">API</a> freely, because a passing suite proves the public behaviour is
+  unchanged.</li>
+<li><strong>They document behaviour.</strong> A test is an executable example of how a function
+  is meant to be called and what it should return.</li>
+<li><strong>They enable collaboration.</strong> On a team, tests are how you trust a teammate's
+  pull request without re-reading all of it — the checks are green.</li>
+</ul>
+<p>The cost is small and paid once; the benefit compounds every time the code
+changes.</p>
 <h2 id="the-tests-structure">The <code>tests/</code> structure<a class="headerlink" href="#the-tests-structure" title="Permanent link">&para;</a></h2>
-<p>How the test tree mirrors the source tree, and how to name test files and test
-functions.</p>
-<h2 id="writing-and-running-tests-with-pytest">Writing and running tests with <code>pytest</code><a class="headerlink" href="#writing-and-running-tests-with-pytest" title="Permanent link">&para;</a></h2>
-<p>Assertions, fixtures, parametrization and how to run a subset:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pytest
+<p>Tests live in a top-level <code>tests/</code> folder, kept out of the shipped package (see
+<a href="../organization/">Organization</a>). The suite <strong>mirrors the source</strong>: each part of
+the library has a matching <code>test_*.py</code> file, so it is obvious where a test lives
+and where one is missing.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tests/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── test_package.py     # the package imports and exposes its version
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└── test_resources.py   # the data files are valid
 </span></code></pre></div>
+<p>Two naming conventions let pytest <strong>discover</strong> tests automatically, with no
+registration:</p>
+<ul>
+<li>test <em>files</em> are named <code>test_*.py</code>,</li>
+<li>test <em>functions</em> are named <code>test_*</code>.</li>
+</ul>
+<p>This project's smoke test shows the shape — import the thing, then assert
+something about it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># tests/test_package.py</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">esperantilo</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_package_is_importable</span><span class="p">():</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">assert</span> <span class="n">esperantilo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_version_is_exposed</span><span class="p">():</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">esperantilo</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">assert</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">__version__</span>
+</span></code></pre></div>
+<p>Each function tests one fact, and its name says what that fact is — so a failure
+report reads like a sentence: <code>test_version_is_exposed failed</code>.</p>
+<h2 id="writing-and-running-tests-with-pytest">Writing and running tests with <code>pytest</code><a class="headerlink" href="#writing-and-running-tests-with-pytest" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.pytest.org/">pytest</a> is the de-facto standard test runner for
+Python. Install it via the test extra and run the whole suite with one word:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pytest
+</span></code></pre></div>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>pytest
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">===================== test session starts =====================</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">collected 6 items</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">tests/test_package.py ..                                  [ 33%]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">tests/test_resources.py ....                              [100%]</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">====================== 6 passed in 0.05s ======================</span>
+</span></code></pre></div>
+<p>The everyday features you will reach for:</p>
+<ul>
+<li><strong>Assertions.</strong> Plain <code>assert</code> statements — pytest rewrites them to show the
+  actual values on failure, so you rarely need anything else.</li>
+<li>
+<p><strong>Parametrization.</strong> Run the same test over many inputs with
+  <code>@pytest.mark.parametrize</code>, instead of copy-pasting. This project uses it to
+  run the same checks over <em>every</em> file in <code>resources/</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="n">FILES</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_mandatory_fields</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;titolo&quot;</span><span class="p">,</span> <span class="s2">&quot;vortoj&quot;</span><span class="p">):</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="k">assert</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">data</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;missing &#39;</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Fixtures.</strong> Reusable setup shared across tests (a sample document, a temporary
+  file), declared once and requested by name.</p>
+</li>
+<li>
+<p><strong>Running a subset</strong> while you focus on one area:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pytest<span class="w"> </span>tests/test_package.py<span class="w">           </span><span class="c1"># one file</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>pytest<span class="w"> </span>-k<span class="w"> </span>version<span class="w">                      </span><span class="c1"># tests whose name matches &quot;version&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>pytest<span class="w"> </span>-x<span class="w">                              </span><span class="c1"># stop at the first failure</span>
+</span></code></pre></div>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Test behaviour, not implementation</p>
+<p>Assert on what a function <em>returns or does</em>, not on how it does it. Then your
+tests keep passing through internal refactors and only fail when behaviour
+actually changes — which is the whole point.</p>
+</div>
 <h2 id="tests-in-continuous-integration">Tests in continuous integration<a class="headerlink" href="#tests-in-continuous-integration" title="Permanent link">&para;</a></h2>
-<p>How the <code>tests.yml</code> workflow runs the suite on every push and pull request, and
-how it becomes a required check before merging. See
-<a href="../../github/actions/">GitHub Actions</a> and
-<a href="../../github/repository-configuration/">Repository configuration</a>.</p>
+<p>Running tests locally is good; running them <strong>automatically on every change</strong> is
+what makes them a real safety net. The <a href="../../github/actions/#running-python-tests"><code>tests.yml</code> workflow</a>
+runs <code>pytest</code> on every push and pull request to <code>main</code>, so a broken change is
+flagged on GitHub before anyone merges it.</p>
+<p>The final step is to make that check <strong>mandatory</strong>: with
+<a href="../../github/repository-configuration/#required-status-checks">branch protection</a>,
+a pull request cannot be merged while its tests are red. Local <code>pytest</code>, CI and
+branch protection then form a chain — you catch problems early, CI catches what
+you missed, and the rules make sure nothing broken reaches <code>main</code>.</p>
+<h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../github/actions/">GitHub Actions</a> — the workflow that runs these tests.</li>
+<li><a href="../../esperanto/">Esperanto</a> — the linguistic rules the library, and its
+  tests, will encode.</li>
+</ul>
 
 
 
@@ -1646,13 +1773,13 @@ how it becomes a required check before merging. See
         
         
           
-          <a href="../../esperanto/" class="md-footer__link md-footer__link--next" aria-label="Next: Esperanto">
+          <a href="../python-faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Esperanto
+                FAQ
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1706,7 +1833,7 @@ how it becomes a required check before merging. See
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
