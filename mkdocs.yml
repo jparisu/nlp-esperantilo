@@ -80,6 +80,38 @@ plugins:
           name: English
           default: true
           build: true
+        - locale: es
+          name: Español
+          build: true
+          site_name: NLP Esperantilo
+          site_description: Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí
+          nav_translations:
+            Home: Inicio
+            Git: Git
+            What is Git: Qué es Git
+            Organization: Organización
+            Commands: Comandos
+            Undoing changes: Deshacer cambios
+            Example: Ejemplo
+            GitHub: GitHub
+            What is GitHub: Qué es GitHub
+            First steps: Primeros pasos
+            Workflow: Flujo de trabajo
+            GitHub Actions: GitHub Actions
+            Repository configuration: Configuración del repositorio
+            GitHub Pages: GitHub Pages
+            Python Library: Biblioteca Python
+            What is a library: Qué es una biblioteca
+            Installation and usage: Instalación y uso
+            API: API
+            Testing: Pruebas
+            Esperanto: Esperanto
+            History: Historia
+            Grammar: Gramática
+            Vocabulary: Vocabulario
+            Resources: Recursos
+            Word lists: Listas de palabras
+            FAQ: Preguntas frecuentes
         - locale: eo
           name: Esperanto
           build: true
