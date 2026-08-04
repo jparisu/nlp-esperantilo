@@ -24,6 +24,8 @@
         
           <link rel="alternate" href="../../python-library/" hreflang="en">
         
+          <link rel="alternate" href="../../es/python-library/" hreflang="es">
+        
           <link rel="alternate" href="./" hreflang="eo">
         
       
@@ -33,7 +35,7 @@
     
     
       
-        <title>Python Library - NLP Esperantilo</title>
+        <title>Python-Biblioteko - NLP Esperantilo</title>
       
     
     
@@ -86,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-library" class="md-skip">
+        <a href="#python-biblioteko" class="md-skip">
           Saltu al enhavo
         </a>
       
@@ -122,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Library
+              Python-Biblioteko
             
           </span>
         </div>
@@ -181,6 +183,12 @@
           <li class="md-select__item">
             <a href="../../python-library/" hreflang="en" class="md-select__link">
               English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/python-library/" hreflang="es" class="md-select__link">
+              Español
             </a>
           </li>
         
@@ -1128,6 +1136,8 @@
       
         
       
+        
+      
     
     
     
@@ -1295,6 +1305,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../esperanto/esperanto-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1312,7 +1350,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1334,14 +1372,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1431,7 +1469,7 @@
 
 
   
-    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/python-library/index.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/python-library/index.eo.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1439,20 +1477,20 @@
   
 
 
-<h1 id="python-library">Python Library<a class="headerlink" href="#python-library" title="Permanent link">&para;</a></h1>
-<p>This section explains how to build a Python library: how to organize it, how to
-design its API, how to test it, and how to install and use it. The running
-example is <code>esperantilo</code>, the very package this project ships.</p>
-<p>The pages build on each other — layout, then installation, then the API design,
-then testing — but each stands on its own if you already know the basics.</p>
+<h1 id="python-biblioteko">Python-Biblioteko<a class="headerlink" href="#python-biblioteko" title="Permanent link">&para;</a></h1>
+<p>Ĉi tiu sekcio klarigas kiel konstrui Python-bibliotekon: kiel organizi ĝin, kiel
+dezajni ĝian API-on, kiel testi ĝin, kaj kiel instali kaj uzi ĝin. La kuranta
+ekzemplo estas <code>esperantilo</code>, la propra pako, kiun distribuas ĉi tiu projekto.</p>
+<p>La paĝoj apogas sin unu sur la alia — strukturo, poste instalado, poste la dezajno
+de la API, poste testado — sed ĉiu staras memstare se vi jam konas la bazaĵojn.</p>
 <div class="grid cards">
 <ul>
-<li><a href="library/"><strong>1. What is a library</strong></a> — packages, modules and distributions.</li>
-<li><a href="organization/"><strong>2. Organization</strong></a> — <code>pyproject.toml</code>, <code>src/</code>, <code>tests/</code>.</li>
-<li><a href="installation-and-usage/"><strong>3. Installation and usage</strong></a> — from GitHub, in a notebook.</li>
-<li><a href="api/"><strong>4. API</strong></a> — designing a clear public interface, spaCy-style.</li>
-<li><a href="testing/"><strong>5. Testing</strong></a> — <code>pytest</code> and continuous integration.</li>
-<li><a href="python-faq/"><strong>FAQ</strong></a> — quick answers to common doubts.</li>
+<li><a href="library/"><strong>1. Kio estas biblioteko</strong></a> — pakoj, moduloj kaj distribuaĵoj.</li>
+<li><a href="organization/"><strong>2. Organizado</strong></a> — <code>pyproject.toml</code>, <code>src/</code>, <code>tests/</code>.</li>
+<li><a href="installation-and-usage/"><strong>3. Instalado kaj uzo</strong></a> — de GitHub, en notlibro.</li>
+<li><a href="api/"><strong>4. API</strong></a> — dezajni klaran publikan interfacon, laŭ la stilo de spaCy.</li>
+<li><a href="testing/"><strong>5. Testado</strong></a> — <code>pytest</code> kaj kontinua integrado.</li>
+<li><a href="python-faq/"><strong>Oftaj demandoj</strong></a> — rapidaj respondoj al kutimaj duboj.</li>
 </ul>
 </div>
 

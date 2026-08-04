@@ -15,10 +15,16 @@
         <link rel="canonical" href="https://jparisu.github.io/nlp-esperantilo/pr-preview/pr-2/esperanto/esperanto-faq/">
       
       
+        <link rel="prev" href="../resources/">
+      
+      
+        <link rel="next" href="../word-lists/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../es/esperanto/esperanto-faq/" hreflang="es">
         
           <link rel="alternate" href="../../eo/esperanto/esperanto-faq/" hreflang="eo">
         
@@ -177,6 +183,12 @@
           <li class="md-select__item">
             <a href="./" hreflang="en" class="md-select__link">
               English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/esperanto/esperanto-faq/" hreflang="es" class="md-select__link">
+              Español
             </a>
           </li>
         
@@ -1103,6 +1115,8 @@
       
   
   
+    
+  
   
   
     
@@ -1122,15 +1136,17 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1158,7 +1174,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1287,6 +1303,44 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
@@ -1306,7 +1360,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1328,14 +1382,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1434,6 +1488,78 @@
 
 
 <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
+<p>Common questions about Esperanto and about turning it into data for the library.
+Each answer links to the page where the topic is covered in full.</p>
+<details class="question">
+<summary>What is Esperanto, in one sentence?</summary>
+<p>A constructed international auxiliary language, published by L. L. Zamenhof in
+1887, designed to be <strong>regular and easy to learn</strong> — with no grammatical
+exceptions. See <a href="../history/">History</a>.</p>
+</details>
+<details class="question">
+<summary>Why build an NLP library for Esperanto specifically?</summary>
+<p>Because its grammar is fully regular, so a <strong>rule-based</strong> tokenizer,
+lemmatizer and POS tagger are actually feasible — endings and affixes follow
+rules that never break, unlike in natural languages. See
+<a href="../history/#why-it-matters-here">History § Why it matters here</a>.</p>
+</details>
+<details class="question">
+<summary>How do I know a word's part of speech?</summary>
+<p>From its final vowel: <code>-o</code> is a noun, <code>-a</code> an adjective, <code>-e</code> an adverb, <code>-i</code>
+a verb infinitive. This one rule covers most content words. See
+<a href="../grammar/#word-class-endings">Grammar § Word-class endings</a>.</p>
+</details>
+<details class="question">
+<summary>How does lemmatization work in Esperanto?</summary>
+<p>Peel the grammatical endings and affixes off a word to reach its root, then
+re-attach the class vowel. <code>malsanulejojn</code> → strip <code>-n</code>, <code>-j</code>, <code>-o</code>, then
+<code>-ej-</code>, <code>-ul-</code>, <code>mal-</code> → root <code>san-</code>. Each step is a table lookup. See
+<a href="../vocabulary/#affixes">Vocabulary § Affixes</a>.</p>
+</details>
+<details class="question">
+<summary>What are the correlatives?</summary>
+<p>A regular 5 × 9 grid of 45 common words (this/that/which/some/every/no ×
+thing/person/place/time…), each a prefix plus an ending. Learn the grid and
+you get all 45. See <a href="../grammar/#correlatives">Grammar § Correlatives</a>.</p>
+</details>
+<details class="question">
+<summary>What is the accusative <code>-n</code> for?</summary>
+<p>It marks the <strong>direct object</strong> of a verb (and direction of motion). Nouns and
+their adjectives both take it, and it stacks after the plural <code>-j</code>:
+<code>interesajn librojn</code>. See <a href="../grammar/#grammatical-inflections">Grammar § Grammatical inflections</a>.</p>
+</details>
+<details class="question">
+<summary>How should I handle the special letters <code>ĉ ĝ ĥ ĵ ŝ ŭ</code> in code?</summary>
+<p>Treat them as ordinary Unicode letters and <strong>normalise</strong> input to a single
+canonical form (NFC, real diacritics) before tokenizing, converting the
+x-system (<code>cx</code>, <code>gx</code>, …) or h-system if present. See
+<a href="../grammar/#alphabet">Grammar § Alphabet</a>.</p>
+</details>
+<details class="question">
+<summary>What counts as a stop-word in Esperanto?</summary>
+<p>The article <code>la</code>, the pronouns, the correlatives, and a fixed set of
+prepositions, conjunctions and common adverbs — mostly closed classes, so the
+list is finite. This project ships 250 of them. See
+<a href="../vocabulary/#stop-words">Vocabulary § Stop-words</a>.</p>
+</details>
+<details class="question">
+<summary>Where does the library get its word lists from?</summary>
+<p>From JSON files under <code>resources/</code>, which are the single source of truth: the
+library reads them at runtime and the docs render them at build time, so they
+can never disagree. See <a href="../vocabulary/#format">Vocabulary § Format</a>.</p>
+</details>
+<details class="question">
+<summary>Where can I find real Esperanto text to test the library?</summary>
+<p>From corpora such as the <a href="https://tekstaro.com">Tekstaro de Esperanto</a>, the
+Esperanto Wikipedia, and public-domain books on Project Gutenberg — mind each
+source's licence. See <a href="../resources/#corpora">Resources § Corpora</a>.</p>
+</details>
+<details class="question">
+<summary>Is the grammar content here trustworthy?</summary>
+<p>It follows Ivy Kellerman Reed's <em>A Complete Grammar of Esperanto</em> (1910), a
+public-domain reference included in the repository. See
+<a href="../resources/#books">Resources § Books</a>.</p>
+</details>
 
 
 
@@ -1464,6 +1590,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../resources/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resources">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Resources
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../word-lists/" class="md-footer__link md-footer__link--next" aria-label="Next: Word lists">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Word lists
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

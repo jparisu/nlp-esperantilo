@@ -24,6 +24,8 @@
         
           <link rel="alternate" href="../../../git/git-faq/" hreflang="en">
         
+          <link rel="alternate" href="../../../es/git/git-faq/" hreflang="es">
+        
           <link rel="alternate" href="./" hreflang="eo">
         
       
@@ -86,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faq" class="md-skip">
+        <a href="#oftaj-demandoj" class="md-skip">
           Saltu al enhavo
         </a>
       
@@ -181,6 +183,12 @@
           <li class="md-select__item">
             <a href="../../../git/git-faq/" hreflang="en" class="md-select__link">
               English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../es/git/git-faq/" hreflang="es" class="md-select__link">
+              Español
             </a>
           </li>
         
@@ -1138,6 +1146,8 @@
       
         
       
+        
+      
     
     
     
@@ -1305,6 +1315,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../esperanto/esperanto-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1322,7 +1360,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1344,14 +1382,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1441,7 +1479,7 @@
 
 
   
-    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/git/git-faq.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/git/git-faq.eo.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1449,96 +1487,97 @@
   
 
 
-<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<p>Common questions and doubts about Git. Each answer links to the page where the
-topic is covered in full.</p>
+<h1 id="oftaj-demandoj">Oftaj demandoj<a class="headerlink" href="#oftaj-demandoj" title="Permanent link">&para;</a></h1>
+<p>Kutimaj demandoj kaj duboj pri Git. Ĉiu respondo ligas al la paĝo, kie la temo estas
+traktata pli detale.</p>
 <details class="question">
-<summary>What is the difference between Git and GitHub?</summary>
-<p><strong>Git</strong> is the version control tool that runs on your computer and records
-the history of your files. <strong>GitHub</strong> is a website that hosts Git
-repositories online so people can share and collaborate on them. You can use
-Git with no GitHub at all; GitHub always uses Git underneath. See
-<a href="../git/">What is Git</a> and the <a href="../../github/">GitHub section</a>.</p>
+<summary>Kio estas la diferenco inter Git kaj GitHub?</summary>
+<p><strong>Git</strong> estas la versikontrola ilo, kiu funkcias sur via komputilo kaj registras
+la historion de viaj dosieroj. <strong>GitHub</strong> estas retejo, kiu gastigas
+Git-deponejojn interrete por ke oni kunhavigu kaj kunlaboru. Vi povas uzi Git
+tute sen GitHub; GitHub ĉiam uzas Git sube. Vidu <a href="../git/">Kio estas Git</a> kaj la
+<a href="../../github/">GitHub-sekcion</a>.</p>
 </details>
 <details class="question">
-<summary>Do I need an internet connection to use Git?</summary>
-<p>No. Git is <a href="../git/#a-bit-of-history">distributed</a>: your clone holds the full
-history, so you can commit, branch, inspect the log and go back in time
-completely offline. You only need a connection to <code>push</code> and <code>pull</code>.</p>
+<summary>Ĉu mi bezonas retkonekton por uzi Git?</summary>
+<p>Ne. Git estas <a href="../git/#iom-da-historio">distribuita</a>: via klono enhavas la tutan
+historion, do vi povas fari commit-ojn, krei branĉojn, inspekti la protokolon kaj
+reiri en la tempo tute senrete. Vi bezonas konekton nur por <code>push</code> kaj <code>pull</code>.</p>
 </details>
 <details class="question">
-<summary>What is the difference between <code>add</code> and <code>commit</code>?</summary>
-<p><code>git add</code> moves changes into the <strong>staging area</strong> — a draft of your next
-commit. <code>git commit</code> records everything staged as a permanent point in
-history. Staging first lets you choose exactly what goes into each commit.
-See <a href="../git/#the-three-areas">The three areas</a>.</p>
+<summary>Kio estas la diferenco inter <code>add</code> kaj <code>commit</code>?</summary>
+<p><code>git add</code> movas ŝanĝojn al la <strong>prepara zono</strong> — malneto de via sekva commit.
+<code>git commit</code> registras ĉion preparitan kiel konstantan punkton en la historio.
+Prepari unue ebligas al vi elekti ekzakte kio eniras ĉiun commit-on. Vidu
+<a href="../git/#la-tri-zonoj">La tri zonoj</a>.</p>
 </details>
 <details class="question">
-<summary>I ran <code>git commit</code> and an editor full of text opened. What happened?</summary>
-<p>You committed without a message (<code>-m</code>), so Git opened your default editor to
-write one. Type a short message on the first line, save and close the editor.
-If it is <strong>Vim</strong> and you are stuck, press <code>Esc</code>, then type <code>:wq</code> and press
-Enter to save and quit. To avoid this, always commit with
-<code>git commit -m "your message"</code>.</p>
+<summary>Mi plenumis <code>git commit</code> kaj malfermiĝis redaktilo plena de teksto. Kio okazis?</summary>
+<p>Vi faris commit-on sen mesaĝo (<code>-m</code>), do Git malfermis vian defaŭltan redaktilon
+por verki unu. Tajpu mallongan mesaĝon en la unua linio, konservu kaj fermu la
+redaktilon. Se ĝi estas <strong>Vim</strong> kaj vi blokiĝis, premu <code>Esc</code>, poste tajpu <code>:wq</code>
+kaj premu Enter por konservi kaj eliri. Por eviti ĉi tion, ĉiam faru la commit-on
+per <code>git commit -m "via mesaĝo"</code>.</p>
 </details>
 <details class="question">
-<summary>How do I write a good commit message?</summary>
-<p>Keep it short, in the imperative mood, and describe <em>what</em> the commit does:
-<code>Add stop-word list</code>, not <code>stuff</code> or <code>fixed things</code>. One coherent change per
-commit. Message conventions are covered as a workflow topic in
-<a href="../../github/workflow/">GitHub § Workflow</a>.</p>
+<summary>Kiel mi verku bonan mesaĝon de commit?</summary>
+<p>Tenu ĝin mallonga, en imperativo, kaj priskribu <em>kion</em> faras la commit:
+<code>Add stop-word list</code>, ne <code>stuff</code> aŭ <code>fixed things</code>. Unu kohera ŝanĝo por ĉiu
+commit. La konvencioj de mesaĝoj estas traktataj kiel temo de laborfluo en
+<a href="../../github/workflow/">GitHub § Laborfluo</a>.</p>
 </details>
 <details class="question">
-<summary>I made a mistake in my last commit. Can I undo it?</summary>
-<p>Yes, if you have <strong>not pushed</strong> it yet. Use <code>git reset --soft HEAD~1</code> to undo
-the commit while keeping its changes staged, fix things, and commit again.
-If you already pushed and shared it, use <code>git revert</code> instead. See
-<a href="../undoing-changes/">Undoing changes</a>.</p>
+<summary>Mi eraris en mia lasta commit. Ĉu mi povas malfari ĝin?</summary>
+<p>Jes, se vi <strong>ankoraŭ ne puŝis</strong> ĝin. Uzu <code>git reset --soft HEAD~1</code> por malfari la
+commit-on konservante ĝiajn ŝanĝojn preparitaj, korektu, kaj konfirmu denove. Se
+vi jam puŝis kaj kunhavigis ĝin, uzu <code>git revert</code> anstataŭe. Vidu
+<a href="../undoing-changes/">Malfari ŝanĝojn</a>.</p>
 </details>
 <details class="question">
-<summary>I changed a file and want the original back. How?</summary>
-<p>If the change is not committed, <code>git restore &lt;file&gt;</code> discards it and restores
-the last committed version. Careful: uncommitted changes discarded this way
-are gone for good. See <a href="../undoing-changes/#git-restore-discard-changes-in-the-working-directory">Undoing changes</a>.</p>
+<summary>Mi ŝanĝis dosieron kaj volas revenigi la originalon. Kiel?</summary>
+<p>Se la ŝanĝo ne estas konfirmita, <code>git restore &lt;dosiero&gt;</code> forĵetas ĝin kaj
+restarigas la lastan konfirmitan version. Atentu: nekonfirmitaj ŝanĝoj forĵetitaj
+tiel perdiĝas por ĉiam. Vidu
+<a href="../undoing-changes/#git-restore-forjeti-sangojn-en-la-labordosierujo">Malfari ŝanĝojn</a>.</p>
 </details>
 <details class="question">
-<summary>What is a merge conflict and did I break something?</summary>
-<p>Nothing is broken. A conflict happens when two branches changed the <strong>same
-lines</strong> of a file and Git cannot decide which version to keep, so it asks
-you. Edit the file, remove the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> markers,
-leave the text you want, then <code>git add</code> and commit. The
-<a href="../example/#5-merge-the-branch-back-and-resolve-a-conflict">Example</a> walks
-through one step by step.</p>
+<summary>Kio estas kunfanda konflikto kaj ĉu mi rompis ion?</summary>
+<p>Nenio estas rompita. Konflikto okazas, kiam du branĉoj ŝanĝis la <strong>samajn liniojn</strong>
+de dosiero kaj Git ne povas decidi kiun version konservi, do ĝi demandas vin.
+Redaktu la dosieron, forigu la markilojn <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, lasu la
+tekston kiun vi volas, poste faru <code>git add</code> kaj commit. La
+<a href="../example/#5-kunfandi-la-brancon-reen-kaj-solvi-konflikton">Ekzemplo</a> trairas
+unu paŝon post paŝo.</p>
 </details>
 <details class="question">
-<summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary>
-<p><code>git fetch</code> downloads new commits from the remote but does <strong>not</strong> change
-your working files. <code>git pull</code> does a fetch <strong>and</strong> merges those commits into
-your current branch in one step. See <a href="../commands/#git-pull">Commands § git pull</a>.</p>
+<summary>Kio estas la diferenco inter <code>git pull</code> kaj <code>git fetch</code>?</summary>
+<p><code>git fetch</code> elŝutas novajn commit-ojn de la remoto sed <strong>ne</strong> ŝanĝas viajn
+laborajn dosierojn. <code>git pull</code> faras fetch <strong>kaj</strong> kunfandas tiujn commit-ojn en
+vian nunan branĉon en unu paŝo. Vidu <a href="../commands/#git-pull">Komandoj § git pull</a>.</p>
 </details>
 <details class="question">
-<summary>Should I commit my virtual environment or <code>__pycache__</code>?</summary>
-<p>No. Those are generated locally and do not belong in the history. List them
-in a <a href="../commands/#the-gitignore-file"><code>.gitignore</code></a> file so Git ignores them.
-This project's <code>.gitignore</code> is a good template.</p>
+<summary>Ĉu mi konfirmu mian virtualan medion aŭ <code>__pycache__</code>?</summary>
+<p>Ne. Tiuj generiĝas loke kaj ne apartenas al la historio. Listigu ilin en dosiero
+<a href="../commands/#la-dosiero-gitignore"><code>.gitignore</code></a> por ke Git ilin ignoru. La
+<code>.gitignore</code> de ĉi tiu projekto estas bona ŝablono.</p>
 </details>
 <details class="question">
-<summary>I accidentally committed a file that should be ignored. Now what?</summary>
-<p>Add it to <code>.gitignore</code>, then stop tracking it with
-<code>git rm --cached &lt;file&gt;</code> and commit. The file stays on your disk but leaves
-the repository. See <a href="../commands/#the-gitignore-file">Commands § .gitignore</a>.</p>
+<summary>Mi hazarde konfirmis dosieron, kiu devus esti ignorata. Kaj nun?</summary>
+<p>Aldonu ĝin al <code>.gitignore</code>, poste ĉesu spuri ĝin per <code>git rm --cached &lt;dosiero&gt;</code>
+kaj faru commit. La dosiero restas sur via disko sed forlasas la deponejon. Vidu
+<a href="../commands/#la-dosiero-gitignore">Komandoj § .gitignore</a>.</p>
 </details>
 <details class="question">
-<summary>What does <code>HEAD</code> mean?</summary>
-<p><code>HEAD</code> is a pointer to <em>where you currently are</em> in the history — normally
-the latest commit of the branch you are on. Notations like <code>HEAD~1</code> mean
-"one commit before <code>HEAD</code>". See <a href="../organization/#branches">Branches</a>.</p>
+<summary>Kion signifas <code>HEAD</code>?</summary>
+<p><code>HEAD</code> estas montrilo al <em>kie vi estas nun</em> en la historio — normale la lasta
+commit de la branĉo sur kiu vi estas. Notacioj kiel <code>HEAD~1</code> signifas "unu commit
+antaŭ <code>HEAD</code>". Vidu <a href="../organization/#brancoj">Branĉoj</a>.</p>
 </details>
 <details class="question">
-<summary>Is it safe to delete a branch after merging it?</summary>
-<p>Yes. Once a branch is merged, its commits live on in the target branch, so
-<code>git branch -d &lt;branch&gt;</code> only removes the pointer, not the history. See the
-<a href="../example/#5-merge-the-branch-back-and-resolve-a-conflict">Example</a>.</p>
+<summary>Ĉu estas sekure forigi branĉon post ĝia kunfando?</summary>
+<p>Jes. Post kunfando de branĉo, ĝiaj commit-oj plu vivas en la cela branĉo, do
+<code>git branch -d &lt;branĉo&gt;</code> forigas nur la montrilon, ne la historion. Vidu la
+<a href="../example/#5-kunfandi-la-brancon-reen-kaj-solvi-konflikton">Ekzemplon</a>.</p>
 </details>
 
 

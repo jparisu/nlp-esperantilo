@@ -24,6 +24,8 @@
         
           <link rel="alternate" href="../../../python-library/python-faq/" hreflang="en">
         
+          <link rel="alternate" href="../../../es/python-library/python-faq/" hreflang="es">
+        
           <link rel="alternate" href="./" hreflang="eo">
         
       
@@ -86,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faq" class="md-skip">
+        <a href="#oftaj-demandoj" class="md-skip">
           Saltu al enhavo
         </a>
       
@@ -181,6 +183,12 @@
           <li class="md-select__item">
             <a href="../../../python-library/python-faq/" hreflang="en" class="md-select__link">
               English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../es/python-library/python-faq/" hreflang="es" class="md-select__link">
+              Español
             </a>
           </li>
         
@@ -1138,6 +1146,8 @@
       
         
       
+        
+      
     
     
     
@@ -1305,6 +1315,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../esperanto/esperanto-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oftaj demandoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1322,7 +1360,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1344,14 +1382,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1441,7 +1479,7 @@
 
 
   
-    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/python-library/python-faq.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/python-library/python-faq.eo.md" title="Redakti ĉi tiun paĝon" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1449,92 +1487,95 @@
   
 
 
-<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<p>Common questions about building, installing and testing the Python library. Each
-answer links to the page where the topic is covered in full.</p>
+<h1 id="oftaj-demandoj">Oftaj demandoj<a class="headerlink" href="#oftaj-demandoj" title="Permanent link">&para;</a></h1>
+<p>Kutimaj demandoj pri konstruado, instalado kaj testado de la Python-biblioteko. Ĉiu
+respondo ligas al la paĝo, kie la temo estas traktata pli detale.</p>
 <details class="question">
-<summary>What is the difference between a module, a package and a library?</summary>
-<p>A <strong>module</strong> is a single <code>.py</code> file; a <strong>package</strong> is a folder of modules with
-an <code>__init__.py</code>; a <strong>library</strong> is a package meant to be reused by other code.
-A <strong>distribution</strong> is the installable bundle <code>pip</code> fetches. See
-<a href="../library/#module-package-library-distribution">What is a library</a>.</p>
+<summary>Kio estas la diferenco inter modulo, pako kaj biblioteko?</summary>
+<p><strong>Modulo</strong> estas unuopa dosiero <code>.py</code>; <strong>pako</strong> estas dosierujo de moduloj kun
+<code>__init__.py</code>; <strong>biblioteko</strong> estas pako celita por esti reuzata de alia kodo.
+<strong>Distribuaĵo</strong> estas la instalebla pakaĵo, kiun <code>pip</code> alportas. Vidu
+<a href="../library/#modulo-pako-biblioteko-distribuajo">Kio estas biblioteko</a>.</p>
 </details>
 <details class="question">
-<summary>Do I need <code>setup.py</code>? What is <code>pyproject.toml</code>?</summary>
-<p>No — <code>pyproject.toml</code> is the modern, standardised replacement for <code>setup.py</code>.
-It holds the project metadata, dependencies and build configuration in one
-file. See <a href="../organization/#pyprojecttoml">Organization § pyproject.toml</a>.</p>
+<summary>Ĉu mi bezonas <code>setup.py</code>? Kio estas <code>pyproject.toml</code>?</summary>
+<p>Ne — <code>pyproject.toml</code> estas la moderna, normigita anstataŭaĵo de <code>setup.py</code>. Ĝi
+enhavas la metadatenojn de la projekto, la dependecojn kaj la konstruan agordon en
+unu sola dosiero. Vidu <a href="../organization/#pyprojecttoml">Organizado § pyproject.toml</a>.</p>
 </details>
 <details class="question">
-<summary>Why is the code under <code>src/</code> instead of at the repository root?</summary>
-<p>So the package is not importable <em>by accident</em> from the project root. The
-<code>src/</code> layout forces you to install the package before importing it, so your
-tests run against the installed library exactly as a user would get it. See
-<a href="../organization/#the-src-layout">Organization § src</a>.</p>
+<summary>Kial la kodo estas sub <code>src/</code> anstataŭ ĉe la radiko de la deponejo?</summary>
+<p>Por ke la pako ne estu importebla <em>hazarde</em> de la radiko de la projekto. La
+<code>src/</code>-strukturo devigas vin instali la pakon antaŭ ol importi ĝin, do viaj testoj
+ruliĝas kontraŭ la instalita biblioteko ekzakte kiel ricevus ĝin uzanto. Vidu
+<a href="../organization/#the-src-layout">Organizado § src</a>.</p>
 </details>
 <details class="question">
-<summary>What is the difference between <code>requirements.txt</code> and <code>pyproject.toml</code>?</summary>
-<p><code>pyproject.toml</code> declares what the <em>library</em> needs as part of its identity —
-the source of truth when someone installs it. <code>requirements.txt</code> is a
-convenience list for pinning a reproducible <em>environment</em>. This library is
-rule-based, so it has no runtime dependencies and <code>requirements.txt</code> is
-essentially empty. See <a href="../organization/#requirementstxt">Organization § requirements.txt</a>.</p>
+<summary>Kio estas la diferenco inter <code>requirements.txt</code> kaj <code>pyproject.toml</code>?</summary>
+<p><code>pyproject.toml</code> deklaras kion la <em>biblioteko</em> bezonas kiel parton de sia identeco
+— la fonto de vero kiam iu instalas ĝin. <code>requirements.txt</code> estas oportuna listo
+por fiksi reprodukteblan <em>medion</em>. Ĉi tiu biblioteko estas regul-bazita, do ĝi ne
+havas rultempajn dependecojn kaj <code>requirements.txt</code> estas esence malplena. Vidu
+<a href="../organization/#requirementstxt">Organizado § requirements.txt</a>.</p>
 </details>
 <details class="question">
-<summary>What does <code>__init__.py</code> do?</summary>
-<p>It marks a directory as a <strong>package</strong> and defines what the package exposes
-when imported. Here it declares the version and, as the library grows, is
-where public classes are re-exported. See
-<a href="../organization/#__init__py">Organization § <strong>init</strong>.py</a>.</p>
+<summary>Kion faras <code>__init__.py</code>?</summary>
+<p>Ĝi markas dosierujon kiel <strong>pakon</strong> kaj difinas kion la pako eksponas ĉe la
+importo. Ĉi tie ĝi deklaras la version kaj, dum la biblioteko kreskas, estas kie
+reeksportiĝas la publikaj klasoj. Vidu
+<a href="../organization/#__init__py">Organizado § <strong>init</strong>.py</a>.</p>
 </details>
 <details class="question">
-<summary>How do I install the library in a Google Colab notebook?</summary>
-<p>Install it straight from GitHub in a cell, then import it:</p>
+<summary>Kiel mi instalas la bibliotekon en notlibro de Google Colab?</summary>
+<p>Instalu ĝin rekte de GitHub en ĉelo, poste importu ĝin:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jparisu</span><span class="o">/</span><span class="n">nlp</span><span class="o">-</span><span class="n">esperantilo</span><span class="o">.</span><span class="n">git</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">esperantilo</span>
 </span></code></pre></div>
-<p>See <a href="../installation-and-usage/#use-it-in-a-notebook">Installation and usage</a>.</p>
+<p>Vidu <a href="../installation-and-usage/#uzi-gin-en-notlibro">Instalado kaj uzo</a>.</p>
 </details>
 <details class="question">
-<summary>What does <code>pip install -e \".[test]\"</code> mean?</summary>
-<p><code>-e</code> installs the package in <strong>editable</strong> mode (a link to your source, so
-edits take effect immediately), and <code>.[test]</code> also installs the <code>test</code> extra
-(<code>pytest</code>). It is the standard setup for <em>developing</em> the library. See
-<a href="../installation-and-usage/#install-locally">Installation and usage § Install locally</a>.</p>
+<summary>Kion signifas <code>pip install -e \".[test]\"</code>?</summary>
+<p><code>-e</code> instalas la pakon en <strong>redaktebla</strong> reĝimo (ligilo al via fontkodo, do la
+redaktoj efikas tuj), kaj <code>.[test]</code> ankaŭ instalas la kromaĵon <code>test</code> (<code>pytest</code>).
+Ĝi estas la norma aranĝo por <em>disvolvi</em> la bibliotekon. Vidu
+<a href="../installation-and-usage/#instali-loke">Instalado kaj uzo § Instali loke</a>.</p>
 </details>
 <details class="question">
-<summary>I installed a new version in a notebook but nothing changed. Why?</summary>
-<p>Python caches imported modules for the session. After installing a new
-version, <strong>restart the runtime</strong> (Runtime → Restart) so the new code is
-loaded. See <a href="../installation-and-usage/#use-it-in-a-notebook">Installation and usage</a>.</p>
+<summary>Mi instalis novan version en notlibro sed nenio ŝanĝiĝis. Kial?</summary>
+<p>Python kaŝmemorigas la importitajn modulojn dum la sesio. Post instalado de nova
+versio, <strong>restartigu la rultempon</strong> (Runtime → Restart), por ke la nova kodo estu
+ŝargita. Vidu <a href="../installation-and-usage/#uzi-gin-en-notlibro">Instalado kaj uzo</a>.</p>
 </details>
 <details class="question">
-<summary>What is <code>__all__</code> for?</summary>
-<p>It names a module's <strong>public</strong> objects: it documents the intended API and
-controls what <code>from esperantilo import *</code> brings in. Names outside it (and
-names starting with <code>_</code>) are treated as private. See <a href="../api/#what-an-api-is-here">API § What an API is here</a>.</p>
+<summary>Por kio estas <code>__all__</code>?</summary>
+<p>Ĝi nomas la <strong>publikajn</strong> objektojn de modulo: ĝi dokumentas la celitan API-on kaj
+regas kion alportas <code>from esperantilo import *</code>. La nomoj ekster ĝi (kaj tiuj
+komenciĝantaj per <code>_</code>) estas traktataj kiel privataj. Vidu
+<a href="../api/#kio-estas-api-ci-tie">API § Kio estas API ĉi tie</a>.</p>
 </details>
 <details class="question">
-<summary>Why model the API on spaCy?</summary>
-<p>Because spaCy's typed <code>Doc</code> / <code>Token</code> design is a proven, pleasant way to
-represent analysed text, and Esperanto's regular grammar makes those
-attributes computable by rule. It gives a concrete target to imitate. See
-<a href="../api/#a-spacy-like-api">API § A spaCy-like API</a>.</p>
+<summary>Kial modeli la API-on laŭ spaCy?</summary>
+<p>Ĉar la tipita dezajno <code>Doc</code> / <code>Token</code> de spaCy estas pruvita, agrabla maniero
+reprezenti analizitan tekston, kaj la regula gramatiko de Esperanto igas tiujn
+atributojn kalkuleblaj per reguloj. Ĝi donas konkretan celon por imiti. Vidu
+<a href="../api/#api-lau-la-stilo-de-spacy">API § API laŭ la stilo de spaCy</a>.</p>
 </details>
 <details class="question">
-<summary>How do I run the tests?</summary>
-<p>Install the test extra and run pytest:</p>
+<summary>Kiel mi rulas la testojn?</summary>
+<p>Instalu la testan kromaĵon kaj rulu pytest:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pytest
 </span></code></pre></div>
-<p>pytest discovers files named <code>test_*.py</code> and functions named <code>test_*</code>
-automatically. See <a href="../testing/#writing-and-running-tests-with-pytest">Testing</a>.</p>
+<p>pytest aŭtomate malkovras la dosierojn nomatajn <code>test_*.py</code> kaj la funkciojn
+nomatajn <code>test_*</code>. Vidu
+<a href="../testing/#verki-kaj-ruli-testojn-per-pytest">Testado</a>.</p>
 </details>
 <details class="question">
-<summary>Do the tests run automatically?</summary>
-<p>Yes. The <code>tests.yml</code> GitHub Actions workflow runs <code>pytest</code> on every push and
-pull request, and branch protection can make passing tests <strong>required</strong> before
-a merge. See <a href="../testing/#tests-in-continuous-integration">Testing § Tests in continuous integration</a>.</p>
+<summary>Ĉu la testoj ruliĝas aŭtomate?</summary>
+<p>Jes. La <code>tests.yml</code>-laborfluo de GitHub Actions rulas <code>pytest</code> ĉe ĉiu push kaj
+kunfanda peto, kaj la branĉoprotekto povas igi la sukceson de la testoj <strong>deviga</strong>
+antaŭ kunfando. Vidu
+<a href="../testing/#testoj-en-kontinua-integrado">Testado § Testoj en kontinua integrado</a>.</p>
 </details>
 
 
