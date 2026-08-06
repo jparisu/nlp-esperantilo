@@ -1,13 +1,19 @@
 """MkDocs hook that renders the word lists of `resources/` as documentation pages.
 
-Every JSON file in `resources/` that follows the schema described in
-`resources/README.md` becomes a page under *Esperanto → Word lists*, plus an
-index page listing all of them. Dropping a new file there — say
-`prepozicioj.json` — is enough for a new page to appear: no page has to be
-written by hand and no navigation entry has to be added.
+There are two data files, and no word is written twice:
 
-The hook also copies each JSON file into the built site, so that the list can be
-downloaded from the documentation itself.
+* `resources/vortoj.json` — the **lexicon**: every word once, with its category,
+  its English translation and a note.
+* `resources/listoj.json` — the **lists**: a title, a description and a filter
+  over the lexicon. A word that is both a preposition and a stop-word is stored
+  once and shown by both lists.
+
+Adding a list means adding one entry to `listoj.json`; its page and its
+navigation entry appear on the next build.
+
+The generated pages are **English only**. They carry a banner saying so, and the
+language switcher on them stays on the same page instead of wandering off (see
+`on_page_context`).
 """
 
 from __future__ import annotations
@@ -26,8 +32,11 @@ log = logging.getLogger("mkdocs.hooks.word_lists")
 #: Directory holding the source data, relative to the repository root.
 RESOURCES_DIR = Path(__file__).resolve().parent.parent / "resources"
 
-#: Where the generated pages live inside the documentation tree. They are part
-#: of the *guide*: linguistic reference data, not library behaviour.
+#: The lexicon and the list definitions.
+LEXICON_FILE = "vortoj.json"
+LISTS_FILE = "listoj.json"
+
+#: Where the generated pages live inside the documentation tree.
 OUTPUT_DIR = "guide/esperanto/word-lists"
 
 #: Title of the generated section in the navigation.
@@ -38,230 +47,125 @@ SECTION_TITLE = "Word lists"
 PARENT_SECTION = "Esperanto"
 
 #: Repository used to build "view the source file" links.
-REPOSITORY_BLOB_URL = (
-    "https://github.com/jparisu/nlp-esperantilo/blob/main/resources"
+REPOSITORY_BLOB_URL = "https://github.com/jparisu/nlp-esperantilo/blob/main/resources"
+
+#: Shown on every generated page: the data is not translated.
+ENGLISH_ONLY = (
+    '!!! warning "English only"\n'
+    "    These pages are generated from the data files, which carry English\n"
+    "    translations only. They are not translated into the other languages of\n"
+    "    this site."
 )
-
-#: Locale the generated pages fall back to when a field or string is missing.
-FALLBACK_LOCALE = "en"
-
-#: User-interface strings of the generated pages, per locale. A locale missing
-#: from here (or a key missing from a locale) falls back to `FALLBACK_LOCALE`.
-STRINGS: dict[str, dict[str, str]] = {
-    "en": {
-        "index_title": "Word lists",
-        "index_intro": (
-            "Machine-readable word lists the library is built to consume"
-            " directly. Each list lives as a JSON file under `resources/` in the"
-            " repository, and each page below is generated from that file at"
-            " build time — the documentation and the data can never disagree."
-        ),
-        "adding_title": "Adding a list",
-        "adding_body": (
-            "Drop a new JSON file in `resources/` following the schema"
-            " documented in `resources/README.md`. A page for it appears here"
-            " automatically, with no navigation entry to add."
-        ),
-        "empty": "No word list has been added yet.",
-        "col_list": "List",
-        "col_entries": "Entries",
-        "col_file": "File",
-        "open": "Open the list",
-        "about_title": "About this list",
-        "about_body": (
-            "**{count} entries**, generated from [`resources/{filename}`]({url})."
-            " The page and the file cannot drift apart: the table below *is* the"
-            " file."
-        ),
-        "download": "Download",
-        "sources": "Sources",
-        "words": "Words",
-        "col_word": "Word",
-        "col_translation": "English",
-        "col_notes": "Notes",
-        "col_source": "Source",
-        "usage": "Using this list from the library",
-    },
-    "es": {
-        "index_title": "Listas de palabras",
-        "index_intro": (
-            "Listas de palabras legibles por máquina que la biblioteca está"
-            " pensada para consumir directamente. Cada lista vive como un"
-            " archivo JSON bajo `resources/` en el repositorio, y cada página de"
-            " abajo se genera a partir de ese archivo en tiempo de construcción"
-            " — la documentación y los datos nunca pueden discrepar."
-        ),
-        "adding_title": "Añadir una lista",
-        "adding_body": (
-            "Deja un nuevo archivo JSON en `resources/` siguiendo el esquema"
-            " documentado en `resources/README.md`. Su página aparece aquí"
-            " automáticamente, sin ninguna entrada de navegación que añadir."
-        ),
-        "empty": "Todavía no se ha añadido ninguna lista de palabras.",
-        "col_list": "Lista",
-        "col_entries": "Entradas",
-        "col_file": "Archivo",
-        "open": "Abrir la lista",
-        "about_title": "Sobre esta lista",
-        "about_body": (
-            "**{count} entradas**, generadas a partir de"
-            " [`resources/{filename}`]({url}). La página y el archivo no pueden"
-            " separarse: la tabla de abajo *es* el archivo."
-        ),
-        "download": "Descargar",
-        "sources": "Fuentes",
-        "words": "Palabras",
-        "col_word": "Palabra",
-        "col_translation": "Inglés",
-        "col_notes": "Notas",
-        "col_source": "Fuente",
-        "usage": "Usar esta lista desde la biblioteca",
-    },
-    "eo": {
-        "index_title": "Vortlistoj",
-        "index_intro": (
-            "Maŝinlegeblaj vortlistoj, kiujn la biblioteko estas destinita legi"
-            " rekte. Ĉiu listo vivas kiel JSON-dosiero sub `resources/` en la"
-            " deponejo, kaj ĉiu paĝo sube estas generita el tiu dosiero"
-            " konstrutempe — la dokumentaro kaj la datumoj neniam povas"
-            " malkonsenti."
-        ),
-        "adding_title": "Aldoni liston",
-        "adding_body": (
-            "Metu novan JSON-dosieron en `resources/` laŭ la skemo dokumentita"
-            " en `resources/README.md`. Paĝo por ĝi aperas ĉi tie aŭtomate, sen"
-            " aldonenda navigada ero."
-        ),
-        "empty": "Ankoraŭ neniu vortlisto estas aldonita.",
-        "col_list": "Listo",
-        "col_entries": "Eroj",
-        "col_file": "Dosiero",
-        "open": "Malfermi la liston",
-        "about_title": "Pri ĉi tiu listo",
-        "about_body": (
-            "**{count} eroj**, generitaj el [`resources/{filename}`]({url})."
-            " La paĝo kaj la dosiero ne povas disiĝi: la tabelo sube *estas* la"
-            " dosiero."
-        ),
-        "download": "Elŝuti",
-        "sources": "Fontoj",
-        "words": "Vortoj",
-        "col_word": "Vorto",
-        "col_translation": "Angla",
-        "col_notes": "Notoj",
-        "col_source": "Fonto",
-        "usage": "Uzi ĉi tiun liston el la biblioteko",
-    },
-}
-
-
-def _string(key: str, locale: str) -> str:
-    """Look a user-interface string up, falling back to `FALLBACK_LOCALE`."""
-    table = STRINGS.get(locale, {})
-    if key in table:
-        return table[key]
-    return STRINGS[FALLBACK_LOCALE][key]
 
 
 # --------------------------------------------------------------------------- #
 # Loading
 # --------------------------------------------------------------------------- #
 
-def _load_lists() -> list[dict[str, Any]]:
-    """Read and validate every word list in `resources/`."""
-    if not RESOURCES_DIR.is_dir():
-        log.warning("word_lists: no resources directory at %s", RESOURCES_DIR)
-        return []
+def _read(filename: str) -> Any:
+    path = RESOURCES_DIR / filename
+    if not path.is_file():
+        raise PluginError(f"word_lists: missing {path}")
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        raise PluginError(f"{filename} is not valid JSON: {error}") from error
 
-    lists: list[dict[str, Any]] = []
-    for path in sorted(RESOURCES_DIR.glob("*.json")):
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as error:
-            raise PluginError(f"{path.name} is not valid JSON: {error}") from error
 
-        for field in ("id", "titolo", "vortoj"):
-            if field not in data:
-                raise PluginError(f"{path.name} is missing the '{field}' field")
+def _load() -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Read the lexicon and resolve every list's filter against it.
 
-        data["_filename"] = path.name
-        lists.append(data)
+    Returns:
+        The lexicon, and the lists with their matching words under `"vortoj"`.
+    """
+    lexicon = _read(LEXICON_FILE)
+    for field in ("kategorioj", "vortoj"):
+        if field not in lexicon:
+            raise PluginError(f"{LEXICON_FILE} is missing the '{field}' field")
 
-    return lists
+    lists = []
+    for definition in _read(LISTS_FILE):
+        for field in ("id", "titolo", "filtro"):
+            if field not in definition:
+                raise PluginError(f"{LISTS_FILE}: a list is missing '{field}'")
+
+        matching = [
+            word
+            for word in lexicon["vortoj"]
+            if all(word.get(key) == value for key, value in definition["filtro"].items())
+        ]
+        if not matching:
+            raise PluginError(
+                f"{LISTS_FILE}: list '{definition['id']}' matches no word; "
+                f"its filter is {definition['filtro']}"
+            )
+
+        lists.append({**definition, "vortoj": matching})
+
+    return lexicon, lists
 
 
 # --------------------------------------------------------------------------- #
 # Rendering
 # --------------------------------------------------------------------------- #
 
-def _translated(value: Any, locale: str, default: str = "") -> str:
-    """Pick `locale` out of a translatable field, falling back to English.
-
-    Translatable fields are objects keyed by locale (see `resources/README.md`).
-    A plain string is returned as-is, so a list that declares no translations
-    still renders.
-    """
-    if isinstance(value, str):
-        return value
-    if not isinstance(value, dict):
-        return default
-    return (
-        value.get(locale)
-        or value.get(FALLBACK_LOCALE)
-        or next(iter(value.values()), default)
-    )
-
-
-def _title(data: dict[str, Any], locale: str) -> str:
-    return _translated(data["titolo"], locale)
-
-
-def _description(data: dict[str, Any], locale: str) -> str:
-    return _translated(data.get("priskribo", ""), locale)
-
-
-def _category_label(data: dict[str, Any], key: str, locale: str) -> str:
-    """Heading for one grammatical category.
-
-    The keys of `kategorioj` are already words of the list's own language, so on
-    that language's site they are shown bare; every other locale gets the
-    translated gloss appended.
-    """
-    if locale == data.get("lingvo"):
-        return key.capitalize()
-    label = _translated(data.get("kategorioj", {}).get(key, {}), locale)
-    return f"{key.capitalize()} — {label}" if label else key.capitalize()
-
-
 def _escape(text: str) -> str:
     """Escape the characters that would break a Markdown table cell."""
     return text.replace("|", "\\|")
 
 
-def _render_list_page(data: dict[str, Any], locale: str) -> str:
+def _render_list_page(lexicon: dict[str, Any], data: dict[str, Any]) -> str:
     words = data["vortoj"]
-    sources = {source["id"]: source for source in data.get("fontoj", [])}
-    filename = data["_filename"]
+    sources = {source["id"]: source for source in lexicon.get("fontoj", [])}
+    categories = lexicon["kategorioj"]
 
     lines = [
-        f"# {_title(data, locale)}",
+        f"# {data['titolo']}",
         "",
-        _description(data, locale),
+        data.get("priskribo", ""),
         "",
-        f"!!! info \"{_string('about_title', locale)}\"",
-        "    "
-        + _string("about_body", locale).format(
-            count=len(words),
-            filename=filename,
-            url=f"{REPOSITORY_BLOB_URL}/{filename}",
-        ),
+        ENGLISH_ONLY,
         "",
-        f"    {_string('download', locale)}: [`{filename}`](./{filename})",
+        f'!!! info "About this list"',
+        f"    **{len(words)} entries**, selected from"
+        f" [`resources/{LEXICON_FILE}`]({REPOSITORY_BLOB_URL}/{LEXICON_FILE})"
+        f" by the filter `{json.dumps(data['filtro'])}`. The page and the data"
+        f" cannot drift apart: the table below *is* the file.",
+        "",
+        f"    Download the whole lexicon: [`{LEXICON_FILE}`](./{LEXICON_FILE})",
         "",
     ]
 
+    # Group by category, keeping the order declared in the lexicon.
+    present = {word.get("kategorio", "alia") for word in words}
+    ordered = [key for key in categories if key in present]
+    ordered += sorted(present - set(categories))
+
+    lines += ["## Words", ""]
+    for category in ordered:
+        rows = [w for w in words if w.get("kategorio", "alia") == category]
+        label = categories.get(category, category.capitalize())
+        heading = f"{category.capitalize()} — {label}" if label else category.capitalize()
+        lines += [
+            f"### {heading}" if len(ordered) > 1 else "",
+            "" if len(ordered) > 1 else "",
+            "| Word | English | Notes | Source |",
+            "| --- | --- | --- | --- |",
+        ]
+        for word in sorted(rows, key=lambda item: item["vorto"]):
+            origin = ", ".join(
+                sources.get(key, {}).get("nomo", key) for key in word.get("fontoj", [])
+            )
+            lines.append(
+                f"| `{word['vorto']}` "
+                f"| {_escape(', '.join(word.get('traduko', [])))} "
+                f"| {_escape(word.get('noto', ''))} "
+                f"| {_escape(origin)} |"
+            )
+        lines.append("")
+
     if sources:
-        lines += [f"## {_string('sources', locale)}", ""]
+        lines += ["## Sources", ""]
         for source in sources.values():
             note = f" — {source['noto']}" if source.get("noto") else ""
             licence = f" ({source['licenco']})" if source.get("licenco") else ""
@@ -272,91 +176,53 @@ def _render_list_page(data: dict[str, Any], locale: str) -> str:
             )
         lines.append("")
 
-    # Group by category, keeping the order declared in the file.
-    declared = list(data.get("kategorioj", {}))
-    present = {word.get("kategorio", "alia") for word in words}
-    ordered = [key for key in declared if key in present]
-    ordered += sorted(present - set(declared))
+    return "\n".join(lines)
 
-    header = " | ".join(
-        _string(key, locale)
-        for key in ("col_word", "col_translation", "col_notes", "col_source")
-    )
 
-    lines += [f"## {_string('words', locale)}", ""]
-    for category in ordered:
-        rows = [word for word in words if word.get("kategorio", "alia") == category]
-        lines += [
-            f"### {_category_label(data, category, locale)}",
-            "",
-            f"| {header} |",
-            "| --- | --- | --- | --- |",
-        ]
-        for word in sorted(rows, key=lambda item: item["vorto"]):
-            translations = word.get("traduko", {}).get("en", [])
-            origin = ", ".join(
-                sources.get(key, {}).get("nomo", key) for key in word.get("fontoj", [])
-            )
-            lines.append(
-                f"| `{word['vorto']}` "
-                f"| {_escape(', '.join(translations))} "
-                f"| {_escape(word.get('noto', ''))} "
-                f"| {_escape(origin)} |"
-            )
-        lines.append("")
+def _render_index_page(lists: list[dict[str, Any]]) -> str:
+    lines = [
+        "# Word lists",
+        "",
+        "Machine-readable word lists the library is built to consume directly."
+        " Every word lives once in"
+        f" [`resources/{LEXICON_FILE}`]({REPOSITORY_BLOB_URL}/{LEXICON_FILE});"
+        " each list below is a filter over it, so a word that belongs to two"
+        " lists is still stored once.",
+        "",
+        ENGLISH_ONLY,
+        "",
+        '!!! tip "Adding a list"',
+        f"    Add an entry to `resources/{LISTS_FILE}` with an `id`, a `titolo`,"
+        " a `priskribo` and a `filtro`. Its page appears here automatically,"
+        " with no navigation entry to add.",
+        "",
+        "| List | Entries | Filter |",
+        "| --- | --- | --- |",
+    ]
+    for data in lists:
+        lines.append(
+            f"| [{data['titolo']}]({data['id']}.md) "
+            f"| {len(data['vortoj'])} "
+            f"| `{json.dumps(data['filtro'])}` |"
+        )
+    lines.append("")
 
     lines += [
-        f"## {_string('usage', locale)}",
+        "",
+        "## Reading a list from Python",
         "",
         "```python",
         "import json",
         "from pathlib import Path",
         "",
-        f"data = json.loads(Path(\"resources/{filename}\").read_text(encoding=\"utf-8\"))",
-        "words = {entry[\"vorto\"] for entry in data[\"vortoj\"]}",
+        f'lexicon = json.loads(Path("resources/{LEXICON_FILE}").read_text(encoding="utf-8"))',
+        "",
+        "# The same filter the pages above apply.",
+        'prepositions = {w["vorto"] for w in lexicon["vortoj"]'
+        ' if w["kategorio"] == "prepozicio"}',
         "```",
         "",
     ]
-
-    return "\n".join(lines)
-
-
-def _render_index_page(lists: list[dict[str, Any]], locale: str) -> str:
-    lines = [
-        f"# {_string('index_title', locale)}",
-        "",
-        _string("index_intro", locale),
-        "",
-        f"!!! tip \"{_string('adding_title', locale)}\"",
-        f"    {_string('adding_body', locale)}",
-        "",
-    ]
-
-    if not lists:
-        lines += [_string("empty", locale), ""]
-        return "\n".join(lines)
-
-    header = " | ".join(
-        _string(key, locale) for key in ("col_list", "col_entries", "col_file")
-    )
-    lines += [f"| {header} |", "| --- | --- | --- |"]
-    for data in lists:
-        lines.append(
-            f"| [{_title(data, locale)}]({data['id']}.md) "
-            f"| {len(data['vortoj'])} "
-            f"| `resources/{data['_filename']}` |"
-        )
-    lines.append("")
-
-    for data in lists:
-        lines += [
-            f"## {_title(data, locale)}",
-            "",
-            _description(data, locale),
-            "",
-            f"[{_string('open', locale)}]({data['id']}.md){{ .md-button }}",
-            "",
-        ]
 
     return "\n".join(lines)
 
@@ -369,8 +235,7 @@ def _find_section(nav: list[Any], title: str) -> list[Any] | None:
     """Find the children of the navigation section called `title`.
 
     The search is recursive because the navigation is a tree: `Esperanto` is not
-    a top-level entry but a subsection of `Guide`. Returns the list of children
-    so the caller can append to it, or `None` if no such section exists.
+    a top-level entry but a subsection of `Guide`.
     """
     for item in nav:
         if not isinstance(item, dict):
@@ -392,7 +257,7 @@ def _find_section(nav: list[Any], title: str) -> list[Any] | None:
 @event_priority(-100)
 def on_config(config):
     """Append the generated section to the navigation of the parent section."""
-    lists = _load_lists()
+    _, lists = _load()
     if not config.nav:
         return config
 
@@ -402,11 +267,9 @@ def on_config(config):
 
     parent = _find_section(config.nav, PARENT_SECTION)
     if parent is None:
-        # Better a section in the wrong place than pages with no navigation
-        # entry at all, which `mkdocs build --strict` rejects.
         log.warning(
-            "word_lists: no '%s' section in the navigation, "
-            "appending '%s' at the top level",
+            "word_lists: no '%s' section in the navigation, appending '%s' at "
+            "the top level",
             PARENT_SECTION,
             SECTION_TITLE,
         )
@@ -428,17 +291,6 @@ def _languages(config) -> tuple[str | None, str | None]:
     )
 
 
-def _current_locale(config) -> str:
-    """Locale the generated pages should be written in.
-
-    The pages produced here bypass mkdocs-static-i18n (they never exist on
-    disk), so the locale has to be read off the plugin by hand. Without the
-    plugin there is a single build, in the fallback locale.
-    """
-    current, _ = _languages(config)
-    return current or FALLBACK_LOCALE
-
-
 def _locale_prefix(config) -> str:
     """Sub-directory the current mkdocs-static-i18n build writes into.
 
@@ -450,24 +302,64 @@ def _locale_prefix(config) -> str:
     return f"{current}/" if current and current != default else ""
 
 
+class _Alternate:
+    """The one attribute mkdocs-static-i18n reads off an alternate file.
+
+    Its language switcher does `page.file.alternates[lang].url`. The generated
+    pages have no real `File` in the other languages — they are produced once
+    per build, after the plugin has run — so a stand-in carrying the URL is
+    enough, and is what keeps the switcher on the current page.
+    """
+
+    def __init__(self, url: str) -> None:
+        self.url = url
+
+
+def _teach_i18n_about(file: File, config) -> None:
+    """Give a generated file the attributes the language switcher needs.
+
+    Without them the plugin skips the file (it checks `hasattr(file, "locale")`)
+    and leaves the switcher pointing at whatever page it handled last — which is
+    how these pages used to send readers to an unrelated one.
+
+    Every language builds the same page at the same relative path, so the
+    alternate URL of a language is just its prefix plus that path.
+    """
+    current, default = _languages(config)
+    if current is None:
+        return
+
+    # `guide/…/prepozicioj.md` -> `guide/…/prepozicioj/`, `…/index.md` -> `…/`
+    path = file.src_uri[: -len(".md")]
+    url = path.rsplit("/", 1)[0] + "/" if path.endswith("/index") else f"{path}/"
+
+    file.locale = current
+    file.locale_alternate_of = current
+    file.alternates = {
+        alternate["lang"]: _Alternate(
+            f"{'' if alternate['lang'] == default else alternate['lang'] + '/'}{url}"
+        )
+        for alternate in config.extra.get("alternate", [])
+    }
+
+
 def _add(files, config, file: File) -> None:
     prefix = _locale_prefix(config)
     if prefix:
         file.dest_uri = prefix + file.dest_uri
+    if file.src_uri.endswith(".md"):
+        _teach_i18n_about(file, config)
     files.append(file)
 
 
 @event_priority(-100)
 def on_files(files, config):
-    """Generate one page per word list, plus an index and the raw JSON files."""
-    lists = _load_lists()
-    locale = _current_locale(config)
+    """Generate one page per list, plus an index and the raw lexicon."""
+    lexicon, lists = _load()
 
-    generated = {
-        f"{OUTPUT_DIR}/index.md": _render_index_page(lists, locale),
-    }
+    generated = {f"{OUTPUT_DIR}/index.md": _render_index_page(lists)}
     for data in lists:
-        generated[f"{OUTPUT_DIR}/{data['id']}.md"] = _render_list_page(data, locale)
+        generated[f"{OUTPUT_DIR}/{data['id']}.md"] = _render_list_page(lexicon, data)
 
     for src_uri, content in generated.items():
         if files.get_file_from_path(src_uri) is not None:
@@ -475,14 +367,16 @@ def on_files(files, config):
         _add(files, config, File.generated(config, src_uri, content=content))
 
     # Make the raw data downloadable from the documentation itself.
-    for data in lists:
-        src_uri = f"{OUTPUT_DIR}/{data['_filename']}"
+    for filename in (LEXICON_FILE, LISTS_FILE):
+        src_uri = f"{OUTPUT_DIR}/{filename}"
         if files.get_file_from_path(src_uri) is not None:
             continue
         _add(
             files,
             config,
-            File.generated(config, src_uri, abs_src_path=str(RESOURCES_DIR / data["_filename"])),
+            File.generated(
+                config, src_uri, abs_src_path=str(RESOURCES_DIR / filename)
+            ),
         )
 
     log.info("word_lists: generated %d word list page(s)", len(lists))

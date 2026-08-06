@@ -23,18 +23,6 @@ consecuencia.
 
 </div>
 
-## Cuál te interesa
-
-| Si quieres… | Ve a |
-| --- | --- |
-| Usar la biblioteca desde tu propio código | [Biblioteca](library/index.md) |
-| Saber exactamente qué devuelve una función | [Biblioteca → Referencia de la API](library/api.md) |
-| Aprender Git, GitHub, empaquetado o pruebas | [Guía](guide/index.md) |
-| Aprender las reglas del Esperanto que codifica un PLN | [Guía → Esperanto](guide/esperanto/index.md) |
-
-Las dos mitades se enlazan constantemente: la guía explica una técnica y después
-señala el lugar de la biblioteca donde se usa de verdad.
-
 ## Pruébala
 
 ```bash

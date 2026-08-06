@@ -23,7 +23,7 @@ conjunctions.
 
     **[Stop-words →](word-lists/ignorindaj-vortoj.md)** — 250 entries, each with
     its English translation, grammatical category and provenance. It is generated
-    from `resources/ignorindaj-vortoj.json`, the same file the library will read
+    from `resources/vortoj.json`, the same file the library will read
     at runtime, so the documentation and the data can never disagree.
 
 A representative sample, by category:
@@ -182,7 +182,7 @@ Using a list from the library is then a two-liner:
 import json
 from pathlib import Path
 
-data = json.loads(Path("resources/ignorindaj-vortoj.json").read_text(encoding="utf-8"))
+data = json.loads(Path("resources/vortoj.json").read_text(encoding="utf-8"))
 stop_words = {entry["vorto"] for entry in data["vortoj"]}
 ```
 

@@ -1,33 +1,51 @@
 # Resources
 
-Machine-readable word lists. These files are the single source of truth for the
-linguistic data of the project: the documentation renders them as pages at build
-time (see [`hooks/word_lists.py`](../hooks/word_lists.py)), and the library will
-read the same files at runtime once it grows past its current skeleton.
+The linguistic data of the project, and the single source of truth for it: the
+documentation renders these files as pages at build time (see
+[`hooks/word_lists.py`](../hooks/word_lists.py)), and the library will read the
+same files at runtime once it grows past its current skeleton.
 
-Adding a new list — for example `prepozicioj.json` — is enough for a new
-documentation page to appear under *Esperanto → Word lists*. No page has to be
-written and no navigation entry has to be added.
+Two files, with different jobs:
 
-## Available lists
-
-| File | Contents |
+| File | What it holds |
 | --- | --- |
-| `ignorindaj-vortoj.json` | Stop-words: the high-frequency, low-content words a pipeline usually filters out. |
+| `vortoj.json` | The **lexicon**: every word exactly once. |
+| `listoj.json` | The **lists**: each one a filter over the lexicon. |
 
-## Schema
+## Why two files
 
-Field names are in Esperanto, matching the file names. Translatable fields are
-objects keyed by [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)
-locale.
+Many words belong to several lists. Every preposition is also a stop-word; so
+are most correlatives and most numerals. With one file per list, `kun` would be
+written twice, with two copies of its translation and its note, free to drift
+apart.
+
+Instead the word is stored once, tagged, and each list selects from the lexicon:
+
+```jsonc
+// vortoj.json — the word, once
+{ "vorto": "kun", "kategorio": "prepozicio", "traduko": ["with"], "ignorinda": true }
+```
+
+```jsonc
+// listoj.json — two lists, both of which show it
+{ "id": "ignorindaj-vortoj", "filtro": { "ignorinda": true } }
+{ "id": "prepozicioj",       "filtro": { "kategorio": "prepozicio" } }
+```
+
+Adding a list is one entry in `listoj.json`: its page and its navigation entry
+appear on the next build, with no page to write.
+
+!!! note
+    The data is **English only**. The generated pages say so, and are not
+    translated into the other languages of the site.
+
+## `vortoj.json`
+
+Field names are in Esperanto, matching the language the words belong to.
 
 ```jsonc
 {
-  "id": "ignorindaj-vortoj",       // identifier; also the URL of the generated page
-  "titolo": { "eo": "…", "en": "…" },
-  "priskribo": { "eo": "…", "en": "…" },
-  "lingvo": "eo",                  // language the words belong to
-  "tradukoj": ["en"],              // locales available in the "traduko" field
+  "lingvo": "eo",                  // language of the words
   "licenco": "Apache-2.0",
   "fontoj": [                      // where the data comes from
     {
@@ -38,37 +56,49 @@ locale.
       "noto": "…"
     }
   ],
-  "kategorioj": {                  // grammatical categories used by the words
-    "prepozicio": { "en": "Preposition" }
+  "kategorioj": {                  // grammatical categories, with English labels
+    "prepozicio": "Preposition"
   },
   "vortoj": [
     {
-      "vorto": "kun",              // the word itself, lowercase
+      "vorto": "kun",              // the word itself, lowercase, unique
       "kategorio": "prepozicio",   // a key of "kategorioj"
-      "traduko": { "en": ["with"] },
+      "traduko": ["with"],         // English glosses
       "noto": "…",                 // optional
-      "fontoj": ["stopwords-iso"]  // optional; ids from the top-level "fontoj"
+      "fontoj": ["stopwords-iso"], // ids from the top-level "fontoj"
+      "ignorinda": true            // is it a stop-word?
     }
   ]
 }
 ```
 
-The documentation build only requires `id`, `titolo` and `vortoj`, and fails if
-one of them is missing. `tests/test_resources.py` enforces more: `id` must equal
-the file name, `vortoj` must not be empty, and every `vorto` must be lowercase,
-unique, carry a `traduko` and use a `kategorio` that is a key of `kategorioj`.
-Files are UTF-8 and keep the Esperanto diacritics
-(`ĉ`, `ĝ`, `ĥ`, `ĵ`, `ŝ`, `ŭ`) as-is, never the `x`-system.
+## `listoj.json`
 
-## Using a list
+An array of list definitions:
 
-```python
-import json
-from pathlib import Path
-
-data = json.loads(Path("resources/ignorindaj-vortoj.json").read_text(encoding="utf-8"))
-stop_words = {entry["vorto"] for entry in data["vortoj"]}
+```jsonc
+[
+  {
+    "id": "prepozicioj",           // identifier; also the URL of the page
+    "titolo": "Prepositions",
+    "priskribo": "…",
+    "filtro": { "kategorio": "prepozicio" }   // every key must match
+  }
+]
 ```
 
-`tests/test_resources.py` validates every file in this directory against the
-schema above, so a malformed edit is caught by CI.
+A `filtro` is a plain equality test: a word is in the list when **all** its keys
+match the word's fields. `{"kategorio": "nombro", "ignorinda": true}` selects the
+numerals that are also stop-words.
+
+## What is enforced
+
+The documentation build fails if the lexicon lacks `kategorioj` or `vortoj`, if
+a list lacks `id`, `titolo` or `filtro`, or if a filter matches no word.
+
+[`tests/test_resources.py`](../tests/test_resources.py) enforces more: every word
+is lowercase and appears only once, has a non-empty `traduko`, a `kategorio` that
+exists and an `ignorinda` flag; every source it cites is declared; every list id
+is unique and filters on a field that words actually have.
+
+Files are UTF-8 and keep the Esperanto diacritics (`ĉ ĝ ĥ ĵ ŝ ŭ`).

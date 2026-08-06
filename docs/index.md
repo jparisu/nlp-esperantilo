@@ -21,18 +21,6 @@
 
 </div>
 
-## Which one do you want
-
-| If you want to… | Go to |
-| --- | --- |
-| Call the library from your own code | [Library](library/index.md) |
-| Know exactly what a function returns | [Library → API reference](library/api.md) |
-| Learn Git, GitHub, packaging or testing | [Guide](guide/index.md) |
-| Learn the Esperanto rules an NLP library encodes | [Guide → Esperanto](guide/esperanto/index.md) |
-
-The two halves cross-link constantly: the guide teaches a technique, then points
-at the place in the library where it is actually used.
-
 ## Try it
 
 ```bash

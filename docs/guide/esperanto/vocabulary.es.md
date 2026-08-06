@@ -24,7 +24,7 @@ conjunto fijo de preposiciones y conjunciones.
 
     **[Palabras vacías →](word-lists/ignorindaj-vortoj.md)** — 250 entradas, cada
     una con su traducción al inglés, su categoría gramatical y su procedencia. Se
-    genera a partir de `resources/ignorindaj-vortoj.json`, el mismo archivo que
+    genera a partir de `resources/vortoj.json`, el mismo archivo que
     leerá la biblioteca en tiempo de ejecución, de modo que la documentación y los
     datos nunca pueden discrepar.
 
@@ -188,7 +188,7 @@ Usar una lista desde la biblioteca es entonces cosa de dos líneas:
 import json
 from pathlib import Path
 
-data = json.loads(Path("resources/ignorindaj-vortoj.json").read_text(encoding="utf-8"))
+data = json.loads(Path("resources/vortoj.json").read_text(encoding="utf-8"))
 stop_words = {entry["vorto"] for entry in data["vortoj"]}
 ```
 

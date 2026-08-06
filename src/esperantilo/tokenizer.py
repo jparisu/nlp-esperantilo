@@ -8,14 +8,10 @@ from typing import Iterable
 __all__ = ["sentence_tokenizer"]
 
 
-#: Characters that end a sentence unless the caller says otherwise. A tuple, so
-#: it cannot be mutated by one caller and leak into the next.
-_DEFAULT_END_OF_SENTENCE = (".", "!", "?")
-
 
 def sentence_tokenizer(
     text: str,
-    end_of_sentence: Iterable[str] = _DEFAULT_END_OF_SENTENCE,
+    end_of_sentence: Iterable[str] = (".", "!", "?"),
 ) -> list[str]:
     """Split `text` into sentences.
 

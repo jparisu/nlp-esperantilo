@@ -1,7 +1,12 @@
-"""Validate the word lists of `resources/` against the documented schema.
+"""Validate the word data of `resources/` against the documented schema.
 
-The documentation is generated from these files, so a malformed edit must fail
-here rather than in the middle of a documentation build.
+There are two files and they have different jobs:
+
+* `vortoj.json` is the lexicon — every word exactly once;
+* `listoj.json` defines the lists, each one a filter over that lexicon.
+
+The documentation is generated from both, so a malformed edit must fail here
+rather than in the middle of a documentation build.
 """
 
 import json
@@ -10,63 +15,78 @@ from pathlib import Path
 import pytest
 
 RESOURCES = Path(__file__).resolve().parents[1] / "resources"
-FILES = sorted(RESOURCES.glob("*.json"))
+LEXICON = json.loads((RESOURCES / "vortoj.json").read_text(encoding="utf-8"))
+LISTS = json.loads((RESOURCES / "listoj.json").read_text(encoding="utf-8"))
+
+WORDS = LEXICON["vortoj"]
+CATEGORIES = LEXICON["kategorioj"]
+SOURCES = {source["id"] for source in LEXICON["fontoj"]}
 
 
-def _load(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+# --------------------------------------------------------------------------- #
+# The lexicon
+# --------------------------------------------------------------------------- #
+
+def test_the_lexicon_has_its_mandatory_fields():
+    for field in ("lingvo", "fontoj", "kategorioj", "vortoj"):
+        assert field in LEXICON, f"missing '{field}'"
+    assert WORDS, "the lexicon is empty"
 
 
-def test_resources_directory_is_not_empty():
-    assert FILES, f"no word list found in {RESOURCES}"
+def test_every_category_has_an_english_label():
+    for key, label in CATEGORIES.items():
+        assert isinstance(label, str) and label, f"'{key}' has no label"
 
 
-@pytest.mark.parametrize("path", FILES, ids=lambda p: p.name)
-def test_mandatory_fields(path: Path):
-    data = _load(path)
-    for field in ("id", "titolo", "vortoj"):
-        assert field in data, f"missing '{field}'"
-    assert data["id"] == path.stem, "'id' must match the file name"
-    assert data["vortoj"], "the list is empty"
+@pytest.mark.parametrize("word", WORDS, ids=lambda w: w["vorto"])
+def test_every_word_is_well_formed(word):
+    vorto = word["vorto"]
+    assert vorto == vorto.lower(), f"'{vorto}' is not lowercase"
+    assert word["kategorio"] in CATEGORIES, f"'{vorto}' has an unknown category"
+    assert isinstance(word["traduko"], list) and word["traduko"], (
+        f"'{vorto}' has no translation"
+    )
+    assert isinstance(word["ignorinda"], bool), f"'{vorto}' has no 'ignorinda' flag"
+    for source in word.get("fontoj", []):
+        assert source in SOURCES, f"'{vorto}' references unknown source {source!r}"
 
 
-@pytest.mark.parametrize("path", FILES, ids=lambda p: p.name)
-def test_entries_are_well_formed(path: Path):
-    data = _load(path)
-    categories = set(data.get("kategorioj", {}))
-    sources = {source["id"] for source in data.get("fontoj", [])}
-
-    seen = set()
-    for entry in data["vortoj"]:
-        word = entry.get("vorto")
-        assert word, f"an entry has no 'vorto': {entry}"
-        assert word == word.lower(), f"'{word}' is not lowercase"
-        assert word not in seen, f"'{word}' is duplicated"
-        seen.add(word)
-
-        if categories:
-            assert entry.get("kategorio") in categories, (
-                f"'{word}' has an unknown category {entry.get('kategorio')!r}"
-            )
-
-        translations = entry.get("traduko", {})
-        assert translations, f"'{word}' has no translation"
-        for locale, values in translations.items():
-            assert isinstance(values, list) and values, (
-                f"'{word}' has an empty '{locale}' translation"
-            )
-
-        for source in entry.get("fontoj", []):
-            assert source in sources, f"'{word}' references unknown source {source!r}"
+def test_no_word_appears_twice():
+    """The point of a single lexicon: a word belongs to many lists, but exists once."""
+    seen = [word["vorto"] for word in WORDS]
+    duplicates = {v for v in seen if seen.count(v) > 1}
+    assert not duplicates, f"duplicated: {sorted(duplicates)}"
 
 
-@pytest.mark.parametrize("path", FILES, ids=lambda p: p.name)
-def test_declared_translations_are_present(path: Path):
-    data = _load(path)
-    for locale in data.get("tradukoj", []):
-        missing = [
-            entry["vorto"]
-            for entry in data["vortoj"]
-            if locale not in entry.get("traduko", {})
-        ]
-        assert not missing, f"missing '{locale}' translation for: {missing[:10]}"
+# --------------------------------------------------------------------------- #
+# The lists
+# --------------------------------------------------------------------------- #
+
+def test_list_ids_are_unique():
+    ids = [entry["id"] for entry in LISTS]
+    assert len(ids) == len(set(ids)), f"duplicated ids in listoj.json: {ids}"
+
+
+@pytest.mark.parametrize("definition", LISTS, ids=lambda d: d["id"])
+def test_every_list_is_well_formed(definition):
+    for field in ("id", "titolo", "priskribo", "filtro"):
+        assert field in definition, f"missing '{field}'"
+    assert definition["filtro"], "the filter is empty: it would match every word"
+
+
+@pytest.mark.parametrize("definition", LISTS, ids=lambda d: d["id"])
+def test_every_list_matches_at_least_one_word(definition):
+    """A filter that matches nothing means a typo, and would build an empty page."""
+    matching = [
+        word
+        for word in WORDS
+        if all(word.get(k) == v for k, v in definition["filtro"].items())
+    ]
+    assert matching, f"'{definition['id']}' matches no word"
+
+
+@pytest.mark.parametrize("definition", LISTS, ids=lambda d: d["id"])
+def test_every_filter_uses_a_real_field(definition):
+    fields = {key for word in WORDS for key in word}
+    unknown = set(definition["filtro"]) - fields
+    assert not unknown, f"'{definition['id']}' filters on unknown field(s) {unknown}"

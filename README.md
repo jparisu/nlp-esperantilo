@@ -89,13 +89,20 @@ request is merged, and the preview is removed when it closes.
 
 The linguistic data lives in [`resources/`](resources/README.md) as JSON, and
 the documentation pages under *Esperanto → Word lists* are generated from those
-files at build time by [`hooks/word_lists.py`](hooks/word_lists.py). Adding a
-new list (say `resources/prepozicioj.json`) is enough for a new page to appear —
-no page to write, no navigation entry to add.
+files at build time by [`hooks/word_lists.py`](hooks/word_lists.py). Adding an
+entry to `resources/listoj.json` is enough for a new page to appear — no page to
+write, no navigation entry to add. The pages are English only.
+
+Every word lives once in [`resources/vortoj.json`](resources/vortoj.json); each
+list in [`resources/listoj.json`](resources/listoj.json) is a filter over it, so
+a preposition that is also a stop-word is stored once and shown by both lists.
 
 | List | Entries |
 | --- | --- |
-| [`ignorindaj-vortoj.json`](resources/ignorindaj-vortoj.json) — stop-words with English translations | 250 |
+| Stop-words | 250 |
+| Prepositions | 34 |
+| Correlatives | 59 |
+| Numbers | 27 |
 
 ### Spell check
 

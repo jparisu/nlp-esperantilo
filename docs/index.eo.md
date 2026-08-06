@@ -22,18 +22,6 @@ laŭ tio.
 
 </div>
 
-## Kiun vi bezonas
-
-| Se vi volas… | Iru al |
-| --- | --- |
-| Uzi la bibliotekon el via propra kodo | [Biblioteko](library/index.md) |
-| Scii precize kion funkcio redonas | [Biblioteko → API-referenco](library/api.md) |
-| Lerni Git, GitHub, pakadon aŭ testadon | [Gvidilo](guide/index.md) |
-| Lerni la Esperantajn regulojn, kiujn NLP enkodigas | [Gvidilo → Esperanto](guide/esperanto/index.md) |
-
-La du duonoj konstante interligiĝas: la gvidilo instruas teknikon, poste montras
-la lokon en la biblioteko, kie ĝi vere estas uzata.
-
 ## Provu ĝin
 
 ```bash
