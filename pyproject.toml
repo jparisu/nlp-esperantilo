@@ -28,6 +28,7 @@ docs = [
     "mkdocs>=1.6",
     "mkdocs-material>=9.5",
     "mkdocs-static-i18n>=1.2",
+    "mkdocstrings-python>=1.10",
 ]
 
 [project.urls]
@@ -40,5 +41,13 @@ Issues = "https://github.com/jparisu/nlp-esperantilo/issues"
 where = ["src"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-ra"
+# Put `src/` on sys.path for the test run. Without this, `pytest` on a fresh
+# clone fails with "No module named 'esperantilo'": the package lives under
+# `src/`, which Python does not search unless the project has been installed.
+# With it, `pytest` works straight after `git clone`, installed or not.
+pythonpath = ["src"]
+# `src` is a test path too: `--doctest-modules` runs the `>>>` examples of every
+# docstring, so the examples shown in the API reference are executed by CI and
+# cannot quietly go out of date.
+testpaths = ["tests", "src"]
+addopts = "-ra --doctest-modules"

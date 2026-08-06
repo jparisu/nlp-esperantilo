@@ -1,53 +1,70 @@
 # NLP Esperantilo
 
-Welcome to **NLP Esperantilo**, a project made of two complementary parts:
+**NLP Esperantilo** is two things at once, and this site is split accordingly.
 
-- **A Python library** for rule-based Natural Language Processing in Esperanto.
-- **This documentation**, a guide and tutorial to build that library and its
-  surrounding tooling from scratch.
+<div class="grid cards" markdown>
 
-!!! warning "Work in progress"
-    This site is the scaffold of the documentation. Every section already has
-    its structure and its planned contents, but the contents themselves are
-    still being written.
+- :material-package-variant:{ .lg .middle } **[Library](library/index.md)**
 
-## Who is this for
+    ---
 
-This guide is aimed at university students who have to build their own
-Esperanto NLP library. Readers are expected to have some technical background,
-but not necessarily experience with the specific tools and topics explained
-here.
+    The reference manual of `esperantilo`, a rule-based NLP library for
+    Esperanto: what it does today, and what every public name means. Its
+    [API reference](library/api.md) is generated from the source.
 
-## What this guide covers
+- :material-book-open-page-variant:{ .lg .middle } **[Guide](guide/index.md)**
 
-| Section | Contents |
+    ---
+
+    How a library like it is built and shipped: Git, GitHub, Python packaging
+    and testing, and the Esperanto linguistics that go inside.
+
+</div>
+
+## Which one do you want
+
+| If you want to… | Go to |
 | --- | --- |
-| [Git](git/index.md) | Version control: how Git works, its most used commands and how to undo changes. |
-| [GitHub](github/index.md) | Collaborative workflow, pull requests, GitHub Actions, repository protection and GitHub Pages. |
-| [Python Library](python-library/index.md) | Packaging, project layout, API design, installation and testing. |
-| [Esperanto](esperanto/index.md) | History, grammar, vocabulary and resources — the linguistic rules the library encodes. |
+| Call the library from your own code | [Library](library/index.md) |
+| Know exactly what a function returns | [Library → API reference](library/api.md) |
+| Learn Git, GitHub, packaging or testing | [Guide](guide/index.md) |
+| Learn the Esperanto rules an NLP library encodes | [Guide → Esperanto](guide/esperanto/index.md) |
 
-## What this guide does *not* cover
+The two halves cross-link constantly: the guide teaches a technique, then points
+at the place in the library where it is actually used.
 
-Two topics are deliberately left out, because they are taught in the course
-lectures:
+## Try it
 
-- **Web scraping and API consumption** (`requests`, `beautifulsoup4`, the
-  Wikipedia API, and similar).
-- **Text-mining and Machine-Learning classification** (feature extraction,
-  vectorization, model training and evaluation, metrics).
+```bash
+pip install git+https://github.com/jparisu/nlp-esperantilo.git
+```
 
-The focus here is the *software-engineering tooling* needed to work like a
-professional team, and the *Esperanto domain knowledge* needed to write a
-rule-based NLP library.
+```python
+import esperantilo
 
-## Reading the documentation
+esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
+# ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
+```
 
-The guide can be read from start to finish, but the four sections are mostly
-independent. A reader who already knows Git and GitHub can jump straight to
-[Python Library](python-library/index.md) or [Esperanto](esperanto/index.md).
+!!! warning "The library is deliberately small"
+    `esperantilo` is at version `0.1.0` and ships one feature:
+    [sentence segmentation](library/sentence-segmentation.md). Tokens, lemmas
+    and affix analysis are still a
+    [design target](guide/python-library/api.md), not shipped code. Building the
+    rest is the exercise this site prepares you for.
 
-## Building the documentation locally
+## Who this is for
+
+University students who have to build their own Esperanto NLP library. Readers
+are expected to have a technical background, but not necessarily experience with
+the specific tools and topics explained here.
+
+Two topics are deliberately left out of the guide, because they are taught in
+the course lectures: **web scraping and API consumption**, and **text-mining and
+Machine-Learning classification**. See
+[Guide → what it does not cover](guide/index.md#what-this-guide-does-not-cover).
+
+## Building this site locally
 
 ```bash
 pip install -r docs/requirements.txt

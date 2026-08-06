@@ -1,9 +1,9 @@
 # Resources
 
 Machine-readable word lists. These files are the single source of truth for the
-linguistic data of the project: the library reads them at runtime, and the
-documentation renders them as pages at build time
-(see [`hooks/word_lists.py`](../hooks/word_lists.py)).
+linguistic data of the project: the documentation renders them as pages at build
+time (see [`hooks/word_lists.py`](../hooks/word_lists.py)), and the library will
+read the same files at runtime once it grows past its current skeleton.
 
 Adding a new list — for example `prepozicioj.json` — is enough for a new
 documentation page to appear under *Esperanto → Word lists*. No page has to be
@@ -53,8 +53,11 @@ locale.
 }
 ```
 
-Only `id`, `titolo` and `vortoj` are mandatory; the documentation build fails if
-one of them is missing. Files are UTF-8 and keep the Esperanto diacritics
+The documentation build only requires `id`, `titolo` and `vortoj`, and fails if
+one of them is missing. `tests/test_resources.py` enforces more: `id` must equal
+the file name, `vortoj` must not be empty, and every `vorto` must be lowercase,
+unique, carry a `traduko` and use a `kategorio` that is a key of `kategorioj`.
+Files are UTF-8 and keep the Esperanto diacritics
 (`ĉ`, `ĝ`, `ĥ`, `ĵ`, `ŝ`, `ŭ`) as-is, never the `x`-system.
 
 ## Using a list

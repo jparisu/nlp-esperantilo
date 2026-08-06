@@ -1,6 +1,11 @@
 [codespell]
 # Paths that must not be spell checked.
-skip = ./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock
+#
+# codespell only knows English, so the translated pages (`<page>.<locale>.md`) are
+# skipped: ordinary Spanish words like "historial" or "comandos" are reported as
+# English typos, which cannot be fixed, only ignored. Same for ./resources/books,
+# which holds verbatim public-domain texts that must not be corrected.
+skip = ./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock,./resources/books,*.es.md,*.eo.md
 # Project-specific vocabulary (Esperanto words, proper names, technical terms).
 ignore-words = .codespell-ignore-words.txt
 # Only report words the checker is confident about.

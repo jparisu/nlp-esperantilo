@@ -1,0 +1,64 @@
+# FAQ
+
+Common questions about Esperanto and about turning it into data for the library.
+Each answer links to the page where the topic is covered in full.
+
+??? question "What is Esperanto, in one sentence?"
+    A constructed international auxiliary language, published by L. L. Zamenhof in
+    1887, designed to be **regular and easy to learn** — with no grammatical
+    exceptions. See [History](history.md).
+
+??? question "Why build an NLP library for Esperanto specifically?"
+    Because its grammar is fully regular, so a **rule-based** tokenizer,
+    lemmatizer and POS tagger are actually feasible — endings and affixes follow
+    rules that never break, unlike in natural languages. See
+    [History § Why it matters here](history.md#why-it-matters-here).
+
+??? question "How do I know a word's part of speech?"
+    From its final vowel: `-o` is a noun, `-a` an adjective, `-e` an adverb, `-i`
+    a verb infinitive. This one rule covers most content words. See
+    [Grammar § Word-class endings](grammar.md#word-class-endings).
+
+??? question "How does lemmatization work in Esperanto?"
+    Peel the grammatical endings and affixes off a word to reach its root, then
+    re-attach the class vowel. `malsanulejojn` → strip `-n`, `-j`, `-o`, then
+    `-ej-`, `-ul-`, `mal-` → root `san-`. Each step is a table lookup. See
+    [Vocabulary § Affixes](vocabulary.md#affixes).
+
+??? question "What are the correlatives?"
+    A regular 5 × 9 grid of 45 common words (this/that/which/some/every/no ×
+    thing/person/place/time…), each a prefix plus an ending. Learn the grid and
+    you get all 45. See [Grammar § Correlatives](grammar.md#correlatives).
+
+??? question "What is the accusative `-n` for?"
+    It marks the **direct object** of a verb (and direction of motion). Nouns and
+    their adjectives both take it, and it stacks after the plural `-j`:
+    `interesajn librojn`. See [Grammar § Grammatical inflections](grammar.md#grammatical-inflections).
+
+??? question "How should I handle the special letters `ĉ ĝ ĥ ĵ ŝ ŭ` in code?"
+    Treat them as ordinary Unicode letters and **normalise** input to a single
+    canonical form (NFC, real diacritics) before tokenizing, converting the
+    x-system (`cx`, `gx`, …) or h-system if present. See
+    [Grammar § Alphabet](grammar.md#alphabet).
+
+??? question "What counts as a stop-word in Esperanto?"
+    The article `la`, the pronouns, the correlatives, and a fixed set of
+    prepositions, conjunctions and common adverbs — mostly closed classes, so the
+    list is finite. This project ships 250 of them. See
+    [Vocabulary § Stop-words](vocabulary.md#stop-words).
+
+??? question "Where does the library get its word lists from?"
+    From JSON files under `resources/`, which are the single source of truth: the
+    docs render them at build time and the library will read the same files at
+    runtime, so they can never disagree. See
+    [Vocabulary § Format](vocabulary.md#format).
+
+??? question "Where can I find real Esperanto text to test the library?"
+    From corpora such as the [Tekstaro de Esperanto](https://tekstaro.com), the
+    Esperanto Wikipedia, and public-domain books on Project Gutenberg — mind each
+    source's licence. See [Resources § Corpora](resources.md#corpora).
+
+??? question "Is the grammar content here trustworthy?"
+    It follows Ivy Kellerman Reed's *A Complete Grammar of Esperanto* (1910), a
+    public-domain reference included in the repository. See
+    [Resources § Books](resources.md#books).

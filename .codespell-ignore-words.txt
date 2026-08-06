@@ -7,6 +7,10 @@ dum
 mian
 nin
 #
+# Spanish nav labels in mkdocs.yml (the translated pages themselves are skipped,
+# see .codespellrc, but mkdocs.yml holds all languages at once):
+comandos
+#
 esperantilo
 zamenhof
 fundamento

@@ -11,6 +11,16 @@ edit_uri: edit/main/docs/
 
 copyright: Licensed under the Apache License 2.0
 
+# Link validation. `mkdocs build --strict` (run in CI by docs.yml and
+# docs-preview.yml) already fails on links to missing pages; `anchors: warn`
+# additionally makes it fail on broken in-page anchors (#section), which
+# otherwise only print as info. This catches, for example, a cross-page
+# "[…](grammar.md#afiksoj)" whose target heading was renamed or mistranslated.
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
 theme:
   name: material
   language: en
@@ -67,6 +77,36 @@ hooks:
 
 plugins:
   - search
+  # Enabled automatically by mkdocstrings; declared here only to configure it.
+  # `resolve_closest` matters because the site is built once per language: the
+  # same API identifiers exist in `/library/api/`, `/es/library/api/` and
+  # `/eo/library/api/`, and a reference must resolve to the copy in the reader's
+  # own language rather than to whichever was registered first.
+  - autorefs:
+      resolve_closest: true
+  # Builds the "Library → API reference" page from the docstrings of
+  # src/esperantilo/. The page holds only `::: esperantilo…` directives, so the
+  # reference and the code can never disagree.
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          # The package lives under src/, which is not on sys.path.
+          paths: [src]
+          options:
+            docstring_style: google
+            docstring_section_style: table
+            heading_level: 3
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            show_root_heading: true
+            show_root_full_path: true
+            show_signature_annotations: true
+            show_source: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
   # Internationalization: new languages are added here, and their pages as
   # `<page>.<locale>.md` next to the English ones. Missing translations fall
   # back to the English page, so translations can be added incrementally.
@@ -87,6 +127,11 @@ plugins:
           site_description: Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí
           nav_translations:
             Home: Inicio
+            # The two parts of the site.
+            Library: Biblioteca
+            Sentence segmentation: Segmentación en frases
+            API reference: Referencia de la API
+            Guide: Guía
             Git: Git
             What is Git: Qué es Git
             Organization: Organización
@@ -118,6 +163,11 @@ plugins:
           site_name: NLP Esperantilo
           nav_translations:
             Home: Hejmo
+            # The two parts of the site.
+            Library: Biblioteko
+            Sentence segmentation: Fraz-dividado
+            API reference: API-referenco
+            Guide: Gvidilo
             Git: Git
             GitHub: GitHub
             Python Library: Python-Biblioteko
@@ -162,37 +212,54 @@ extra:
       link: https://github.com/jparisu/nlp-esperantilo
       name: NLP Esperantilo on GitHub
 
+# The site has exactly two parts, and the navigation says so:
+#
+#   Library — the reference manual of the `esperantilo` package itself: what it
+#             does today, and what every public name means. Its API page is
+#             generated from the source by mkdocstrings.
+#   Guide   — how a library like it is built and shipped: Git, GitHub, Python
+#             packaging and the Esperanto linguistics that go inside.
+#
+# Keep new pages on the right side of that line: a page describing *the
+# library's behaviour* belongs to Library, a page *teaching a technique* belongs
+# to Guide. The two parts cross-link freely.
 nav:
   - Home: index.md
-  - Git:
-      - git/index.md
-      - What is Git: git/git.md
-      - Organization: git/organization.md
-      - Commands: git/commands.md
-      - Undoing changes: git/undoing-changes.md
-      - Example: git/example.md
-      - FAQ: git/git-faq.md
-  - GitHub:
-      - github/index.md
-      - What is GitHub: github/github.md
-      - First steps: github/first-steps.md
-      - Workflow: github/workflow.md
-      - GitHub Actions: github/actions.md
-      - Repository configuration: github/repository-configuration.md
-      - GitHub Pages: github/pages.md
-      - FAQ: github/github-faq.md
-  - Python Library:
-      - python-library/index.md
-      - What is a library: python-library/library.md
-      - Organization: python-library/organization.md
-      - Installation and usage: python-library/installation-and-usage.md
-      - API: python-library/api.md
-      - Testing: python-library/testing.md
-      - FAQ: python-library/python-faq.md
-  - Esperanto:
-      - esperanto/index.md
-      - History: esperanto/history.md
-      - Grammar: esperanto/grammar.md
-      - Vocabulary: esperanto/vocabulary.md
-      - Resources: esperanto/resources.md
-      - FAQ: esperanto/esperanto-faq.md
+  - Library:
+      - library/index.md
+      - Sentence segmentation: library/sentence-segmentation.md
+      - API reference: library/api.md
+  - Guide:
+      - guide/index.md
+      - Git:
+          - guide/git/index.md
+          - What is Git: guide/git/git.md
+          - Organization: guide/git/organization.md
+          - Commands: guide/git/commands.md
+          - Undoing changes: guide/git/undoing-changes.md
+          - Example: guide/git/example.md
+          - FAQ: guide/git/git-faq.md
+      - GitHub:
+          - guide/github/index.md
+          - What is GitHub: guide/github/github.md
+          - First steps: guide/github/first-steps.md
+          - Workflow: guide/github/workflow.md
+          - GitHub Actions: guide/github/actions.md
+          - Repository configuration: guide/github/repository-configuration.md
+          - GitHub Pages: guide/github/pages.md
+          - FAQ: guide/github/github-faq.md
+      - Python Library:
+          - guide/python-library/index.md
+          - What is a library: guide/python-library/library.md
+          - Organization: guide/python-library/organization.md
+          - Installation and usage: guide/python-library/installation-and-usage.md
+          - API: guide/python-library/api.md
+          - Testing: guide/python-library/testing.md
+          - FAQ: guide/python-library/python-faq.md
+      - Esperanto:
+          - guide/esperanto/index.md
+          - History: guide/esperanto/history.md
+          - Grammar: guide/esperanto/grammar.md
+          - Vocabulary: guide/esperanto/vocabulary.md
+          - Resources: guide/esperanto/resources.md
+          - FAQ: guide/esperanto/esperanto-faq.md

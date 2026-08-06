@@ -18,7 +18,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.13"]
+        # The oldest and the newest version `requires-python` in pyproject.toml
+        # promises to support. `fail-fast: false` runs both even if one breaks,
+        # so a version-specific failure is obvious.
+        python-version: ["3.9", "3.13"]
     steps:
 
       - name: Checkout repository
