@@ -18,13 +18,15 @@
         <link rel="prev" href="../">
       
       
+        <link rel="next" href="../prepozicioj/">
+      
       
         
-          <link rel="alternate" href="../../../../library/sentence-segmentation/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../../../../es/library/sentence-segmentation/" hreflang="es">
+          <link rel="alternate" href="../../../../es/guide/esperanto/word-lists/ignorindaj-vortoj/" hreflang="es">
         
-          <link rel="alternate" href="../../../../eo/library/sentence-segmentation/" hreflang="eo">
+          <link rel="alternate" href="../../../../eo/guide/esperanto/word-lists/ignorindaj-vortoj/" hreflang="eo">
         
       
       
@@ -181,19 +183,19 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../library/sentence-segmentation/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../../../es/library/sentence-segmentation/" hreflang="es" class="md-select__link">
+            <a href="../../../../es/guide/esperanto/word-lists/ignorindaj-vortoj/" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../../../eo/library/sentence-segmentation/" hreflang="eo" class="md-select__link">
+            <a href="../../../../eo/guide/esperanto/word-lists/ignorindaj-vortoj/" hreflang="eo" class="md-select__link">
               Esperanto
             </a>
           </li>
@@ -1548,6 +1550,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1664,17 +1672,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#words" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1835,10 +1832,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-this-list-from-the-library" class="md-nav__link">
+  <a href="#sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using this list from the library
+        Sources
       
     </span>
   </a>
@@ -1849,6 +1846,90 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prepozicioj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepositions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korelativoj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Correlatives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nombroj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1904,17 +1985,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#words" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2075,10 +2145,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-this-list-from-the-library" class="md-nav__link">
+  <a href="#sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using this list from the library
+        Sources
       
     </span>
   </a>
@@ -2103,17 +2173,18 @@
 
 
 <h1 id="stop-words">Stop-words<a class="headerlink" href="#stop-words" title="Permanent link">&para;</a></h1>
-<p>Esperanto stop-words — the high-frequency, low-content words that a text-processing pipeline usually filters out — with their English translation and their grammatical category.</p>
+<p>The high-frequency, low-content words that a text-processing pipeline usually filters out before analysing a text.</p>
+<div class="admonition warning">
+<p class="admonition-title">English only</p>
+<p>These pages are generated from the data files, which carry English
+translations only. They are not translated into the other languages of
+this site.</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">About this list</p>
-<p><strong>250 entries</strong>, generated from <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/ignorindaj-vortoj.json"><code>resources/ignorindaj-vortoj.json</code></a>. The page and the file cannot drift apart: the table below <em>is</em> the file.</p>
-<p>Download: <a href="../ignorindaj-vortoj.json"><code>ignorindaj-vortoj.json</code></a></p>
+<p><strong>250 entries</strong>, selected from <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/vortoj.json"><code>resources/vortoj.json</code></a> by the filter <code>{"ignorinda": true}</code>. The page and the data cannot drift apart: the table below <em>is</em> the file.</p>
+<p>Download the whole lexicon: <a href="../vortoj.json"><code>vortoj.json</code></a></p>
 </div>
-<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://github.com/stopwords-iso/stopwords-eo">stopwords-iso/stopwords-eo</a> (MIT) — The reference public list of Esperanto stop-words (173 words, no translations). Every word of that list is included here.</li>
-<li><a href="https://github.com/jparisu/nlp-esperantilo">NLP Esperantilo</a> (Apache-2.0) — Words added by this project, mostly prepositions and correlatives missing from the reference list.</li>
-</ul>
 <h2 id="words">Words<a class="headerlink" href="#words" title="Permanent link">&para;</a></h2>
 <h3 id="artikolo-article">Artikolo — Article<a class="headerlink" href="#artikolo-article" title="Permanent link">&para;</a></h3>
 <table>
@@ -3784,13 +3855,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="using-this-list-from-the-library">Using this list from the library<a class="headerlink" href="#using-this-list-from-the-library" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;resources/ignorindaj-vortoj.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">words</span> <span class="o">=</span> <span class="p">{</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;vorto&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;vortoj&quot;</span><span class="p">]}</span>
-</span></code></pre></div>
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/stopwords-iso/stopwords-eo">stopwords-iso/stopwords-eo</a> (MIT) — The reference public list of Esperanto stop-words (173 words, no translations). Every word of that list is included here.</li>
+<li><a href="https://github.com/jparisu/nlp-esperantilo">NLP Esperantilo</a> (Apache-2.0) — Words added by this project, mostly prepositions and correlatives missing from the reference list.</li>
+</ul>
 
 
 
@@ -3841,6 +3910,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../prepozicioj/" class="md-footer__link md-footer__link--next" aria-label="Next: Prepositions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Prepositions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

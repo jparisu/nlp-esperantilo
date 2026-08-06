@@ -1693,6 +1693,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1756,7 +1762,91 @@
   <span class="md-ellipsis">
     
   
-    Ignorindaj vortoj
+    Stop-words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/prepozicioj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepositions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/korelativoj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Correlatives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/nombroj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numbers
   
 
     
@@ -1958,7 +2048,7 @@ konjunkcioj.</p>
 prezentatan ĉi tie aŭtomate:</p>
 <p><strong><a href="../word-lists/ignorindaj-vortoj/">Ignorindaj vortoj →</a></strong> — 250 eroj, ĉiu kun sia
 angla traduko, gramatika kategorio kaj deveno. Ĝi estas generita el
-<code>resources/ignorindaj-vortoj.json</code>, la sama dosiero kiun legos la biblioteko
+<code>resources/vortoj.json</code>, la sama dosiero kiun legos la biblioteko
 rultempe, por ke la dokumentaro kaj la datumoj neniam povu malkonsenti.</p>
 </div>
 <p>Reprezenta specimeno, laŭ kategorio:</p>
@@ -2397,7 +2487,7 @@ dokumentaro. La plena skemo estas dokumentita en <code>resources/README.md</code
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;resources/ignorindaj-vortoj.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;resources/vortoj.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">stop_words</span> <span class="o">=</span> <span class="p">{</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;vorto&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;vortoj&quot;</span><span class="p">]}</span>
 </span></code></pre></div>
 <h2 id="kien-iri-poste">Kien iri poste<a class="headerlink" href="#kien-iri-poste" title="Permanent link">&para;</a></h2>

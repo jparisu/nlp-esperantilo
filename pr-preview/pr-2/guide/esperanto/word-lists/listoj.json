@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ignorindaj-vortoj",
+    "titolo": "Stop-words",
+    "priskribo": "The high-frequency, low-content words that a text-processing pipeline usually filters out before analysing a text.",
+    "filtro": { "ignorinda": true }
+  },
+  {
+    "id": "prepozicioj",
+    "titolo": "Prepositions",
+    "priskribo": "Esperanto prepositions. They govern the nominative, so the noun that follows keeps its plain `-o` / `-oj` form; the accusative after one of them marks direction, not object.",
+    "filtro": { "kategorio": "prepozicio" }
+  },
+  {
+    "id": "korelativoj",
+    "titolo": "Correlatives",
+    "priskribo": "The correlative table: 45 words built from five prefixes (`ki-`, `ti-`, `i-`, `ĉi-`, `neni-`) and nine endings, plus the accusative and plural forms the table generates.",
+    "filtro": { "kategorio": "korelativo" }
+  },
+  {
+    "id": "nombroj",
+    "titolo": "Numbers",
+    "priskribo": "Numerals and the words used to build them. Cardinals are invariable roots; ordinals add `-a`, and `miliono` and `miliardo` behave as ordinary nouns.",
+    "filtro": { "kategorio": "nombro" }
+  }
+]
