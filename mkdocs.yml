@@ -71,9 +71,18 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-# Generates the "Word lists" pages of the Esperanto section from resources/*.json.
+# Generates the "Word lists" pages of the Esperanto section from resources/.
+# The hook lives inside docs/ because it is documentation tooling, not library
+# code — which means it also has to be kept out of the built site, see
+# `exclude_docs` below.
 hooks:
-  - hooks/word_lists.py
+  - docs/hooks/word_lists.py
+
+# Files under docs/ that are build inputs, not pages. Without this the hook's
+# source and the `__pycache__` Python writes next to it would be copied verbatim
+# into the published site.
+exclude_docs: |
+  hooks/
 
 plugins:
   - search

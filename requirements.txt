@@ -1,9 +1,0 @@
-# Runtime dependencies of the library.
-# The library is rule-based and has no third-party runtime dependency yet.
-#
-# Development extras live in pyproject.toml:
-#   pip install -e ".[test]"   # testing
-#   pip install -e ".[docs]"   # documentation
-#
-# Documentation dependencies are also pinned in docs/requirements.txt,
-# which is the file used by the GitHub Actions workflows.

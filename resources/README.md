@@ -2,7 +2,7 @@
 
 The linguistic data of the project, and the single source of truth for it: the
 documentation renders these files as pages at build time (see
-[`hooks/word_lists.py`](../hooks/word_lists.py)), and the library will read the
+[`docs/hooks/word_lists.py`](../docs/hooks/word_lists.py)), and the library will read the
 same files at runtime once it grows past its current skeleton.
 
 Two files, with different jobs:

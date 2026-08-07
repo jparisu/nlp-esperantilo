@@ -144,7 +144,7 @@ Esperanto, estas finia listo, kiun la biblioteko povas teni en dosiero.
 Ĉiuj ĉi tiuj listoj estas konservataj same, kiel **JSON-dosieroj sub `resources/`**,
 por ke unu sola fonto de vero povu nutri kaj la kodon (rultempe) kaj la dokumentaron
 (konstrutempe, per
-[`hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/hooks/word_lists.py)).
+[`docs/hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/hooks/word_lists.py)).
 La nomoj de la kampoj estas en Esperanto, kongruaj kun la dosiernomoj; la tradukeblaj
 kampoj estas objektoj indeksitaj laŭ lingvokodo:
 

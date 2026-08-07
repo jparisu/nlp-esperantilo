@@ -28,8 +28,8 @@ nlp-esperantilo/
 ├── .github/workflows/    # Continuous integration: tests, docs, previews, spell check
 ├── docs/                 # Documentation sources (MkDocs)
 │   ├── library/          #   reference manual of the library
-│   └── guide/            #   the guide: Git, GitHub, Python, Esperanto
-├── hooks/                # Build-time hooks that turn resources/ into doc pages
+│   ├── guide/            #   the guide: Git, GitHub, Python, Esperanto
+│   └── hooks/            #   build-time hooks that turn resources/ into pages
 ├── resources/            # Machine-readable word lists (JSON)
 ├── src/esperantilo/      # The Python library
 ├── tests/                # Test suite (pytest)
@@ -89,7 +89,7 @@ request is merged, and the preview is removed when it closes.
 
 The linguistic data lives in [`resources/`](resources/README.md) as JSON, and
 the documentation pages under *Esperanto → Word lists* are generated from those
-files at build time by [`hooks/word_lists.py`](hooks/word_lists.py). Adding an
+files at build time by [`docs/hooks/word_lists.py`](docs/hooks/word_lists.py). Adding an
 entry to `resources/listoj.json` is enough for a new page to appear — no page to
 write, no navigation entry to add. The pages are English only.
 
@@ -108,11 +108,11 @@ a preposition that is also a stop-word is stored once and shown by both lists.
 
 ```bash
 pip install codespell
-codespell                  # configuration in .codespellrc
+codespell                  # settings in [tool.codespell] in pyproject.toml
 ```
 
 Project-specific vocabulary (Esperanto words, proper names) goes in
-`.codespell-ignore-words.txt`.
+[`.codespell/ignore-words.txt`](.codespell/ignore-words.txt).
 
 ## License
 

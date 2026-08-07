@@ -149,7 +149,7 @@ Todas estas listas se almacenan de la misma forma, como **archivos JSON bajo
 `resources/`**, para que una única fuente de verdad pueda alimentar tanto el
 código (en tiempo de ejecución) como la documentación (en tiempo de construcción,
 mediante
-[`hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/hooks/word_lists.py)).
+[`docs/hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/hooks/word_lists.py)).
 Los nombres de los campos están en Esperanto, coincidiendo con los nombres de
 archivo; los campos traducibles son objetos indexados por locale:
 

@@ -29,8 +29,9 @@ from mkdocs.structure.files import File
 
 log = logging.getLogger("mkdocs.hooks.word_lists")
 
-#: Directory holding the source data, relative to the repository root.
-RESOURCES_DIR = Path(__file__).resolve().parent.parent / "resources"
+#: Directory holding the source data. This file lives in `docs/hooks/`, so the
+#: repository root is two levels up.
+RESOURCES_DIR = Path(__file__).resolve().parents[2] / "resources"
 
 #: The lexicon and the list definitions.
 LEXICON_FILE = "vortoj.json"

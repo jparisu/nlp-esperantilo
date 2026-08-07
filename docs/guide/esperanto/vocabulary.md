@@ -144,7 +144,7 @@ else in Esperanto, are a finite list the library can hold in a file.
 All of these lists are stored the same way, as **JSON files under `resources/`**,
 so that a single source of truth can feed both the code (at runtime) and the
 documentation (at build time, via
-[`hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/hooks/word_lists.py)).
+[`docs/hooks/word_lists.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/hooks/word_lists.py)).
 Field names are in Esperanto, matching the file names; translatable fields are
 objects keyed by locale:
 

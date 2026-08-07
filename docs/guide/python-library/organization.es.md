@@ -13,13 +13,12 @@ de Python:
 ```text
 nlp-esperantilo/
 ├── pyproject.toml        # metadatos del proyecto y configuración de construcción
-├── requirements.txt      # dependencias de ejecución (ninguna, por ahora)
 ├── README.md             # portada
 ├── LICENSE               # texto de la licencia
 ├── mkdocs.yml            # configuración de la documentación
 ├── docs/                 # la documentación que estás leyendo
+│   └── hooks/            #   hooks que convierten resources/ en páginas
 ├── resources/            # archivos de datos (listas de palabras) del proyecto
-├── hooks/                # hooks de construcción que convierten resources/ en páginas
 ├── .github/workflows/    # integración continua
 ├── src/
 │   └── esperantilo/      # el paquete en sí
@@ -70,7 +69,8 @@ docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "mkdocs-static-i18n>=1.2"]
 where = ["src"]                        # encuentra el paquete bajo src/
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+pythonpath = ["src"]      # so `pytest` works without installing
+testpaths = ["tests", "src"]
 ```
 
 Vale la pena entender tres partes:
@@ -97,11 +97,13 @@ hace cada uno?
 - **`requirements.txt`** es una lista de conveniencia, usada a menudo para fijar
   versiones exactas de un *entorno* reproducible.
 
-En este proyecto la biblioteca **no tiene dependencias de ejecución** (está basada
-en reglas), así que
-[`requirements.txt`](https://github.com/jparisu/nlp-esperantilo/blob/main/requirements.txt)
-está esencialmente vacío — solo documenta dónde viven los extras de desarrollo.
-Las dependencias propias de la documentación se fijan aparte en
+**Este proyecto no tiene un `requirements.txt` en la raíz.** La biblioteca está
+basada en reglas y no tiene ninguna dependencia de ejecución, así que el archivo
+no diría nada que `pyproject.toml` no diga ya — y un archivo vacío que parece
+importante es peor que no tenerlo. Los extras de desarrollo se declaran en
+`[project.optional-dependencies]` y se instalan con `pip install -e ".[test]"`.
+
+El único sitio donde una lista fijada **sí** merece la pena es en
 `docs/requirements.txt`, que es el archivo que usan los
 [workflows de CI](../github/actions.md).
 

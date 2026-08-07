@@ -188,18 +188,18 @@ automáticamente:
 
 ```yaml
 - run: pip install codespell
-- run: codespell            # la configuración viene de .codespellrc
+- run: codespell            # la configuración viene de pyproject.toml
 ```
 
 La parte interesante es enseñarle al corrector las palabras que no conoce —
 términos en Esperanto, nombres propios, jerga técnica— para que no se reporten como
 errores. Esa configuración vive en
-[`.codespellrc`](https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc):
+[`pyproject.toml`](https://github.com/jparisu/nlp-esperantilo/blob/main/pyproject.toml):
 
 ```ini
-[codespell]
+[tool.codespell]
 skip = ./.git,./.devs,./site,./.venv,...   # rutas que no se comprueban
-ignore-words = .codespell-ignore-words.txt # vocabulario aceptado del proyecto
+ignore-words = ".codespell/ignore-words.txt" # vocabulario aceptado del proyecto
 builtin = clear,rare                        # solo correcciones con confianza
 ```
 

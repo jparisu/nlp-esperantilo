@@ -13,13 +13,12 @@ Python-pakoj:
 ```text
 nlp-esperantilo/
 ├── pyproject.toml        # metadatenoj de la projekto kaj konstrua agordo
-├── requirements.txt      # rultempaj dependecoj (neniuj, nuntempe)
 ├── README.md             # ĉefpaĝo
 ├── LICENSE               # licenca teksto
 ├── mkdocs.yml            # agordo de la dokumentaro
 ├── docs/                 # la dokumentaro, kiun vi legas
+│   └── hooks/            #   hokoj, kiuj igas resources/ dokumentaj paĝoj
 ├── resources/            # datumdosieroj (vortlistoj) distribuataj kun la projekto
-├── hooks/                # konstrutempaj hokoj, kiuj igas resources/ dokumentaj paĝoj
 ├── .github/workflows/    # kontinua integrado
 ├── src/
 │   └── esperantilo/      # la pako mem
@@ -69,7 +68,8 @@ docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "mkdocs-static-i18n>=1.2"]
 where = ["src"]                        # trovu la pakon sub src/
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+pythonpath = ["src"]      # so `pytest` works without installing
+testpaths = ["tests", "src"]
 ```
 
 Tri partojn indas kompreni:
@@ -95,11 +95,13 @@ Simpla listo de dependecoj, unu por linio, tradicie uzata kun
 - **`requirements.txt`** estas oportuna listo, ofte uzata por fiksi precizajn versiojn
   por reproduktebla *medio*.
 
-En ĉi tiu projekto la biblioteko havas **neniujn rultempajn dependecojn** (ĝi estas
-regul-bazita), do
-[`requirements.txt`](https://github.com/jparisu/nlp-esperantilo/blob/main/requirements.txt)
-estas esence malplena — ĝi nur dokumentas kie vivas la disvolvaj kromaĵoj. La proprajn
-dependecojn de la dokumentaro oni fiksas aparte en `docs/requirements.txt`, kiu estas
+**Ĉi tiu projekto ne havas `requirements.txt` en la radiko.** La biblioteko estas
+regul-bazita kaj havas neniun rultempan dependecon, do la dosiero dirus nenion,
+kion `pyproject.toml` ne jam diras — kaj malplena dosiero, kiu aspektas grava,
+estas pli malbona ol neniu dosiero. La disvolvaj kromaĵoj estas deklaritaj en
+`[project.optional-dependencies]` kaj instalataj per `pip install -e ".[test]"`.
+
+La sola loko, kie fiksita listo **ja** valoras, estas `docs/requirements.txt`, kiu estas
 la dosiero, kiun uzas la [CI-laborfluoj](../github/actions.md).
 
 ### `__init__.py`

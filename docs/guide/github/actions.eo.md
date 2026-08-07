@@ -184,18 +184,18 @@ aŭtomate:
 
 ```yaml
 - run: pip install codespell
-- run: codespell            # la agordo venas de .codespellrc
+- run: codespell            # la agordo venas de pyproject.toml
 ```
 
 La interesa parto estas instrui al la kontrolilo la vortojn, kiujn ĝi ne konas —
 Esperantajn terminojn, proprajn nomojn, teknikan ĵargonon — por ke ili ne estu
 raportataj kiel eraroj. Tiu agordo vivas en
-[`.codespellrc`](https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc):
+[`pyproject.toml`](https://github.com/jparisu/nlp-esperantilo/blob/main/pyproject.toml):
 
 ```ini
-[codespell]
+[tool.codespell]
 skip = ./.git,./.devs,./site,./.venv,...   # vojoj kiujn ne kontroli
-ignore-words = .codespell-ignore-words.txt # akceptita vortprovizo de la projekto
+ignore-words = ".codespell/ignore-words.txt" # akceptita vortprovizo de la projekto
 builtin = clear,rare                        # nur memfidaj korektoj
 ```
 

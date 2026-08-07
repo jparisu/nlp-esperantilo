@@ -20,7 +20,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Text Processing :: Linguistic",
 ]
-dependencies = []
+dependencies = [
+    # Used by `esperantilo.wiki` to reach the MediaWiki and Wikidata web APIs.
+    "requests>=2.25",
+]
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]
@@ -39,6 +42,23 @@ Issues = "https://github.com/jparisu/nlp-esperantilo/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.codespell]
+# Settings live here rather than in a `.codespellrc` at the root: codespell only
+# auto-discovers `setup.cfg`, `.codespellrc` and `pyproject.toml`, so a config in
+# its own directory would force `codespell --config …` on every run. The word
+# list, which is the part that actually grows, lives in `.codespell/`.
+#
+# Paths that must not be spell checked. codespell only knows English, so the
+# translated pages (`<page>.<locale>.md`) are skipped: ordinary Spanish and
+# Esperanto words get reported as English typos, which cannot be fixed, only
+# ignored. Same for ./resources/books, which holds verbatim public-domain texts.
+skip = "./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock,./resources/books,*.es.md,*.eo.md"
+# Project-specific vocabulary (Esperanto words, proper names, technical terms).
+ignore-words = ".codespell/ignore-words.txt"
+# Only report words the checker is confident about.
+builtin = "clear,rare"
+check-filenames = true
 
 [tool.pytest.ini_options]
 # Put `src/` on sys.path for the test run. Without this, `pytest` on a fresh

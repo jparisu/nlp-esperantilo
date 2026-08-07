@@ -13,13 +13,12 @@ packages:
 ```text
 nlp-esperantilo/
 ├── pyproject.toml        # project metadata and build configuration
-├── requirements.txt      # runtime dependencies (none, for now)
 ├── README.md             # front page
 ├── LICENSE               # licence text
 ├── mkdocs.yml            # documentation configuration
 ├── docs/                 # the documentation you are reading
+│   └── hooks/            #   build-time hooks that turn resources/ into pages
 ├── resources/            # data files (word lists) shipped with the project
-├── hooks/                # build-time hooks that turn resources/ into doc pages
 ├── .github/workflows/    # continuous integration
 ├── src/
 │   └── esperantilo/      # the package itself
@@ -70,7 +69,8 @@ docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "mkdocs-static-i18n>=1.2"]
 where = ["src"]                        # find the package under src/
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+pythonpath = ["src"]      # so `pytest` works without installing
+testpaths = ["tests", "src"]
 ```
 
 Three parts are worth understanding:
@@ -96,11 +96,16 @@ does what?
 - **`requirements.txt`** is a convenience list, often used to pin exact versions
   for a reproducible *environment*.
 
-In this project the library has **no runtime dependencies** (it is rule-based),
-so [`requirements.txt`](https://github.com/jparisu/nlp-esperantilo/blob/main/requirements.txt)
-is essentially empty — it only documents where the development extras live. The
-documentation's own dependencies are pinned separately in `docs/requirements.txt`,
-which is the file the [CI workflows](../github/actions.md) use.
+**This project has no root `requirements.txt`.** The library is rule-based and
+has no runtime dependency, so the file would hold nothing that
+`pyproject.toml` does not already say — and an empty file that looks meaningful
+is worse than no file. Development extras are declared as
+`[project.optional-dependencies]` and installed with `pip install -e ".[test]"`.
+
+The one place a pinned list *does* earn its keep is
+[`docs/requirements.txt`](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/requirements.txt):
+it fixes exact versions of the documentation toolchain so that the
+[CI workflows](../github/actions.md) build the site the same way every time.
 
 ### `__init__.py`
 

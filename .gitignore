@@ -33,3 +33,6 @@ site/
 .vscode/
 *.swp
 .DS_Store
+
+# Local working notes and course material: kept on disk, never committed.
+.devs/

@@ -30,7 +30,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install codespell
 
-      # Configuration (which paths to skip and which words to accept) lives in
-      # .codespellrc, so that local runs and CI behave identically.
+      # Settings live in [tool.codespell] in pyproject.toml and the accepted
+      # vocabulary in .codespell/ignore-words.txt, both of which codespell picks
+      # up on its own — so local runs and CI behave identically with no flags.
       - name: Run codespell
         run: codespell

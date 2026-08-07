@@ -178,19 +178,20 @@ typos automatically:
 
 ```yaml
 - run: pip install codespell
-- run: codespell            # configuration comes from .codespellrc
+- run: codespell            # settings come from pyproject.toml
 ```
 
 The interesting part is teaching the checker about words it does not know —
 Esperanto terms, proper names, technical jargon — so they are not reported as
-errors. That configuration lives in
-[`.codespellrc`](https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc):
+errors. codespell picks its settings up from `[tool.codespell]` in
+[`pyproject.toml`](https://github.com/jparisu/nlp-esperantilo/blob/main/pyproject.toml),
+which is why the workflow needs no flags:
 
-```ini
-[codespell]
-skip = ./.git,./.devs,./site,./.venv,...   # paths not to check
-ignore-words = .codespell-ignore-words.txt # accepted project vocabulary
-builtin = clear,rare                        # only confident corrections
+```toml
+[tool.codespell]
+skip = "./.git,./.devs,./site,./.venv,..."      # paths not to check
+ignore-words = ".codespell/ignore-words.txt"    # accepted project vocabulary
+builtin = "clear,rare"                          # only confident corrections
 ```
 
 Keeping the configuration in a file (rather than in the workflow) means a
