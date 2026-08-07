@@ -1,12 +1,12 @@
-"""MkDocs hook that renders the word lists of `resources/` as documentation pages.
+"""MkDocs hook rendering the word lists of `resources/esperanto/` as doc pages.
 
 There are two data files, and no word is written twice:
 
-* `resources/vortoj.json` — the **lexicon**: every word once, with its category,
-  its English translation and a note.
-* `resources/listoj.json` — the **lists**: a title, a description and a filter
-  over the lexicon. A word that is both a preposition and a stop-word is stored
-  once and shown by both lists.
+* `resources/esperanto/vortoj.json` — the **lexicon**: every word once, with its
+  category, its English translation and a note.
+* `resources/esperanto/listoj.json` — the **lists**: a title, a description and
+  a filter over the lexicon. A word that is both a preposition and a stop-word
+  is stored once and shown by both lists.
 
 Adding a list means adding one entry to `listoj.json`; its page and its
 navigation entry appear on the next build.
@@ -31,7 +31,7 @@ log = logging.getLogger("mkdocs.hooks.word_lists")
 
 #: Directory holding the source data. This file lives in `docs/hooks/`, so the
 #: repository root is two levels up.
-RESOURCES_DIR = Path(__file__).resolve().parents[2] / "resources"
+RESOURCES_DIR = Path(__file__).resolve().parents[2] / "resources" / "esperanto"
 
 #: The lexicon and the list definitions.
 LEXICON_FILE = "vortoj.json"
@@ -48,7 +48,9 @@ SECTION_TITLE = "Word lists"
 PARENT_SECTION = "Esperanto"
 
 #: Repository used to build "view the source file" links.
-REPOSITORY_BLOB_URL = "https://github.com/jparisu/nlp-esperantilo/blob/main/resources"
+REPOSITORY_BLOB_URL = (
+    "https://github.com/jparisu/nlp-esperantilo/blob/main/resources/esperanto"
+)
 
 #: Shown on every generated page: the data is not translated.
 ENGLISH_ONLY = (

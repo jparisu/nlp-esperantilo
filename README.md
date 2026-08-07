@@ -30,8 +30,12 @@ nlp-esperantilo/
 │   ├── library/          #   reference manual of the library
 │   ├── guide/            #   the guide: Git, GitHub, Python, Esperanto
 │   └── hooks/            #   build-time hooks that turn resources/ into pages
-├── resources/            # Machine-readable word lists (JSON)
+├── resources/            # Data and notebooks that are not code
+│   ├── esperanto/        #   machine-readable word lists (JSON) and reference texts
+│   └── notebooks/        #   notebooks for students, meant for Google Colab
 ├── src/esperantilo/      # The Python library
+│   ├── nlp/              #   analysing text that is already in hand
+│   └── wiki/             #   fetching text from Wikipedia
 ├── tests/                # Test suite (pytest)
 ├── mkdocs.yml            # Documentation configuration
 └── pyproject.toml        # Package metadata and build configuration
@@ -49,13 +53,23 @@ pip install git+https://github.com/jparisu/nlp-esperantilo.git
 ```python
 import esperantilo
 
+# Analyse text you already have.
 esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
 # ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
+
+# Or fetch it from Wikipedia first, in any language.
+page = esperantilo.WikiPage.look_up("Esperanto", language="eo")
+esperantilo.sentence_tokenizer(page.section(page.title))
 ```
 
-The library is at `0.1.0` and ships one feature, sentence segmentation. Tokens,
-lemmas and affix analysis are still a design target — building them is the
-exercise the guide prepares you for.
+The library is at `0.1.0` and ships two features, split into one subpackage
+each: `esperantilo.wiki` reads Wikipedia articles as plain text, and
+`esperantilo.nlp` analyses text that is already in hand — sentence segmentation
+so far. Tokens, lemmas and affix analysis are still a design target — building
+them is the exercise the guide prepares you for.
+
+Its only runtime dependency is [`requests`](https://requests.readthedocs.io/),
+which `pip` installs with it.
 
 ## Development
 
@@ -90,11 +104,11 @@ request is merged, and the preview is removed when it closes.
 The linguistic data lives in [`resources/`](resources/README.md) as JSON, and
 the documentation pages under *Esperanto → Word lists* are generated from those
 files at build time by [`docs/hooks/word_lists.py`](docs/hooks/word_lists.py). Adding an
-entry to `resources/listoj.json` is enough for a new page to appear — no page to
+entry to `resources/esperanto/listoj.json` is enough for a new page to appear — no page to
 write, no navigation entry to add. The pages are English only.
 
-Every word lives once in [`resources/vortoj.json`](resources/vortoj.json); each
-list in [`resources/listoj.json`](resources/listoj.json) is a filter over it, so
+Every word lives once in [`resources/esperanto/vortoj.json`](resources/esperanto/vortoj.json); each
+list in [`resources/esperanto/listoj.json`](resources/esperanto/listoj.json) is a filter over it, so
 a preposition that is also a stop-word is stored once and shown by both lists.
 
 | List | Entries |

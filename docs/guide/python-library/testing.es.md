@@ -42,7 +42,7 @@ tests/
 ```
 
 Fíjate en el emparejamiento: `test_tokenizer.py` acompaña a
-`src/esperantilo/tokenizer.py`, cuyo comportamiento se describe en
+`src/esperantilo/nlp/tokenizer.py`, cuyo comportamiento se describe en
 [Biblioteca → Segmentación en frases](../../library/sentence-segmentation.md).
 Un módulo de código, un módulo de pruebas: en eso consiste toda la convención.
 
@@ -95,14 +95,16 @@ $ pytest
 ===================== test session starts =====================
 configfile: pyproject.toml
 testpaths: tests, src
-collected 25 items
+collected 300 items
 
-tests/test_package.py ....                                [ 16%]
-tests/test_resources.py ....                              [ 32%]
-tests/test_tokenizer.py .............xxx                  [ 96%]
-src/esperantilo/tokenizer.py .                            [100%]
+tests/test_package.py ........                            [  2%]
+tests/test_resources.py ...........................       [ 18%]
+tests/test_tokenizer.py .............xxx                  [ 97%]
+src/esperantilo/nlp/tokenizer.py .                        [ 97%]
+src/esperantilo/wiki/_wiki_api.py ..                      [ 98%]
+src/esperantilo/wiki/wiki.py .....                        [100%]
 
-================ 22 passed, 3 xfailed in 0.03s ================
+=============== 297 passed, 3 xfailed in 0.13s ================
 ```
 
 Las funciones del día a día que usarás:

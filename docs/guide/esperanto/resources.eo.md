@@ -23,7 +23,7 @@ fluecon multe pli rapide ol kun natura lingvo — kio estas oportuna kiam via ce
 Referencaj gramatikoj kaj legaĵoj:
 
 - **_A Complete Grammar of Esperanto_**, Ivy Kellerman Reed (1910) — **en-repo** ĉe
-  `resources/books/esperanto_grammar.txt`. Publik-domajna, sistema gramatiko kun
+  `resources/esperanto/books/esperanto_grammar.txt`. Publik-domajna, sistema gramatiko kun
   gradigitaj ekzercoj; ĝi estas la referenco, kiun sekvas la
   [Gramatika paĝo](grammar.md) de ĉi tiu sekcio. Ankaŭ disponebla kiel
   [Project Gutenberg-e-libro #7787](https://www.gutenberg.org/ebooks/7787).

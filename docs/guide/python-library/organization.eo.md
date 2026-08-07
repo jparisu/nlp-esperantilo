@@ -18,12 +18,16 @@ nlp-esperantilo/
 ├── mkdocs.yml            # agordo de la dokumentaro
 ├── docs/                 # la dokumentaro, kiun vi legas
 │   └── hooks/            #   hokoj, kiuj igas resources/ dokumentaj paĝoj
-├── resources/            # datumdosieroj (vortlistoj) distribuataj kun la projekto
+├── resources/            # datumdosieroj (vortlistoj) kaj notlibroj
 ├── .github/workflows/    # kontinua integrado
 ├── src/
 │   └── esperantilo/      # la pako mem
 │       ├── __init__.py   # la publika API: reeksportoj kaj __all__
-│       └── tokenizer.py  # unu funkcio, unu modulo
+│       ├── nlp/          # unu subpako por ĉiu funkcia areo
+│       │   └── tokenizer.py
+│       └── wiki/
+│           ├── wiki.py       # la publika klaso
+│           └── _wiki_api.py  # privata: la HTTP-klientoj
 └── tests/
     ├── test_package.py    # la pako importiĝas kaj eksponas sian publikan API-on
     ├── test_resources.py  # validigo de la datumdosieroj
@@ -34,6 +38,12 @@ Notu la parigon: `tokenizer.py` en `src/`, `test_tokenizer.py` en `tests/`. Ĝi
 skaliĝas senpense — nova funkcio estas nova modulo kaj nova testmodulo — kaj ĝi
 igas mankantan teston evidenta. Kion tiu specifa modulo faras, estas dokumentita
 en [Biblioteko → Fraz-dividado](../../library/sentence-segmentation.md).
+
+Kiam funkcio kreskas preter unu sola modulo, ĝi fariĝas **subpako**: dosierujo
+kun propra `__init__.py`, kiu reeksportas la publikajn nomojn de tiu funkcio.
+`wiki/` estas tia — publika klaso en `wiki.py` kaj privata HTTP-kliento en
+`_wiki_api.py`, el kiuj nur la klaso estas reeksportata. La uzanto plu skribas
+`from esperantilo import WikiPage` kaj neniam lernas ambaŭ dosiernomojn.
 
 La distinga trajto estas, ke la importebla pako vivas sub `src/`, ne ĉe la radiko de
 la deponejo. La kialo estas subtila sed grava — vidu
@@ -58,7 +68,7 @@ name = "esperantilo"
 version = "0.1.0"
 description = "A rule-based Natural Language Processing library for Esperanto"
 requires-python = ">=3.9"
-dependencies = []                      # regul-bazita: neniuj rultempaj eksteraj dep.
+dependencies = ["requests>=2.25"]      # la sola rultempa dependeco
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]                 # instalata per .[test]

@@ -10,21 +10,24 @@ install it, and what every public name means.
     library like this one is built, shipped and tested. If you are here to
     learn the tooling, start there.
 
-!!! warning "One feature so far"
-    The library is at version `0.1.0` and ships exactly one thing: sentence
-    segmentation. Everything else — tokens, lemmas, affix analysis — is still a
-    [design target](../guide/python-library/api.md), not shipped code.
+!!! warning "Two features so far"
+    The library is at version `0.1.0` and ships two things: reading Wikipedia
+    articles, and sentence segmentation. Everything else — tokens, lemmas, affix
+    analysis — is still a [design target](../guide/python-library/api.md), not
+    shipped code.
 
 <div class="grid cards" markdown>
 
 - [**1. Sentence segmentation**](sentence-segmentation.md) — splitting a text into sentences.
-- [**2. API reference**](api.md) — every public name, generated from the source.
+- [**2. Reading Wikipedia**](wikipedia.md) — fetching an article as plain text, in any language.
+- [**3. API reference**](api.md) — every public name, generated from the source.
 
 </div>
 
 ## Installation
 
-The library has **no runtime dependencies**. Install it straight from GitHub:
+The library depends on [`requests`](https://requests.readthedocs.io/), which
+`pip` pulls in with it. Install it straight from GitHub:
 
 ```bash
 pip install git+https://github.com/jparisu/nlp-esperantilo.git
@@ -38,8 +41,13 @@ Step-by-step instructions, including virtual environments and notebooks, are in
 ```python
 import esperantilo
 
+# Analyse text you already have.
 esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
 # ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
+
+# Or fetch it from Wikipedia first.
+page = esperantilo.WikiPage.look_up("Esperanto", language="eo")
+esperantilo.sentence_tokenizer(page.section(page.title))
 ```
 
 ## The public API
@@ -49,7 +57,8 @@ top-level `esperantilo` module, and is listed in its `__all__`:
 
 | Name | Kind | What it is |
 | --- | --- | --- |
-| [`sentence_tokenizer`](api.md#esperantilo.tokenizer.sentence_tokenizer) | function | Splits a text into sentences. |
+| [`WikiPage`](api.md#esperantilo.wiki.WikiPage) | class | One Wikipedia article, in one language, as plain text. |
+| [`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer) | function | Splits a text into sentences. |
 | [`__version__`](api.md#esperantilo.__version__) | constant | The installed version. |
 
 Anything not in that list — every module-private helper, every internal
@@ -62,7 +71,11 @@ boundary matters, and how it is drawn in Python, is explained in
 ```text
 src/esperantilo/
 ├── __init__.py      # the public API: re-exports and __all__
-└── tokenizer.py     # sentence segmentation
+├── nlp/             # analysing text that is already in hand
+│   └── tokenizer.py #   sentence segmentation
+└── wiki/            # fetching text from Wikipedia
+    ├── wiki.py      #   the WikiPage class
+    └── _wiki_api.py #   private: the MediaWiki and Wikidata clients
 ```
 
 The [API reference](api.md) is **generated from those files** every time the

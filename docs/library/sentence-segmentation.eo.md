@@ -2,7 +2,7 @@
 
 Dividi tekston en frazojn estas la unua paŝo de preskaŭ ĉiu NLP-ĉeno.
 `esperantilo` faras tion per
-[`sentence_tokenizer`](api.md#esperantilo.tokenizer.sentence_tokenizer).
+[`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer).
 
 ```python
 from esperantilo import sentence_tokenizer

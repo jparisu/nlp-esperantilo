@@ -2,7 +2,7 @@
 
 Splitting a text into sentences is the first step of almost every NLP pipeline.
 `esperantilo` does it with
-[`sentence_tokenizer`](api.md#esperantilo.tokenizer.sentence_tokenizer).
+[`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer).
 
 ```python
 from esperantilo import sentence_tokenizer

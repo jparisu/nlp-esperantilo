@@ -18,12 +18,16 @@ nlp-esperantilo/
 ├── mkdocs.yml            # documentation configuration
 ├── docs/                 # the documentation you are reading
 │   └── hooks/            #   build-time hooks that turn resources/ into pages
-├── resources/            # data files (word lists) shipped with the project
+├── resources/            # data files (word lists) and notebooks
 ├── .github/workflows/    # continuous integration
 ├── src/
 │   └── esperantilo/      # the package itself
 │       ├── __init__.py   # the public API: re-exports and __all__
-│       └── tokenizer.py  # one feature, one module
+│       ├── nlp/          # one subpackage per feature area
+│       │   └── tokenizer.py
+│       └── wiki/
+│           ├── wiki.py       # the public class
+│           └── _wiki_api.py  # private: the HTTP clients
 └── tests/
     ├── test_package.py    # the package imports and exposes its public API
     ├── test_resources.py  # validation of the data files
@@ -35,6 +39,12 @@ scales without thinking — a new feature is a new module and a new test module 
 and it makes a missing test obvious. What that particular module does is
 documented in
 [Library → Sentence segmentation](../../library/sentence-segmentation.md).
+
+Once a feature grows past a single module it becomes a **subpackage**: a
+directory with its own `__init__.py` that re-exports the feature's public names.
+`wiki/` is one — a public class in `wiki.py` and a private HTTP client in
+`_wiki_api.py`, of which only the class is re-exported. Users still write
+`from esperantilo import WikiPage` and never learn either filename.
 
 The distinguishing feature is that the importable package lives under `src/`, not
 at the repository root. The reason is subtle but important — see
@@ -59,7 +69,7 @@ name = "esperantilo"
 version = "0.1.0"
 description = "A rule-based Natural Language Processing library for Esperanto"
 requires-python = ">=3.9"
-dependencies = []                      # rule-based: no third-party runtime deps
+dependencies = ["requests>=2.25"]      # the only runtime dependency
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]                 # installed with .[test]

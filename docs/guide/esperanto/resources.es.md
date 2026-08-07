@@ -26,7 +26,7 @@ convertirte en poeta.
 Gramáticas de referencia y lecturas:
 
 - **_A Complete Grammar of Esperanto_**, Ivy Kellerman Reed (1910) — **en-repo** en
-  `resources/books/esperanto_grammar.txt`. Una gramática sistemática de dominio
+  `resources/esperanto/books/esperanto_grammar.txt`. Una gramática sistemática de dominio
   público con ejercicios graduados; es la referencia que sigue la
   [página de Gramática](grammar.md) de esta sección. También disponible como
   [eBook #7787 de Project Gutenberg](https://www.gutenberg.org/ebooks/7787).

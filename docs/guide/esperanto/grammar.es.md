@@ -21,7 +21,7 @@ y la flexión.
 !!! quote "Referencia"
     Las reglas y los ejemplos de esta página siguen la clásica **_A Complete
     Grammar of Esperanto_** de Ivy Kellerman Reed (1910), una obra de dominio
-    público incluida en el repositorio en `resources/books/esperanto_grammar.txt`.
+    público incluida en el repositorio en `resources/esperanto/books/esperanto_grammar.txt`.
     Véase [Recursos § Libros](resources.md#libros) para la cita completa.
 
 ## Alfabeto

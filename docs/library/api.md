@@ -22,8 +22,14 @@ Every public name of `esperantilo`, with its signature, arguments and examples.
     options:
       heading_level: 3
 
-::: esperantilo.tokenizer
+::: esperantilo.nlp
     options:
       heading_level: 2
       members:
         - sentence_tokenizer
+
+::: esperantilo.wiki
+    options:
+      heading_level: 2
+      members:
+        - WikiPage

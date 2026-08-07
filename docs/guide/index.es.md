@@ -51,6 +51,11 @@ Aquí el foco está en las *herramientas de ingeniería de software* necesarias
 para trabajar como un equipo profesional, y en el *conocimiento del dominio del
 Esperanto* necesario para escribir una biblioteca de PLN basada en reglas.
 
+La biblioteca sí *usa* el primero de esos dos temas —`esperantilo.wiki` llama a
+las APIs de Wikipedia y Wikidata con `requests`—, pero como código publicado que
+leer, no como lección: véase
+[Biblioteca → Leer Wikipedia](../library/wikipedia.md).
+
 ## Este repositorio es el ejemplo
 
 Cada vez que la guía muestra un archivo, un workflow o un commit, es uno real de

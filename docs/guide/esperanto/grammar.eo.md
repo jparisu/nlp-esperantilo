@@ -20,7 +20,7 @@ la finaĵojn kaj vi havas la vortklason kaj la fleksion.
 !!! quote "Referenco"
     La reguloj kaj ekzemploj sur ĉi tiu paĝo sekvas la klasikan **_A Complete Grammar
     of Esperanto_** de Ivy Kellerman Reed (1910), publik-domajna verko inkluzivita en
-    la deponejo ĉe `resources/books/esperanto_grammar.txt`. Vidu
+    la deponejo ĉe `resources/esperanto/books/esperanto_grammar.txt`. Vidu
     [Rimedoj § Libroj](resources.md#libroj) por la plena citaĵo.
 
 ## Alfabeto

@@ -49,6 +49,10 @@ The focus here is the *software-engineering tooling* needed to work like a
 professional team, and the *Esperanto domain knowledge* needed to write a
 rule-based NLP library.
 
+The library does *use* the first of those two — `esperantilo.wiki` calls the
+Wikipedia and Wikidata APIs with `requests` — but as shipped code to read, not
+as a lesson: see [Library → Reading Wikipedia](../library/wikipedia.md).
+
 ## This repository is the worked example
 
 Wherever the guide shows a file, a workflow or a commit, it is a real one from

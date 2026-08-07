@@ -1,4 +1,4 @@
-"""Tests for `esperantilo.tokenizer.sentence_tokenizer`."""
+"""Tests for `esperantilo.nlp.tokenizer.sentence_tokenizer`."""
 
 import pytest
 

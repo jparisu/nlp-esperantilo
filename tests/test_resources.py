@@ -2,8 +2,8 @@
 
 There are two files and they have different jobs:
 
-* `vortoj.json` is the lexicon — every word exactly once;
-* `listoj.json` defines the lists, each one a filter over that lexicon.
+* `esperanto/vortoj.json` is the lexicon — every word exactly once;
+* `esperanto/listoj.json` defines the lists, each one a filter over that lexicon.
 
 The documentation is generated from both, so a malformed edit must fail here
 rather than in the middle of a documentation build.
@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-RESOURCES = Path(__file__).resolve().parents[1] / "resources"
+RESOURCES = Path(__file__).resolve().parents[1] / "resources" / "esperanto"
 LEXICON = json.loads((RESOURCES / "vortoj.json").read_text(encoding="utf-8"))
 LISTS = json.loads((RESOURCES / "listoj.json").read_text(encoding="utf-8"))
 

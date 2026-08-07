@@ -24,7 +24,7 @@ faster than with a natural language — which is convenient when your goal is to
 Reference grammars and readers:
 
 - **_A Complete Grammar of Esperanto_**, Ivy Kellerman Reed (1910) — **in-repo**
-  at `resources/books/esperanto_grammar.txt`. A public-domain, systematic grammar
+  at `resources/esperanto/books/esperanto_grammar.txt`. A public-domain, systematic grammar
   with graded exercises; it is the reference this section's
   [Grammar page](grammar.md) follows. Also available as
   [Project Gutenberg eBook #7787](https://www.gutenberg.org/ebooks/7787).

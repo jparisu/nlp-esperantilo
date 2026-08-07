@@ -2,7 +2,7 @@
 
 Dividir un texto en frases es el primer paso de casi cualquier pipeline de PLN.
 `esperantilo` lo hace con
-[`sentence_tokenizer`](api.md#esperantilo.tokenizer.sentence_tokenizer).
+[`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer).
 
 ```python
 from esperantilo import sentence_tokenizer

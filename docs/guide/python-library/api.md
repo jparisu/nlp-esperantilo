@@ -6,7 +6,7 @@ Everything else is an implementation detail you are free to change. Designing
 that surface well is what separates a library people enjoy using from one they
 fight with.
 
-The `esperantilo` package exposes exactly one function so far, so most of this
+The `esperantilo` package exposes one class and one function so far, so most of this
 page is a **design target**: it shows what a clean NLP interface looks like —
 modelled on [spaCy](https://spacy.io/api) — so that the library's own
 `Doc` / `Token` interface can be built to imitate it.
@@ -159,7 +159,7 @@ so there is only ever one copy of the truth.
 holding nothing but a directive:
 
 ```markdown
-::: esperantilo.tokenizer
+::: esperantilo.nlp
     options:
       members:
         - sentence_tokenizer
@@ -168,7 +168,7 @@ holding nothing but a directive:
 renders the signature, the type hints, the argument table and the examples of
 every listed object, each with a link to the source lines it came from. That is
 exactly how [Library → API reference](../../library/api.md) is built; its page
-source is [three directives and a paragraph](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
+source is [four directives and a paragraph](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
 
 Two habits make the generated page worth reading:
 

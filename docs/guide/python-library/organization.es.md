@@ -18,12 +18,16 @@ nlp-esperantilo/
 ├── mkdocs.yml            # configuración de la documentación
 ├── docs/                 # la documentación que estás leyendo
 │   └── hooks/            #   hooks que convierten resources/ en páginas
-├── resources/            # archivos de datos (listas de palabras) del proyecto
+├── resources/            # archivos de datos (listas de palabras) y notebooks
 ├── .github/workflows/    # integración continua
 ├── src/
 │   └── esperantilo/      # el paquete en sí
 │       ├── __init__.py   # la API pública: reexportaciones y __all__
-│       └── tokenizer.py  # una función, un módulo
+│       ├── nlp/          # un subpaquete por área funcional
+│       │   └── tokenizer.py
+│       └── wiki/
+│           ├── wiki.py       # la clase pública
+│           └── _wiki_api.py  # privado: los clientes HTTP
 └── tests/
     ├── test_package.py    # el paquete se importa y expone su API pública
     ├── test_resources.py  # validación de los archivos de datos
@@ -35,6 +39,13 @@ Fíjate en el emparejamiento: `tokenizer.py` en `src/`, `test_tokenizer.py` en
 pruebas nuevo— y hace evidente que falta una prueba. Lo que hace ese módulo en
 concreto está documentado en
 [Biblioteca → Segmentación en frases](../../library/sentence-segmentation.md).
+
+Cuando una función crece más allá de un solo módulo se convierte en un
+**subpaquete**: un directorio con su propio `__init__.py` que reexporta los
+nombres públicos de esa función. `wiki/` es uno — una clase pública en `wiki.py`
+y un cliente HTTP privado en `_wiki_api.py`, del que solo se reexporta la clase.
+Quien lo usa sigue escribiendo `from esperantilo import WikiPage` y no llega a
+conocer ninguno de los dos nombres de archivo.
 
 El rasgo distintivo es que el paquete importable vive bajo `src/`, no en la raíz
 del repositorio. La razón es sutil pero importante — véase
@@ -59,7 +70,7 @@ name = "esperantilo"
 version = "0.1.0"
 description = "A rule-based Natural Language Processing library for Esperanto"
 requires-python = ">=3.9"
-dependencies = []                      # basada en reglas: sin deps de ejecución externas
+dependencies = ["requests>=2.25"]      # la única dependencia de ejecución
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]                 # se instala con .[test]

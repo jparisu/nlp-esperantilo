@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
 authors = [{ name = "jparisu" }]
-keywords = ["nlp", "esperanto", "linguistics", "tokenizer", "lemmatizer"]
+keywords = ["nlp", "esperanto", "linguistics", "tokenizer", "lemmatizer", "wikipedia"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -52,8 +52,9 @@ where = ["src"]
 # Paths that must not be spell checked. codespell only knows English, so the
 # translated pages (`<page>.<locale>.md`) are skipped: ordinary Spanish and
 # Esperanto words get reported as English typos, which cannot be fixed, only
-# ignored. Same for ./resources/books, which holds verbatim public-domain texts.
-skip = "./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock,./resources/books,*.es.md,*.eo.md"
+# ignored. Same for ./resources/esperanto/books, which holds verbatim
+# public-domain texts.
+skip = "./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock,./resources/esperanto/books,*.es.md,*.eo.md"
 # Project-specific vocabulary (Esperanto words, proper names, technical terms).
 ignore-words = ".codespell/ignore-words.txt"
 # Only report words the checker is confident about.

@@ -38,7 +38,7 @@ tests/
 └── test_tokenizer.py   # sentence segmentation behaves as documented
 ```
 
-`test_tokenizer.py` pairs with `src/esperantilo/tokenizer.py`, whose behaviour is
+`test_tokenizer.py` pairs with `src/esperantilo/nlp/tokenizer.py`, whose behaviour is
 described in
 [Library → Sentence segmentation](../../library/sentence-segmentation.md). One
 source module, one test module: that pairing is the whole convention.
@@ -91,14 +91,16 @@ $ pytest
 ===================== test session starts =====================
 configfile: pyproject.toml
 testpaths: tests, src
-collected 25 items
+collected 300 items
 
-tests/test_package.py ....                                [ 16%]
-tests/test_resources.py ....                              [ 32%]
-tests/test_tokenizer.py .............xxx                  [ 96%]
-src/esperantilo/tokenizer.py .                            [100%]
+tests/test_package.py ........                            [  2%]
+tests/test_resources.py ...........................       [ 18%]
+tests/test_tokenizer.py .............xxx                  [ 97%]
+src/esperantilo/nlp/tokenizer.py .                        [ 97%]
+src/esperantilo/wiki/_wiki_api.py ..                      [ 98%]
+src/esperantilo/wiki/wiki.py .....                        [100%]
 
-================ 22 passed, 3 xfailed in 0.03s ================
+=============== 297 passed, 3 xfailed in 0.13s ================
 ```
 
 The everyday features you will reach for:

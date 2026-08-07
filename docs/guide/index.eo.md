@@ -50,6 +50,11 @@ La fokuso ĉi tie estas la *ilaro de programa inĝenierado* necesa por labori ki
 profesia teamo, kaj la *faka scio pri Esperanto* necesa por verki regul-bazitan
 NLP-bibliotekon.
 
+La biblioteko ja *uzas* la unuan el tiuj du temoj — `esperantilo.wiki` vokas la
+API-ojn de Vikipedio kaj Vikidatumoj per `requests` — sed kiel eldonitan kodon
+por legi, ne kiel lecionon: vidu
+[Biblioteko → Legi Vikipedion](../library/wikipedia.md).
+
 ## Ĉi tiu deponejo estas la ekzemplo
 
 Kiam ajn la gvidilo montras dosieron, laborfluon aŭ enmetaĵon (*commit*), ĝi

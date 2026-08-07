@@ -6,7 +6,7 @@ y métodos que los usuarios están destinados a tocar. Todo lo demás es un deta
 implementación que eres libre de cambiar. Diseñar bien esa superficie es lo que
 separa una biblioteca que la gente disfruta usando de una con la que pelea.
 
-El paquete `esperantilo` expone hasta ahora una sola función, así que la mayor
+El paquete `esperantilo` expone hasta ahora una clase y una función, así que la mayor
 parte de esta página es un **objetivo de diseño**: muestra cómo es una interfaz
 de PLN limpia —modelada sobre [spaCy](https://spacy.io/api)— para que la propia
 interfaz `Doc` / `Token` de la biblioteca pueda construirse imitándola.
@@ -165,7 +165,7 @@ docstrings**, de forma que solo haya una copia de la verdad.
 que no contiene más que una directiva:
 
 ```markdown
-::: esperantilo.tokenizer
+::: esperantilo.nlp
     options:
       members:
         - sentence_tokenizer
@@ -175,7 +175,7 @@ renderiza la firma, las anotaciones de tipo, la tabla de argumentos y los
 ejemplos de cada objeto listado, cada uno con un enlace a las líneas de código de
 las que salió. Así es exactamente como se construye
 [Biblioteca → Referencia de la API](../../library/api.md); el fuente de esa
-página son [tres directivas y un párrafo](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
+página son [cuatro directivas y un párrafo](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
 
 Dos hábitos hacen que la página generada merezca la pena:
 

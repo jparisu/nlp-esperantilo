@@ -23,7 +23,7 @@ konjunkcioj.
 
     **[Ignorindaj vortoj →](word-lists/ignorindaj-vortoj.md)** — 250 eroj, ĉiu kun sia
     angla traduko, gramatika kategorio kaj deveno. Ĝi estas generita el
-    `resources/vortoj.json`, la sama dosiero kiun legos la biblioteko
+    `resources/esperanto/vortoj.json`, la sama dosiero kiun legos la biblioteko
     rultempe, por ke la dokumentaro kaj la datumoj neniam povu malkonsenti.
 
 Reprezenta specimeno, laŭ kategorio:
@@ -182,7 +182,7 @@ Uzi liston el la biblioteko estas do afero de du linioj:
 import json
 from pathlib import Path
 
-data = json.loads(Path("resources/vortoj.json").read_text(encoding="utf-8"))
+data = json.loads(Path("resources/esperanto/vortoj.json").read_text(encoding="utf-8"))
 stop_words = {entry["vorto"] for entry in data["vortoj"]}
 ```
 

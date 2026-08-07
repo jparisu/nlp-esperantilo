@@ -139,6 +139,7 @@ plugins:
             # The two parts of the site.
             Library: Biblioteca
             Sentence segmentation: Segmentación en frases
+            Reading Wikipedia: Leer Wikipedia
             API reference: Referencia de la API
             Guide: Guía
             Git: Git
@@ -175,6 +176,7 @@ plugins:
             # The two parts of the site.
             Library: Biblioteko
             Sentence segmentation: Fraz-dividado
+            Reading Wikipedia: Legi Vikipedion
             API reference: API-referenco
             Guide: Gvidilo
             Git: Git
@@ -237,6 +239,7 @@ nav:
   - Library:
       - library/index.md
       - Sentence segmentation: library/sentence-segmentation.md
+      - Reading Wikipedia: library/wikipedia.md
       - API reference: library/api.md
   - Guide:
       - guide/index.md

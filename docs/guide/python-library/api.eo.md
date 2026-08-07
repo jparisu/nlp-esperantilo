@@ -6,7 +6,7 @@ uzantoj estas destinitaj tuŝi. Ĉio alia estas realiga detalo, kiun vi rajtas �
 Bone dezajni tiun surfacon estas tio, kio disigas bibliotekon, kiun oni ĝuas uzi, de
 tiu kontraŭ kiu oni batalas.
 
-La pako `esperantilo` eksponas ĝis nun nur unu funkcion, do la plej granda parto
+La pako `esperantilo` eksponas ĝis nun unu klason kaj unu funkcion, do la plej granda parto
 de ĉi tiu paĝo estas **dezajna celo**: ĝi montras kiel aspektas pura
 NLP-interfaco — modelita laŭ [spaCy](https://spacy.io/api) — por ke la propra
 interfaco `Doc` / `Token` de la biblioteko povu esti konstruita imitante ĝin.
@@ -157,7 +157,7 @@ ekzistu nur unu kopio de la vero.
 enhavas nenion krom direktivon:
 
 ```markdown
-::: esperantilo.tokenizer
+::: esperantilo.nlp
     options:
       members:
         - sentence_tokenizer
@@ -166,7 +166,7 @@ enhavas nenion krom direktivon:
 bildigas la signaturon, la tipindikojn, la argument-tabelon kaj la ekzemplojn de
 ĉiu listigita objekto, ĉiun kun ligilo al la fontlinioj, el kiuj ĝi venis. Ĝuste
 tiel estas konstruita [Biblioteko → API-referenco](../../library/api.md); la
-fonto de tiu paĝo estas [tri direktivoj kaj alineo](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
+fonto de tiu paĝo estas [kvar direktivoj kaj alineo](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md).
 
 Du kutimoj igas la generitan paĝon leginda:
 
