@@ -353,6 +353,8 @@
       
         
       
+        
+      
     
     
     
@@ -417,6 +419,34 @@
     
   
     Sentence segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading Wikipedia
   
 
     
@@ -1952,7 +1982,7 @@ surface</em>: the objects, functions and methods that users are meant to touch.
 Everything else is an implementation detail you are free to change. Designing
 that surface well is what separates a library people enjoy using from one they
 fight with.</p>
-<p>The <code>esperantilo</code> package exposes exactly one function so far, so most of this
+<p>The <code>esperantilo</code> package exposes one class and one function so far, so most of this
 page is a <strong>design target</strong>: it shows what a clean NLP interface looks like —
 modelled on <a href="https://spacy.io/api">spaCy</a> — so that the library's own
 <code>Doc</code> / <code>Token</code> interface can be built to imitate it.</p>
@@ -2093,7 +2123,7 @@ still shows the old one. The fix is to generate the page <strong>from the docstr
 so there is only ever one copy of the truth.</p>
 <p><a href="https://mkdocstrings.github.io/">mkdocstrings</a> does that for MkDocs. A page
 holding nothing but a directive:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.tokenizer
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.nlp
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    options:
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>      members:
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>sentence_tokenizer
@@ -2101,7 +2131,7 @@ holding nothing but a directive:</p>
 <p>renders the signature, the type hints, the argument table and the examples of
 every listed object, each with a link to the source lines it came from. That is
 exactly how <a href="../../../library/api/">Library → API reference</a> is built; its page
-source is <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md">three directives and a paragraph</a>.</p>
+source is <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md">four directives and a paragraph</a>.</p>
 <p>Two habits make the generated page worth reading:</p>
 <ul>
 <li><strong>Write docstrings in a consistent style.</strong> This project uses the Google style

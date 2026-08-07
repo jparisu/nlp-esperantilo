@@ -355,6 +355,8 @@
       
         
       
+        
+      
     
     
     
@@ -419,6 +421,34 @@
     
   
     Segmentación en frases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leer Wikipedia
   
 
     
@@ -1954,7 +1984,7 @@ aplicaciones) de una biblioteca es su <em>superficie pública</em>: los objetos,
 y métodos que los usuarios están destinados a tocar. Todo lo demás es un detalle de
 implementación que eres libre de cambiar. Diseñar bien esa superficie es lo que
 separa una biblioteca que la gente disfruta usando de una con la que pelea.</p>
-<p>El paquete <code>esperantilo</code> expone hasta ahora una sola función, así que la mayor
+<p>El paquete <code>esperantilo</code> expone hasta ahora una clase y una función, así que la mayor
 parte de esta página es un <strong>objetivo de diseño</strong>: muestra cómo es una interfaz
 de PLN limpia —modelada sobre <a href="https://spacy.io/api">spaCy</a>— para que la propia
 interfaz <code>Doc</code> / <code>Token</code> de la biblioteca pueda construirse imitándola.</p>
@@ -2101,7 +2131,7 @@ página sigue mostrando el antiguo. La solución es generar la página <strong>d
 docstrings</strong>, de forma que solo haya una copia de la verdad.</p>
 <p><a href="https://mkdocstrings.github.io/">mkdocstrings</a> hace eso en MkDocs. Una página
 que no contiene más que una directiva:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.tokenizer
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.nlp
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    options:
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>      members:
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>sentence_tokenizer
@@ -2110,7 +2140,7 @@ que no contiene más que una directiva:</p>
 ejemplos de cada objeto listado, cada uno con un enlace a las líneas de código de
 las que salió. Así es exactamente como se construye
 <a href="../../../library/api/">Biblioteca → Referencia de la API</a>; el fuente de esa
-página son <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md">tres directivas y un párrafo</a>.</p>
+página son <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/library/api.md">cuatro directivas y un párrafo</a>.</p>
 <p>Dos hábitos hacen que la página generada merezca la pena:</p>
 <ul>
 <li><strong>Escribe los docstrings en un estilo consistente.</strong> Este proyecto usa el

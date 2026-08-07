@@ -353,6 +353,8 @@
       
         
       
+        
+      
     
     
     
@@ -417,6 +419,34 @@
     
   
     Sentence segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading Wikipedia
   
 
     
@@ -2056,28 +2086,36 @@ reproduce it in your own project.</p>
 packages:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nlp-esperantilo/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── pyproject.toml        # project metadata and build configuration
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── requirements.txt      # runtime dependencies (none, for now)
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── README.md             # front page
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── LICENSE               # licence text
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── mkdocs.yml            # documentation configuration
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── docs/                 # the documentation you are reading
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── resources/            # data files (word lists) shipped with the project
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── hooks/                # build-time hooks that turn resources/ into doc pages
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── .github/workflows/    # continuous integration
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── src/
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   └── esperantilo/      # the package itself
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── __init__.py   # the public API: re-exports and __all__
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       └── tokenizer.py  # one feature, one module
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>└── tests/
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    ├── test_package.py    # the package imports and exposes its public API
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    ├── test_resources.py  # validation of the data files
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    └── test_tokenizer.py  # one test module per source module
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── README.md             # front page
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── LICENSE               # licence text
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── mkdocs.yml            # documentation configuration
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── docs/                 # the documentation you are reading
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── hooks/            #   build-time hooks that turn resources/ into pages
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── resources/            # data files (word lists) and notebooks
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── .github/workflows/    # continuous integration
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── src/
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └── esperantilo/      # the package itself
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       ├── __init__.py   # the public API: re-exports and __all__
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── nlp/          # one subpackage per feature area
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       │   └── tokenizer.py
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       └── wiki/
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│           ├── wiki.py       # the public class
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│           └── _wiki_api.py  # private: the HTTP clients
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└── tests/
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    ├── test_package.py    # the package imports and exposes its public API
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    ├── test_resources.py  # validation of the data files
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    └── test_tokenizer.py  # one test module per source module
 </span></code></pre></div>
 <p>Note the pairing: <code>tokenizer.py</code> in <code>src/</code>, <code>test_tokenizer.py</code> in <code>tests/</code>. It
 scales without thinking — a new feature is a new module and a new test module —
 and it makes a missing test obvious. What that particular module does is
 documented in
 <a href="../../../library/sentence-segmentation/">Library → Sentence segmentation</a>.</p>
+<p>Once a feature grows past a single module it becomes a <strong>subpackage</strong>: a
+directory with its own <code>__init__.py</code> that re-exports the feature's public names.
+<code>wiki/</code> is one — a public class in <code>wiki.py</code> and a private HTTP client in
+<code>_wiki_api.py</code>, of which only the class is re-exported. Users still write
+<code>from esperantilo import WikiPage</code> and never learn either filename.</p>
 <p>The distinguishing feature is that the importable package lives under <code>src/</code>, not
 at the repository root. The reason is subtle but important — see
 <a href="#the-src-layout">The <code>src/</code> layout</a> below.</p>
@@ -2096,7 +2134,7 @@ project's file:</p>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A rule-based Natural Language Processing library for Esperanto&quot;</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.9&quot;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w">                      </span><span class="c1"># rule-based: no third-party runtime deps</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;requests&gt;=2.25&quot;</span><span class="p">]</span><span class="w">      </span><span class="c1"># the only runtime dependency</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">[project.optional-dependencies]</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&gt;=7.0&quot;</span><span class="p">]</span><span class="w">                 </span><span class="c1"># installed with .[test]</span>
@@ -2106,7 +2144,8 @@ project's file:</p>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src&quot;</span><span class="p">]</span><span class="w">                        </span><span class="c1"># find the package under src/</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">[tool.pytest.ini_options]</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">]</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">pythonpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src&quot;</span><span class="p">]</span><span class="w">      </span><span class="c1"># so `pytest` works without installing</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Three parts are worth understanding:</p>
 <ul>
@@ -2130,11 +2169,15 @@ does what?</p>
 <li><strong><code>requirements.txt</code></strong> is a convenience list, often used to pin exact versions
   for a reproducible <em>environment</em>.</li>
 </ul>
-<p>In this project the library has <strong>no runtime dependencies</strong> (it is rule-based),
-so <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/requirements.txt"><code>requirements.txt</code></a>
-is essentially empty — it only documents where the development extras live. The
-documentation's own dependencies are pinned separately in <code>docs/requirements.txt</code>,
-which is the file the <a href="../../github/actions/">CI workflows</a> use.</p>
+<p><strong>This project has no root <code>requirements.txt</code>.</strong> The library is rule-based and
+has no runtime dependency, so the file would hold nothing that
+<code>pyproject.toml</code> does not already say — and an empty file that looks meaningful
+is worse than no file. Development extras are declared as
+<code>[project.optional-dependencies]</code> and installed with <code>pip install -e ".[test]"</code>.</p>
+<p>The one place a pinned list <em>does</em> earn its keep is
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/requirements.txt"><code>docs/requirements.txt</code></a>:
+it fixes exact versions of the documentation toolchain so that the
+<a href="../../github/actions/">CI workflows</a> build the site the same way every time.</p>
 <h3 id="__init__py"><code>__init__.py</code><a class="headerlink" href="#__init__py" title="Permanent link">&para;</a></h3>
 <p>An <code>__init__.py</code> file marks a directory as a <strong>regular package</strong>. Since Python 3.3
 a folder without one can still be imported, as a <em>namespace package</em>, but a

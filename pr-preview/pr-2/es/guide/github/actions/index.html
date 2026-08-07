@@ -355,6 +355,8 @@
       
         
       
+        
+      
     
     
     
@@ -419,6 +421,34 @@
     
   
     Segmentación en frases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leer Wikipedia
   
 
     
@@ -2182,15 +2212,15 @@ ejecuta <a href="https://github.com/codespell-project/codespell"><code>codespell
 documentación y el código en cada push y pull request, detectando erratas comunes
 automáticamente:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install codespell</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codespell</span><span class="w">            </span><span class="c1"># la configuración viene de .codespellrc</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codespell</span><span class="w">            </span><span class="c1"># la configuración viene de pyproject.toml</span>
 </span></code></pre></div>
 <p>La parte interesante es enseñarle al corrector las palabras que no conoce —
 términos en Esperanto, nombres propios, jerga técnica— para que no se reporten como
 errores. Esa configuración vive en
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc"><code>.codespellrc</code></a>:</p>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[codespell]</span>
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/pyproject.toml"><code>pyproject.toml</code></a>:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[tool.codespell]</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">skip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">./.git,./.devs,./site,./.venv,...</span><span class="w">   </span><span class="c1"># rutas que no se comprueban</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ignore-words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">.codespell-ignore-words.txt</span><span class="w"> </span><span class="c1"># vocabulario aceptado del proyecto</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ignore-words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.codespell/ignore-words.txt&quot;</span><span class="w"> </span><span class="c1"># vocabulario aceptado del proyecto</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">builtin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">clear,rare</span><span class="w">                        </span><span class="c1"># solo correcciones con confianza</span>
 </span></code></pre></div>
 <p>Mantener la configuración en un archivo (en lugar de en el workflow) significa que

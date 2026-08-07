@@ -357,6 +357,8 @@
       
         
       
+        
+      
     
     
     
@@ -421,6 +423,34 @@
     
   
     Fraz-dividado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legi Vikipedion
   
 
     
@@ -2048,7 +2078,7 @@ konjunkcioj.</p>
 prezentatan ĉi tie aŭtomate:</p>
 <p><strong><a href="../word-lists/ignorindaj-vortoj/">Ignorindaj vortoj →</a></strong> — 250 eroj, ĉiu kun sia
 angla traduko, gramatika kategorio kaj deveno. Ĝi estas generita el
-<code>resources/vortoj.json</code>, la sama dosiero kiun legos la biblioteko
+<code>resources/esperanto/vortoj.json</code>, la sama dosiero kiun legos la biblioteko
 rultempe, por ke la dokumentaro kaj la datumoj neniam povu malkonsenti.</p>
 </div>
 <p>Reprezenta specimeno, laŭ kategorio:</p>
@@ -2455,7 +2485,7 @@ Esperanto, estas finia listo, kiun la biblioteko povas teni en dosiero.</p>
 <p>Ĉiuj ĉi tiuj listoj estas konservataj same, kiel <strong>JSON-dosieroj sub <code>resources/</code></strong>,
 por ke unu sola fonto de vero povu nutri kaj la kodon (rultempe) kaj la dokumentaron
 (konstrutempe, per
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/hooks/word_lists.py"><code>hooks/word_lists.py</code></a>).
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/hooks/word_lists.py"><code>docs/hooks/word_lists.py</code></a>).
 La nomoj de la kampoj estas en Esperanto, kongruaj kun la dosiernomoj; la tradukeblaj
 kampoj estas objektoj indeksitaj laŭ lingvokodo:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
@@ -2487,7 +2517,7 @@ dokumentaro. La plena skemo estas dokumentita en <code>resources/README.md</code
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;resources/vortoj.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;resources/esperanto/vortoj.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">stop_words</span> <span class="o">=</span> <span class="p">{</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;vorto&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;vortoj&quot;</span><span class="p">]}</span>
 </span></code></pre></div>
 <h2 id="kien-iri-poste">Kien iri poste<a class="headerlink" href="#kien-iri-poste" title="Permanent link">&para;</a></h2>

@@ -357,6 +357,8 @@
       
         
       
+        
+      
     
     
     
@@ -421,6 +423,34 @@
     
   
     Fraz-dividado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legi Vikipedion
   
 
     
@@ -2180,15 +2210,15 @@ rulas <a href="https://github.com/codespell-project/codespell"><code>codespell</
 dokumentaro kaj la kodo ĉe ĉiu push kaj kunfanda peto, kaptante kutimajn tajperarojn
 aŭtomate:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install codespell</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codespell</span><span class="w">            </span><span class="c1"># la agordo venas de .codespellrc</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codespell</span><span class="w">            </span><span class="c1"># la agordo venas de pyproject.toml</span>
 </span></code></pre></div>
 <p>La interesa parto estas instrui al la kontrolilo la vortojn, kiujn ĝi ne konas —
 Esperantajn terminojn, proprajn nomojn, teknikan ĵargonon — por ke ili ne estu
 raportataj kiel eraroj. Tiu agordo vivas en
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/.codespellrc"><code>.codespellrc</code></a>:</p>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[codespell]</span>
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/pyproject.toml"><code>pyproject.toml</code></a>:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[tool.codespell]</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">skip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">./.git,./.devs,./site,./.venv,...</span><span class="w">   </span><span class="c1"># vojoj kiujn ne kontroli</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ignore-words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">.codespell-ignore-words.txt</span><span class="w"> </span><span class="c1"># akceptita vortprovizo de la projekto</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ignore-words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.codespell/ignore-words.txt&quot;</span><span class="w"> </span><span class="c1"># akceptita vortprovizo de la projekto</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">builtin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">clear,rare</span><span class="w">                        </span><span class="c1"># nur memfidaj korektoj</span>
 </span></code></pre></div>
 <p>Teni la agordon en dosiero (anstataŭ en la laborfluo) signifas, ke <strong>loka rulo de

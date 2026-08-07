@@ -359,6 +359,8 @@
       
         
       
+        
+      
     
     
     
@@ -423,6 +425,34 @@
     
   
     Fraz-dividado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legi Vikipedion
   
 
     
@@ -1847,20 +1877,22 @@ instruas, kiel oni konstruas, eldonas kaj testas tian bibliotekon. Se vi
 venas por lerni la ilaron, komencu tie.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Nur unu funkcio ĝis nun</p>
-<p>La biblioteko estas ĉe versio <code>0.1.0</code> kaj havas ekzakte unu aferon:
-fraz-dividadon. Ĉio alia — vortoj (<em>tokens</em>), lemoj, afiksa analizo — ankoraŭ
-estas <a href="../guide/python-library/api/">dezajna celo</a>, ne eldonita kodo.</p>
+<p class="admonition-title">Nur du funkcioj ĝis nun</p>
+<p>La biblioteko estas ĉe versio <code>0.1.0</code> kaj havas du aferojn: legadon de
+Vikipediaj artikoloj kaj fraz-dividadon. Ĉio alia — vortoj (<em>tokens</em>), lemoj,
+afiksa analizo — ankoraŭ estas <a href="../guide/python-library/api/">dezajna celo</a>,
+ne eldonita kodo.</p>
 </div>
 <div class="grid cards">
 <ul>
 <li><a href="sentence-segmentation/"><strong>1. Fraz-dividado</strong></a> — dividi tekston en frazojn.</li>
-<li><a href="api/"><strong>2. API-referenco</strong></a> — ĉiu publika nomo, generita el la fontkodo.</li>
+<li><a href="wikipedia/"><strong>2. Legi Vikipedion</strong></a> — havigi artikolon kiel platan tekston, en iu ajn lingvo.</li>
+<li><a href="api/"><strong>3. API-referenco</strong></a> — ĉiu publika nomo, generita el la fontkodo.</li>
 </ul>
 </div>
 <h2 id="instalado">Instalado<a class="headerlink" href="#instalado" title="Permanent link">&para;</a></h2>
-<p>La biblioteko havas <strong>neniun rultempan dependecon</strong>. Instalu ĝin rekte el
-GitHub:</p>
+<p>La biblioteko dependas de <a href="https://requests.readthedocs.io/"><code>requests</code></a>, kiun
+<code>pip</code> instalas kune kun ĝi. Instalu ĝin rekte el GitHub:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/jparisu/nlp-esperantilo.git
 </span></code></pre></div>
 <p>Paŝon-post-paŝaj instrukcioj, inkluzive de virtualaj medioj kaj notlibroj,
@@ -1869,8 +1901,13 @@ troviĝas en
 <h2 id="rapida-komenco">Rapida komenco<a class="headerlink" href="#rapida-komenco" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">esperantilo</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Zamenhof kreis Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># [&#39;Zamenhof kreis Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Analizi tekston jam havatan.</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Zamenhof kreis Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># [&#39;Zamenhof kreis Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Aŭ unue havigi ĝin el Vikipedio.</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">page</span> <span class="o">=</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">WikiPage</span><span class="o">.</span><span class="n">look_up</span><span class="p">(</span><span class="s2">&quot;Esperanto&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;eo&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">title</span><span class="p">))</span>
 </span></code></pre></div>
 <h2 id="la-publika-api">La publika API<a class="headerlink" href="#la-publika-api" title="Permanent link">&para;</a></h2>
 <p>Ĉio, kion la biblioteko promesas teni stabila, estas importebla rekte el la
@@ -1885,7 +1922,12 @@ troviĝas en
 </thead>
 <tbody>
 <tr>
-<td><a href="api/#esperantilo.tokenizer.sentence_tokenizer"><code>sentence_tokenizer</code></a></td>
+<td><a href="api/#esperantilo.wiki.WikiPage"><code>WikiPage</code></a></td>
+<td>klaso</td>
+<td>Unu Vikipedia artikolo, en unu lingvo, kiel plata teksto.</td>
+</tr>
+<tr>
+<td><a href="api/#esperantilo.nlp.sentence_tokenizer"><code>sentence_tokenizer</code></a></td>
 <td>funkcio</td>
 <td>Dividas tekston en frazojn.</td>
 </tr>
@@ -1903,7 +1945,11 @@ oni desegnas ĝin en Python, estas klarigita en
 <h2 id="kie-logas-la-partoj">Kie loĝas la partoj<a class="headerlink" href="#kie-logas-la-partoj" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/esperantilo/
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── __init__.py      # la publika API: reeksportoj kaj __all__
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>└── tokenizer.py     # fraz-dividado
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── nlp/             # analizi tekston jam havatan
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   └── tokenizer.py #   fraz-dividado
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>└── wiki/            # havigi tekston el Vikipedio
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    ├── wiki.py      #   la klaso WikiPage
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    └── _wiki_api.py #   privata: la klientoj de MediaWiki kaj Vikidatumoj
 </span></code></pre></div>
 <p>La <a href="api/">API-referenco</a> estas <strong>generita el tiuj dosieroj</strong> ĉiufoje kiam la
 paĝaro estas konstruata, do ŝanĝu dokumentĉenon kaj la paĝo ŝanĝiĝas kun ĝi.</p>
