@@ -1554,6 +1554,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Stop-words">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roots-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roots only
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1603,6 +1620,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abbreviations
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1723,8 +1751,6 @@
       
         
       
-        
-      
     
     
     
@@ -1837,34 +1863,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../word-lists/korelativoj/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correlatives
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../word-lists/nombroj/" class="md-nav__link">
         
   
@@ -1944,6 +1942,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Stop-words">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roots-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roots only
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1993,6 +2008,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abbreviations
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2072,10 +2098,68 @@ conjunctions.</p>
 <p class="admonition-title">The full list already exists as data</p>
 <p>This project ships the complete list as a machine-readable file, rendered
 here automatically:</p>
-<p><strong><a href="../word-lists/ignorindaj-vortoj/">Stop-words →</a></strong> — 250 entries, each with
+<p><strong><a href="../word-lists/ignorindaj-vortoj/">Stop-words →</a></strong> — 122 entries, each with
 its English translation, grammatical category and provenance. It is generated
 from <code>resources/esperanto/vortoj.json</code>, the same file the library will read
 at runtime, so the documentation and the data can never disagree.</p>
+</div>
+<h3 id="roots-only">Roots only<a class="headerlink" href="#roots-only" title="Permanent link">&para;</a></h3>
+<p>122 entries is a short list, and deliberately so. Esperanto builds words by
+adding morphemes to a root, so a list written word by word repeats itself: <code>mi</code>,
+<code>mia</code>, <code>min</code> and <code>mian</code> are one pronoun and three endings; <code>esti</code>, <code>estas</code>,
+<code>estis</code>, <code>estos</code>, <code>estus</code> and <code>estu</code> are one verb and five.</p>
+<p>The lexicon therefore stores <strong>roots, not forms</strong>. An entry earns its place only
+if it <em>cannot</em> be built from another entry plus a rule written down on this site.
+By that test 131 of the original 252 entries were dropped:</p>
+<table>
+<thead>
+<tr>
+<th>Dropped</th>
+<th>Built from</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mia</code>, <code>min</code>, <code>mian</code>, <code>nia</code>, <code>ĝin</code>, …</td>
+<td>the pronoun <code>mi</code>, <code>ni</code>, <code>ĝi</code>, …</td>
+<td><a href="../grammar/#personal-pronouns">Grammar § Personal pronouns</a></td>
+</tr>
+<tr>
+<td><code>unua</code>, <code>dua</code>, <code>deka</code>, …</td>
+<td>the cardinal <code>unu</code>, <code>du</code>, <code>dek</code>, …</td>
+<td><a href="../grammar/#numbers-and-compounding">Grammar § Numbers</a></td>
+</tr>
+<tr>
+<td><code>estas</code>, <code>havis</code>, <code>povus</code>, …</td>
+<td>the infinitive <code>esti</code>, <code>havi</code>, <code>povi</code></td>
+<td><a href="../grammar/#verb-system">Grammar § Verb system</a></td>
+</tr>
+<tr>
+<td>all 59 correlative entries</td>
+<td>five prefixes × nine endings</td>
+<td><a href="../grammar/#correlatives">Grammar § Correlatives</a></td>
+</tr>
+<tr>
+<td><code>malantaŭ</code>, <code>sinjorino</code>, <code>supren</code></td>
+<td><code>antaŭ</code>, <code>sinjoro</code>, <code>supre</code></td>
+<td><a href="#affixes">§ Affixes</a> below</td>
+</tr>
+<tr>
+<td><code>bv</code>, <code>s-ro</code>, <code>d-ro</code>, <code>k</code>, …</td>
+<td>nothing — see <a href="#abbreviations">§ Abbreviations</a></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Five roots were <em>added</em> in exchange, because forms were present whose root was
+not: <code>bona</code>, <code>feliĉa</code>, <code>bonvoli</code>, <code>fraŭlo</code> and <code>supre</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">The list and the lemmatizer ship together</p>
+<p>A roots-only list is smaller <em>and</em> weaker on its own: <code>token in stop_words</code>
+no longer catches <code>estas</code> or <code>min</code>. It is only correct for a pipeline that
+normalises first — strip the endings, then look up. Filtering raw tokens
+against this list will let inflected stop-words through.</p>
 </div>
 <p>A representative sample, by category:</p>
 <table>
@@ -2103,15 +2187,17 @@ at runtime, so the documentation and the data can never disagree.</p>
 <td><code>mi</code>, <code>vi</code>, <code>li</code>, <code>ŝi</code>, <code>ĝi</code>, <code>ni</code>, <code>ili</code>, <code>oni</code>, <code>si</code></td>
 </tr>
 <tr>
-<td>Correlatives</td>
-<td><code>tio</code>, <code>kiu</code>, <code>ĉiam</code>, <code>nenie</code>, <code>kiel</code>, …</td>
-</tr>
-<tr>
 <td>Common adverbs</td>
 <td><code>ankaŭ</code>, <code>ankoraŭ</code>, <code>jam</code>, <code>nur</code>, <code>tre</code>, <code>tro</code>, <code>plu</code></td>
 </tr>
+<tr>
+<td>Verbs</td>
+<td><code>esti</code>, <code>havi</code>, <code>povi</code> — infinitives only</td>
+</tr>
 </tbody>
 </table>
+<p>The correlatives are stop-words too, all 45 of them, but they are not in the file:
+they are generated by the <a href="../grammar/#correlatives">table</a>.</p>
 <p>The rest — <em>why</em> each word qualifies and where the entries come from — lives with
 the <a href="../word-lists/ignorindaj-vortoj/">generated list</a>; this page only summarises.</p>
 <h2 id="affixes">Affixes<a class="headerlink" href="#affixes" title="Permanent link">&para;</a></h2>
@@ -2288,6 +2374,61 @@ to encode.</p>
 in: <code>-n</code> → <code>-j</code> → <code>-o</code> (endings), then <code>-ej-</code>, <code>-ul-</code> (suffixes), then the
 <code>mal-</code> prefix, leaving <code>san-</code> ("health"). Each step is a table lookup.</p>
 </div>
+<h2 id="abbreviations">Abbreviations<a class="headerlink" href="#abbreviations" title="Permanent link">&para;</a></h2>
+<p>Abbreviations are the one group the roots-only rule cannot regenerate. <code>s-ro</code>
+is not <code>sinjoro</code> plus an ending — no amount of stripping produces it — so
+removing it from the lexicon means it has to be written down here instead. A
+pipeline that wants to expand them needs this table as data:</p>
+<table>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Expansion</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bv</code></td>
+<td><code>bonvolu</code></td>
+<td>please</td>
+</tr>
+<tr>
+<td><code>d-ro</code></td>
+<td><code>doktoro</code></td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td><code>ekz</code></td>
+<td><code>ekzemple</code></td>
+<td>e.g., for example</td>
+</tr>
+<tr>
+<td><code>f-no</code></td>
+<td><code>fraŭlino</code></td>
+<td>Miss</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td><code>kaj</code></td>
+<td>and</td>
+</tr>
+<tr>
+<td><code>s-no</code></td>
+<td><code>sinjorino</code></td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td><code>s-ro</code></td>
+<td><code>sinjoro</code></td>
+<td>Mr.</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern behind most of them is <em>first letter, hyphen, last syllable</em>:
+<code>s-ro</code> ← <code>s(injo)ro</code>. It is a convention, not a rule, and the variants are real
+— <code>s-ino</code> is as common as <code>s-no</code>. Treat the table as closed and extend it by
+hand.</p>
 <h2 id="most-common-roots">Most common roots<a class="headerlink" href="#most-common-roots" title="Permanent link">&para;</a></h2>
 <p>A lemmatizer also benefits from a list of known <strong>roots</strong>, both to validate a
 decomposition and to catch the frequent words that appear everywhere. A starter

@@ -1556,6 +1556,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Palabras vacías">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solo-raices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solo raíces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1605,6 +1622,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abreviaturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abreviaturas
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1725,8 +1753,6 @@
       
         
       
-        
-      
     
     
     
@@ -1839,34 +1865,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../word-lists/korelativoj/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Correlatives
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../word-lists/nombroj/" class="md-nav__link">
         
   
@@ -1946,6 +1944,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Palabras vacías">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solo-raices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solo raíces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1995,6 +2010,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abreviaturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abreviaturas
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2075,11 +2101,69 @@ conjunto fijo de preposiciones y conjunciones.</p>
 <p class="admonition-title">La lista completa ya existe como datos</p>
 <p>Este proyecto distribuye la lista completa como un archivo legible por máquina,
 renderizado aquí automáticamente:</p>
-<p><strong><a href="../word-lists/ignorindaj-vortoj/">Palabras vacías →</a></strong> — 250 entradas, cada
+<p><strong><a href="../word-lists/ignorindaj-vortoj/">Palabras vacías →</a></strong> — 122 entradas, cada
 una con su traducción al inglés, su categoría gramatical y su procedencia. Se
 genera a partir de <code>resources/esperanto/vortoj.json</code>, el mismo archivo que
 leerá la biblioteca en tiempo de ejecución, de modo que la documentación y los
 datos nunca pueden discrepar.</p>
+</div>
+<h3 id="solo-raices">Solo raíces<a class="headerlink" href="#solo-raices" title="Permanent link">&para;</a></h3>
+<p>122 entradas es una lista corta, y a propósito. El Esperanto construye palabras
+añadiendo morfemas a una raíz, así que una lista escrita palabra por palabra se
+repite: <code>mi</code>, <code>mia</code>, <code>min</code> y <code>mian</code> son un pronombre y tres terminaciones;
+<code>esti</code>, <code>estas</code>, <code>estis</code>, <code>estos</code>, <code>estus</code> y <code>estu</code> son un verbo y cinco.</p>
+<p>Por eso el léxico guarda <strong>raíces, no formas</strong>. Una entrada se gana su sitio solo
+si <em>no</em> puede construirse a partir de otra entrada más una regla escrita en este
+sitio. Con ese criterio se eliminaron 131 de las 252 entradas originales:</p>
+<table>
+<thead>
+<tr>
+<th>Eliminado</th>
+<th>Se construye desde</th>
+<th>Regla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mia</code>, <code>min</code>, <code>mian</code>, <code>nia</code>, <code>ĝin</code>, …</td>
+<td>el pronombre <code>mi</code>, <code>ni</code>, <code>ĝi</code>, …</td>
+<td><a href="../grammar/#pronombres-personales">Gramática § Pronombres personales</a></td>
+</tr>
+<tr>
+<td><code>unua</code>, <code>dua</code>, <code>deka</code>, …</td>
+<td>el cardinal <code>unu</code>, <code>du</code>, <code>dek</code>, …</td>
+<td><a href="../grammar/#numeros-y-composicion">Gramática § Números</a></td>
+</tr>
+<tr>
+<td><code>estas</code>, <code>havis</code>, <code>povus</code>, …</td>
+<td>el infinitivo <code>esti</code>, <code>havi</code>, <code>povi</code></td>
+<td><a href="../grammar/#sistema-verbal">Gramática § Sistema verbal</a></td>
+</tr>
+<tr>
+<td>las 59 entradas de correlativos</td>
+<td>cinco prefijos × nueve terminaciones</td>
+<td><a href="../grammar/#correlativos">Gramática § Correlativos</a></td>
+</tr>
+<tr>
+<td><code>malantaŭ</code>, <code>sinjorino</code>, <code>supren</code></td>
+<td><code>antaŭ</code>, <code>sinjoro</code>, <code>supre</code></td>
+<td><a href="#afijos">§ Afijos</a>, más abajo</td>
+</tr>
+<tr>
+<td><code>bv</code>, <code>s-ro</code>, <code>d-ro</code>, <code>k</code>, …</td>
+<td>nada — véase <a href="#abreviaturas">§ Abreviaturas</a></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>A cambio se <em>añadieron</em> cinco raíces, porque había formas cuya raíz faltaba:
+<code>bona</code>, <code>feliĉa</code>, <code>bonvoli</code>, <code>fraŭlo</code> y <code>supre</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">La lista y el lematizador van juntos</p>
+<p>Una lista de solo raíces es más pequeña <em>y</em> más débil por sí sola: <code>token in
+stop_words</code> ya no atrapa <code>estas</code> ni <code>min</code>. Solo es correcta para una tubería
+que normaliza primero — quitar las terminaciones y después buscar. Filtrar
+tokens en bruto contra esta lista dejará pasar las palabras vacías flexionadas.</p>
 </div>
 <p>Una muestra representativa, por categoría:</p>
 <table>
@@ -2107,15 +2191,17 @@ datos nunca pueden discrepar.</p>
 <td><code>mi</code>, <code>vi</code>, <code>li</code>, <code>ŝi</code>, <code>ĝi</code>, <code>ni</code>, <code>ili</code>, <code>oni</code>, <code>si</code></td>
 </tr>
 <tr>
-<td>Correlativos</td>
-<td><code>tio</code>, <code>kiu</code>, <code>ĉiam</code>, <code>nenie</code>, <code>kiel</code>, …</td>
-</tr>
-<tr>
 <td>Adverbios comunes</td>
 <td><code>ankaŭ</code>, <code>ankoraŭ</code>, <code>jam</code>, <code>nur</code>, <code>tre</code>, <code>tro</code>, <code>plu</code></td>
 </tr>
+<tr>
+<td>Verbos</td>
+<td><code>esti</code>, <code>havi</code>, <code>povi</code> — solo infinitivos</td>
+</tr>
 </tbody>
 </table>
+<p>Los correlativos también son palabras vacías, los 45, pero no están en el archivo:
+los genera la <a href="../grammar/#correlativos">tabla</a>.</p>
 <p>El resto — <em>por qué</em> califica cada palabra y de dónde vienen las entradas— vive con
 la <a href="../word-lists/ignorindaj-vortoj/">lista generada</a>; esta página solo resume.</p>
 <h2 id="afijos">Afijos<a class="headerlink" href="#afijos" title="Permanent link">&para;</a></h2>
@@ -2293,6 +2379,60 @@ dentro: <code>-n</code> → <code>-j</code> → <code>-o</code> (terminaciones),
 luego el prefijo <code>mal-</code>, dejando <code>san-</code> ("salud"). Cada paso es una búsqueda en
 una tabla.</p>
 </div>
+<h2 id="abreviaturas">Abreviaturas<a class="headerlink" href="#abreviaturas" title="Permanent link">&para;</a></h2>
+<p>Las abreviaturas son el único grupo que la regla de solo raíces no puede
+regenerar. <code>s-ro</code> no es <code>sinjoro</code> más una terminación — ningún recorte lo produce
+—, así que sacarlo del léxico obliga a escribirlo aquí. Una tubería que quiera
+expandirlas necesita esta tabla como datos:</p>
+<table>
+<thead>
+<tr>
+<th>Abreviatura</th>
+<th>Expansión</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bv</code></td>
+<td><code>bonvolu</code></td>
+<td>por favor</td>
+</tr>
+<tr>
+<td><code>d-ro</code></td>
+<td><code>doktoro</code></td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td><code>ekz</code></td>
+<td><code>ekzemple</code></td>
+<td>p. ej., por ejemplo</td>
+</tr>
+<tr>
+<td><code>f-no</code></td>
+<td><code>fraŭlino</code></td>
+<td>Srta.</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td><code>kaj</code></td>
+<td>y</td>
+</tr>
+<tr>
+<td><code>s-no</code></td>
+<td><code>sinjorino</code></td>
+<td>Sra.</td>
+</tr>
+<tr>
+<td><code>s-ro</code></td>
+<td><code>sinjoro</code></td>
+<td>Sr.</td>
+</tr>
+</tbody>
+</table>
+<p>El patrón detrás de casi todas es <em>primera letra, guion, última sílaba</em>: <code>s-ro</code> ←
+<code>s(injo)ro</code>. Es una convención, no una regla, y las variantes son reales — <code>s-ino</code>
+es tan común como <code>s-no</code>. Trata la tabla como cerrada y amplíala a mano.</p>
 <h2 id="raices-mas-comunes">Raíces más comunes<a class="headerlink" href="#raices-mas-comunes" title="Permanent link">&para;</a></h2>
 <p>Un lematizador también se beneficia de una lista de <strong>raíces</strong> conocidas, tanto
 para validar una descomposición como para captar las palabras frecuentes que

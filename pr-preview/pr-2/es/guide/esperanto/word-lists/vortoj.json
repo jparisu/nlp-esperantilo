@@ -22,15 +22,13 @@
     "prepozicio": "Preposition",
     "konjunkcio": "Conjunction",
     "pronomo": "Pronoun",
-    "korelativo": "Correlative",
     "adverbo": "Adverb",
     "partikulo": "Particle",
     "verboformo": "Verb form",
     "nombro": "Number",
     "interjekcio": "Interjection",
     "ĝentilaĵo": "Politeness word",
-    "titolo": "Title of address",
-    "mallongigo": "Abbreviation"
+    "titolo": "Title of address"
   },
   "vortoj": [
     {
@@ -164,50 +162,27 @@
       "ignorinda": true
     },
     {
-      "vorto": "bonan",
+      "vorto": "bona",
       "kategorio": "ĝentilaĵo",
       "traduko": [
         "good"
       ],
-      "noto": "Accusative of *bona*, as in the greeting *bonan tagon*.",
+      "noto": "A content adjective, listed only as the root of the greeting form *bonan* (*bonan tagon*).",
       "fontoj": [
-        "stopwords-iso"
+        "nlp-esperantilo"
       ],
-      "ignorinda": true
+      "ignorinda": false
     },
     {
-      "vorto": "bonvole",
+      "vorto": "bonvoli",
       "kategorio": "ĝentilaĵo",
       "traduko": [
-        "please",
-        "kindly"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "bonvolu",
-      "kategorio": "ĝentilaĵo",
-      "traduko": [
+        "to be so kind as to",
         "please"
       ],
-      "noto": "Imperative of *bonvoli*, followed by an infinitive.",
+      "noto": "Infinitive. The imperative *bonvolu* and the adverb *bonvole* are the usual forms.",
       "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "bv",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "please"
-      ],
-      "noto": "Abbreviation of *bonvolu*.",
-      "fontoj": [
-        "stopwords-iso"
+        "nlp-esperantilo"
       ],
       "ignorinda": true
     },
@@ -229,54 +204,6 @@
         "thou"
       ],
       "noto": "Archaic and rarely used; *vi* covers both singular and plural.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "cia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "thy"
-      ],
-      "noto": "Possessive of *ci*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "cian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "thy"
-      ],
-      "noto": "Accusative of *cia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "cin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "thee"
-      ],
-      "noto": "Accusative of *ci*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "d-ro",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "Dr."
-      ],
-      "noto": "Abbreviation of *doktoro*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -319,18 +246,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "deka",
-      "kategorio": "nombro",
-      "traduko": [
-        "tenth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "des",
       "kategorio": "partikulo",
       "traduko": [
@@ -355,18 +270,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "doktor'",
-      "kategorio": "titolo",
-      "traduko": [
-        "doctor"
-      ],
-      "noto": "Elided form of *doktoro*, mostly in poetry and address.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "doktoro",
       "kategorio": "titolo",
       "traduko": [
@@ -383,18 +286,6 @@
       "traduko": [
         "two"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "dua",
-      "kategorio": "nombro",
-      "traduko": [
-        "second"
-      ],
-      "noto": "Ordinal: number + *-a*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -436,19 +327,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "ekz",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "e.g.",
-        "for example"
-      ],
-      "noto": "Abbreviation of *ekzemple*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ekzemple",
       "kategorio": "adverbo",
       "traduko": [
@@ -484,20 +362,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "estas",
-      "kategorio": "verboformo",
-      "traduko": [
-        "is",
-        "am",
-        "are"
-      ],
-      "noto": "Present tense of *esti*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "esti",
       "kategorio": "verboformo",
       "traduko": [
@@ -506,55 +370,6 @@
       "noto": "Infinitive.",
       "fontoj": [
         "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "estis",
-      "kategorio": "verboformo",
-      "traduko": [
-        "was",
-        "were"
-      ],
-      "noto": "Past tense of *esti*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "estos",
-      "kategorio": "verboformo",
-      "traduko": [
-        "will be"
-      ],
-      "noto": "Future tense of *esti*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "estu",
-      "kategorio": "verboformo",
-      "traduko": [
-        "be"
-      ],
-      "noto": "Imperative of *esti*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "estus",
-      "kategorio": "verboformo",
-      "traduko": [
-        "would be"
-      ],
-      "noto": "Conditional of *esti*.",
-      "fontoj": [
-        "stopwords-iso"
       ],
       "ignorinda": true
     },
@@ -570,28 +385,16 @@
       "ignorinda": true
     },
     {
-      "vorto": "f-no",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "Miss"
-      ],
-      "noto": "Abbreviation of *fraŭlino*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "feliĉan",
+      "vorto": "feliĉa",
       "kategorio": "ĝentilaĵo",
       "traduko": [
         "happy"
       ],
-      "noto": "Accusative of *feliĉa*, as in *feliĉan naskiĝtagon*.",
+      "noto": "A content adjective, listed only as the root of the greeting form *feliĉan* (*feliĉan naskiĝtagon*).",
       "fontoj": [
-        "stopwords-iso"
+        "nlp-esperantilo"
       ],
-      "ignorinda": true
+      "ignorinda": false
     },
     {
       "vorto": "for",
@@ -606,13 +409,15 @@
       "ignorinda": true
     },
     {
-      "vorto": "fraŭlino",
+      "vorto": "fraŭlo",
       "kategorio": "titolo",
       "traduko": [
-        "miss"
+        "bachelor",
+        "young man"
       ],
+      "noto": "Root of *fraŭlino* (miss), which adds the female suffix *-in-*.",
       "fontoj": [
-        "stopwords-iso"
+        "nlp-esperantilo"
       ],
       "ignorinda": true
     },
@@ -628,19 +433,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "havas",
-      "kategorio": "verboformo",
-      "traduko": [
-        "has",
-        "have"
-      ],
-      "noto": "Present tense of *havi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "havi",
       "kategorio": "verboformo",
       "traduko": [
@@ -649,54 +441,6 @@
       "noto": "Infinitive.",
       "fontoj": [
         "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "havis",
-      "kategorio": "verboformo",
-      "traduko": [
-        "had"
-      ],
-      "noto": "Past tense of *havi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "havos",
-      "kategorio": "verboformo",
-      "traduko": [
-        "will have"
-      ],
-      "noto": "Future tense of *havi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "havu",
-      "kategorio": "verboformo",
-      "traduko": [
-        "have"
-      ],
-      "noto": "Imperative of *havi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "havus",
-      "kategorio": "verboformo",
-      "traduko": [
-        "would have"
-      ],
-      "noto": "Conditional of *havi*.",
-      "fontoj": [
-        "stopwords-iso"
       ],
       "ignorinda": true
     },
@@ -757,115 +501,11 @@
       "ignorinda": true
     },
     {
-      "vorto": "ia",
-      "kategorio": "korelativo",
-      "traduko": [
-        "some kind of"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ial",
-      "kategorio": "korelativo",
-      "traduko": [
-        "for some reason"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iam",
-      "kategorio": "korelativo",
-      "traduko": [
-        "sometime",
-        "once"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ie",
-      "kategorio": "korelativo",
-      "traduko": [
-        "somewhere"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iel",
-      "kategorio": "korelativo",
-      "traduko": [
-        "somehow"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ies",
-      "kategorio": "korelativo",
-      "traduko": [
-        "someone's"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ili",
       "kategorio": "pronomo",
       "traduko": [
         "they"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ilia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "their",
-        "theirs"
-      ],
-      "noto": "Possessive of *ili*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ilian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "their"
-      ],
-      "noto": "Accusative of *ilia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ilin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "them"
-      ],
-      "noto": "Accusative of *ili*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -878,77 +518,6 @@
         "between",
         "among"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "io",
-      "kategorio": "korelativo",
-      "traduko": [
-        "something"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iom",
-      "kategorio": "korelativo",
-      "traduko": [
-        "some",
-        "somewhat"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ion",
-      "kategorio": "korelativo",
-      "traduko": [
-        "something"
-      ],
-      "noto": "Accusative of *io*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iu",
-      "kategorio": "korelativo",
-      "traduko": [
-        "someone",
-        "some (one)"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iujn",
-      "kategorio": "korelativo",
-      "traduko": [
-        "some"
-      ],
-      "noto": "Plural accusative of *iu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "iun",
-      "kategorio": "korelativo",
-      "traduko": [
-        "someone"
-      ],
-      "noto": "Accusative of *iu*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -1025,18 +594,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "k",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "and"
-      ],
-      "noto": "Abbreviation of *kaj*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "kaj",
       "kategorio": "konjunkcio",
       "traduko": [
@@ -1054,147 +611,6 @@
         "that"
       ],
       "noto": "Introduces a subordinate clause; not to be confused with *kiu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kia",
-      "kategorio": "korelativo",
-      "traduko": [
-        "what kind of"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kial",
-      "kategorio": "korelativo",
-      "traduko": [
-        "why"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiam",
-      "kategorio": "korelativo",
-      "traduko": [
-        "when"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kie",
-      "kategorio": "korelativo",
-      "traduko": [
-        "where"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiel",
-      "kategorio": "korelativo",
-      "traduko": [
-        "how",
-        "as"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kies",
-      "kategorio": "korelativo",
-      "traduko": [
-        "whose"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kio",
-      "kategorio": "korelativo",
-      "traduko": [
-        "what"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiom",
-      "kategorio": "korelativo",
-      "traduko": [
-        "how much",
-        "how many"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kion",
-      "kategorio": "korelativo",
-      "traduko": [
-        "what"
-      ],
-      "noto": "Accusative of *kio*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiu",
-      "kategorio": "korelativo",
-      "traduko": [
-        "who",
-        "which",
-        "what (one)"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiujn",
-      "kategorio": "korelativo",
-      "traduko": [
-        "whom",
-        "which"
-      ],
-      "noto": "Plural accusative of *kiu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kiun",
-      "kategorio": "korelativo",
-      "traduko": [
-        "whom",
-        "which"
-      ],
-      "noto": "Accusative of *kiu*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -1259,18 +675,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "kvara",
-      "kategorio": "nombro",
-      "traduko": [
-        "fourth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "kvazaŭ",
       "kategorio": "konjunkcio",
       "traduko": [
@@ -1287,18 +691,6 @@
       "traduko": [
         "five"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "kvina",
-      "kategorio": "nombro",
-      "traduko": [
-        "fifth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -1333,53 +725,6 @@
       "kategorio": "pronomo",
       "traduko": [
         "he"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "lia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "his"
-      ],
-      "noto": "Possessive of *li*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "lian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "his"
-      ],
-      "noto": "Accusative of *lia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "lin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "him"
-      ],
-      "noto": "Accusative of *li*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "malantaŭ",
-      "kategorio": "prepozicio",
-      "traduko": [
-        "behind"
       ],
       "fontoj": [
         "stopwords-iso"
@@ -1434,31 +779,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "mia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "my",
-        "mine"
-      ],
-      "noto": "Possessive of *mi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "mian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "my"
-      ],
-      "noto": "Accusative of *mia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "mil",
       "kategorio": "nombro",
       "traduko": [
@@ -1495,18 +815,6 @@
       "ignorinda": false
     },
     {
-      "vorto": "min",
-      "kategorio": "pronomo",
-      "traduko": [
-        "me"
-      ],
-      "noto": "Accusative of *mi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "minus",
       "kategorio": "nombro",
       "traduko": [
@@ -1540,18 +848,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "naŭa",
-      "kategorio": "nombro",
-      "traduko": [
-        "ninth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ne",
       "kategorio": "partikulo",
       "traduko": [
@@ -1576,132 +872,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "nenia",
-      "kategorio": "korelativo",
-      "traduko": [
-        "no kind of"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nenial",
-      "kategorio": "korelativo",
-      "traduko": [
-        "for no reason"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "neniam",
-      "kategorio": "korelativo",
-      "traduko": [
-        "never"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nenie",
-      "kategorio": "korelativo",
-      "traduko": [
-        "nowhere"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "neniel",
-      "kategorio": "korelativo",
-      "traduko": [
-        "in no way"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nenies",
-      "kategorio": "korelativo",
-      "traduko": [
-        "no one's"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nenio",
-      "kategorio": "korelativo",
-      "traduko": [
-        "nothing"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "neniom",
-      "kategorio": "korelativo",
-      "traduko": [
-        "none",
-        "no amount"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nenion",
-      "kategorio": "korelativo",
-      "traduko": [
-        "nothing"
-      ],
-      "noto": "Accusative of *nenio*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "neniu",
-      "kategorio": "korelativo",
-      "traduko": [
-        "nobody",
-        "no one",
-        "no"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "neniun",
-      "kategorio": "korelativo",
-      "traduko": [
-        "nobody"
-      ],
-      "noto": "Accusative of *neniu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "nepre",
       "kategorio": "adverbo",
       "traduko": [
@@ -1719,43 +889,6 @@
       "traduko": [
         "we"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "our",
-        "ours"
-      ],
-      "noto": "Possessive of *ni*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "our"
-      ],
-      "noto": "Accusative of *nia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "nin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "us"
-      ],
-      "noto": "Accusative of *ni*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -1817,18 +950,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "oka",
-      "kategorio": "nombro",
-      "traduko": [
-        "eighth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ol",
       "kategorio": "konjunkcio",
       "traduko": [
@@ -1849,42 +970,6 @@
         "they"
       ],
       "noto": "Impersonal pronoun.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "onia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "one's"
-      ],
-      "noto": "Possessive of *oni*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "onian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "one's"
-      ],
-      "noto": "Accusative of *onia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "onin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "one"
-      ],
-      "noto": "Accusative of *oni*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -1986,19 +1071,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "povas",
-      "kategorio": "verboformo",
-      "traduko": [
-        "can",
-        "is able to"
-      ],
-      "noto": "Present tense of *povi*.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "povi",
       "kategorio": "verboformo",
       "traduko": [
@@ -2006,55 +1078,6 @@
         "can"
       ],
       "noto": "Infinitive.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "povis",
-      "kategorio": "verboformo",
-      "traduko": [
-        "could"
-      ],
-      "noto": "Past tense of *povi*.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "povos",
-      "kategorio": "verboformo",
-      "traduko": [
-        "will be able to"
-      ],
-      "noto": "Future tense of *povi*.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "povu",
-      "kategorio": "verboformo",
-      "traduko": [
-        "be able to"
-      ],
-      "noto": "Imperative of *povi*.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "povus",
-      "kategorio": "verboformo",
-      "traduko": [
-        "could",
-        "would be able to"
-      ],
-      "noto": "Conditional of *povi*.",
       "fontoj": [
         "nlp-esperantilo"
       ],
@@ -2108,30 +1131,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "s-no",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "Mrs."
-      ],
-      "noto": "Abbreviation of *sinjorino*; *s-ino* is also common.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "s-ro",
-      "kategorio": "mallongigo",
-      "traduko": [
-        "Mr."
-      ],
-      "noto": "Abbreviation of *sinjoro*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "se",
       "kategorio": "konjunkcio",
       "traduko": [
@@ -2176,35 +1175,11 @@
       "ignorinda": true
     },
     {
-      "vorto": "sepa",
-      "kategorio": "nombro",
-      "traduko": [
-        "seventh"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ses",
       "kategorio": "nombro",
       "traduko": [
         "six"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sesa",
-      "kategorio": "nombro",
-      "traduko": [
-        "sixth"
-      ],
-      "noto": "Ordinal: number + *-a*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2217,76 +1192,6 @@
         "oneself"
       ],
       "noto": "Reflexive pronoun of the third person.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "his own",
-        "her own",
-        "its own",
-        "their own"
-      ],
-      "noto": "Possessive of *si*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "his own",
-        "her own",
-        "its own",
-        "their own"
-      ],
-      "noto": "Accusative of *sia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "himself",
-        "herself",
-        "itself",
-        "themselves"
-      ],
-      "noto": "Accusative of *si*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sinjor'",
-      "kategorio": "titolo",
-      "traduko": [
-        "mister",
-        "sir"
-      ],
-      "noto": "Elided form of *sinjoro*, mostly in poetry and address.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "sinjorino",
-      "kategorio": "titolo",
-      "traduko": [
-        "madam",
-        "Mrs"
-      ],
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2329,13 +1234,15 @@
       "ignorinda": true
     },
     {
-      "vorto": "supren",
+      "vorto": "supre",
       "kategorio": "adverbo",
       "traduko": [
-        "upwards"
+        "above",
+        "up"
       ],
+      "noto": "*supren* (upwards) is this word plus the directional *-n*.",
       "fontoj": [
-        "stopwords-iso"
+        "nlp-esperantilo"
       ],
       "ignorinda": true
     },
@@ -2358,146 +1265,6 @@
         "however",
         "nevertheless"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tia",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that kind of",
-        "such"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tial",
-      "kategorio": "korelativo",
-      "traduko": [
-        "therefore",
-        "for that reason"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiam",
-      "kategorio": "korelativo",
-      "traduko": [
-        "then"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tie",
-      "kategorio": "korelativo",
-      "traduko": [
-        "there"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiel",
-      "kategorio": "korelativo",
-      "traduko": [
-        "thus",
-        "so",
-        "in that way"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ties",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that one's"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tio",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that (thing)"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiom",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that much",
-        "that many"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tion",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that (thing)"
-      ],
-      "noto": "Accusative of *tio*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiu",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that (one)"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiujn",
-      "kategorio": "korelativo",
-      "traduko": [
-        "those"
-      ],
-      "noto": "Plural accusative of *tiu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tiun",
-      "kategorio": "korelativo",
-      "traduko": [
-        "that (one)"
-      ],
-      "noto": "Accusative of *tiu*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2543,18 +1310,6 @@
       "traduko": [
         "three"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "tria",
-      "kategorio": "nombro",
-      "traduko": [
-        "third"
-      ],
-      "noto": "Ordinal: number + *-a*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2608,18 +1363,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "unua",
-      "kategorio": "nombro",
-      "traduko": [
-        "first"
-      ],
-      "noto": "Ordinal: number + *-a*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ve",
       "kategorio": "interjekcio",
       "traduko": [
@@ -2650,43 +1393,6 @@
         "you"
       ],
       "noto": "Both singular and plural.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "via",
-      "kategorio": "pronomo",
-      "traduko": [
-        "your",
-        "yours"
-      ],
-      "noto": "Possessive of *vi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "vian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "your"
-      ],
-      "noto": "Accusative of *via*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "vin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "you"
-      ],
-      "noto": "Accusative of *vi*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2729,107 +1435,6 @@
       "ignorinda": true
     },
     {
-      "vorto": "ĉia",
-      "kategorio": "korelativo",
-      "traduko": [
-        "every kind of"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉial",
-      "kategorio": "korelativo",
-      "traduko": [
-        "for every reason"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiam",
-      "kategorio": "korelativo",
-      "traduko": [
-        "always"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉie",
-      "kategorio": "korelativo",
-      "traduko": [
-        "everywhere"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiel",
-      "kategorio": "korelativo",
-      "traduko": [
-        "in every way"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉies",
-      "kategorio": "korelativo",
-      "traduko": [
-        "everyone's"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉio",
-      "kategorio": "korelativo",
-      "traduko": [
-        "everything"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiom",
-      "kategorio": "korelativo",
-      "traduko": [
-        "all of it",
-        "the whole quantity"
-      ],
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉion",
-      "kategorio": "korelativo",
-      "traduko": [
-        "everything"
-      ],
-      "noto": "Accusative of *ĉio*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
       "vorto": "ĉirkaŭ",
       "kategorio": "prepozicio",
       "traduko": [
@@ -2838,45 +1443,6 @@
       ],
       "fontoj": [
         "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiu",
-      "kategorio": "korelativo",
-      "traduko": [
-        "every",
-        "everyone",
-        "each"
-      ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiujn",
-      "kategorio": "korelativo",
-      "traduko": [
-        "all",
-        "everyone"
-      ],
-      "noto": "Plural accusative of *ĉiu*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĉiun",
-      "kategorio": "korelativo",
-      "traduko": [
-        "everyone",
-        "each"
-      ],
-      "noto": "Accusative of *ĉiu*.",
-      "fontoj": [
-        "stopwords-iso"
       ],
       "ignorinda": true
     },
@@ -2898,42 +1464,6 @@
       "traduko": [
         "it"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĝia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "its"
-      ],
-      "noto": "Possessive of *ĝi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĝian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "its"
-      ],
-      "noto": "Accusative of *ĝia*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ĝin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "it"
-      ],
-      "noto": "Accusative of *ĝi*.",
       "fontoj": [
         "stopwords-iso"
       ],
@@ -2968,43 +1498,6 @@
       "traduko": [
         "she"
       ],
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ŝia",
-      "kategorio": "pronomo",
-      "traduko": [
-        "her",
-        "hers"
-      ],
-      "noto": "Possessive of *ŝi*.",
-      "fontoj": [
-        "stopwords-iso"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ŝian",
-      "kategorio": "pronomo",
-      "traduko": [
-        "her"
-      ],
-      "noto": "Accusative of *ŝia*.",
-      "fontoj": [
-        "nlp-esperantilo"
-      ],
-      "ignorinda": true
-    },
-    {
-      "vorto": "ŝin",
-      "kategorio": "pronomo",
-      "traduko": [
-        "her"
-      ],
-      "noto": "Accusative of *ŝi*.",
       "fontoj": [
         "stopwords-iso"
       ],
