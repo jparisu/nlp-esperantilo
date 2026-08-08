@@ -44,8 +44,9 @@ Kutimaj demandoj pri Esperanto kaj pri transformi ĝin en datumojn por la biblio
 ??? question "Kio validas kiel ignorinda vorto en Esperanto?"
     La artikolo `la`, la pronomoj, la korelativoj, kaj fiksa aro da prepozicioj,
     konjunkcioj kaj oftaj adverboj — plejparte fermitaj klasoj, do la listo estas finia.
-    Ĉi tiu projekto distribuas 250 el ili. Vidu
-    [Vortprovizo § Ignorindaj vortoj](vocabulary.md#ignorindaj-vortoj).
+    Ĉi tiu projekto distribuas 122 el ili — nur *radikojn*, ĉar la fleksiitajn
+    formojn generas reguloj. Vidu
+    [Vortprovizo § Nur radikoj](vocabulary.md#nur-radikoj).
 
 ??? question "De kie la biblioteko prenas siajn vortlistojn?"
     El JSON-dosieroj sub `resources/`, kiuj estas la sola fonto de vero: la dokumentaro

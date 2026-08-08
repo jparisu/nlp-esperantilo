@@ -22,11 +22,40 @@ conjunto fijo de preposiciones y conjunciones.
     Este proyecto distribuye la lista completa como un archivo legible por máquina,
     renderizado aquí automáticamente:
 
-    **[Palabras vacías →](word-lists/ignorindaj-vortoj.md)** — 250 entradas, cada
+    **[Palabras vacías →](word-lists/ignorindaj-vortoj.md)** — 122 entradas, cada
     una con su traducción al inglés, su categoría gramatical y su procedencia. Se
     genera a partir de `resources/esperanto/vortoj.json`, el mismo archivo que
     leerá la biblioteca en tiempo de ejecución, de modo que la documentación y los
     datos nunca pueden discrepar.
+
+### Solo raíces
+
+122 entradas es una lista corta, y a propósito. El Esperanto construye palabras
+añadiendo morfemas a una raíz, así que una lista escrita palabra por palabra se
+repite: `mi`, `mia`, `min` y `mian` son un pronombre y tres terminaciones;
+`esti`, `estas`, `estis`, `estos`, `estus` y `estu` son un verbo y cinco.
+
+Por eso el léxico guarda **raíces, no formas**. Una entrada se gana su sitio solo
+si *no* puede construirse a partir de otra entrada más una regla escrita en este
+sitio. Con ese criterio se eliminaron 131 de las 252 entradas originales:
+
+| Eliminado | Se construye desde | Regla |
+| --- | --- | --- |
+| `mia`, `min`, `mian`, `nia`, `ĝin`, … | el pronombre `mi`, `ni`, `ĝi`, … | [Gramática § Pronombres personales](grammar.md#pronombres-personales) |
+| `unua`, `dua`, `deka`, … | el cardinal `unu`, `du`, `dek`, … | [Gramática § Números](grammar.md#numeros-y-composicion) |
+| `estas`, `havis`, `povus`, … | el infinitivo `esti`, `havi`, `povi` | [Gramática § Sistema verbal](grammar.md#sistema-verbal) |
+| las 59 entradas de correlativos | cinco prefijos × nueve terminaciones | [Gramática § Correlativos](grammar.md#correlativos) |
+| `malantaŭ`, `sinjorino`, `supren` | `antaŭ`, `sinjoro`, `supre` | [§ Afijos](#afijos), más abajo |
+| `bv`, `s-ro`, `d-ro`, `k`, … | nada — véase [§ Abreviaturas](#abreviaturas) | — |
+
+A cambio se *añadieron* cinco raíces, porque había formas cuya raíz faltaba:
+`bona`, `feliĉa`, `bonvoli`, `fraŭlo` y `supre`.
+
+!!! warning "La lista y el lematizador van juntos"
+    Una lista de solo raíces es más pequeña *y* más débil por sí sola: `token in
+    stop_words` ya no atrapa `estas` ni `min`. Solo es correcta para una tubería
+    que normaliza primero — quitar las terminaciones y después buscar. Filtrar
+    tokens en bruto contra esta lista dejará pasar las palabras vacías flexionadas.
 
 Una muestra representativa, por categoría:
 
@@ -36,8 +65,11 @@ Una muestra representativa, por categoría:
 | Preposiciones | `al`, `de`, `en`, `kun`, `por`, `pri`, `sur`, `sub`, `tra` |
 | Conjunciones | `kaj`, `aŭ`, `sed`, `ke`, `ĉar`, `se`, `nek` |
 | Pronombres | `mi`, `vi`, `li`, `ŝi`, `ĝi`, `ni`, `ili`, `oni`, `si` |
-| Correlativos | `tio`, `kiu`, `ĉiam`, `nenie`, `kiel`, … |
 | Adverbios comunes | `ankaŭ`, `ankoraŭ`, `jam`, `nur`, `tre`, `tro`, `plu` |
+| Verbos | `esti`, `havi`, `povi` — solo infinitivos |
+
+Los correlativos también son palabras vacías, los 45, pero no están en el archivo:
+los genera la [tabla](grammar.md#correlativos).
 
 El resto — *por qué* califica cada palabra y de dónde vienen las entradas— vive con
 la [lista generada](word-lists/ignorindaj-vortoj.md); esta página solo resume.
@@ -97,6 +129,27 @@ Estas se quitan primero, en orden inverso, para llegar a la base:
     dentro: `-n` → `-j` → `-o` (terminaciones), luego `-ej-`, `-ul-` (sufijos), y
     luego el prefijo `mal-`, dejando `san-` ("salud"). Cada paso es una búsqueda en
     una tabla.
+
+## Abreviaturas
+
+Las abreviaturas son el único grupo que la regla de solo raíces no puede
+regenerar. `s-ro` no es `sinjoro` más una terminación — ningún recorte lo produce
+—, así que sacarlo del léxico obliga a escribirlo aquí. Una tubería que quiera
+expandirlas necesita esta tabla como datos:
+
+| Abreviatura | Expansión | Significado |
+| --- | --- | --- |
+| `bv` | `bonvolu` | por favor |
+| `d-ro` | `doktoro` | Dr. |
+| `ekz` | `ekzemple` | p. ej., por ejemplo |
+| `f-no` | `fraŭlino` | Srta. |
+| `k` | `kaj` | y |
+| `s-no` | `sinjorino` | Sra. |
+| `s-ro` | `sinjoro` | Sr. |
+
+El patrón detrás de casi todas es *primera letra, guion, última sílaba*: `s-ro` ←
+`s(injo)ro`. Es una convención, no una regla, y las variantes son reales — `s-ino`
+es tan común como `s-no`. Trata la tabla como cerrada y amplíala a mano.
 
 ## Raíces más comunes
 

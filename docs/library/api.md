@@ -13,6 +13,11 @@ Every public name of `esperantilo`, with its signature, arguments and examples.
     Every entry links to the exact lines it documents: expand *Source* to read
     them.
 
+!!! warning "English only"
+    This page is generated from the docstrings of the source code, which are
+    written in English. It is not translated into the other languages of this
+    site.
+
 ::: esperantilo
     options:
       heading_level: 2

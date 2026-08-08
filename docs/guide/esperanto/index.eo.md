@@ -27,7 +27,8 @@ La referencaj listoj vivas kiel JSON-dosieroj sub `resources/` en la deponejo ka
 estas prezentataj ĉi tie aŭtomate, por ke la dokumentaro neniam povu deflankiĝi de
 la datumoj mem:
 
-- [Ignorindaj vortoj](word-lists/ignorindaj-vortoj.md) — 250 vortoj kun sia angla
-  traduko kaj gramatika kategorio.
+- [Ignorindaj vortoj](word-lists/ignorindaj-vortoj.md) — 122 radikoj kun sia angla
+  traduko kaj gramatika kategorio. Radikoj, ne formoj: vidu
+  [Vortprovizo § Nur radikoj](vocabulary.md#nur-radikoj).
 
 Vidu [ĉiujn vortlistojn](word-lists/index.md).

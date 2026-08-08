@@ -26,7 +26,8 @@ The reference lists live as JSON files under `resources/` in the repository and
 are rendered here automatically, so the documentation can never drift from the
 data itself:
 
-- [Stop-words](word-lists/ignorindaj-vortoj.md) — 250 words with their English
-  translation and grammatical category.
+- [Stop-words](word-lists/ignorindaj-vortoj.md) — 122 roots with their English
+  translation and grammatical category. Roots, not forms: see
+  [Vocabulary § Roots only](vocabulary.md#roots-only).
 
 See [all word lists](word-lists/index.md).

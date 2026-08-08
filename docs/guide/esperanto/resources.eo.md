@@ -44,6 +44,10 @@ Por serĉi radikojn, afiksojn kaj signifojn:
 - **_Plena Ilustrita Vortaro_** (PIV) — la granda referenca unulingva vortaro,
   eldonita de SAT; la normo por aŭtoritataj difinoj.
 - **[Vortaro.net](https://vortaro.net)** — oportuna reta fasado por PIV.
+- **[esperanto12.net](https://esperanto12.net/en/tabelvortoj/)** — kompakta
+  referenco pri la fermitaj klasoj, kaj la plej klara trairo de la
+  [korelativa tabelo](grammar.md#korelativoj) — la 45 vortoj kiujn la leksikono
+  intence ne konservas.
 
 !!! tip "Kion vi volas estas maŝinlegebla"
     Por nutri la bibliotekon, preferu fontojn, kiuj ofertas **strukturitan

@@ -48,8 +48,9 @@ biblioteca. Cada respuesta enlaza a la página donde el tema se trata en detalle
 ??? question "¿Qué cuenta como palabra vacía en Esperanto?"
     El artículo `la`, los pronombres, los correlativos, y un conjunto fijo de
     preposiciones, conjunciones y adverbios comunes — en su mayoría clases cerradas,
-    así que la lista es finita. Este proyecto distribuye 250 de ellas. Véase
-    [Vocabulario § Palabras vacías](vocabulary.md#palabras-vacias).
+    así que la lista es finita. Este proyecto distribuye 122 de ellas — solo
+    *raíces*, ya que las formas flexionadas se generan por regla. Véase
+    [Vocabulario § Solo raíces](vocabulary.md#solo-raices).
 
 ??? question "¿De dónde saca la biblioteca sus listas de palabras?"
     De archivos JSON bajo `resources/`, que son la única fuente de verdad: la

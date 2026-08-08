@@ -180,7 +180,17 @@ Los correlativos en `-u` y `-a` toman tanto `-j` como `-n` (`tiujn`, `kiuj`), co
 los sustantivos y adjetivos a los que se parecen. Los de `-o` toman `-n` pero
 **nunca** `-j` (`kion`, `tion` — no existe *tioj*), y los de `-e` toman `-n` para
 marcar dirección (`tien`, `kien`). Las otras cinco terminaciones son invariables.
-La mayoría de los correlativos son palabras vacías.
+
+Los 45 son palabras vacías, y esta tabla es el único sitio donde el proyecto los
+guarda: `resources/esperanto/vortoj.json` contiene raíces, no formas, así que se
+espera que un lematizador genere la rejilla a partir de los dos ejes de arriba en
+lugar de buscar las palabras. Véase
+[Vocabulario § Solo raíces](vocabulary.md#solo-raices).
+
+!!! tip "Un ejercicio para la rejilla"
+    [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
+    recorre la tabla celda por celda con frases de ejemplo — la forma más rápida
+    de dejar de leerla como 45 palabras sueltas.
 
 ## Afijos
 

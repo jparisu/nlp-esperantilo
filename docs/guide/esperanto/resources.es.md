@@ -48,6 +48,10 @@ Para buscar raíces, afijos y significados:
 - **_Plena Ilustrita Vortaro_** (PIV) — el gran diccionario monolingüe de
   referencia, publicado por SAT; el estándar para definiciones autorizadas.
 - **[Vortaro.net](https://vortaro.net)** — una cómoda interfaz en línea para PIV.
+- **[esperanto12.net](https://esperanto12.net/en/tabelvortoj/)** — una referencia
+  compacta de las clases cerradas, y el recorrido más claro por la
+  [tabla de correlativos](grammar.md#correlativos) — las 45 palabras que el léxico
+  deliberadamente no guarda.
 
 !!! tip "Lo que quieres es legible por máquina"
     Para alimentar la biblioteca, prefiere fuentes que ofrezcan una **exportación

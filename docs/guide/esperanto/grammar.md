@@ -171,8 +171,17 @@ The nine endings and the full table:
 The `-u` and `-a` correlatives take both `-j` and `-n` (`tiujn`, `kiuj`), like the
 nouns and adjectives they resemble. The `-o` correlatives take `-n` but **never**
 `-j` (`kion`, `tion` — there is no *tioj*), and the `-e` correlatives take `-n` to
-mark direction (`tien`, `kien`). The other five endings are invariable. Most
-correlatives are stop-words.
+mark direction (`tien`, `kien`). The other five endings are invariable.
+
+All 45 are stop-words, and this table is the only place the project stores them:
+`resources/esperanto/vortoj.json` holds roots, not forms, so a lemmatizer is
+expected to generate the grid from the two axes above rather than look words up.
+See [Vocabulary § Roots only](vocabulary.md#roots-only).
+
+!!! tip "A drill for the grid"
+    [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
+    walks through the table cell by cell with example sentences — the fastest
+    way to stop reading it as 45 separate words.
 
 ## Affixes
 

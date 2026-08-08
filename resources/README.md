@@ -104,6 +104,29 @@ A `filtro` is a plain equality test: a word is in the list when **all** its keys
 match the word's fields. `{"kategorio": "nombro", "ignorinda": true}` selects the
 numerals that are also stop-words.
 
+### Roots, not forms
+
+`vortoj.json` holds a word only if it **cannot be built from another entry plus a
+rule documented in the guide**. Esperanto is regular enough that a list written
+form by form repeats itself — `mi` / `mia` / `min` / `mian` is one pronoun and
+three endings — so the derived forms are left out and generated instead:
+
+| Not stored | Generated from | Documented in |
+| --- | --- | --- |
+| possessives and accusatives of pronouns | the pronoun | [Grammar § Personal pronouns](../docs/guide/esperanto/grammar.md) |
+| ordinals (`unua`, `dua`, …) | the cardinal | [Grammar § Numbers](../docs/guide/esperanto/grammar.md) |
+| conjugated verbs (`estas`, `havis`, …) | the infinitive | [Grammar § Verb system](../docs/guide/esperanto/grammar.md) |
+| all 45 correlatives, and their `-n` / `-jn` forms | 5 prefixes × 9 endings | [Grammar § Correlatives](../docs/guide/esperanto/grammar.md) |
+| affixed words (`malantaŭ`, `sinjorino`, `supren`) | root + affix | [Vocabulary § Affixes](../docs/guide/esperanto/vocabulary.md) |
+| abbreviations (`s-ro`, `bv`, `k`, …) | *nothing* — a closed table | [Vocabulary § Abbreviations](../docs/guide/esperanto/vocabulary.md) |
+
+Two consequences worth knowing before editing this file:
+
+- **Adding a word means adding a root.** If you need `bonan`, add `bona`.
+- **The list is not a drop-in stop-word filter.** `token in vortoj` will miss
+  `estas` and `min`. The consumer has to normalise first, or expand the rules
+  above at load time.
+
 ### What is enforced
 
 The documentation build fails if the lexicon lacks `kategorioj` or `vortoj`, if

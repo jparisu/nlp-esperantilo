@@ -170,8 +170,17 @@ La naŭ finaĵoj kaj la plena tabelo:
 La korelativoj en `-u` kaj `-a` prenas kaj `-j` kaj `-n` (`tiujn`, `kiuj`), kiel la
 substantivoj kaj adjektivoj, al kiuj ili similas. Tiuj en `-o` prenas `-n` sed
 **neniam** `-j` (`kion`, `tion` — *tioj* ne ekzistas), kaj tiuj en `-e` prenas `-n` por
-marki direkton (`tien`, `kien`). La aliaj kvin finaĵoj estas neflekseblaj. La plimulto
-de la korelativoj estas ignorindaj vortoj.
+marki direkton (`tien`, `kien`). La aliaj kvin finaĵoj estas neflekseblaj.
+
+Ĉiuj 45 estas ignorindaj vortoj, kaj ĉi tiu tabelo estas la sola loko kie la
+projekto konservas ilin: `resources/esperanto/vortoj.json` enhavas radikojn, ne
+formojn, do lematizilo devas generi la kradon el la du aksoj supre anstataŭ serĉi
+la vortojn. Vidu [Vortprovizo § Nur radikoj](vocabulary.md#nur-radikoj).
+
+!!! tip "Ekzercilo por la krado"
+    [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
+    trairas la tabelon ĉelon post ĉelo kun ekzemplaj frazoj — la plej rapida
+    maniero ĉesi legi ĝin kiel 45 apartajn vortojn.
 
 ## Afiksoj
 

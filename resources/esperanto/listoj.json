@@ -12,15 +12,9 @@
     "filtro": { "kategorio": "prepozicio" }
   },
   {
-    "id": "korelativoj",
-    "titolo": "Correlatives",
-    "priskribo": "The correlative table: 45 words built from five prefixes (`ki-`, `ti-`, `i-`, `ĉi-`, `neni-`) and nine endings, plus the accusative and plural forms the table generates.",
-    "filtro": { "kategorio": "korelativo" }
-  },
-  {
     "id": "nombroj",
     "titolo": "Numbers",
-    "priskribo": "Numerals and the words used to build them. Cardinals are invariable roots; ordinals add `-a`, and `miliono` and `miliardo` behave as ordinary nouns.",
+    "priskribo": "Numerals and the words used to build them. Only the cardinals are listed: the ordinals are the same words plus `-a`, and `miliono` and `miliardo` behave as ordinary nouns.",
     "filtro": { "kategorio": "nombro" }
   }
 ]

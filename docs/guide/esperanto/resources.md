@@ -46,6 +46,10 @@ For looking up roots, affixes and meanings:
 - **_Plena Ilustrita Vortaro_** (PIV) — the large monolingual dictionary of
   reference, published by SAT; the standard for authoritative definitions.
 - **[Vortaro.net](https://vortaro.net)** — a convenient online front-end to PIV.
+- **[esperanto12.net](https://esperanto12.net/en/tabelvortoj/)** — a compact
+  reference for the closed classes, and the clearest walk-through of the
+  [correlative table](grammar.md#correlatives) — the 45 words the lexicon
+  deliberately does not store.
 
 !!! tip "Machine-readable is what you want"
     For feeding the library, prefer sources that offer a **structured export**

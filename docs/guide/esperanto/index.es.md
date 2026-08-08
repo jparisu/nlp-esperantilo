@@ -27,7 +27,8 @@ Las listas de referencia viven como archivos JSON bajo `resources/` en el
 repositorio y se renderizan aquí automáticamente, de modo que la documentación
 nunca pueda separarse de los datos en sí:
 
-- [Palabras vacías](word-lists/ignorindaj-vortoj.md) — 250 palabras con su
-  traducción al inglés y su categoría gramatical.
+- [Palabras vacías](word-lists/ignorindaj-vortoj.md) — 122 raíces con su
+  traducción al inglés y su categoría gramatical. Raíces, no formas: véase
+  [Vocabulario § Solo raíces](vocabulary.md#solo-raices).
 
 Véase [todas las listas de palabras](word-lists/index.md).

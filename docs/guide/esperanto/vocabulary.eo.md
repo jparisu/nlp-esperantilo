@@ -21,10 +21,39 @@ konjunkcioj.
     Ĉi tiu projekto distribuas la plenan liston kiel maŝinlegeblan dosieron,
     prezentatan ĉi tie aŭtomate:
 
-    **[Ignorindaj vortoj →](word-lists/ignorindaj-vortoj.md)** — 250 eroj, ĉiu kun sia
+    **[Ignorindaj vortoj →](word-lists/ignorindaj-vortoj.md)** — 122 eroj, ĉiu kun sia
     angla traduko, gramatika kategorio kaj deveno. Ĝi estas generita el
     `resources/esperanto/vortoj.json`, la sama dosiero kiun legos la biblioteko
     rultempe, por ke la dokumentaro kaj la datumoj neniam povu malkonsenti.
+
+### Nur radikoj
+
+122 eroj estas mallonga listo, kaj intence. Esperanto konstruas vortojn aldonante
+morfemojn al radiko, do listo skribita vorto post vorto ripetas sin: `mi`, `mia`,
+`min` kaj `mian` estas unu pronomo kaj tri finaĵoj; `esti`, `estas`, `estis`,
+`estos`, `estus` kaj `estu` estas unu verbo kaj kvin.
+
+Tial la leksikono konservas **radikojn, ne formojn**. Ero meritas sian lokon nur
+se ĝi *ne* konstrueblas el alia ero plus regulo skribita en ĉi tiu retejo. Laŭ tiu
+kriterio 131 el la originaj 252 eroj estis forigitaj:
+
+| Forigita | Konstruebla el | Regulo |
+| --- | --- | --- |
+| `mia`, `min`, `mian`, `nia`, `ĝin`, … | la pronomo `mi`, `ni`, `ĝi`, … | [Gramatiko § Personaj pronomoj](grammar.md#personaj-pronomoj) |
+| `unua`, `dua`, `deka`, … | la baznombro `unu`, `du`, `dek`, … | [Gramatiko § Nombroj](grammar.md#nombroj-kaj-kunmetado) |
+| `estas`, `havis`, `povus`, … | la infinitivo `esti`, `havi`, `povi` | [Gramatiko § Verba sistemo](grammar.md#verba-sistemo) |
+| ĉiuj 59 korelativaj eroj | kvin prefiksoj × naŭ finaĵoj | [Gramatiko § Korelativoj](grammar.md#korelativoj) |
+| `malantaŭ`, `sinjorino`, `supren` | `antaŭ`, `sinjoro`, `supre` | [§ Afiksoj](#afiksoj) sube |
+| `bv`, `s-ro`, `d-ro`, `k`, … | nenio — vidu [§ Mallongigoj](#mallongigoj) | — |
+
+Interŝanĝe kvin radikoj estis *aldonitaj*, ĉar ĉeestis formoj kies radiko mankis:
+`bona`, `feliĉa`, `bonvoli`, `fraŭlo` kaj `supre`.
+
+!!! warning "La listo kaj la lematizilo iras kune"
+    Nur-radika listo estas pli malgranda *kaj* pli malforta per si mem: `token in
+    stop_words` ne plu kaptas `estas` nek `min`. Ĝi ĝustas nur por ĉeno kiu unue
+    normaligas — deprenu la finaĵojn, poste serĉu. Filtri krudajn ĵetonojn kontraŭ
+    ĉi tiu listo tralasos la fleksiitajn ignorindajn vortojn.
 
 Reprezenta specimeno, laŭ kategorio:
 
@@ -34,8 +63,11 @@ Reprezenta specimeno, laŭ kategorio:
 | Prepozicioj | `al`, `de`, `en`, `kun`, `por`, `pri`, `sur`, `sub`, `tra` |
 | Konjunkcioj | `kaj`, `aŭ`, `sed`, `ke`, `ĉar`, `se`, `nek` |
 | Pronomoj | `mi`, `vi`, `li`, `ŝi`, `ĝi`, `ni`, `ili`, `oni`, `si` |
-| Korelativoj | `tio`, `kiu`, `ĉiam`, `nenie`, `kiel`, … |
 | Oftaj adverboj | `ankaŭ`, `ankoraŭ`, `jam`, `nur`, `tre`, `tro`, `plu` |
+| Verboj | `esti`, `havi`, `povi` — nur infinitivoj |
+
+La korelativoj ankaŭ estas ignorindaj vortoj, ĉiuj 45, sed ili ne estas en la
+dosiero: ilin generas la [tabelo](grammar.md#korelativoj).
 
 La cetero — *kial* ĉiu vorto kvalifikiĝas kaj de kie venas la eroj — vivas kun la
 [generita listo](word-lists/ignorindaj-vortoj.md); ĉi tiu paĝo nur resumas.
@@ -94,6 +126,28 @@ por kodigi.
     Por reakiri la radikon de vorto kiel `malsanulejojn`, senŝeligu de ekstere
     internen: `-n` → `-j` → `-o` (finaĵoj), poste `-ej-`, `-ul-` (sufiksoj), poste la
     prefikso `mal-`, lasante `san-` ("sano"). Ĉiu paŝo estas serĉo en tabelo.
+
+## Mallongigoj
+
+La mallongigoj estas la sola grupo kiun la nur-radika regulo ne povas regeneri.
+`s-ro` ne estas `sinjoro` plus finaĵo — neniu deprenado produktas ĝin — do forigi
+ĝin el la leksikono devigas skribi ĝin ĉi tie. Ĉeno kiu volas malvolvi ilin
+bezonas ĉi tiun tabelon kiel datumojn:
+
+| Mallongigo | Plena formo | Signifo |
+| --- | --- | --- |
+| `bv` | `bonvolu` | bonvolu |
+| `d-ro` | `doktoro` | D-ro |
+| `ekz` | `ekzemple` | ekz., ekzemple |
+| `f-no` | `fraŭlino` | F-ino |
+| `k` | `kaj` | kaj |
+| `s-no` | `sinjorino` | S-ino |
+| `s-ro` | `sinjoro` | S-ro |
+
+La ŝablono malantaŭ preskaŭ ĉiuj estas *unua litero, streketo, lasta silabo*:
+`s-ro` ← `s(injo)ro`. Ĝi estas konvencio, ne regulo, kaj la variantoj estas realaj
+— `s-ino` estas same ofta kiel `s-no`. Traktu la tabelon kiel fermitan kaj
+etendu ĝin mane.
 
 ## Plej oftaj radikoj
 
