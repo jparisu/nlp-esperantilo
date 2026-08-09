@@ -1,6 +1,6 @@
 # Segmentación en frases
 
-Dividir un texto en frases es el primer paso de casi cualquier pipeline de PLN.
+Dividir un texto en frases es el primer paso de casi cualquier pipeline de NLP.
 `esperantilo` lo hace con
 [`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer).
 

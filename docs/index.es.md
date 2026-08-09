@@ -1,7 +1,7 @@
 # NLP Esperantilo
 
-**NLP Esperantilo** son dos cosas a la vez, y este sitio está dividido en
-consecuencia.
+**NLP Esperantilo** es un proyecto con fines educativos para ayudar a construir una librería de procesamiento de lenguaje natural (NLP) para el Esperanto.
+El proyecto cuenta con 2 partes:
 
 <div class="grid cards" markdown>
 
@@ -9,7 +9,7 @@ consecuencia.
 
     ---
 
-    El manual de referencia de `esperantilo`, una biblioteca de PLN basada en
+    El manual de referencia de `esperantilo`, una biblioteca de NLP basada en
     reglas para el Esperanto: qué hace hoy y qué significa cada nombre público.
     Su [referencia de la API](library/api.md) se genera desde el código fuente.
 
@@ -18,8 +18,7 @@ consecuencia.
     ---
 
     Cómo se construye y se publica una biblioteca como esa: Git, GitHub,
-    empaquetado y pruebas en Python, y la lingüística del Esperanto que va
-    dentro.
+    empaquetado y lingüística del Esperanto.
 
 </div>
 
@@ -37,23 +36,8 @@ esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
 ```
 
 !!! warning "La biblioteca es deliberadamente pequeña"
-    `esperantilo` está en la versión `0.1.0` y ofrece una sola función:
-    [segmentación en frases](library/sentence-segmentation.md). Los tokens, los
-    lemas y el análisis de afijos siguen siendo un
-    [objetivo de diseño](guide/python-library/api.md), no código publicado.
-    Construir el resto es justo el ejercicio para el que este sitio te prepara.
+    `esperantilo` es un proyecto con caracter educativo, no intenta ser una librería completa y funcional.
 
-## Para quién es
-
-Estudiantes universitarios que tienen que construir su propia biblioteca de PLN
-para el Esperanto. Se espera que quien lea tenga cierta base técnica, pero no
-necesariamente experiencia con las herramientas y los temas concretos que aquí
-se explican.
-
-Dos temas se dejan fuera de la guía deliberadamente, porque se enseñan en las
-clases del curso: **web scraping y consumo de APIs**, y **minería de textos y
-clasificación con Machine Learning**. Véase
-[Guía → qué no cubre](guide/index.md#que-no-cubre-esta-guia).
 
 ## Construir este sitio en local
 

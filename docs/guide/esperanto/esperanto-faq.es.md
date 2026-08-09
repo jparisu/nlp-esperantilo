@@ -8,7 +8,7 @@ biblioteca. Cada respuesta enlaza a la página donde el tema se trata en detalle
     1887, diseñada para ser **regular y fácil de aprender** — sin excepciones
     gramaticales. Véase [Historia](history.md).
 
-??? question "¿Por qué construir una biblioteca de PLN para el Esperanto en concreto?"
+??? question "¿Por qué construir una biblioteca de NLP para el Esperanto en concreto?"
     Porque su gramática es completamente regular, así que un tokenizador,
     lematizador y etiquetador morfosintáctico **basados en reglas** son realmente
     viables — las terminaciones y los afijos siguen reglas que nunca se rompen, a

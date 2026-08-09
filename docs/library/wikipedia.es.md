@@ -1,6 +1,6 @@
 # Leer Wikipedia
 
-Una biblioteca de PLN no sirve de nada sin texto sobre el que trabajar.
+Una biblioteca de NLP no sirve de nada sin texto sobre el que trabajar.
 `esperantilo` obtiene ese texto de Wikipedia con
 [`WikiPage`](api.md#esperantilo.wiki.WikiPage), ya limpio de marcado wiki.
 

@@ -4,7 +4,7 @@ Una **biblioteca** es un fragmento de código escrito para ser *reutilizado* por
 otro código. En lugar de copiar funciones entre proyectos, las empaquetas una vez,
 les das una interfaz pública clara, y dejas que cualquier proyecto las instale e
 importe. `esperantilo` —la biblioteca que construye esta guía— es una: un conjunto
-de herramientas de PLN basado en reglas para el Esperanto que un notebook puede
+de herramientas de NLP basado en reglas para el Esperanto que un notebook puede
 instalar y usar en un par de líneas.
 
 Esta página ordena el vocabulario, explica qué te aporta una biblioteca y observa
@@ -87,7 +87,7 @@ cualidades a las que aspirar en `esperantilo`:
 - **Nombres y documentación claros.** `fit`, `predict`, `LogisticRegression` dicen
   lo que hacen, y cada objeto público tiene documentación.
 
-La biblioteca de PLN **spaCy** —la referencia de diseño para la propia API de este
+La biblioteca de NLP **spaCy** —la referencia de diseño para la propia API de este
 proyecto— tiene las mismas cualidades, aplicadas al texto. Volvemos a ella en
 detalle en [la página de la API](api.md).
 

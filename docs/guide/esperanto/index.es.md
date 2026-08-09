@@ -3,7 +3,7 @@
 Esta sección trata la propia lengua Esperanto — su historia, gramática,
 vocabulario y recursos de aprendizaje. Está fuertemente orientada a la lingüística
 y a las reglas regulares del Esperanto, de modo que a partir de ella pueda
-implementarse una biblioteca de PLN basada en reglas.
+implementarse una biblioteca de NLP basada en reglas.
 
 Las páginas van del contexto a los datos: la historia de la lengua, luego sus
 reglas, y luego las listas que esas reglas producen. Si solo necesitas los datos

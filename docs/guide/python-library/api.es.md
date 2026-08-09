@@ -8,7 +8,7 @@ separa una biblioteca que la gente disfruta usando de una con la que pelea.
 
 El paquete `esperantilo` expone hasta ahora una clase y una función, así que la mayor
 parte de esta página es un **objetivo de diseño**: muestra cómo es una interfaz
-de PLN limpia —modelada sobre [spaCy](https://spacy.io/api)— para que la propia
+de NLP limpia —modelada sobre [spaCy](https://spacy.io/api)— para que la propia
 interfaz `Doc` / `Token` de la biblioteca pueda construirse imitándola.
 
 !!! tip "La parte que ya existe"

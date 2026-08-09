@@ -13,7 +13,7 @@ pruebas, y el conocimiento lingüístico que va dentro.
 
 ## Para quién es
 
-Estudiantes universitarios que tienen que construir su propia biblioteca de PLN
+Estudiantes universitarios que tienen que construir su propia biblioteca de NLP
 para el Esperanto. Se espera cierta base técnica, pero no necesariamente
 experiencia con estas herramientas concretas.
 
@@ -49,7 +49,7 @@ curso:
 
 Aquí el foco está en las *herramientas de ingeniería de software* necesarias
 para trabajar como un equipo profesional, y en el *conocimiento del dominio del
-Esperanto* necesario para escribir una biblioteca de PLN basada en reglas.
+Esperanto* necesario para escribir una biblioteca de NLP basada en reglas.
 
 La biblioteca sí *usa* el primero de esos dos temas —`esperantilo.wiki` llama a
 las APIs de Wikipedia y Wikidata con `requests`—, pero como código publicado que

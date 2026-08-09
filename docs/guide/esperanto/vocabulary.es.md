@@ -10,7 +10,7 @@ están pensadas para copiarse directamente a los recursos de la biblioteca.
 Las **palabras vacías** (*stop-words*) son palabras de alta frecuencia que, por sí
 solas, aportan poco significado — el artículo, las preposiciones, las
 conjunciones, los pronombres, los correlativos y los adverbios comunes. Una tubería
-de PLN suele filtrarlas antes del análisis, para que `la`, `de`, `kaj` y `mi` no
+de NLP suele filtrarlas antes del análisis, para que `la`, `de`, `kaj` y `mi` no
 ahoguen a las palabras con contenido.
 
 Las palabras vacías del Esperanto son fáciles de enumerar porque la mayoría

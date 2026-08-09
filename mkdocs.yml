@@ -133,7 +133,7 @@ plugins:
           name: Español
           build: true
           site_name: NLP Esperantilo
-          site_description: Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí
+          site_description: Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí
           nav_translations:
             Home: Inicio
             # The two parts of the site.

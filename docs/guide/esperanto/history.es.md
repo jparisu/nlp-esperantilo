@@ -4,7 +4,7 @@ El Esperanto es una **lengua auxiliar internacional construida**: una lengua
 diseñada a propósito, en lugar de una que evolucionó de forma natural. Entender
 *por qué* se construyó como se construyó explica su propiedad más importante para
 este proyecto —su **regularidad**—, que es lo que hace viable, para empezar, una
-biblioteca de PLN basada en reglas.
+biblioteca de NLP basada en reglas.
 
 ## Zamenhof y el *Unua Libro*
 
