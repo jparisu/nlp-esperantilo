@@ -7,7 +7,7 @@ tema se trata en detalle.
     **Git** es la herramienta de control de versiones que se ejecuta en tu
     ordenador y registra el historial de tus archivos. **GitHub** es un sitio web
     que aloja repositorios Git en línea para que la gente los comparta y colabore.
-    Puedes usar Git sin GitHub en absoluto; GitHub siempre usa Git por debajo.
+    Puedes usar Git sin GitHub, pero GitHub siempre usa Git por debajo.
     Véase [Qué es Git](git.md) y la [sección de GitHub](../github/index.md).
 
 ??? question "¿Necesito conexión a internet para usar Git?"

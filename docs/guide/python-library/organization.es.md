@@ -12,32 +12,30 @@ de Python:
 
 ```text
 nlp-esperantilo/
-├── pyproject.toml        # metadatos del proyecto y configuración de construcción
-├── README.md             # portada
-├── LICENSE               # texto de la licencia
-├── mkdocs.yml            # configuración de la documentación
-├── docs/                 # la documentación que estás leyendo
-│   └── hooks/            #   hooks que convierten resources/ en páginas
-├── resources/            # archivos de datos (listas de palabras) y notebooks
-├── .github/workflows/    # integración continua
 ├── src/
-│   └── esperantilo/      # el paquete en sí
-│       ├── __init__.py   # la API pública: reexportaciones y __all__
-│       ├── nlp/          # un subpaquete por área funcional
+│   └── esperantilo/       # el paquete en sí
+│       ├── __init__.py    # la API pública: reexportaciones y __all__
+│       ├── nlp/           # un subpaquete por área funcional
 │       │   └── tokenizer.py
-│       └── wiki/
-│           ├── wiki.py       # la clase pública
-│           └── _wiki_api.py  # privado: los clientes HTTP
-└── tests/
-    ├── test_package.py    # el paquete se importa y expone su API pública
-    ├── test_resources.py  # validación de los archivos de datos
-    └── test_tokenizer.py  # un módulo de pruebas por módulo de código
+│       └── ...            # otros subpaquetes y módulos
+└── tests/                 # scripts de test para la biblioteca
+    ├── test_tokenizer.py  # un módulo de pruebas por módulo de código
+    └── ...
+
+# Otros ficheros y directorios auxiliares
+├── pyproject.toml         # metadatos del proyecto y configuración de construcción
+├── README.md              # portada
+├── LICENSE                # texto de la licencia
+├── mkdocs.yml             # configuración de la documentación
+├── docs/                  # la documentación que estás leyendo
+├── resources/             # archivos de datos (listas de palabras) y notebooks
+├── .github/workflows/     # integración continua
 ```
 
 Fíjate en el emparejamiento: `tokenizer.py` en `src/`, `test_tokenizer.py` en
-`tests/`. Escala sin pensar —una función nueva es un módulo nuevo y un módulo de
-pruebas nuevo— y hace evidente que falta una prueba. Lo que hace ese módulo en
-concreto está documentado en
+`tests/`. Escala sin pensar: una función nueva es un módulo nuevo y un módulo de
+test nuevo.
+Lo que hace ese módulo en concreto está documentado en
 [Biblioteca → Segmentación en frases](../../library/sentence-segmentation.md).
 
 Cuando una función crece más allá de un solo módulo se convierte en un
@@ -88,35 +86,13 @@ Vale la pena entender tres partes:
 
 - **`[project]`** — la identidad de la biblioteca. `name` es lo que la gente hace
   `pip install`; `version` es lo que fijan; `dependencies` es lo que se instala
-  *con* ella (vacío aquí, porque la biblioteca está basada en reglas).
+  *con* ella.
 - **`[project.optional-dependencies]`** — *extras*, instalados a demanda. `.[test]`
   añade `pytest`, `.[docs]` añade las herramientas de MkDocs. Los usuarios de la
   biblioteca no necesitan ninguno; los desarrolladores sí.
 - **`[tool.*]`** — configuración de otras herramientas reunida en un solo sitio.
   Aquí `[tool.setuptools.packages.find]` le dice a la construcción dónde está el
   paquete, y `[tool.pytest.ini_options]` configura el ejecutor de pruebas.
-
-### `requirements.txt`
-
-Una lista simple de dependencias, una por línea, usada tradicionalmente con
-`pip install -r requirements.txt`. Se solapa con `pyproject.toml`, así que ¿qué
-hace cada uno?
-
-- **`pyproject.toml`** declara lo que la *biblioteca* necesita para funcionar,
-  como parte de su identidad. Es la fuente de verdad cuando alguien instala
-  `esperantilo`.
-- **`requirements.txt`** es una lista de conveniencia, usada a menudo para fijar
-  versiones exactas de un *entorno* reproducible.
-
-**Este proyecto no tiene un `requirements.txt` en la raíz.** La biblioteca está
-basada en reglas y no tiene ninguna dependencia de ejecución, así que el archivo
-no diría nada que `pyproject.toml` no diga ya — y un archivo vacío que parece
-importante es peor que no tenerlo. Los extras de desarrollo se declaran en
-`[project.optional-dependencies]` y se instalan con `pip install -e ".[test]"`.
-
-El único sitio donde una lista fijada **sí** merece la pena es en
-`docs/requirements.txt`, que es el archivo que usan los
-[workflows de CI](../github/actions.md).
 
 ### `__init__.py`
 
@@ -135,10 +111,8 @@ __all__ = ["__version__"]
 ```
 
 Por ahora solo expone la versión. A medida que la biblioteca crezca, aquí es donde
-importarías y reexportarías las clases y funciones públicas (los objetos `Doc` y
-`Token` diseñados en [la página de la API](api.md)), para que los usuarios puedan
-escribir `from esperantilo import Doc` en lugar de hurgar en módulos internos. La
-lista `__all__` también se explica ahí.
+importarías y reexportarías las clases y funciones públicas, para que los usuarios puedan
+impportar sus elementos de forma rápida y sencilla.
 
 ### `src/` — por qué el código no está en la raíz {#the-src-layout}
 
@@ -164,6 +138,12 @@ comprueba que el paquete se importa y expone su versión, y
 [`test_resources.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_resources.py)
 valida los archivos de datos bajo `resources/`. Las pruebas tienen su propia
 página: [Pruebas](testing.md).
+
+### `requirements.txt`
+
+En muchos casos se usa este fichero como una lista simple de dependencias, una por línea, usada tradicionalmente con
+`pip install -r requirements.txt`.
+Este es un sistema tradicional para mantener compatibilidades, pero que se ve redundante con `pyproject.toml`, que ya contiene la lista de dependencias y sus versiones.
 
 ## Versionado
 

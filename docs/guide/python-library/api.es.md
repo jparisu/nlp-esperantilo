@@ -1,15 +1,14 @@
 # API
 
 La **API** (Application Programming Interface, interfaz de programación de
-aplicaciones) de una biblioteca es su *superficie pública*: los objetos, funciones
+aplicaciones) de una biblioteca es su *cara pública*: los objetos, funciones
 y métodos que los usuarios están destinados a tocar. Todo lo demás es un detalle de
-implementación que eres libre de cambiar. Diseñar bien esa superficie es lo que
+implementación que eres libre de cambiar. Diseñar bien esa *cara* es lo que
 separa una biblioteca que la gente disfruta usando de una con la que pelea.
 
 El paquete `esperantilo` expone hasta ahora una clase y una función, así que la mayor
 parte de esta página es un **objetivo de diseño**: muestra cómo es una interfaz
-de NLP limpia —modelada sobre [spaCy](https://spacy.io/api)— para que la propia
-interfaz `Doc` / `Token` de la biblioteca pueda construirse imitándola.
+de NLP.
 
 !!! tip "La parte que ya existe"
     Todo lo que viene a continuación está ilustrado por código real y publicado:
@@ -38,6 +37,8 @@ En Python, la frontera se traza por convención y con `__all__`:
   — una señal de que los usuarios no deberían depender de ellos.
 - La lista `__all__` de un módulo nombra sus objetos **públicos**. Documenta la
   superficie prevista y controla qué trae `from esperantilo import *`:
+
+<!-- TODO: this must be updated with the actual API surface, not with "future" methods. -->
 
 ```python
 # esperantilo/__init__.py
@@ -157,9 +158,9 @@ relaciones entre objetos— véase la
 
 ## Documentar la API automáticamente
 
-Una referencia de API escrita a mano se pudre: alguien renombra un parámetro y la
-página sigue mostrando el antiguo. La solución es generar la página **desde los
-docstrings**, de forma que solo haya una copia de la verdad.
+Una referencia de API escrita a mano se queda obsoleta rápidamente:
+alguien renombra un parámetro y la página sigue mostrando el antiguo.
+La solución es generar la página **desde los docstrings**, de forma que solo haya una copia de la verdad.
 
 [mkdocstrings](https://mkdocstrings.github.io/) hace eso en MkDocs. Una página
 que no contiene más que una directiva:

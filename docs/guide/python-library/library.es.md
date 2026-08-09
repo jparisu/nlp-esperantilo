@@ -7,7 +7,7 @@ importe. `esperantilo` —la biblioteca que construye esta guía— es una: un c
 de herramientas de NLP basado en reglas para el Esperanto que un notebook puede
 instalar y usar en un par de líneas.
 
-Esta página ordena el vocabulario, explica qué te aporta una biblioteca y observa
+Esta página ordena el vocabulario, explica qué te aporta una biblioteca y muestra
 un ejemplo conocido a imitar.
 
 ## Módulo, paquete, biblioteca, distribución

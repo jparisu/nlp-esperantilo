@@ -30,6 +30,10 @@ Dos pasos iniciales conviene hacerlos bien:
     GPG keys**) evita tener que reescribir nada. Cualquiera vale — elige una y
     sigue adelante.
 
+<!-- TODO: Agregar más información sobre cómo configurar el local
+  Dirigir a las páginas de github con instrucciones, y añadir aquí instrucciones paso a paso para cada caso (a poder ser en tabs).
+ -->
+
 ## Crear un repositorio
 
 Haz clic en **New** (el botón verde en tu página de repositorios) y rellena:
@@ -72,7 +76,7 @@ La mayor parte de tu tiempo en GitHub la pasas leyendo repositorios *de otras
 personas*. Todos los repositorios tienen las mismas pestañas, y conocerlas hace
 legible cualquier proyecto:
 
-| Pestaña | Qué encuentras ahí |
+| Pestaña |  |
 | --- | --- |
 | **Code** | Los archivos, el README, el selector de ramas y el historial de commits. |
 | **Issues** | Errores reportados, tareas y peticiones de funciones, abiertos y cerrados. |

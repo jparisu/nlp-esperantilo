@@ -87,7 +87,7 @@ Luego añade esa clave una segunda vez en GitHub, como **Signing Key**, en
 **Settings → SSH and GPG keys**.
 
 !!! note "¿Es obligatorio firmar?"
-    Para este proyecto, firmar es un *bueno-de-tener*, no un requisito estricto.
+    Para este proyecto, firmar es una buena práctica, no un requisito estricto.
     Entiende qué significa la insignia `Verified` y cómo activarla; un equipo puede
     luego decidir si exigirla (véase
     [Configuración del repositorio](repository-configuration.md)).

@@ -6,7 +6,7 @@ versiones, su forma de trabajar y sus comandos más usados.
 Git es la base de todo lo que viene después: el flujo de trabajo colaborativo de
 la [sección de GitHub](../github/index.md) se construye directamente sobre los
 commits y las ramas que se presentan aquí. Si ya conoces bien Git, puedes
-saltar adelante; si no, las páginas están pensadas para leerse en orden.
+saltar adelante.
 
 <div class="grid cards" markdown>
 

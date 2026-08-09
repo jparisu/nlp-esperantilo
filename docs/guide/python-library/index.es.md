@@ -1,12 +1,12 @@
 # Biblioteca Python
 
 Esta sección explica cómo construir una biblioteca de Python: cómo organizarla,
-cómo diseñar su API, cómo probarla y cómo instalarla y usarla. El ejemplo
-recurrente es `esperantilo`, el propio paquete que distribuye este proyecto.
+cómo diseñar su API, cómo probarla y cómo instalarla y usarla.
+Vamos a usar como ejemplo `esperantilo`, el propio paquete que distribuye este proyecto.
 
-Las páginas se apoyan unas en otras — estructura, luego instalación, luego el
-diseño de la API, luego las pruebas — pero cada una se sostiene por sí sola si ya
-conoces lo básico.
+<!-- This comment is not required in English obviously -->
+!!! note "Librería"
+  Las bibliotecas también son conocidas como *librerías*, de la mala traducción del inglés *library*.
 
 <div class="grid cards" markdown>
 

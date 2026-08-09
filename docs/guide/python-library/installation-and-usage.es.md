@@ -7,6 +7,11 @@ directamente desde GitHub — sin configuración local, sin clonar a mano.
 
 ## Instalar desde GitHub
 
+!!! warning
+    A la hora de instalar una librería en local, conviene usar entornos virtuales, sobre todo con librerías en desarrollo.
+    Esto evita que nuestra librería pase a estar instalada en el sistema, o que se mezclen dependencias de distintas librerías.
+    Lee [Instalar en local](#instalar-en-local) para más información.
+
 `pip` puede instalar un paquete directamente desde un repositorio Git. Es la forma
 más rápida de meter `esperantilo` en un notebook mientras la biblioteca todavía se
 mueve:
@@ -45,18 +50,6 @@ shell), luego importa y usa la biblioteca:
 import esperantilo
 
 print(esperantilo.__version__)   # 0.1.0
-```
-
-A medida que la biblioteca crezca, el mismo import te da sus objetos públicos —por
-ejemplo los tipos `Doc` y `Token` diseñados en [la página de la API](api.md):
-
-```python
-# Ilustrativo: la API objetivo, aún no implementada.
-import esperantilo
-
-doc = esperantilo.parse("La rapida vulpo saltas.")
-for token in doc:
-    print(token.text, token.lemma, token.pos)
 ```
 
 !!! note "Reinicia el entorno de ejecución tras instalar"

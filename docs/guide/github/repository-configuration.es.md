@@ -5,9 +5,6 @@ equipo de verdad los sigue. Esta página trata de hacer que se **impongan**:
 configurar el repositorio para que `main` no pueda romperse por accidente, y para
 que cada cambio pase por un pull request revisado y probado.
 
-Esto importa sobre todo en un equipo, donde "acuérdate por favor de abrir un pull
-request" no es una salvaguarda fiable.
-
 !!! info "El orden importa"
     Proteger `main` solo tiene sentido una vez que existen ramas, pull requests y
     comprobaciones de CI — por eso esta página viene después de

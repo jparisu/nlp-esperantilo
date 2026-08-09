@@ -3,8 +3,7 @@
 **Git** es un *sistema de control de versiones*: una herramienta que registra el
 historial de un conjunto de archivos, de modo que cada cambio pueda inspeccionarse,
 compartirse y, si hace falta, deshacerse. Es la forma estándar de escribir
-software hoy en día, y es la base sobre la que se construyen GitHub, los pull
-requests y la integración continua.
+software hoy en día, utilizada por la mayoría de empresas y desarrolladores.
 
 Esta página explica de dónde viene Git, qué problema resuelve y el modelo mental
 que necesitas antes de aprender ningún comando.
@@ -62,9 +61,6 @@ que cuesta prescindir una vez las tienes:
   archivos a la vez. Git fusiona sus cambios y, cuando dos personas editan las
   mismas líneas, te indica exactamente dónde hace falta una decisión humana.
 
-Para un proyecto en equipo como este, ese último punto es el importante: el
-control de versiones es lo que permite que todo el mundo contribuya sin
-estorbarse.
 
 ## Las tres áreas
 

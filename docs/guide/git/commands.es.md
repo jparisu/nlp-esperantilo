@@ -233,6 +233,15 @@ sobre los últimos cambios de tus compañeros y no sobre una copia desactualizad
 | `git push` | Enviar commits al remoto. |
 | `git pull` | Traer commits del remoto a la rama actual. |
 
+## Otros comandos útiles
+
+- `git rebase <branch>` — reorganizar commits para hacer el historial más lineal.
+- `git fetch` — traer commits del remoto sin fusionarlos.
+- `git cherry-pick <hash>` — aplicar un commit concreto de otra rama.
+
+Otros comandos para deshacer cambios se cubren en [Deshacer cambios](undoing-changes.md):
+`git restore`, `git reset`, `git stash`.
+
 ## El archivo `.gitignore`
 
 No todos los archivos deben estar en el repositorio. Los artefactos compilados,

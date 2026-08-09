@@ -138,24 +138,6 @@ Las funciones del día a día que usarás:
     tus pruebas siguen pasando a través de refactorizaciones internas y solo fallan
     cuando el comportamiento realmente cambia — que es de lo que se trata.
 
-## Doctests: documentación que se ejecuta {#doctests}
-
-Un bloque `Examples:` escrito como sesión interactiva es a la vez documentación y
-prueba. `--doctest-modules` hace que pytest ejecute esos ejemplos y compare la
-salida real con la escrita; este proyecto lo activa para `src/` en
-`pyproject.toml`:
-
-```toml
-[tool.pytest.ini_options]
-testpaths = ["tests", "src"]
-addopts = "-ra --doctest-modules"
-```
-
-Esos ejemplos son los que se publican en la página de
-[Referencia de la API](../../library/api.md), así que ejecutarlos es lo que evita
-que la documentación se quede desfasada en silencio. Mantenlos cortos e
-ilustrativos: los casos límite van en `tests/`.
-
 ## Pruebas en integración continua
 
 Ejecutar las pruebas en local está bien; ejecutarlas **automáticamente en cada

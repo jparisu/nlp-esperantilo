@@ -107,9 +107,38 @@ Reincorporar una rama a `main` es una **fusión** (*merge*). Hay dos formas:
 - **Fast-forward.** Si `main` no se ha movido desde que se creó la rama, Git
   puede simplemente deslizar el puntero de `main` hasta el último commit de la
   rama. No se crea ningún commit nuevo; el historial se mantiene lineal.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"
+```
+
 - **Commit de fusión.** Si *ambas* ramas ganaron commits (como en el diagrama de
   arriba), Git crea un nuevo **commit de fusión** con **dos padres**, que vuelve
   a unir las dos líneas de historial.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"
+```
 
 Cuando las dos ramas cambiaron **las mismas líneas** del mismo archivo, Git no
 puede decidir qué versión gana. Esto es un **conflicto de fusión**: Git se

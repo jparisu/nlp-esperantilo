@@ -5,9 +5,7 @@ alrededor. Este mismo repositorio se usa como ejemplo vivo a lo largo de toda la
 sección.
 
 Se construye directamente sobre la [sección de Git](../git/index.md): asegúrate
-primero de sentirte cómodo con los commits y las ramas. Las páginas están
-ordenadas de forma que cada una se apoya en la anterior — flujo de trabajo, luego
-la automatización que lo respalda, y luego los ajustes que lo imponen.
+primero de sentirte cómodo con los commits y las ramas.
 
 <div class="grid cards" markdown>
 

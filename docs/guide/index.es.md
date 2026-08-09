@@ -1,21 +1,13 @@
 # Guía
 
-Una guía para construir y publicar una biblioteca de Python como esta: el
-control de versiones, el flujo de trabajo colaborativo, el empaquetado y las
+Esta guía te ayudará a construir y publicar una biblioteca de Python como la de este repositorio.
+Te guiará por los conceptos básicos del control de versiones, el flujo de trabajo colaborativo, el empaquetado y las
 pruebas, y el conocimiento lingüístico que va dentro.
 
 !!! info "Guía, no referencia"
     Estas páginas enseñan el *cómo*. La sección
     [Biblioteca](../library/index.md) es la otra mitad de este sitio: el manual
-    de referencia de `esperantilo`, qué hace hoy y qué significa cada nombre
-    público. La guía enlaza con ella siempre que un ejemplo real explique algo
-    mejor que la prosa.
-
-## Para quién es
-
-Estudiantes universitarios que tienen que construir su propia biblioteca de NLP
-para el Esperanto. Se espera cierta base técnica, pero no necesariamente
-experiencia con estas herramientas concretas.
+    de referencia de `esperantilo`, el API y su funcionalidad.
 
 ## Las cuatro secciones
 
@@ -35,26 +27,6 @@ experiencia con estas herramientas concretas.
 Las secciones son en gran medida independientes. Léelas en orden si empiezas de
 cero; salta directamente a [Biblioteca Python](python-library/index.md) o a
 [Esperanto](esperanto/index.md) si ya conoces Git y GitHub.
-
-## Qué *no* cubre esta guía {#que-no-cubre-esta-guia}
-
-Dos temas se dejan fuera deliberadamente, porque se enseñan en las clases del
-curso:
-
-- **Web scraping y consumo de APIs** (`requests`, `beautifulsoup4`, la API de
-  Wikipedia y similares).
-- **Minería de textos y clasificación con Machine Learning** (extracción de
-  características, vectorización, entrenamiento y evaluación de modelos,
-  métricas).
-
-Aquí el foco está en las *herramientas de ingeniería de software* necesarias
-para trabajar como un equipo profesional, y en el *conocimiento del dominio del
-Esperanto* necesario para escribir una biblioteca de NLP basada en reglas.
-
-La biblioteca sí *usa* el primero de esos dos temas —`esperantilo.wiki` llama a
-las APIs de Wikipedia y Wikidata con `requests`—, pero como código publicado que
-leer, no como lección: véase
-[Biblioteca → Leer Wikipedia](../library/wikipedia.md).
 
 ## Este repositorio es el ejemplo
 
