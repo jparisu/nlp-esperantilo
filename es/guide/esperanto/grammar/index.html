@@ -1,0 +1,2944 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
+      
+      
+        <meta name="author" content="jparisu">
+      
+      
+        <link rel="canonical" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/grammar/">
+      
+      
+        <link rel="prev" href="../history/">
+      
+      
+        <link rel="next" href="../vocabulary/">
+      
+      
+        
+          <link rel="alternate" href="../../../../guide/esperanto/grammar/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="es">
+        
+          <link rel="alternate" href="../../../../eo/guide/esperanto/grammar/" hreflang="eo">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Gramática - NLP Esperantilo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gramatica" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../../" title="NLP Esperantilo" class="md-header__button md-logo" aria-label="NLP Esperantilo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NLP Esperantilo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gramática
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../guide/esperanto/grammar/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../../eo/guide/esperanto/grammar/" hreflang="eo" class="md-select__link">
+              Esperanto
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jparisu/nlp-esperantilo" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jparisu/nlp-esperantilo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="NLP Esperantilo" class="md-nav__button md-logo" aria-label="NLP Esperantilo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    NLP Esperantilo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jparisu/nlp-esperantilo" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jparisu/nlp-esperantilo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../library/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Biblioteca
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Biblioteca
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/sentence-segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentación en frases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/wikipedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leer Wikipedia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guía
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../git/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qué es Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comandos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/undoing-changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deshacer cambios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../github/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GitHub
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qué es GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/first-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flujo de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/repository-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración del repositorio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/github-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../python-library/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Biblioteca Python
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Biblioteca Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qué es una biblioteca
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/installation-and-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación y uso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pruebas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python-library/python-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esperanto
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esperanto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gramática
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gramática
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alfabeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alfabeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminaciones-de-clase-de-palabra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminaciones de clase de palabra
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flexiones-gramaticales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexiones gramaticales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sistema-verbal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema verbal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-articulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El artículo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pronombres-personales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pronombres personales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correlativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correlativos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afijos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Afijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefijos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sufijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sufijos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeros-y-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números y composición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-resueltos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos resueltos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adonde-ir-despues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adónde ir después
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raíces comunes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esperanto-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../word-lists/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listas de palabras
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Listas de palabras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/ignorindaj-vortoj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stop-words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/prepozicioj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepositions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../word-lists/nombroj/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alfabeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alfabeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminaciones-de-clase-de-palabra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminaciones de clase de palabra
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flexiones-gramaticales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexiones gramaticales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sistema-verbal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema verbal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-articulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El artículo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pronombres-personales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pronombres personales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correlativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correlativos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afijos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Afijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefijos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sufijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sufijos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeros-y-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Números y composición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-resueltos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos resueltos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adonde-ir-despues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adónde ir después
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/jparisu/nlp-esperantilo/edit/main/docs/guide/esperanto/grammar.es.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gramatica">Gramática<a class="headerlink" href="#gramatica" title="Permanent link">&para;</a></h1>
+<p>Esta es la página de referencia central de la sección de Esperanto. Reúne las
+reglas que necesita una tubería (<em>pipeline</em>) basada en reglas — para el
+tokenizador, el lematizador, el etiquetador morfosintáctico y el manejo de
+palabras vacías. Como la morfología del Esperanto no tiene excepciones, cada regla
+de abajo puede convertirse casi directamente en código.</p>
+<p>La idea rectora: una palabra en Esperanto se construye a partir de una <strong>raíz</strong> más
+<strong>terminaciones gramaticales</strong> y <strong>afijos</strong> opcionales. Quita las terminaciones y
+los afijos y tienes el lema; lee las terminaciones y tienes la categoría gramatical
+y la flexión.</p>
+<div class="admonition note">
+<p class="admonition-title">Qué deja fuera esta página</p>
+<p>Los <strong>participios</strong> (<code>-ant-</code>, <code>-int-</code>, <code>-ont-</code> activos; <code>-at-</code>, <code>-it-</code>, <code>-ot-</code>
+pasivos), los tiempos compuestos que se forman con ellos y <code>esti</code>, y la voz
+pasiva son igual de regulares, pero aquí no se cubren. Una tubería que
+implemente solo las reglas de abajo analizará mal formas como <code>leganta</code>,
+<code>legita</code> o <code>estas legata</code>.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Referencia</p>
+<p>Las reglas y los ejemplos de esta página siguen la clásica <strong><em>A Complete
+Grammar of Esperanto</em></strong> de Ivy Kellerman Reed (1910), una obra de dominio
+público incluida en el repositorio en <code>resources/esperanto/books/esperanto_grammar.txt</code>.
+Véase <a href="../resources/#libros">Recursos § Libros</a> para la cita completa.</p>
+</div>
+<h2 id="alfabeto">Alfabeto<a class="headerlink" href="#alfabeto" title="Permanent link">&para;</a></h2>
+<p>El Esperanto usa un alfabeto latino de <strong>28 letras</strong>. Es estrictamente
+<strong>fonético</strong>: cada letra se pronuncia siempre igual, y cada sonido se escribe con
+exactamente una letra. Seis letras llevan diacríticos: las cinco consonantes con
+circunflejo no las usa ninguna otra lengua, y <code>ŭ</code> aparece también en el alfabeto
+latino del bielorruso.</p>
+<table>
+<thead>
+<tr>
+<th>Letra</th>
+<th>Nombre</th>
+<th>Sonido (aprox.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ĉ</code></td>
+<td>ĉo</td>
+<td><em>ch</em> de "chico"</td>
+</tr>
+<tr>
+<td><code>ĝ</code></td>
+<td>ĝo</td>
+<td><em>j</em> inglesa de "jam" (sonora)</td>
+</tr>
+<tr>
+<td><code>ĥ</code></td>
+<td>ĥo</td>
+<td><em>j</em> fuerte de "jamón"</td>
+</tr>
+<tr>
+<td><code>ĵ</code></td>
+<td>ĵo</td>
+<td><em>j</em> francesa de "jour"</td>
+</tr>
+<tr>
+<td><code>ŝ</code></td>
+<td>ŝo</td>
+<td><em>sh</em> inglesa de "show"</td>
+</tr>
+<tr>
+<td><code>ŭ</code></td>
+<td>ŭo</td>
+<td><em>u</em> breve en diptongos, como en "auto"</td>
+</tr>
+</tbody>
+</table>
+<p>Las letras <code>q</code>, <code>w</code>, <code>x</code>, <code>y</code> <strong>no</strong> forman parte del alfabeto.</p>
+<div class="admonition warning">
+<p class="admonition-title">La codificación importa para la tokenización</p>
+<p>Los diacríticos son letras Unicode reales (<code>ĉ</code> es U+0109), no una <code>c</code> más una
+marca combinante — pero el texto que se encuentra por ahí puede usar cualquiera
+de las dos formas. También existen dos alternativas en ASCII para teclados que
+no pueden escribir los diacríticos:</p>
+<ul>
+<li>el <strong>sistema x</strong>: <code>cx gx hx jx sx ux</code> para <code>ĉ ĝ ĥ ĵ ŝ ŭ</code>;</li>
+<li>el <strong>sistema h</strong> (del <em>Fundamento</em>): <code>ch gh hh jh sh u</code>.</li>
+</ul>
+<p>Un tokenizador robusto debería <strong>normalizar</strong> la entrada a una única forma
+canónica (Unicode NFC, diacríticos reales) antes de aplicar cualquier otra
+regla. Los archivos de datos de este proyecto conservan los diacríticos reales
+y nunca el sistema x (véase <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md"><code>resources/README.md</code></a>).</p>
+</div>
+<h2 id="terminaciones-de-clase-de-palabra">Terminaciones de clase de palabra<a class="headerlink" href="#terminaciones-de-clase-de-palabra" title="Permanent link">&para;</a></h2>
+<p>Esta es la regla más útil de todas para el etiquetado morfosintáctico y la
+lematización: la <strong>vocal final de una palabra completa marca su categoría
+gramatical</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Terminación</th>
+<th>Clase de palabra</th>
+<th>Ejemplo</th>
+<th>Raíz</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o</code></td>
+<td>sustantivo</td>
+<td><code>libro</code></td>
+<td><code>libr-</code></td>
+<td>libro</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>adjetivo</td>
+<td><code>bona</code></td>
+<td><code>bon-</code></td>
+<td>bueno</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>adverbio (derivado)</td>
+<td><code>rapide</code></td>
+<td><code>rapid-</code></td>
+<td>rápidamente</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>verbo (infinitivo)</td>
+<td><code>kanti</code></td>
+<td><code>kant-</code></td>
+<td>cantar</td>
+</tr>
+</tbody>
+</table>
+<p>De una sola raíz obtienes toda la familia: <code>muziko</code> (música), <code>muzika</code> (musical),
+<code>muzike</code> (musicalmente).</p>
+<h2 id="flexiones-gramaticales">Flexiones gramaticales<a class="headerlink" href="#flexiones-gramaticales" title="Permanent link">&para;</a></h2>
+<p>Los sustantivos y los adjetivos toman dos terminaciones opcionales, siempre
+<strong>después</strong> de la vocal de clase:</p>
+<table>
+<thead>
+<tr>
+<th>Terminación</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-j</code></td>
+<td>plural</td>
+<td><code>libroj</code> (libros), <code>bonaj</code> (buenos)</td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>acusativo (objeto directo)</td>
+<td><code>libron</code>, <code>bonan</code></td>
+</tr>
+<tr>
+<td><code>-jn</code></td>
+<td>plural <strong>y</strong> acusativo</td>
+<td><code>bonajn librojn</code></td>
+</tr>
+</tbody>
+</table>
+<p>Dos reglas las hacen completamente regulares:</p>
+<ul>
+<li><strong>Los adjetivos concuerdan</strong> con su sustantivo en número y caso: <em>"la bonaj
+  libroj"</em>, <em>"mi legas interesajn librojn"</em>.</li>
+<li>El orden es fijo: raíz → vocal de clase → <code>-j</code> → <code>-n</code>. Así, el análisis de
+  <code>librojn</code> es <code>libr-</code> + <code>-o</code> (sustantivo) + <code>-j</code> (plural) + <code>-n</code> (acusativo).</li>
+</ul>
+<p>El acusativo también marca la dirección del movimiento, pero para el análisis
+morfológico lo que importa es el sufijo <code>-n</code>.</p>
+<h2 id="sistema-verbal">Sistema verbal<a class="headerlink" href="#sistema-verbal" title="Permanent link">&para;</a></h2>
+<p>Los verbos <strong>no</strong> se conjugan por persona ni número — solo por tiempo y modo, con
+una sola terminación cada uno. La misma raíz toma cualquiera de estas:</p>
+<table>
+<thead>
+<tr>
+<th>Terminación</th>
+<th>Tiempo / modo</th>
+<th>Ejemplo (<code>kant-</code>, cantar)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-as</code></td>
+<td>presente</td>
+<td><code>kantas</code> (canto / canta)</td>
+</tr>
+<tr>
+<td><code>-is</code></td>
+<td>pasado</td>
+<td><code>kantis</code> (cantó)</td>
+</tr>
+<tr>
+<td><code>-os</code></td>
+<td>futuro</td>
+<td><code>kantos</code> (cantará)</td>
+</tr>
+<tr>
+<td><code>-us</code></td>
+<td>condicional</td>
+<td><code>kantus</code> (cantaría)</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>imperativo / volitivo</td>
+<td><code>kantu!</code> (¡canta!)</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>infinitivo</td>
+<td><code>kanti</code> (cantar)</td>
+</tr>
+</tbody>
+</table>
+<p><code>mi kantas</code>, <code>vi kantas</code>, <code>ili kantas</code> — el verbo nunca cambia según el sujeto.
+Para lematizar un verbo, sustituye su terminación de tiempo/modo por <code>-i</code>
+(<code>kantis → kanti</code>).</p>
+<h2 id="el-articulo">El artículo<a class="headerlink" href="#el-articulo" title="Permanent link">&para;</a></h2>
+<p>Hay <strong>un</strong> artículo, el determinado <code>la</code> ("el/la/los/las"). Es <strong>invariable</strong> —
+sin plural, sin género, sin caso:</p>
+<ul>
+<li><code>la libro</code> (el libro), <code>la libroj</code> (los libros), <code>la bona libro</code> (el buen libro).</li>
+</ul>
+<p><strong>No hay artículo indeterminado</strong>: <code>libro</code> significa tanto "un libro" como
+simplemente "libro". <code>la</code> es una palabra vacía natural (véase
+<a href="../word-lists/ignorindaj-vortoj/">Palabras vacías</a>).</p>
+<h2 id="pronombres-personales">Pronombres personales<a class="headerlink" href="#pronombres-personales" title="Permanent link">&para;</a></h2>
+<p>Los pronombres son un conjunto pequeño y cerrado — ideal para codificar a mano:</p>
+<table>
+<thead>
+<tr>
+<th>Pronombre</th>
+<th>Significado</th>
+<th>Posesivo (<code>+ -a</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mi</code></td>
+<td>yo</td>
+<td><code>mia</code></td>
+</tr>
+<tr>
+<td><code>vi</code></td>
+<td>tú / usted / vosotros</td>
+<td><code>via</code></td>
+</tr>
+<tr>
+<td><code>li</code></td>
+<td>él</td>
+<td><code>lia</code></td>
+</tr>
+<tr>
+<td><code>ŝi</code></td>
+<td>ella</td>
+<td><code>ŝia</code></td>
+</tr>
+<tr>
+<td><code>ĝi</code></td>
+<td>ello (neutro)</td>
+<td><code>ĝia</code></td>
+</tr>
+<tr>
+<td><code>ni</code></td>
+<td>nosotros</td>
+<td><code>nia</code></td>
+</tr>
+<tr>
+<td><code>ili</code></td>
+<td>ellos/ellas</td>
+<td><code>ilia</code></td>
+</tr>
+<tr>
+<td><code>oni</code></td>
+<td>uno / se (impersonal)</td>
+<td><code>onia</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td>reflexivo (sí mismo/a, se)</td>
+<td><code>sia</code></td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>acusativo</strong> de un pronombre añade <code>-n</code>: <code>min</code> (me), <code>vin</code>, <code>lin</code>, <code>ŝin</code>,
+<code>nin</code>, <code>ilin</code>. Los posesivos son adjetivos corrientes, así que también flexionan:
+<code>miajn librojn</code> (mis libros, acus. pl.).</p>
+<h2 id="correlativos">Correlativos<a class="headerlink" href="#correlativos" title="Permanent link">&para;</a></h2>
+<p>Los <strong>correlativos</strong> son una rejilla asombrosamente regular de 5 × 9 con 45
+palabras comunes (este/ese/cuál/algún/todo/ningún + cosa/persona/lugar/tiempo/
+razón…). Cada uno es un <strong>prefijo</strong> (la categoría de significado) más una
+<strong>terminación</strong> (el tipo). Aprende la rejilla y obtienes las 45 gratis.</p>
+<p>Los cinco prefijos:</p>
+<table>
+<thead>
+<tr>
+<th>Prefijo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ki-</code></td>
+<td>interrogativo / relativo ("qué", "cuál")</td>
+</tr>
+<tr>
+<td><code>ti-</code></td>
+<td>demostrativo ("ese")</td>
+</tr>
+<tr>
+<td><code>i-</code></td>
+<td>indefinido ("algún")</td>
+</tr>
+<tr>
+<td><code>ĉi-</code></td>
+<td>universal ("todo", "cada")</td>
+</tr>
+<tr>
+<td><code>neni-</code></td>
+<td>negativo ("ningún", "nada")</td>
+</tr>
+</tbody>
+</table>
+<p>Las nueve terminaciones y la tabla completa:</p>
+<table>
+<thead>
+<tr>
+<th>Terminación → tipo</th>
+<th><code>ki-</code></th>
+<th><code>ti-</code></th>
+<th><code>i-</code></th>
+<th><code>ĉi-</code></th>
+<th><code>neni-</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o</code> cosa</td>
+<td>kio</td>
+<td>tio</td>
+<td>io</td>
+<td>ĉio</td>
+<td>nenio</td>
+</tr>
+<tr>
+<td><code>-u</code> individuo</td>
+<td>kiu</td>
+<td>tiu</td>
+<td>iu</td>
+<td>ĉiu</td>
+<td>neniu</td>
+</tr>
+<tr>
+<td><code>-a</code> clase</td>
+<td>kia</td>
+<td>tia</td>
+<td>ia</td>
+<td>ĉia</td>
+<td>nenia</td>
+</tr>
+<tr>
+<td><code>-es</code> posesión</td>
+<td>kies</td>
+<td>ties</td>
+<td>ies</td>
+<td>ĉies</td>
+<td>nenies</td>
+</tr>
+<tr>
+<td><code>-e</code> lugar</td>
+<td>kie</td>
+<td>tie</td>
+<td>ie</td>
+<td>ĉie</td>
+<td>nenie</td>
+</tr>
+<tr>
+<td><code>-am</code> tiempo</td>
+<td>kiam</td>
+<td>tiam</td>
+<td>iam</td>
+<td>ĉiam</td>
+<td>neniam</td>
+</tr>
+<tr>
+<td><code>-al</code> razón</td>
+<td>kial</td>
+<td>tial</td>
+<td>ial</td>
+<td>ĉial</td>
+<td>nenial</td>
+</tr>
+<tr>
+<td><code>-el</code> manera</td>
+<td>kiel</td>
+<td>tiel</td>
+<td>iel</td>
+<td>ĉiel</td>
+<td>neniel</td>
+</tr>
+<tr>
+<td><code>-om</code> cantidad</td>
+<td>kiom</td>
+<td>tiom</td>
+<td>iom</td>
+<td>ĉiom</td>
+<td>neniom</td>
+</tr>
+</tbody>
+</table>
+<p>Los correlativos en <code>-u</code> y <code>-a</code> toman tanto <code>-j</code> como <code>-n</code> (<code>tiujn</code>, <code>kiuj</code>), como
+los sustantivos y adjetivos a los que se parecen. Los de <code>-o</code> toman <code>-n</code> pero
+<strong>nunca</strong> <code>-j</code> (<code>kion</code>, <code>tion</code> — no existe <em>tioj</em>), y los de <code>-e</code> toman <code>-n</code> para
+marcar dirección (<code>tien</code>, <code>kien</code>). Las otras cinco terminaciones son invariables.</p>
+<p>Los 45 son palabras vacías, y esta tabla es el único sitio donde el proyecto los
+guarda: <code>resources/esperanto/vortoj.json</code> contiene raíces, no formas, así que se
+espera que un lematizador genere la rejilla a partir de los dos ejes de arriba en
+lugar de buscar las palabras. Véase
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms"><code>resources/README.md</code> § Roots, not forms</a>.</p>
+<h2 id="afijos">Afijos<a class="headerlink" href="#afijos" title="Permanent link">&para;</a></h2>
+<p>Los afijos son lo que hace <strong>composicional</strong> el vocabulario del Esperanto — y son
+el corazón de la lematización, porque una palabra larga suele ser una raíz envuelta
+en afijos. Se colocan <em>entre</em> la raíz y la terminación gramatical.</p>
+<h3 id="prefijos">Prefijos<a class="headerlink" href="#prefijos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Prefijo</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mal-</code></td>
+<td>opuesto directo</td>
+<td><code>bona</code> → <code>malbona</code> (bueno → malo)</td>
+</tr>
+<tr>
+<td><code>ge-</code></td>
+<td>ambos sexos juntos</td>
+<td><code>patro</code> → <code>gepatroj</code> (padre → padres/progenitores)</td>
+</tr>
+<tr>
+<td><code>ek-</code></td>
+<td>inicio súbito / acción breve</td>
+<td><code>iri</code> → <code>ekiri</code> (ir → ponerse en marcha)</td>
+</tr>
+<tr>
+<td><code>re-</code></td>
+<td>de nuevo / de vuelta</td>
+<td><code>veni</code> → <code>reveni</code> (venir → volver)</td>
+</tr>
+<tr>
+<td><code>dis-</code></td>
+<td>separación, dispersión</td>
+<td><code>doni</code> → <code>disdoni</code> (dar → repartir)</td>
+</tr>
+<tr>
+<td><code>mis-</code></td>
+<td>erróneamente</td>
+<td><code>kompreni</code> → <code>miskompreni</code> (entender mal)</td>
+</tr>
+<tr>
+<td><code>bo-</code></td>
+<td>parentesco político</td>
+<td><code>patro</code> → <code>bopatro</code> (suegro)</td>
+</tr>
+<tr>
+<td><code>pra-</code></td>
+<td>primordial / bis- (parentesco)</td>
+<td><code>avo</code> → <code>praavo</code> (bisabuelo)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sufijos">Sufijos<a class="headerlink" href="#sufijos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sufijo</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-in-</code></td>
+<td>femenino</td>
+<td><code>patro</code> → <code>patrino</code> (padre → madre)</td>
+</tr>
+<tr>
+<td><code>-ist-</code></td>
+<td>profesional / adepto</td>
+<td><code>instrui</code> → <code>instruisto</code> (profesor/a)</td>
+</tr>
+<tr>
+<td><code>-ej-</code></td>
+<td>lugar para</td>
+<td><code>lerni</code> → <code>lernejo</code> (aprender → escuela)</td>
+</tr>
+<tr>
+<td><code>-il-</code></td>
+<td>herramienta / instrumento</td>
+<td><code>tranĉi</code> → <code>tranĉilo</code> (cortar → cuchillo)</td>
+</tr>
+<tr>
+<td><code>-ar-</code></td>
+<td>colección / conjunto</td>
+<td><code>arbo</code> → <code>arbaro</code> (árbol → bosque)</td>
+</tr>
+<tr>
+<td><code>-et-</code></td>
+<td>diminutivo (más pequeño)</td>
+<td><code>domo</code> → <code>dometo</code> (casa → casita)</td>
+</tr>
+<tr>
+<td><code>-eg-</code></td>
+<td>aumentativo (más grande)</td>
+<td><code>domo</code> → <code>domego</code> (casa → casona)</td>
+</tr>
+<tr>
+<td><code>-ul-</code></td>
+<td>persona caracterizada por</td>
+<td><code>juna</code> → <code>junulo</code> (joven → un/a joven)</td>
+</tr>
+<tr>
+<td><code>-an-</code></td>
+<td>miembro / habitante</td>
+<td><code>urbo</code> → <code>urbano</code> (ciudad → ciudadano/a)</td>
+</tr>
+<tr>
+<td><code>-ec-</code></td>
+<td>cualidad abstracta</td>
+<td><code>bona</code> → <code>boneco</code> (bueno → bondad)</td>
+</tr>
+<tr>
+<td><code>-ig-</code></td>
+<td>hacer / causar</td>
+<td><code>granda</code> → <code>grandigi</code> (grande → agrandar)</td>
+</tr>
+<tr>
+<td><code>-iĝ-</code></td>
+<td>volverse / llegar a ser</td>
+<td><code>ruĝa</code> → <code>ruĝiĝi</code> (rojo → enrojecer)</td>
+</tr>
+<tr>
+<td><code>-ind-</code></td>
+<td>digno de</td>
+<td><code>ami</code> → <code>aminda</code> (amar → digno de amor)</td>
+</tr>
+<tr>
+<td><code>-em-</code></td>
+<td>inclinado a</td>
+<td><code>labori</code> → <code>laborema</code> (trabajar → trabajador)</td>
+</tr>
+<tr>
+<td><code>-aĉ-</code></td>
+<td>peyorativo (mala calidad)</td>
+<td><code>domo</code> → <code>domaĉo</code> (casa → casucha)</td>
+</tr>
+</tbody>
+</table>
+<p>Los afijos se apilan. <code>mal-san-ul-ej-o</code> = <code>mal-</code> (opuesto) + <code>san-</code> (salud) +
+<code>-ul-</code> (persona) + <code>-ej-</code> (lugar) + <code>-o</code> (sustantivo) = <strong>hospital</strong> (literalmente
+"lugar para personas no sanas"). Un lematizador que conozca esta tabla de afijos
+puede descomponer tales palabras por reglas.</p>
+<h2 id="numeros-y-composicion">Números y composición<a class="headerlink" href="#numeros-y-composicion" title="Permanent link">&para;</a></h2>
+<p>Los números cardinales se construyen a partir de un puñado de raíces:</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>100</th>
+<th>1000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nul</code></td>
+<td><code>unu</code></td>
+<td><code>du</code></td>
+<td><code>tri</code></td>
+<td><code>kvar</code></td>
+<td><code>kvin</code></td>
+<td><code>ses</code></td>
+<td><code>sep</code></td>
+<td><code>ok</code></td>
+<td><code>naŭ</code></td>
+<td><code>dek</code></td>
+<td><code>cent</code></td>
+<td><code>mil</code></td>
+</tr>
+</tbody>
+</table>
+<p>Los números mayores se <strong>componen</strong> por yuxtaposición: <code>dek du</code> (12), <code>dudek</code>
+(20), <code>dudek unu</code> (21), <code>cent tridek kvin</code> (135). Añadir terminaciones deriva
+palabras relacionadas:</p>
+<ul>
+<li>ordinales con <code>-a</code>: <code>unua</code> (primero), <code>dua</code> (segundo);</li>
+<li>múltiplos con <code>-obl-</code>: <code>duobla</code> (doble);</li>
+<li>fracciones con <code>-on-</code>: <code>duono</code> (una mitad), <code>kvarono</code> (un cuarto);</li>
+<li>colectivos con <code>-op-</code>: <code>duope</code> (de dos en dos).</li>
+</ul>
+<p>De forma más general, <strong>dos raíces cualesquiera pueden componerse</strong> en una sola
+palabra, con la última raíz como núcleo: <code>vapor-ŝipo</code> (barco de vapor),
+<code>dorm-o-ĉambro</code> (dormitorio, con una <code>-o-</code> de enlace para facilitar la
+pronunciación). La clase de palabra del compuesto viene de su terminación final,
+exactamente igual que en una raíz simple.</p>
+<h2 id="ejemplos-resueltos">Ejemplos resueltos<a class="headerlink" href="#ejemplos-resueltos" title="Permanent link">&para;</a></h2>
+<p>Juntando las reglas, aquí hay una frase analizada palabra por palabra:</p>
+<blockquote>
+<p><strong>La juna instruistino legas interesan libron.</strong>
+<em>"La joven profesora está leyendo un libro interesante."</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Palabra</th>
+<th>Descomposición</th>
+<th>Análisis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>La</code></td>
+<td><code>la</code></td>
+<td>artículo (palabra vacía)</td>
+</tr>
+<tr>
+<td><code>juna</code></td>
+<td><code>jun-</code> + <code>-a</code></td>
+<td>adjetivo — "joven"</td>
+</tr>
+<tr>
+<td><code>instruistino</code></td>
+<td><code>instru-</code> + <code>-ist-</code> + <code>-in-</code> + <code>-o</code></td>
+<td>sustantivo — "profesora"</td>
+</tr>
+<tr>
+<td><code>legas</code></td>
+<td><code>leg-</code> + <code>-as</code></td>
+<td>verbo, presente — "lee" (lema <code>legi</code>)</td>
+</tr>
+<tr>
+<td><code>interesan</code></td>
+<td><code>interes-</code> + <code>-a</code> + <code>-n</code></td>
+<td>adjetivo, acusativo — "interesante"</td>
+</tr>
+<tr>
+<td><code>libron</code></td>
+<td><code>libr-</code> + <code>-o</code> + <code>-n</code></td>
+<td>sustantivo, acusativo — "libro" (lema <code>libro</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Un segundo ejemplo muestra el plural, la concordancia de acusativo y un
+correlativo:</p>
+<blockquote>
+<p><strong>Ĉiuj miaj amikoj legas tiujn librojn.</strong>
+<em>"Todos mis amigos están leyendo esos libros."</em></p>
+</blockquote>
+<p><code>Ĉiuj</code> (correlativo <code>ĉiu</code> + <code>-j</code>), <code>miaj</code> (posesivo <code>mia</code> + <code>-j</code>), <code>amikoj</code>
+(<code>amik-o-j</code>) — el sujeto es plural, así que nada toma <code>-n</code>; <code>tiujn librojn</code>
+(<code>tiu-j-n</code>, <code>libr-o-j-n</code>) es el objeto en acusativo plural, y el demostrativo
+concuerda con su sustantivo. Esta concordancia regular es precisamente lo que un
+etiquetador basado en reglas puede verificar y aprovechar.</p>
+<h2 id="adonde-ir-despues">Adónde ir después<a class="headerlink" href="#adonde-ir-despues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../word-lists/">Listas de palabras</a> — la lista de palabras vacías completa,
+  generada desde los datos que lee la biblioteca.</li>
+<li><a href="../../python-library/api/">Biblioteca Python § API</a> — cómo estas reglas se
+  convierten en una interfaz <code>Doc</code> / <code>Token</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../history/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Historia">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Historia
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../vocabulary/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Raíces comunes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Raíces comunes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Licensed under the Apache License 2.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/jparisu/nlp-esperantilo" target="_blank" rel="noopener" title="NLP Esperantilo on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

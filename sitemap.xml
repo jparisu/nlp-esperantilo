@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/esperanto-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/esperanto-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/grammar/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/grammar/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/history/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/history/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/resources/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/resources/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/esperanto/vocabulary/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/vocabulary/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/commands/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/commands/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/example/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/example/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/git-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/git/undoing-changes/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/undoing-changes/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/actions/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/actions/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/first-steps/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/first-steps/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/github-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/pages/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/pages/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/repository-configuration/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/repository-configuration/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/github/workflow/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/workflow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/installation-and-usage/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/installation-and-usage/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/python-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/python-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/guide/python-library/testing/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/testing/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/library/sentence-segmentation/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/sentence-segmentation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/library/wikipedia/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/wikipedia/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/esperanto-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/esperanto-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/grammar/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/grammar/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/history/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/history/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/resources/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/resources/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/vocabulary/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/vocabulary/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/commands/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/commands/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/example/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/example/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/git-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/git/undoing-changes/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/undoing-changes/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/actions/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/actions/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/first-steps/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/first-steps/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/github-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/pages/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/pages/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/repository-configuration/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/repository-configuration/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/github/workflow/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/workflow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/installation-and-usage/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/installation-and-usage/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/python-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/python-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/testing/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/testing/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/library/sentence-segmentation/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/sentence-segmentation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/es/library/wikipedia/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/wikipedia/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/esperanto-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/esperanto-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/esperanto-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/grammar/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/grammar/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/grammar/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/history/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/history/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/history/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/resources/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/resources/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/resources/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/vocabulary/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/esperanto/vocabulary/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/esperanto/vocabulary/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/commands/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/commands/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/commands/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/example/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/example/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/example/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/git/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/git/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/organization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/git/undoing-changes/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/git/undoing-changes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/git/undoing-changes/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/actions/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/actions/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/actions/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/first-steps/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/first-steps/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/first-steps/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/github/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/pages/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/pages/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/pages/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/repository-configuration/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/repository-configuration/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/repository-configuration/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/github/workflow/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/github/workflow/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/github/workflow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/api/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/installation-and-usage/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/installation-and-usage/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/installation-and-usage/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/organization/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/organization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/organization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/python-faq/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/python-faq/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/python-faq/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/testing/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/guide/python-library/testing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/guide/python-library/testing/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/library/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/library/api/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/api/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/api/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/library/sentence-segmentation/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/sentence-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/sentence-segmentation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/nlp-esperantilo/eo/library/wikipedia/</loc>
+        <lastmod>2026-08-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="eo" href="https://jparisu.github.io/nlp-esperantilo/eo/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/nlp-esperantilo/library/wikipedia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/nlp-esperantilo/es/library/wikipedia/"/>
+    </url>
+</urlset>
