@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1493,7 +1493,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1765,32 +1765,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#para-quien-es" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Para quién es
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#las-cuatro-secciones" class="md-nav__link">
     <span class="md-ellipsis">
       
         Las cuatro secciones
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#que-no-cubre-esta-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Qué no cubre esta guía
       
     </span>
   </a>
@@ -1834,21 +1812,15 @@
 
 
 <h1 id="guia">Guía<a class="headerlink" href="#guia" title="Permanent link">&para;</a></h1>
-<p>Una guía para construir y publicar una biblioteca de Python como esta: el
-control de versiones, el flujo de trabajo colaborativo, el empaquetado y las
+<p>Esta guía te ayudará a construir y publicar una biblioteca de Python como la de este repositorio.
+Te guiará por los conceptos básicos del control de versiones, el flujo de trabajo colaborativo, el empaquetado y las
 pruebas, y el conocimiento lingüístico que va dentro.</p>
 <div class="admonition info">
 <p class="admonition-title">Guía, no referencia</p>
 <p>Estas páginas enseñan el <em>cómo</em>. La sección
 <a href="../library/">Biblioteca</a> es la otra mitad de este sitio: el manual
-de referencia de <code>esperantilo</code>, qué hace hoy y qué significa cada nombre
-público. La guía enlaza con ella siempre que un ejemplo real explique algo
-mejor que la prosa.</p>
+de referencia de <code>esperantilo</code>, el API y su funcionalidad.</p>
 </div>
-<h2 id="para-quien-es">Para quién es<a class="headerlink" href="#para-quien-es" title="Permanent link">&para;</a></h2>
-<p>Estudiantes universitarios que tienen que construir su propia biblioteca de PLN
-para el Esperanto. Se espera cierta base técnica, pero no necesariamente
-experiencia con estas herramientas concretas.</p>
 <h2 id="las-cuatro-secciones">Las cuatro secciones<a class="headerlink" href="#las-cuatro-secciones" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
 <ul>
@@ -1865,23 +1837,6 @@ experiencia con estas herramientas concretas.</p>
 <p>Las secciones son en gran medida independientes. Léelas en orden si empiezas de
 cero; salta directamente a <a href="python-library/">Biblioteca Python</a> o a
 <a href="esperanto/">Esperanto</a> si ya conoces Git y GitHub.</p>
-<h2 id="que-no-cubre-esta-guia">Qué <em>no</em> cubre esta guía<a class="headerlink" href="#que-no-cubre-esta-guia" title="Permanent link">&para;</a></h2>
-<p>Dos temas se dejan fuera deliberadamente, porque se enseñan en las clases del
-curso:</p>
-<ul>
-<li><strong>Web scraping y consumo de APIs</strong> (<code>requests</code>, <code>beautifulsoup4</code>, la API de
-  Wikipedia y similares).</li>
-<li><strong>Minería de textos y clasificación con Machine Learning</strong> (extracción de
-  características, vectorización, entrenamiento y evaluación de modelos,
-  métricas).</li>
-</ul>
-<p>Aquí el foco está en las <em>herramientas de ingeniería de software</em> necesarias
-para trabajar como un equipo profesional, y en el <em>conocimiento del dominio del
-Esperanto</em> necesario para escribir una biblioteca de PLN basada en reglas.</p>
-<p>La biblioteca sí <em>usa</em> el primero de esos dos temas —<code>esperantilo.wiki</code> llama a
-las APIs de Wikipedia y Wikidata con <code>requests</code>—, pero como código publicado que
-leer, no como lección: véase
-<a href="../library/wikipedia/">Biblioteca → Leer Wikipedia</a>.</p>
 <h2 id="este-repositorio-es-el-ejemplo">Este repositorio es el ejemplo<a class="headerlink" href="#este-repositorio-es-el-ejemplo" title="Permanent link">&para;</a></h2>
 <p>Cada vez que la guía muestra un archivo, un workflow o un commit, es uno real de
 este repositorio, no un fragmento inventado. La sección

@@ -477,10 +477,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-regulo" class="md-nav__link">
+  <a href="#la-nuna-regulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La regulo
+        La nuna regulo
       
     </span>
   </a>
@@ -488,10 +488,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kion-gi-ne-faras" class="md-nav__link">
+  <a href="#plibonigoj" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kion ĝi ne faras
+        Plibonigoj
       
     </span>
   </a>
@@ -1575,7 +1575,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1847,10 +1847,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-regulo" class="md-nav__link">
+  <a href="#la-nuna-regulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La regulo
+        La nuna regulo
       
     </span>
   </a>
@@ -1858,10 +1858,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kion-gi-ne-faras" class="md-nav__link">
+  <a href="#plibonigoj" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kion ĝi ne faras
+        Plibonigoj
       
     </span>
   </a>
@@ -1913,42 +1913,24 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Mi lernas Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># [&#39;Mi lernas Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
 </span></code></pre></div>
-<h2 id="la-regulo">La regulo<a class="headerlink" href="#la-regulo" title="Permanent link">&para;</a></h2>
-<p>Frazo finiĝas ĉe <code>.</code>, <code>!</code> aŭ <code>?</code>. La signo restas ĉe la frazo, kiun ĝi fermas,
-kaj la ĉirkaŭaj spacoj estas forigitaj. Malplenaj frazoj estas forĵetataj, do
-teksto el nuraj spacoj donas <code>[]</code>.</p>
-<p>Kiuj signoj finas frazon estas argumento:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;!&quot;</span><span class="p">])</span>
+<h2 id="la-nuna-regulo">La nuna regulo<a class="headerlink" href="#la-nuna-regulo" title="Permanent link">&para;</a></h2>
+<p>Ĉi tiu dividilo uzas la signojn donitajn kiel eniga argumento por dividi la
+tekston en frazojn.
+Defaŭlte ili estas <code>.</code>, <code>!</code> kaj <code>?</code>.</p>
+<p>Ekzemplo kun specifaj signoj estus:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,))</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># [&#39;Unua. Dua!&#39;, &#39;Tria?&#39;]</span>
 </span></code></pre></div>
-<h2 id="kion-gi-ne-faras">Kion ĝi ne faras<a class="headerlink" href="#kion-gi-ne-faras" title="Permanent link">&para;</a></h2>
-<p>La dividilo estas intence naiva — ĉiu finigilo tranĉas, kio ajn ĝin ĉirkaŭas:</p>
-<table>
-<thead>
-<tr>
-<th>Enigo</th>
-<th>Rezulto</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>"Pi estas 3.14."</code></td>
-<td><code>['Pi estas 3.', '14.']</code></td>
-</tr>
-<tr>
-<td><code>"Vidu esperanto.net."</code></td>
-<td><code>['Vidu esperanto.', 'net.']</code></td>
-</tr>
-<tr>
-<td><code>"Dr. Zamenhof venis."</code></td>
-<td><code>['Dr.', 'Zamenhof venis.']</code></td>
-</tr>
-</tbody>
-</table>
-<p>Tiuj estas la <code>ToDo</code> notita en la dokumentĉeno de la funkcio, kaj ili estas
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py">fiksitaj per <code>xfail</code>-testoj</a>,
-kiuj fariĝas malsukcesoj en la tago, kiam ili estos riparitaj. Fari tion estas
-ĝuste la speco de ekzerco, por kiu la <a href="../../guide/">Gvidilo</a> preparas vin.</p>
+<h2 id="plibonigoj">Plibonigoj<a class="headerlink" href="#plibonigoj" title="Permanent link">&para;</a></h2>
+<p>Ĉi tiu dividilo estas tre simpligita unua versio.
+Kelkaj plibonigoj indaj je efektivigo estas:</p>
+<ol>
+<li>Ne tranĉi ĉe mallongigoj kiel <code>D-ro</code> aŭ <code>S-ro</code>.</li>
+<li>Ne tranĉi ĉe dekumaj nombroj kiel <code>3.14</code>, nek ĉe aliaj interpunkciaj kazoj
+   kiel <code>...</code> aŭ <code>?!</code>.</li>
+<li>Ne tranĉi ĉe URL-oj, retpoŝtadresoj kaj aliaj vortoj enhavantaj <code>.</code> aŭ <code>?</code>.</li>
+<li>ktp.</li>
+</ol>
 <h2 id="vidu-ankau">Vidu ankaŭ<a class="headerlink" href="#vidu-ankau" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../api/">API-referenco</a> — la generita signaturo, la argumentoj kaj la ekzemploj.</li>

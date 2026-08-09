@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1495,7 +1495,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1803,7 +1803,7 @@ biblioteca. Cada respuesta enlaza a la página donde el tema se trata en detalle
 gramaticales. Véase <a href="../history/">Historia</a>.</p>
 </details>
 <details class="question">
-<summary>¿Por qué construir una biblioteca de PLN para el Esperanto en concreto?</summary>
+<summary>¿Por qué construir una biblioteca de NLP para el Esperanto en concreto?</summary>
 <p>Porque su gramática es completamente regular, así que un tokenizador,
 lematizador y etiquetador morfosintáctico <strong>basados en reglas</strong> son realmente
 viables — las terminaciones y los afijos siguen reglas que nunca se rompen, a
@@ -1822,7 +1822,7 @@ con contenido. Véase
 <p>Pela las terminaciones gramaticales y los afijos de una palabra hasta llegar a
 su raíz, luego vuelve a añadir la vocal de clase. <code>malsanulejojn</code> → quita <code>-n</code>,
 <code>-j</code>, <code>-o</code>, luego <code>-ej-</code>, <code>-ul-</code>, <code>mal-</code> → raíz <code>san-</code>. Cada paso es una
-búsqueda en una tabla. Véase <a href="../vocabulary/#afijos">Vocabulario § Afijos</a>.</p>
+búsqueda en una tabla. Véase <a href="../grammar/#afijos">Gramática § Afijos</a>.</p>
 </details>
 <details class="question">
 <summary>¿Qué son los correlativos?</summary>
@@ -1851,14 +1851,14 @@ sistema x (<code>cx</code>, <code>gx</code>, …) o el sistema h si están prese
 preposiciones, conjunciones y adverbios comunes — en su mayoría clases cerradas,
 así que la lista es finita. Este proyecto distribuye 122 de ellas — solo
 <em>raíces</em>, ya que las formas flexionadas se generan por regla. Véase
-<a href="../vocabulary/#solo-raices">Vocabulario § Solo raíces</a>.</p>
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms"><code>resources/README.md</code> § Roots, not forms</a>.</p>
 </details>
 <details class="question">
 <summary>¿De dónde saca la biblioteca sus listas de palabras?</summary>
 <p>De archivos JSON bajo <code>resources/</code>, que son la única fuente de verdad: la
 documentación los renderiza en tiempo de construcción y la biblioteca leerá
 esos mismos archivos en tiempo de ejecución, de modo que nunca pueden
-discrepar. Véase <a href="../vocabulary/#formato">Vocabulario § Formato</a>.</p>
+discrepar. Véase <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md"><code>resources/README.md</code></a>.</p>
 </details>
 <details class="question">
 <summary>¿Dónde encuentro texto real en Esperanto para probar la biblioteca?</summary>

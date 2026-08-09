@@ -1595,7 +1595,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -1948,14 +1948,12 @@
 
 <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>The <strong>API</strong> (Application Programming Interface) of a library is its <em>public
-surface</em>: the objects, functions and methods that users are meant to touch.
+face</em>: the objects, functions and methods that users are meant to touch.
 Everything else is an implementation detail you are free to change. Designing
-that surface well is what separates a library people enjoy using from one they
+that <em>face</em> well is what separates a library people enjoy using from one they
 fight with.</p>
 <p>The <code>esperantilo</code> package exposes one class and one function so far, so most of this
-page is a <strong>design target</strong>: it shows what a clean NLP interface looks like —
-modelled on <a href="https://spacy.io/api">spaCy</a> — so that the library's own
-<code>Doc</code> / <code>Token</code> interface can be built to imitate it.</p>
+page is a <strong>design target</strong>: it shows what an NLP interface looks like.</p>
 <div class="admonition tip">
 <p class="admonition-title">The part that already exists</p>
 <p>Everything below is illustrated by real, shipped code:
@@ -1982,14 +1980,20 @@ that boundary obvious.</p>
 <li>The <code>__all__</code> list in a module names its <strong>public</strong> objects. It documents the
   intended surface and controls what <code>from esperantilo import *</code> brings in:</li>
 </ul>
+<p>This is how <code>esperantilo</code> does it today, with its public API stated explicitly in <code>__init__.py</code>:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># esperantilo/__init__.py</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">Doc</span><span class="p">,</span> <span class="n">Token</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.nlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">sentence_tokenizer</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.wiki</span><span class="w"> </span><span class="kn">import</span> <span class="n">WikiPage</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;parse&quot;</span><span class="p">,</span> <span class="s2">&quot;Doc&quot;</span><span class="p">,</span> <span class="s2">&quot;Token&quot;</span><span class="p">]</span>   <span class="c1"># the public API, stated explicitly</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__version__&quot;</span><span class="p">,</span> <span class="s2">&quot;WikiPage&quot;</span><span class="p">,</span> <span class="s2">&quot;sentence_tokenizer&quot;</span><span class="p">]</span>   <span class="c1"># the public API, stated explicitly</span>
 </span></code></pre></div>
-<p>With this, a user writes <code>from esperantilo import Doc</code> and never has to know
-which internal module <code>Doc</code> really lives in.</p>
+<p>With this, a user writes <code>from esperantilo import WikiPage</code> and never has to
+know that the class really lives in <code>esperantilo.wiki.wiki</code>, nor that it sits on
+a private <code>esperantilo.wiki._wiki_api</code> module that may change without notice.</p>
+<p>The full list, generated from the code itself, is in
+<a href="../../../library/api/">Library → API reference</a>.</p>
 <h2 id="designing-a-good-one">Designing a good one<a class="headerlink" href="#designing-a-good-one" title="Permanent link">&para;</a></h2>
 <p>A handful of principles make an interface predictable and pleasant. They are the
 same ones that make <a href="../library/#a-concrete-example">scikit-learn and spaCy</a> easy
@@ -2088,9 +2092,9 @@ is exactly what makes a rule-based <code>Doc</code> / <code>Token</code> impleme
 <p>For the full reference to imitate — method names, attribute names and object
 relationships — see the <a href="https://spacy.io/api">spaCy API documentation</a>.</p>
 <h2 id="documenting-the-api-automatically">Documenting the API automatically<a class="headerlink" href="#documenting-the-api-automatically" title="Permanent link">&para;</a></h2>
-<p>An API reference written by hand rots: someone renames a parameter and the page
-still shows the old one. The fix is to generate the page <strong>from the docstrings</strong>,
-so there is only ever one copy of the truth.</p>
+<p>An API reference written by hand goes stale quickly:
+someone renames a parameter and the page still shows the old one.
+The fix is to generate the page <strong>from the docstrings</strong>, so there is only ever one copy of the truth.</p>
 <p><a href="https://mkdocstrings.github.io/">mkdocstrings</a> does that for MkDocs. A page
 holding nothing but a directive:</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.nlp
@@ -2108,7 +2112,7 @@ source is <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/lib
   shown above (<code>Args:</code>, <code>Returns:</code>, <code>Examples:</code>), declared once in
   <code>mkdocs.yml</code>.</li>
 <li><strong>Put examples in <code>Examples:</code> blocks.</strong> Written as <code>&gt;&gt;&gt;</code> sessions they are both
-  documentation and <a href="../testing/#doctests">doctests</a> — CI runs them, so they
+  documentation and <a href="../testing/">doctests</a> — CI runs them, so they
   cannot silently go stale.</li>
 </ul>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1387,17 +1387,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Doctests: documentación que se ejecuta
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pruebas-en-integracion-continua" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1608,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1913,17 +1902,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Doctests: documentación que se ejecuta
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pruebas-en-integracion-continua" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2094,19 +2072,6 @@ hacer <code>git clone</code>.</p>
 tus pruebas siguen pasando a través de refactorizaciones internas y solo fallan
 cuando el comportamiento realmente cambia — que es de lo que se trata.</p>
 </div>
-<h2 id="doctests">Doctests: documentación que se ejecuta<a class="headerlink" href="#doctests" title="Permanent link">&para;</a></h2>
-<p>Un bloque <code>Examples:</code> escrito como sesión interactiva es a la vez documentación y
-prueba. <code>--doctest-modules</code> hace que pytest ejecute esos ejemplos y compare la
-salida real con la escrita; este proyecto lo activa para <code>src/</code> en
-<code>pyproject.toml</code>:</p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[tool.pytest.ini_options]</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">]</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;-ra --doctest-modules&quot;</span>
-</span></code></pre></div>
-<p>Esos ejemplos son los que se publican en la página de
-<a href="../../../library/api/">Referencia de la API</a>, así que ejecutarlos es lo que evita
-que la documentación se quede desfasada en silencio. Mantenlos cortos e
-ilustrativos: los casos límite van en <code>tests/</code>.</p>
 <h2 id="pruebas-en-integracion-continua">Pruebas en integración continua<a class="headerlink" href="#pruebas-en-integracion-continua" title="Permanent link">&para;</a></h2>
 <p>Ejecutar las pruebas en local está bien; ejecutarlas <strong>automáticamente en cada
 cambio</strong> es lo que las convierte en una verdadera red de seguridad. El

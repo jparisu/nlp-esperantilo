@@ -385,17 +385,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#who-this-is-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Who this is for
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#building-this-site-locally" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1567,7 +1556,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -1850,17 +1839,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#who-this-is-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Who this is for
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#building-this-site-locally" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1897,7 +1875,8 @@
 
 
 <h1 id="nlp-esperantilo">NLP Esperantilo<a class="headerlink" href="#nlp-esperantilo" title="Permanent link">&para;</a></h1>
-<p><strong>NLP Esperantilo</strong> is two things at once, and this site is split accordingly.</p>
+<p><strong>NLP Esperantilo</strong> is an educational project that helps you build a Natural Language Processing (NLP) library for Esperanto.
+The project has 2 parts:</p>
 <div class="grid cards">
 <ul>
 <li>
@@ -1910,8 +1889,8 @@ Esperanto: what it does today, and what every public name means. Its
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg></span> <strong><a href="guide/">Guide</a></strong></p>
 <hr />
-<p>How a library like it is built and shipped: Git, GitHub, Python packaging
-and testing, and the Esperanto linguistics that go inside.</p>
+<p>How a library like it is built and shipped: Git, GitHub, packaging and
+Esperanto linguistics.</p>
 </li>
 </ul>
 </div>
@@ -1925,20 +1904,9 @@ and testing, and the Esperanto linguistics that go inside.</p>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">The library is deliberately small</p>
-<p><code>esperantilo</code> is at version <code>0.1.0</code> and ships one feature:
-<a href="library/sentence-segmentation/">sentence segmentation</a>. Tokens, lemmas
-and affix analysis are still a
-<a href="guide/python-library/api/">design target</a>, not shipped code. Building the
-rest is the exercise this site prepares you for.</p>
+<p><code>esperantilo</code> is an educational project; it does not try to be a complete,
+production-ready library.</p>
 </div>
-<h2 id="who-this-is-for">Who this is for<a class="headerlink" href="#who-this-is-for" title="Permanent link">&para;</a></h2>
-<p>University students who have to build their own Esperanto NLP library. Readers
-are expected to have a technical background, but not necessarily experience with
-the specific tools and topics explained here.</p>
-<p>Two topics are deliberately left out of the guide, because they are taught in
-the course lectures: <strong>web scraping and API consumption</strong>, and <strong>text-mining and
-Machine-Learning classification</strong>. See
-<a href="guide/#what-this-guide-does-not-cover">Guide → what it does not cover</a>.</p>
 <h2 id="building-this-site-locally">Building this site locally<a class="headerlink" href="#building-this-site-locally" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdocs<span class="w"> </span>serve

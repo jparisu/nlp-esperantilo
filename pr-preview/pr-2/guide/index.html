@@ -1491,7 +1491,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -1763,32 +1763,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#who-this-is-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Who this is for
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-four-sections" class="md-nav__link">
     <span class="md-ellipsis">
       
         The four sections
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-guide-does-not-cover" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What this guide does not cover
       
     </span>
   </a>
@@ -1832,20 +1810,15 @@
 
 
 <h1 id="guide">Guide<a class="headerlink" href="#guide" title="Permanent link">&para;</a></h1>
-<p>A guide to building and shipping a Python library like this one: the version
-control, the collaborative workflow, the packaging and testing, and the
-linguistic knowledge that goes inside.</p>
+<p>This guide will help you build and ship a Python library like the one in this repository.
+It walks you through the basics of version control, the collaborative workflow, the packaging and
+testing, and the linguistic knowledge that goes inside.</p>
 <div class="admonition info">
 <p class="admonition-title">Guide, not reference</p>
 <p>These pages teach the <em>how</em>. The <a href="../library/">Library</a> section is
 the other half of this site: the reference manual of <code>esperantilo</code> itself —
-what it does today and what every public name means. The guide links to it
-whenever a real, working example makes a point better than prose.</p>
+its API and its functionality.</p>
 </div>
-<h2 id="who-this-is-for">Who this is for<a class="headerlink" href="#who-this-is-for" title="Permanent link">&para;</a></h2>
-<p>University students who have to build their own Esperanto NLP library. Readers
-are expected to have a technical background, but not necessarily experience with
-these specific tools.</p>
 <h2 id="the-four-sections">The four sections<a class="headerlink" href="#the-four-sections" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
 <ul>
@@ -1862,21 +1835,6 @@ these specific tools.</p>
 <p>The sections are mostly independent. Read them in order if you are starting from
 scratch; jump straight to <a href="python-library/">Python Library</a> or
 <a href="esperanto/">Esperanto</a> if you already know Git and GitHub.</p>
-<h2 id="what-this-guide-does-not-cover">What this guide does <em>not</em> cover<a class="headerlink" href="#what-this-guide-does-not-cover" title="Permanent link">&para;</a></h2>
-<p>Two topics are deliberately left out, because they are taught in the course
-lectures:</p>
-<ul>
-<li><strong>Web scraping and API consumption</strong> (<code>requests</code>, <code>beautifulsoup4</code>, the
-  Wikipedia API, and similar).</li>
-<li><strong>Text-mining and Machine-Learning classification</strong> (feature extraction,
-  vectorization, model training and evaluation, metrics).</li>
-</ul>
-<p>The focus here is the <em>software-engineering tooling</em> needed to work like a
-professional team, and the <em>Esperanto domain knowledge</em> needed to write a
-rule-based NLP library.</p>
-<p>The library does <em>use</em> the first of those two — <code>esperantilo.wiki</code> calls the
-Wikipedia and Wikidata APIs with <code>requests</code> — but as shipped code to read, not
-as a lesson: see <a href="../library/wikipedia/">Library → Reading Wikipedia</a>.</p>
 <h2 id="this-repository-is-the-worked-example">This repository is the worked example<a class="headerlink" href="#this-repository-is-the-worked-example" title="Permanent link">&para;</a></h2>
 <p>Wherever the guide shows a file, a workflow or a commit, it is a real one from
 this repository — not an invented snippet. The

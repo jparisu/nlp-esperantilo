@@ -1689,7 +1689,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -2216,7 +2216,7 @@ fallbacks also exist for keyboards that cannot type the diacritics:</p>
 <p>A robust tokenizer should <strong>normalise</strong> input to a single canonical form
 (Unicode NFC, real diacritics) before applying any other rule. This
 project's data files keep the real diacritics and never the x-system (see
-<a href="../vocabulary/#format">Vocabulary § Format</a>).</p>
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md"><code>resources/README.md</code></a>).</p>
 </div>
 <h2 id="word-class-endings">Word-class endings<a class="headerlink" href="#word-class-endings" title="Permanent link">&para;</a></h2>
 <p>This is the single most useful rule for POS tagging and lemmatization: the
@@ -2356,7 +2356,7 @@ plural, no gender, no case:</p>
 <li><code>la libro</code> (the book), <code>la libroj</code> (the books), <code>la bona libro</code> (the good book).</li>
 </ul>
 <p>There is <strong>no indefinite article</strong>: <code>libro</code> means both "a book" and simply
-"book". <code>la</code> is a natural stop-word (see <a href="../vocabulary/#stop-words">Vocabulary</a>).</p>
+"book". <code>la</code> is a natural stop-word (see <a href="../word-lists/ignorindaj-vortoj/">Stop-words</a>).</p>
 <h2 id="personal-pronouns">Personal pronouns<a class="headerlink" href="#personal-pronouns" title="Permanent link">&para;</a></h2>
 <p>The pronouns are a small, closed set — ideal to hard-code:</p>
 <table>
@@ -2548,7 +2548,7 @@ mark direction (<code>tien</code>, <code>kien</code>). The other five endings ar
 <p>All 45 are stop-words, and this table is the only place the project stores them:
 <code>resources/esperanto/vortoj.json</code> holds roots, not forms, so a lemmatizer is
 expected to generate the grid from the two axes above rather than look words up.
-See <a href="../vocabulary/#roots-only">Vocabulary § Roots only</a>.</p>
+See <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms"><code>resources/README.md</code> § Roots, not forms</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">A drill for the grid</p>
 <p><a href="https://esperanto12.net/en/tabelvortoj/">esperanto12.net/en/tabelvortoj</a>
@@ -2811,8 +2811,8 @@ agrees with its noun. This regular agreement is precisely what a rule-based
 tagger can verify and exploit.</p>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../vocabulary/">Vocabulary</a> — the affix and stop-word lists in full, ready to
-  feed the library.</li>
+<li><a href="../word-lists/">Word lists</a> — the stop-word list in full, generated from
+  the data the library reads.</li>
 <li><a href="../../python-library/api/">Python Library § API</a> — how these rules become a
   <code>Doc</code> / <code>Token</code> interface.</li>
 </ul>
@@ -2868,13 +2868,13 @@ tagger can verify and exploit.</p>
         
         
           
-          <a href="../vocabulary/" class="md-footer__link md-footer__link--next" aria-label="Next: Vocabulary">
+          <a href="../vocabulary/" class="md-footer__link md-footer__link--next" aria-label="Next: Common roots">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Vocabulary
+                Common roots
               </div>
             </div>
             <div class="md-footer__button md-icon">

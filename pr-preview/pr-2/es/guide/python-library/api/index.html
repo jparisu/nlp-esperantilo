@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1597,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1950,14 +1950,13 @@
 
 <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>La <strong>API</strong> (Application Programming Interface, interfaz de programación de
-aplicaciones) de una biblioteca es su <em>superficie pública</em>: los objetos, funciones
+aplicaciones) de una biblioteca es su <em>cara pública</em>: los objetos, funciones
 y métodos que los usuarios están destinados a tocar. Todo lo demás es un detalle de
-implementación que eres libre de cambiar. Diseñar bien esa superficie es lo que
+implementación que eres libre de cambiar. Diseñar bien esa <em>cara</em> es lo que
 separa una biblioteca que la gente disfruta usando de una con la que pelea.</p>
 <p>El paquete <code>esperantilo</code> expone hasta ahora una clase y una función, así que la mayor
 parte de esta página es un <strong>objetivo de diseño</strong>: muestra cómo es una interfaz
-de PLN limpia —modelada sobre <a href="https://spacy.io/api">spaCy</a>— para que la propia
-interfaz <code>Doc</code> / <code>Token</code> de la biblioteca pueda construirse imitándola.</p>
+de NLP.</p>
 <div class="admonition tip">
 <p class="admonition-title">La parte que ya existe</p>
 <p>Todo lo que viene a continuación está ilustrado por código real y publicado:
@@ -1985,14 +1984,21 @@ público</strong> y hacer que esa frontera sea obvia.</p>
 <li>La lista <code>__all__</code> de un módulo nombra sus objetos <strong>públicos</strong>. Documenta la
   superficie prevista y controla qué trae <code>from esperantilo import *</code>:</li>
 </ul>
+<p>Así es como lo hace hoy <code>esperantilo</code>, con su API pública declarada explícitamente en <code>__init__.py</code>:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># esperantilo/__init__.py</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">Doc</span><span class="p">,</span> <span class="n">Token</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.nlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">sentence_tokenizer</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.wiki</span><span class="w"> </span><span class="kn">import</span> <span class="n">WikiPage</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;parse&quot;</span><span class="p">,</span> <span class="s2">&quot;Doc&quot;</span><span class="p">,</span> <span class="s2">&quot;Token&quot;</span><span class="p">]</span>   <span class="c1"># la API pública, declarada explícitamente</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__version__&quot;</span><span class="p">,</span> <span class="s2">&quot;WikiPage&quot;</span><span class="p">,</span> <span class="s2">&quot;sentence_tokenizer&quot;</span><span class="p">]</span>   <span class="c1"># la API pública, declarada explícitamente</span>
 </span></code></pre></div>
-<p>Con esto, un usuario escribe <code>from esperantilo import Doc</code> y nunca tiene que saber
-en qué módulo interno vive realmente <code>Doc</code>.</p>
+<p>Con esto, un usuario escribe <code>from esperantilo import WikiPage</code> y nunca tiene que
+saber que la clase vive realmente en <code>esperantilo.wiki.wiki</code>, ni que esta se
+apoya en un módulo privado <code>esperantilo.wiki._wiki_api</code> que puede cambiar sin
+aviso.</p>
+<p>La lista completa, generada desde el propio código, está en
+<a href="../../../library/api/">Biblioteca → Referencia de la API</a>.</p>
 <h2 id="como-disenar-una-buena-api">Cómo diseñar una buena API<a class="headerlink" href="#como-disenar-una-buena-api" title="Permanent link">&para;</a></h2>
 <p>Un puñado de principios hacen que una interfaz sea predecible y agradable. Son los
 mismos que hacen que <a href="../library/#un-ejemplo-concreto">scikit-learn y spaCy</a> sean
@@ -2096,9 +2102,9 @@ viable una implementación de <code>Doc</code> / <code>Token</code> basada en re
 relaciones entre objetos— véase la
 <a href="https://spacy.io/api">documentación de la API de spaCy</a>.</p>
 <h2 id="documentar-la-api-automaticamente">Documentar la API automáticamente<a class="headerlink" href="#documentar-la-api-automaticamente" title="Permanent link">&para;</a></h2>
-<p>Una referencia de API escrita a mano se pudre: alguien renombra un parámetro y la
-página sigue mostrando el antiguo. La solución es generar la página <strong>desde los
-docstrings</strong>, de forma que solo haya una copia de la verdad.</p>
+<p>Una referencia de API escrita a mano se queda obsoleta rápidamente:
+alguien renombra un parámetro y la página sigue mostrando el antiguo.
+La solución es generar la página <strong>desde los docstrings</strong>, de forma que solo haya una copia de la verdad.</p>
 <p><a href="https://mkdocstrings.github.io/">mkdocstrings</a> hace eso en MkDocs. Una página
 que no contiene más que una directiva:</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.nlp
@@ -2117,7 +2123,7 @@ página son <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/docs/l
   estilo Google mostrado arriba (<code>Args:</code>, <code>Returns:</code>, <code>Examples:</code>), declarado una
   sola vez en <code>mkdocs.yml</code>.</li>
 <li><strong>Pon los ejemplos en bloques <code>Examples:</code>.</strong> Escritos como sesiones <code>&gt;&gt;&gt;</code> son a
-  la vez documentación y <a href="../testing/#doctests">doctests</a> — la CI los ejecuta, así
+  la vez documentación y <a href="../testing/">doctests</a> — la CI los ejecuta, así
   que no pueden quedarse desfasados en silencio.</li>
 </ul>
 <h2 id="adonde-ir-despues">Adónde ir después<a class="headerlink" href="#adonde-ir-despues" title="Permanent link">&para;</a></h2>

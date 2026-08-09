@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1691,7 +1691,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -2222,7 +2222,7 @@ no pueden escribir los diacríticos:</p>
 <p>Un tokenizador robusto debería <strong>normalizar</strong> la entrada a una única forma
 canónica (Unicode NFC, diacríticos reales) antes de aplicar cualquier otra
 regla. Los archivos de datos de este proyecto conservan los diacríticos reales
-y nunca el sistema x (véase <a href="../vocabulary/#formato">Vocabulario § Formato</a>).</p>
+y nunca el sistema x (véase <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md"><code>resources/README.md</code></a>).</p>
 </div>
 <h2 id="terminaciones-de-clase-de-palabra">Terminaciones de clase de palabra<a class="headerlink" href="#terminaciones-de-clase-de-palabra" title="Permanent link">&para;</a></h2>
 <p>Esta es la regla más útil de todas para el etiquetado morfosintáctico y la
@@ -2270,9 +2270,7 @@ gramatical</strong>.</p>
 </tbody>
 </table>
 <p>De una sola raíz obtienes toda la familia: <code>muziko</code> (música), <code>muzika</code> (musical),
-<code>muzike</code> (musicalmente). Para <strong>lematizar</strong>, quita la terminación gramatical (y
-cualquier flexión de abajo) para recuperar la raíz, y luego vuelve a añadir la
-vocal de clase para obtener la forma de diccionario.</p>
+<code>muzike</code> (musicalmente).</p>
 <h2 id="flexiones-gramaticales">Flexiones gramaticales<a class="headerlink" href="#flexiones-gramaticales" title="Permanent link">&para;</a></h2>
 <p>Los sustantivos y los adjetivos toman dos terminaciones opcionales, siempre
 <strong>después</strong> de la vocal de clase:</p>
@@ -2366,7 +2364,7 @@ sin plural, sin género, sin caso:</p>
 </ul>
 <p><strong>No hay artículo indeterminado</strong>: <code>libro</code> significa tanto "un libro" como
 simplemente "libro". <code>la</code> es una palabra vacía natural (véase
-<a href="../vocabulary/#palabras-vacias">Vocabulario</a>).</p>
+<a href="../word-lists/ignorindaj-vortoj/">Palabras vacías</a>).</p>
 <h2 id="pronombres-personales">Pronombres personales<a class="headerlink" href="#pronombres-personales" title="Permanent link">&para;</a></h2>
 <p>Los pronombres son un conjunto pequeño y cerrado — ideal para codificar a mano:</p>
 <table>
@@ -2559,13 +2557,7 @@ marcar dirección (<code>tien</code>, <code>kien</code>). Las otras cinco termin
 guarda: <code>resources/esperanto/vortoj.json</code> contiene raíces, no formas, así que se
 espera que un lematizador genere la rejilla a partir de los dos ejes de arriba en
 lugar de buscar las palabras. Véase
-<a href="../vocabulary/#solo-raices">Vocabulario § Solo raíces</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Un ejercicio para la rejilla</p>
-<p><a href="https://esperanto12.net/en/tabelvortoj/">esperanto12.net/en/tabelvortoj</a>
-recorre la tabla celda por celda con frases de ejemplo — la forma más rápida
-de dejar de leerla como 45 palabras sueltas.</p>
-</div>
+<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms"><code>resources/README.md</code> § Roots, not forms</a>.</p>
 <h2 id="afijos">Afijos<a class="headerlink" href="#afijos" title="Permanent link">&para;</a></h2>
 <p>Los afijos son lo que hace <strong>composicional</strong> el vocabulario del Esperanto — y son
 el corazón de la lematización, porque una palabra larga suele ser una raíz envuelta
@@ -2825,8 +2817,8 @@ concuerda con su sustantivo. Esta concordancia regular es precisamente lo que un
 etiquetador basado en reglas puede verificar y aprovechar.</p>
 <h2 id="adonde-ir-despues">Adónde ir después<a class="headerlink" href="#adonde-ir-despues" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../vocabulary/">Vocabulario</a> — las listas de afijos y palabras vacías completas,
-  listas para alimentar la biblioteca.</li>
+<li><a href="../word-lists/">Listas de palabras</a> — la lista de palabras vacías completa,
+  generada desde los datos que lee la biblioteca.</li>
 <li><a href="../../python-library/api/">Biblioteca Python § API</a> — cómo estas reglas se
   convierten en una interfaz <code>Doc</code> / <code>Token</code>.</li>
 </ul>
@@ -2882,13 +2874,13 @@ etiquetador basado en reglas puede verificar y aprovechar.</p>
         
         
           
-          <a href="../vocabulary/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Vocabulario">
+          <a href="../vocabulary/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Raíces comunes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Vocabulario
+                Raíces comunes
               </div>
             </div>
             <div class="md-footer__button md-icon">

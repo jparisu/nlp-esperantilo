@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -540,6 +540,17 @@
     <span class="md-ellipsis">
       
         Licencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idiomas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idiomas
       
     </span>
   </a>
@@ -1595,7 +1606,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1911,6 +1922,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#idiomas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idiomas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vease-tambien" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1947,7 +1969,7 @@
 
 
 <h1 id="leer-wikipedia">Leer Wikipedia<a class="headerlink" href="#leer-wikipedia" title="Permanent link">&para;</a></h1>
-<p>Una biblioteca de PLN no sirve de nada sin texto sobre el que trabajar.
+<p>Una biblioteca de NLP no sirve de nada sin texto sobre el que trabajar.
 <code>esperantilo</code> obtiene ese texto de Wikipedia con
 <a href="../api/#esperantilo.wiki.WikiPage"><code>WikiPage</code></a>, ya limpio de marcado wiki.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo</span><span class="w"> </span><span class="kn">import</span> <span class="n">WikiPage</span>
@@ -2025,6 +2047,43 @@ argumentos lo descarga todo dos veces.</p>
 <h2 id="licencia">Licencia<a class="headerlink" href="#licencia" title="Permanent link">&para;</a></h2>
 <p>El texto de Wikipedia es <strong>CC BY-SA</strong>. Si republicas lo que obtengas, conserva
 la atribución y la licencia; <code>page.url</code> es el enlace que hay que citar.</p>
+<h2 id="idiomas">Idiomas<a class="headerlink" href="#idiomas" title="Permanent link">&para;</a></h2>
+<p>Esta es una lista de algunos de los idiomas más utilizados, y sus códigos de Wikipedia:</p>
+<table>
+<thead>
+<tr>
+<th>Idioma</th>
+<th>Código</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esperanto</td>
+<td><code>eo</code></td>
+</tr>
+<tr>
+<td>Inglés</td>
+<td><code>en</code></td>
+</tr>
+<tr>
+<td>Español</td>
+<td><code>es</code></td>
+</tr>
+<tr>
+<td>Francés</td>
+<td><code>fr</code></td>
+</tr>
+<tr>
+<td>Alemán</td>
+<td><code>de</code></td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>La lista completa de códigos está en <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">Wikipedia:Lista de códigos de idioma</a>.</p>
 <h2 id="vease-tambien">Véase también<a class="headerlink" href="#vease-tambien" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../api/#esperantilo.wiki.WikiPage">Referencia de la API</a> — la firma generada,

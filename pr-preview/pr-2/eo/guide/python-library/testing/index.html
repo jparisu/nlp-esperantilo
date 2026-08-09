@@ -1389,17 +1389,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dokumentteestoj: dokumentado, kiu ruliĝas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#testoj-en-kontinua-integrado" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1610,7 +1599,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1915,17 +1904,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dokumentteestoj: dokumentado, kiu ruliĝas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#testoj-en-kontinua-integrado" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2089,19 +2067,6 @@ testado, do <code>pytest</code> funkcias tuj post <code>git clone</code>.</p>
 viaj testoj plu sukcesas tra internaj refaktorigoj kaj malsukcesas nur kiam la
 konduto vere ŝanĝiĝas — kio estas la tuta celo.</p>
 </div>
-<h2 id="doctests">Dokumentteestoj: dokumentado, kiu ruliĝas<a class="headerlink" href="#doctests" title="Permanent link">&para;</a></h2>
-<p><code>Examples:</code>-bloko verkita kiel interaga seanco estas samtempe dokumentado kaj
-testo. <code>--doctest-modules</code> igas pytest ruli tiujn ekzemplojn kaj kompari la
-realan eligon kun la skribita; ĉi tiu projekto ŝaltas ĝin por <code>src/</code> en
-<code>pyproject.toml</code>:</p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[tool.pytest.ini_options]</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">]</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;-ra --doctest-modules&quot;</span>
-</span></code></pre></div>
-<p>Tiuj ekzemploj estas tiuj publikigitaj sur la paĝo
-<a href="../../../library/api/">API-referenco</a>, do ruli ilin estas tio, kio malhelpas la
-dokumentaron silente malaktualiĝi. Tenu ilin mallongaj kaj ilustraj — randkazoj
-apartenas al <code>tests/</code>.</p>
 <h2 id="testoj-en-kontinua-integrado">Testoj en kontinua integrado<a class="headerlink" href="#testoj-en-kontinua-integrado" title="Permanent link">&para;</a></h2>
 <p>Ruli la testojn loke estas bone; ruli ilin <strong>aŭtomate ĉe ĉiu ŝanĝo</strong> estas tio, kio
 igas ilin vera sekureca reto. La <a href="../../github/actions/#ruli-la-python-testojn"><code>tests.yml</code>-laborfluo</a>

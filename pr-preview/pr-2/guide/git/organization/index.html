@@ -1595,7 +1595,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -2032,10 +2032,34 @@ back. While two branches exist in parallel, the history <strong>diverges</strong
 <li><strong>Fast-forward.</strong> If <code>main</code> has not moved since the branch was created, Git
   can simply slide the <code>main</code> pointer forward to the branch's latest commit. No
   new commit is created; the history stays linear.</li>
+</ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"</code></pre>
+<ul>
 <li><strong>Merge commit.</strong> If <em>both</em> branches gained commits (as in the diagram above),
   Git creates a new <strong>merge commit</strong> with <strong>two parents</strong>, tying the two lines
   of history back together.</li>
 </ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"</code></pre>
 <p>When the two branches changed <strong>the same lines</strong> of the same file, Git cannot
 decide which version wins. This is a <strong>merge conflict</strong>: Git pauses and asks you
 to edit the file and choose. Conflicts are a normal part of collaboration, not

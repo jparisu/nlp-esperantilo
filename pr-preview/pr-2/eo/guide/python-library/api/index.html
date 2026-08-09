@@ -1599,7 +1599,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1952,14 +1952,12 @@
 
 <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>La <strong>API</strong> (Application Programming Interface, programad-interfaco de aplikaĵoj) de
-biblioteko estas ĝia <em>publika surfaco</em>: la objektoj, funkcioj kaj metodoj, kiujn la
+biblioteko estas ĝia <em>publika vizaĝo</em>: la objektoj, funkcioj kaj metodoj, kiujn la
 uzantoj estas destinitaj tuŝi. Ĉio alia estas realiga detalo, kiun vi rajtas ŝanĝi.
-Bone dezajni tiun surfacon estas tio, kio disigas bibliotekon, kiun oni ĝuas uzi, de
+Bone dezajni tiun <em>vizaĝon</em> estas tio, kio disigas bibliotekon, kiun oni ĝuas uzi, de
 tiu kontraŭ kiu oni batalas.</p>
 <p>La pako <code>esperantilo</code> eksponas ĝis nun unu klason kaj unu funkcion, do la plej granda parto
-de ĉi tiu paĝo estas <strong>dezajna celo</strong>: ĝi montras kiel aspektas pura
-NLP-interfaco — modelita laŭ <a href="https://spacy.io/api">spaCy</a> — por ke la propra
-interfaco <code>Doc</code> / <code>Token</code> de la biblioteko povu esti konstruita imitante ĝin.</p>
+de ĉi tiu paĝo estas <strong>dezajna celo</strong>: ĝi montras kiel aspektas NLP-interfaco.</p>
 <div class="admonition tip">
 <p class="admonition-title">La parto, kiu jam ekzistas</p>
 <p>Ĉio sube estas ilustrita de reala, eldonita kodo:
@@ -1986,14 +1984,21 @@ API-dezajno estas do <strong>decidi kio estas publika</strong> kaj igi tiun limo
 <li>La listo <code>__all__</code> en modulo nomas ĝiajn <strong>publikajn</strong> objektojn. Ĝi dokumentas la
   celitan surfacon kaj regas kion alportas <code>from esperantilo import *</code>:</li>
 </ul>
+<p>Jen kiel <code>esperantilo</code> faras tion hodiaŭ, kun sia publika API deklarita eksplicite en <code>__init__.py</code>:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># esperantilo/__init__.py</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">Doc</span><span class="p">,</span> <span class="n">Token</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.nlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">sentence_tokenizer</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo.wiki</span><span class="w"> </span><span class="kn">import</span> <span class="n">WikiPage</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;parse&quot;</span><span class="p">,</span> <span class="s2">&quot;Doc&quot;</span><span class="p">,</span> <span class="s2">&quot;Token&quot;</span><span class="p">]</span>   <span class="c1"># la publika API, deklarita eksplicite</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__version__&quot;</span><span class="p">,</span> <span class="s2">&quot;WikiPage&quot;</span><span class="p">,</span> <span class="s2">&quot;sentence_tokenizer&quot;</span><span class="p">]</span>   <span class="c1"># la publika API, deklarita eksplicite</span>
 </span></code></pre></div>
-<p>Kun ĉi tio, uzanto skribas <code>from esperantilo import Doc</code> kaj neniam devas scii en kiu
-interna modulo <code>Doc</code> vere vivas.</p>
+<p>Kun ĉi tio, uzanto skribas <code>from esperantilo import WikiPage</code> kaj neniam devas
+scii, ke la klaso vere vivas en <code>esperantilo.wiki.wiki</code>, nek ke ĉi tiu apogas
+sin sur privata modulo <code>esperantilo.wiki._wiki_api</code>, kiu povas ŝanĝiĝi sen
+averto.</p>
+<p>La kompleta listo, generita el la kodo mem, troviĝas en
+<a href="../../../library/api/">Biblioteko → API-referenco</a>.</p>
 <h2 id="dezajni-bonan-api-on">Dezajni bonan API-on<a class="headerlink" href="#dezajni-bonan-api-on" title="Permanent link">&para;</a></h2>
 <p>Manpleno da principoj igas interfacon antaŭvidebla kaj agrabla. Ili estas la samaj,
 kiuj igas <a href="../library/#konkreta-ekzemplo">scikit-learn kaj spaCy</a> facile lerneblaj:</p>
@@ -2090,9 +2095,9 @@ estas ekzakte tio, kio igas realigeblan regul-bazitan efektivigon de <code>Doc</
 <p>Por la kompleta referenco por imiti — nomoj de metodoj, nomoj de atributoj kaj rilatoj
 inter objektoj — vidu la <a href="https://spacy.io/api">API-dokumentadon de spaCy</a>.</p>
 <h2 id="dokumenti-la-api-on-automate">Dokumenti la API-on aŭtomate<a class="headerlink" href="#dokumenti-la-api-on-automate" title="Permanent link">&para;</a></h2>
-<p>Mane verkita API-referenco putras: iu renomas parametron kaj la paĝo plu montras
-la malnovan. La solvo estas generi la paĝon <strong>el la dokumentĉenoj</strong>, tiel ke
-ekzistu nur unu kopio de la vero.</p>
+<p>Mane verkita API-referenco rapide malaktualiĝas:
+iu renomas parametron kaj la paĝo plu montras la malnovan.
+La solvo estas generi la paĝon <strong>el la dokumentĉenoj</strong>, tiel ke ekzistu nur unu kopio de la vero.</p>
 <p><a href="https://mkdocstrings.github.io/">mkdocstrings</a> faras tion por MkDocs. Paĝo, kiu
 enhavas nenion krom direktivon:</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>::: esperantilo.nlp
@@ -2110,7 +2115,7 @@ fonto de tiu paĝo estas <a href="https://github.com/jparisu/nlp-esperantilo/blo
   Google-stilon montritan supre (<code>Args:</code>, <code>Returns:</code>, <code>Examples:</code>), deklaritan
   unufoje en <code>mkdocs.yml</code>.</li>
 <li><strong>Metu ekzemplojn en <code>Examples:</code>-blokojn.</strong> Verkitaj kiel <code>&gt;&gt;&gt;</code>-seancoj ili
-  estas samtempe dokumentado kaj <a href="../testing/#doctests">dokumentteestoj</a> — la
+  estas samtempe dokumentado kaj <a href="../testing/">dokumentteestoj</a> — la
   kontinua integrado rulas ilin, do ili ne povas silente malaktualiĝi.</li>
 </ul>
 <h2 id="kien-iri-poste">Kien iri poste<a class="headerlink" href="#kien-iri-poste" title="Permanent link">&para;</a></h2>

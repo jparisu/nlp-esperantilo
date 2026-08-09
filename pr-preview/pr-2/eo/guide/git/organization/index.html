@@ -1599,7 +1599,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -2035,10 +2035,34 @@ taskon, vi kreas branĉon el <code>main</code>, faras commit-ojn sur ĝi, kaj po
 <li><strong>Fast-forward.</strong> Se <code>main</code> ne moviĝis ekde la kreo de la branĉo, Git povas simple
   ŝovi la montrilon de <code>main</code> antaŭen ĝis la plej lasta commit de la branĉo. Neniu
   nova commit kreiĝas; la historio restas lineara.</li>
+</ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"</code></pre>
+<ul>
 <li><strong>Kunfanda commit.</strong> Se <em>ambaŭ</em> branĉoj gajnis commit-ojn (kiel en la supra
   diagramo), Git kreas novan <strong>kunfandan commit-on</strong> kun <strong>du gepatroj</strong>, ligante la
   du liniojn de historio denove kune.</li>
 </ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"</code></pre>
 <p>Kiam la du branĉoj ŝanĝis <strong>la samajn liniojn</strong> de la sama dosiero, Git ne povas
 decidi kiu versio venkas. Tio estas <strong>kunfanda konflikto</strong>: Git paŭzas kaj petas vin
 redakti la dosieron kaj elekti. Konfliktoj estas normala parto de la kunlaboro, ne

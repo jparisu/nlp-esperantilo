@@ -1306,17 +1306,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirementstxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        requirements.txt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#__init__py" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1343,6 +1332,17 @@
     <span class="md-ellipsis">
       
         tests/ — spegulante la fontkodon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        requirements.txt
       
     </span>
   </a>
@@ -1649,7 +1649,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1955,17 +1955,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirementstxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        requirements.txt
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#__init__py" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1992,6 +1981,17 @@
     <span class="md-ellipsis">
       
         tests/ — spegulante la fontkodon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        requirements.txt
       
     </span>
   </a>
@@ -2059,30 +2059,28 @@ reprodukti ĝin en via propra projekto.</p>
 <p>Ĉi tiu projekto uzas la <strong><code>src/</code>-strukturon</strong>, la nuna plej bona praktiko por
 Python-pakoj:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nlp-esperantilo/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── pyproject.toml        # metadatenoj de la projekto kaj konstrua agordo
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── README.md             # ĉefpaĝo
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── LICENSE               # licenca teksto
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── mkdocs.yml            # agordo de la dokumentaro
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── docs/                 # la dokumentaro, kiun vi legas
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── hooks/            #   hokoj, kiuj igas resources/ dokumentaj paĝoj
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── resources/            # datumdosieroj (vortlistoj) kaj notlibroj
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── .github/workflows/    # kontinua integrado
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── src/
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └── esperantilo/      # la pako mem
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       ├── __init__.py   # la publika API: reeksportoj kaj __all__
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── nlp/          # unu subpako por ĉiu funkcia areo
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       │   └── tokenizer.py
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       └── wiki/
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│           ├── wiki.py       # la publika klaso
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│           └── _wiki_api.py  # privata: la HTTP-klientoj
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└── tests/
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    ├── test_package.py    # la pako importiĝas kaj eksponas sian publikan API-on
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    ├── test_resources.py  # validigo de la datumdosieroj
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    └── test_tokenizer.py  # unu testmodulo por ĉiu fontmodulo
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── src/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   └── esperantilo/       # la pako mem
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│       ├── __init__.py    # la publika API: reeksportoj kaj __all__
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│       ├── nlp/           # unu subpako por ĉiu funkcia areo
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│       │   └── tokenizer.py
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│       └── ...            # aliaj subpakoj kaj moduloj
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── tests/                 # testskriptoj por la biblioteko
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── test_tokenizer.py  # unu testmodulo por ĉiu fontmodulo
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    └── ...
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a># Aliaj helpaj dosieroj kaj dosierujoj
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── pyproject.toml         # metadatenoj de la projekto kaj konstrua agordo
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── README.md              # ĉefpaĝo
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── LICENSE                # licenca teksto
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── mkdocs.yml             # agordo de la dokumentaro
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── docs/                  # la dokumentaro, kiun vi legas
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>├── resources/             # datumdosieroj (vortlistoj) kaj notlibroj
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>├── .github/workflows/     # kontinua integrado
 </span></code></pre></div>
 <p>Notu la parigon: <code>tokenizer.py</code> en <code>src/</code>, <code>test_tokenizer.py</code> en <code>tests/</code>. Ĝi
-skaliĝas senpense — nova funkcio estas nova modulo kaj nova testmodulo — kaj ĝi
-igas mankantan teston evidenta. Kion tiu specifa modulo faras, estas dokumentita
+skaliĝas senpense: nova funkcio estas nova modulo kaj nova testmodulo.
+Kion tiu specifa modulo faras, estas dokumentita
 en <a href="../../../library/sentence-segmentation/">Biblioteko → Fraz-dividado</a>.</p>
 <p>Kiam funkcio kreskas preter unu sola modulo, ĝi fariĝas <strong>subpako</strong>: dosierujo
 kun propra <code>__init__.py</code>, kiu reeksportas la publikajn nomojn de tiu funkcio.
@@ -2124,7 +2122,7 @@ de la dosiero de ĉi tiu projekto:</p>
 <ul>
 <li><strong><code>[project]</code></strong> — la identeco de la biblioteko. <code>name</code> estas tio, kion oni
   <code>pip install</code>-as; <code>version</code> estas tio, kion oni fiksas; <code>dependencies</code> estas tio,
-  kio instaliĝas <em>kun</em> ĝi (malplena ĉi tie, ĉar la biblioteko estas regul-bazita).</li>
+  kio instaliĝas <em>kun</em> ĝi.</li>
 <li><strong><code>[project.optional-dependencies]</code></strong> — <em>kromaĵoj</em>, instalataj laŭbezone. <code>.[test]</code>
   aldonas <code>pytest</code>, <code>.[docs]</code> aldonas la MkDocs-ilojn. La uzantoj de la biblioteko
   bezonas neniun; la programistoj jes.</li>
@@ -2132,23 +2130,6 @@ de la dosiero de ĉi tiu projekto:</p>
   <code>[tool.setuptools.packages.find]</code> diras al la konstruo kie estas la pako, kaj
   <code>[tool.pytest.ini_options]</code> agordas la testrulilon.</li>
 </ul>
-<h3 id="requirementstxt"><code>requirements.txt</code><a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
-<p>Simpla listo de dependecoj, unu por linio, tradicie uzata kun
-<code>pip install -r requirements.txt</code>. Ĝi interkovras kun <code>pyproject.toml</code>, do kion faras
-ĉiu?</p>
-<ul>
-<li><strong><code>pyproject.toml</code></strong> deklaras kion la <em>biblioteko</em> bezonas por funkcii, kiel parton
-  de sia identeco. Ĝi estas la fonto de vero, kiam iu instalas <code>esperantilo</code>.</li>
-<li><strong><code>requirements.txt</code></strong> estas oportuna listo, ofte uzata por fiksi precizajn versiojn
-  por reproduktebla <em>medio</em>.</li>
-</ul>
-<p><strong>Ĉi tiu projekto ne havas <code>requirements.txt</code> en la radiko.</strong> La biblioteko estas
-regul-bazita kaj havas neniun rultempan dependecon, do la dosiero dirus nenion,
-kion <code>pyproject.toml</code> ne jam diras — kaj malplena dosiero, kiu aspektas grava,
-estas pli malbona ol neniu dosiero. La disvolvaj kromaĵoj estas deklaritaj en
-<code>[project.optional-dependencies]</code> kaj instalataj per <code>pip install -e ".[test]"</code>.</p>
-<p>La sola loko, kie fiksita listo <strong>ja</strong> valoras, estas <code>docs/requirements.txt</code>, kiu estas
-la dosiero, kiun uzas la <a href="../../github/actions/">CI-laborfluoj</a>.</p>
 <h3 id="__init__py"><code>__init__.py</code><a class="headerlink" href="#__init__py" title="Permanent link">&para;</a></h3>
 <p>Dosiero <code>__init__.py</code> markas dosierujon kiel <strong>regulan pakon</strong>. De Python 3.3, dosierujo
 sen ĝi restas importebla, kiel <em>nomspaca pako</em>, sed biblioteko estu eksplicita: la
@@ -2161,10 +2142,8 @@ la pako. Tiu de ĉi tiu projekto estas intence minimuma:</p>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__version__&quot;</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Nuntempe ĝi eksponas nur la version. Dum la biblioteko kreskas, ĉi tie vi importus kaj
-reeksportus la publikajn klasojn kaj funkciojn (la objektojn <code>Doc</code> kaj <code>Token</code>
-dezajnitajn en <a href="../api/">la API-paĝo</a>), por ke la uzantoj povu skribi
-<code>from esperantilo import Doc</code> anstataŭ fosi en internaj moduloj. La listo <code>__all__</code>
-ankaŭ estas klarigita tie.</p>
+reeksportus la publikajn klasojn kaj funkciojn, por ke la uzantoj povu importi
+ĝiajn erojn rapide kaj facile.</p>
 <h3 id="the-src-layout"><code>src/</code> — kial la kodo ne estas ĉe la radiko<a class="headerlink" href="#the-src-layout" title="Permanent link">&para;</a></h3>
 <p>Meti la pakon sub <code>src/</code> malhelpas klasikan kaj konfuzan cimon. Se la pako sidus ĉe la
 radiko de la deponejo, tiam ruli Python <em>el</em> la radiko importus la lokan dosierujon
@@ -2183,6 +2162,11 @@ kontrolas ke la pako importiĝas kaj eksponas sian version, kaj
 <a href="https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_resources.py"><code>test_resources.py</code></a>
 validigas la datumdosierojn sub <code>resources/</code>. La testado havas sian propran paĝon:
 <a href="../testing/">Testado</a>.</p>
+<h3 id="requirementstxt"><code>requirements.txt</code><a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
+<p>En multaj kazoj tiu ĉi dosiero estas uzata kiel simpla listo de dependecoj, unu
+por linio, tradicie uzata kun <code>pip install -r requirements.txt</code>.
+Tio estas tradicia sistemo por konservi kongruecon, sed ĝi montriĝas redunda kun
+<code>pyproject.toml</code>, kiu jam enhavas la liston de dependecoj kaj iliajn versiojn.</p>
 <h2 id="versiado">Versiado<a class="headerlink" href="#versiado" title="Permanent link">&para;</a></h2>
 <p>La versio de la biblioteko estas deklarita kiel <code>version</code> en <code>pyproject.toml</code> kaj
 spegulata de <code>__version__</code> en <code>__init__.py</code>, por ke ĝi estu legebla rultempe:</p>

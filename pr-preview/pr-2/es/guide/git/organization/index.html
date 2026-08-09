@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1597,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -2037,10 +2037,34 @@ la reincorporas. Mientras dos ramas existen en paralelo, el historial <strong>di
 <li><strong>Fast-forward.</strong> Si <code>main</code> no se ha movido desde que se creó la rama, Git
   puede simplemente deslizar el puntero de <code>main</code> hasta el último commit de la
   rama. No se crea ningún commit nuevo; el historial se mantiene lineal.</li>
+</ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"</code></pre>
+<ul>
 <li><strong>Commit de fusión.</strong> Si <em>ambas</em> ramas ganaron commits (como en el diagrama de
   arriba), Git crea un nuevo <strong>commit de fusión</strong> con <strong>dos padres</strong>, que vuelve
   a unir las dos líneas de historial.</li>
 </ul>
+<pre class="mermaid"><code>gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"</code></pre>
 <p>Cuando las dos ramas cambiaron <strong>las mismas líneas</strong> del mismo archivo, Git no
 puede decidir qué versión gana. Esto es un <strong>conflicto de fusión</strong>: Git se
 detiene y te pide que edites el archivo y elijas. Los conflictos son una parte

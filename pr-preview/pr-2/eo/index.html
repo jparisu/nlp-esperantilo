@@ -389,17 +389,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#por-kiu-gi-estas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Por kiu ĝi estas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#konstrui-ci-tiun-pagaron-loke" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1571,7 +1560,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1854,17 +1843,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#por-kiu-gi-estas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Por kiu ĝi estas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#konstrui-ci-tiun-pagaron-loke" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1901,8 +1879,9 @@
 
 
 <h1 id="nlp-esperantilo">NLP Esperantilo<a class="headerlink" href="#nlp-esperantilo" title="Permanent link">&para;</a></h1>
-<p><strong>NLP Esperantilo</strong> estas du aferoj samtempe, kaj ĉi tiu paĝaro estas dividita
-laŭ tio.</p>
+<p><strong>NLP Esperantilo</strong> estas projekto kun eduka celo, kiu helpas konstrui
+bibliotekon por komputila lingvistiko (NLP) en Esperanto.
+La projekto havas 2 partojn:</p>
 <div class="grid cards">
 <ul>
 <li>
@@ -1915,8 +1894,8 @@ Esperanto: kion ĝi faras hodiaŭ, kaj kion signifas ĉiu publika nomo. Ĝia
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg></span> <strong><a href="guide/">Gvidilo</a></strong></p>
 <hr />
-<p>Kiel oni konstruas kaj eldonas tian bibliotekon: Git, GitHub, Python-pakado
-kaj testado, kaj la Esperanta lingvoscio, kiu iras internen.</p>
+<p>Kiel oni konstruas kaj eldonas tian bibliotekon: Git, GitHub, pakado kaj
+Esperanta lingvoscio.</p>
 </li>
 </ul>
 </div>
@@ -1930,20 +1909,9 @@ kaj testado, kaj la Esperanta lingvoscio, kiu iras internen.</p>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">La biblioteko estas intence malgranda</p>
-<p><code>esperantilo</code> estas ĉe versio <code>0.1.0</code> kaj havas unu solan funkcion:
-<a href="library/sentence-segmentation/">fraz-dividado</a>. Vortoj (<em>tokens</em>),
-lemoj kaj afiksa analizo ankoraŭ estas
-<a href="guide/python-library/api/">dezajna celo</a>, ne eldonita kodo. Konstrui la
-ceteron estas ĝuste la ekzerco, por kiu ĉi tiu paĝaro preparas vin.</p>
+<p><code>esperantilo</code> estas projekto kun eduka celo; ĝi ne provas esti kompleta kaj
+preta-por-produktado biblioteko.</p>
 </div>
-<h2 id="por-kiu-gi-estas">Por kiu ĝi estas<a class="headerlink" href="#por-kiu-gi-estas" title="Permanent link">&para;</a></h2>
-<p>Universitataj studentoj, kiuj devas konstrui sian propran Esperantan
-NLP-bibliotekon. Oni atendas, ke la leganto havas ian teknikan fonon, sed ne
-nepre sperton pri la specifaj iloj kaj temoj ĉi tie klarigataj.</p>
-<p>Du temoj estas intence lasitaj ekster la gvidilo, ĉar ili estas instruataj en la
-kurslecionoj: <strong>retĉerpado kaj konsumo de API-oj</strong>, kaj <strong>teksto-minado kaj
-klasifiko per maŝinlernado</strong>. Vidu
-<a href="guide/#kion-gi-ne-kovras">Gvidilo → kion ĝi ne kovras</a>.</p>
 <h2 id="konstrui-ci-tiun-pagaron-loke">Konstrui ĉi tiun paĝaron loke<a class="headerlink" href="#konstrui-ci-tiun-pagaron-loke" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdocs<span class="w"> </span>serve

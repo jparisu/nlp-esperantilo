@@ -1588,7 +1588,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1934,6 +1934,12 @@
 <strong>kajeroj (Google Colab)</strong>, la ĉefa vojo estas instali rekte de GitHub — sen loka
 agordo, sen mana klonado.</p>
 <h2 id="instali-de-github">Instali de GitHub<a class="headerlink" href="#instali-de-github" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Kiam vi instalas bibliotekon loke, indas uzi virtualajn mediojn, precipe kun bibliotekoj en evoluo.
+Tio evitas, ke nia biblioteko instaliĝu tutsisteme, aŭ ke dependecoj de malsamaj bibliotekoj miksiĝu.
+Legu <a href="#instali-loke">Instali loke</a> por pli da informoj.</p>
+</div>
 <p><code>pip</code> povas instali pakon rekte de Git-deponejo. Ĝi estas la plej rapida maniero
 enmeti <code>esperantilo</code>-n en kajeron dum la biblioteko ankoraŭ moviĝas:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/jparisu/nlp-esperantilo.git
@@ -1961,15 +1967,6 @@ importu kaj uzu la bibliotekon:</p>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">esperantilo</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>   <span class="c1"># 0.1.0</span>
 </span></code></pre></div>
-<p>Dum la biblioteko kreskas, la sama importo donas al vi ĝiajn publikajn objektojn —
-ekzemple la tipojn <code>Doc</code> kaj <code>Token</code> dezajnitajn en <a href="../api/">la API-paĝo</a>:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Ilustra: la cela API, ankoraŭ ne realigita.</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">esperantilo</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">doc</span> <span class="o">=</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;La rapida vulpo saltas.&quot;</span><span class="p">)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">lemma</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
-</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Restartigu la rultempon post la instalado</p>
 <p>Se vi jam importis <code>esperantilo</code>-n en kajero kaj poste instalas novan version,
@@ -1980,9 +1977,9 @@ Python kaŝmemorigas la importitajn modulojn dum la tuta sesio.</p>
 <p>Por disvolvi la bibliotekon mem — anstataŭ nur uzi ĝin — instalu ĝin <strong>loke</strong> en
 virtuala medio. Virtuala medio estas izolita Python-instalaĵo por unu projekto, por ke
 ĝiaj dependecoj ne konfliktu kun io alia sur via maŝino:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">          </span><span class="c1"># kreu la medion</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">     </span><span class="c1"># aktivigu ĝin (Windows: .venv\Scripts\activate)</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span><span class="w">      </span><span class="c1"># redaktebla instalo, kun la testa kromaĵo</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">          </span><span class="c1"># kreu la medion</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">     </span><span class="c1"># aktivigu ĝin (Windows: .venv\Scripts\activate)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span><span class="w">      </span><span class="c1"># redaktebla instalo, kun la testa kromaĵo</span>
 </span></code></pre></div>
 <p>Du opcioj igas ĉi tion <em>disvolva</em> instalo:</p>
 <ul>

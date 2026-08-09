@@ -1495,7 +1495,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Oftaj radikoj
   
 
     
@@ -1800,10 +1800,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kie-logas-la-partoj" class="md-nav__link">
+  <a href="#strukturo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kie loĝas la partoj
+        Strukturo
       
     </span>
   </a>
@@ -1836,15 +1836,12 @@
 
 
 <h1 id="biblioteko">Biblioteko<a class="headerlink" href="#biblioteko" title="Permanent link">&para;</a></h1>
-<p><strong><code>esperantilo</code></strong> estas regul-bazita biblioteko por komputila lingvistiko (NLP)
-en Esperanto. Ĉi tiu sekcio estas ĝia <em>referenca manlibro</em>: kion ĝi faras
-hodiaŭ, kiel instali ĝin, kaj kion signifas ĉiu publika nomo.</p>
+<p><strong><code>esperantilo</code></strong> estas regul-bazita biblioteko por komputila lingvistiko (NLP) en Esperanto.
+Ĉi tiu sekcio estas ĝia <em>referenca manlibro</em>: kion ĝi faras, kiel instali ĝin, kaj kion signifas ĉiu publika nomo.</p>
 <div class="admonition info">
 <p class="admonition-title">Referenco, ne lernilo</p>
-<p>Ĉi tiuj paĝoj dokumentas la bibliotekon <strong>tia, kia ĝi estas</strong>. La
-<a href="../guide/">Gvidilo</a> estas la alia duono de ĉi tiu paĝaro: ĝi
-instruas, kiel oni konstruas, eldonas kaj testas tian bibliotekon. Se vi
-venas por lerni la ilaron, komencu tie.</p>
+<p>Ĉi tiuj paĝoj dokumentas la bibliotekon <strong>tia, kia ĝi estas</strong>.
+La gvidilon vi trovos <a href="../guide/">ĉi tie</a>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Nur du funkcioj ĝis nun</p>
@@ -1871,17 +1868,15 @@ troviĝas en
 <h2 id="rapida-komenco">Rapida komenco<a class="headerlink" href="#rapida-komenco" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">esperantilo</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Analizi tekston jam havatan.</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Zamenhof kreis Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># [&#39;Zamenhof kreis Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Aŭ unue havigi ĝin el Vikipedio.</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">page</span> <span class="o">=</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">WikiPage</span><span class="o">.</span><span class="n">look_up</span><span class="p">(</span><span class="s2">&quot;Esperanto&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;eo&quot;</span><span class="p">)</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">title</span><span class="p">))</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Havigi Vikipedian artikolon en Esperanto.</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">page</span> <span class="o">=</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">WikiPage</span><span class="o">.</span><span class="n">look_up</span><span class="p">(</span><span class="s2">&quot;Esperanto&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;eo&quot;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Dividi la tekston en frazojn.</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">sentences</span> <span class="o">=</span> <span class="n">esperantilo</span><span class="o">.</span><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">full_text</span><span class="p">())</span>
 </span></code></pre></div>
 <h2 id="la-publika-api">La publika API<a class="headerlink" href="#la-publika-api" title="Permanent link">&para;</a></h2>
 <p>Ĉio, kion la biblioteko promesas teni stabila, estas importebla rekte el la
-ĉefa modulo <code>esperantilo</code>, kaj estas listigita en ĝia <code>__all__</code>:</p>
+ĉefa modulo <code>esperantilo</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1908,11 +1903,7 @@ troviĝas en
 </tr>
 </tbody>
 </table>
-<p>Kio ne estas en tiu listo — ĉiu privata helpfunkcio, ĉiu interna modulo — estas
-efektiviga detalo kaj povas ŝanĝiĝi sen averto. Kial tiu limo gravas, kaj kiel
-oni desegnas ĝin en Python, estas klarigita en
-<a href="../guide/python-library/api/">Gvidilo → API</a>.</p>
-<h2 id="kie-logas-la-partoj">Kie loĝas la partoj<a class="headerlink" href="#kie-logas-la-partoj" title="Permanent link">&para;</a></h2>
+<h2 id="strukturo">Strukturo<a class="headerlink" href="#strukturo" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/esperantilo/
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── __init__.py      # la publika API: reeksportoj kaj __all__
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── nlp/             # analizi tekston jam havatan

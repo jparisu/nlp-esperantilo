@@ -473,10 +473,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-rule" class="md-nav__link">
+  <a href="#the-current-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The rule
+        The current rule
       
     </span>
   </a>
@@ -484,10 +484,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-it-does-not-do" class="md-nav__link">
+  <a href="#improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What it does not do
+        Improvements
       
     </span>
   </a>
@@ -1571,7 +1571,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulary
+    Common roots
   
 
     
@@ -1843,10 +1843,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-rule" class="md-nav__link">
+  <a href="#the-current-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The rule
+        The current rule
       
     </span>
   </a>
@@ -1854,10 +1854,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-it-does-not-do" class="md-nav__link">
+  <a href="#improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What it does not do
+        Improvements
       
     </span>
   </a>
@@ -1909,43 +1909,24 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Mi lernas Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># [&#39;Mi lernas Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
 </span></code></pre></div>
-<h2 id="the-rule">The rule<a class="headerlink" href="#the-rule" title="Permanent link">&para;</a></h2>
-<p>A sentence ends at <code>.</code>, <code>!</code> or <code>?</code>. The character stays with the sentence it
-closes, and surrounding whitespace is stripped. Empty sentences are dropped, so
-a text of only whitespace gives <code>[]</code>.</p>
-<p>Which characters end a sentence is an argument:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;!&quot;</span><span class="p">])</span>
+<h2 id="the-current-rule">The current rule<a class="headerlink" href="#the-current-rule" title="Permanent link">&para;</a></h2>
+<p>This tokenizer uses the characters given as an input argument to split the text
+into sentences.
+By default, they are <code>.</code>, <code>!</code> and <code>?</code>.</p>
+<p>An example using specific characters would be:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,))</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># [&#39;Unua. Dua!&#39;, &#39;Tria?&#39;]</span>
 </span></code></pre></div>
-<h2 id="what-it-does-not-do">What it does not do<a class="headerlink" href="#what-it-does-not-do" title="Permanent link">&para;</a></h2>
-<p>The tokenizer is deliberately naive — every terminator cuts, whatever surrounds
-it:</p>
-<table>
-<thead>
-<tr>
-<th>Input</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>"Pi estas 3.14."</code></td>
-<td><code>['Pi estas 3.', '14.']</code></td>
-</tr>
-<tr>
-<td><code>"Vidu esperanto.net."</code></td>
-<td><code>['Vidu esperanto.', 'net.']</code></td>
-</tr>
-<tr>
-<td><code>"Dr. Zamenhof venis."</code></td>
-<td><code>['Dr.', 'Zamenhof venis.']</code></td>
-</tr>
-</tbody>
-</table>
-<p>These are the <code>ToDo</code> recorded in the function's docstring, and they are
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py">pinned by <code>xfail</code> tests</a>
-that turn into failures the day they are fixed. Doing it is exactly the kind of
-exercise the <a href="../../guide/">Guide</a> prepares you for.</p>
+<h2 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h2>
+<p>This tokenizer is a very simplified first version.
+Some improvements worth implementing are:</p>
+<ol>
+<li>Do not cut on abbreviations such as <code>Dr.</code> or <code>S-ro</code>.</li>
+<li>Do not cut on decimal numbers such as <code>3.14</code>, or on other punctuation cases
+   such as <code>...</code> or <code>?!</code>.</li>
+<li>Do not cut on URLs, e-mail addresses and other tokens that contain <code>.</code> or <code>?</code>.</li>
+<li>etc.</li>
+</ol>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../api/">API reference</a> — the generated signature, arguments and examples.</li>

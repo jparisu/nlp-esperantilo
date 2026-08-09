@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -1000,6 +1000,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Crear una cuenta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-la-autenticacion-en-tu-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurar la autenticación en tu máquina
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1608,7 +1625,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1888,6 +1905,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Crear una cuenta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-la-autenticacion-en-tu-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurar la autenticación en tu máquina
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2001,6 +2035,84 @@ trabajo local frecuente, una <strong>clave SSH</strong> (añadida en <strong>Set
 GPG keys</strong>) evita tener que reescribir nada. Cualquiera vale — elige una y
 sigue adelante.</p>
 </div>
+<h3 id="configurar-la-autenticacion-en-tu-maquina">Configurar la autenticación en tu máquina<a class="headerlink" href="#configurar-la-autenticacion-en-tu-maquina" title="Permanent link">&para;</a></h3>
+<p>Elige una de las dos pestañas para autenticarte. No necesitas las dos.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PAT sobre HTTPS</label><label for="__tabbed_1_2">Clave SSH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>1. Crea el token.</strong> En GitHub, <strong>Settings → Developer settings → Personal
+access tokens → Fine-grained tokens → Generate new token</strong>. Ponle un nombre,
+una caducidad y, en <strong>Repository access</strong>, elige los repositorios a los que
+da acceso. En <strong>Permissions → Repository permissions</strong> necesitas al menos
+<strong>Contents: Read and write</strong>.</p>
+<p><strong>2. Cópialo ahora.</strong> El token se muestra una sola vez. Si lo pierdes, hay
+que generar otro.</p>
+<p><strong>3. Clona por HTTPS.</strong> Git te pedirá usuario y contraseña: pega el token
+como contraseña, no la de tu cuenta.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;usuario&gt;/&lt;repositorio&gt;.git
+</span></code></pre></div>
+<p><strong>4. Evita repetirlo en cada push.</strong> Guarda las credenciales con un
+<em>credential helper</em>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Windows: viene con Git for Windows, cifrado</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>manager
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># macOS: las guarda en el llavero del sistema</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>osxkeychain
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Linux: en texto plano, en ~/.git-credentials</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>store</code> guarda el token sin cifrar</p>
+<p>En Linux, <code>store</code> deja el token legible en <code>~/.git-credentials</code>. Vale
+para una máquina personal; en un ordenador compartido usa
+<code>credential.helper cache</code>, que solo lo mantiene en memoria un rato.</p>
+</div>
+<p>Documentación oficial:
+<a href="https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Managing your personal access tokens</a>.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>1. Genera el par de claves.</strong> Acepta la ruta que propone. La <em>passphrase</em>
+es opcional, pero conviene ponerla: protege la clave si alguien accede a tu
+disco.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;tu-correo@ejemplo.com&quot;</span>
+</span></code></pre></div>
+<p><strong>2. Registra la clave en el agente</strong>, para no escribir la passphrase en
+cada operación:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ssh-add<span class="w"> </span>~/.ssh/id_ed25519
+</span></code></pre></div>
+<p><strong>3. Copia la clave pública.</strong> Es la que termina en <code>.pub</code>; la otra no sale
+nunca de tu máquina.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</span></code></pre></div>
+<p><strong>4. Añádela a GitHub.</strong> En <strong>Settings → SSH and GPG keys → New SSH key</strong>,
+pega el contenido, ponle un nombre que identifique el ordenador y guarda.</p>
+<p><strong>5. Comprueba y clona por SSH.</strong> La primera conexión te pedirá confirmar la
+huella del servidor.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;usuario&gt;/&lt;repositorio&gt;.git
+</span></code></pre></div>
+<p>Documentación oficial:
+<a href="https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key</a>
+y
+<a href="https://docs.github.com/es/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Adding a new SSH key to your GitHub account</a>.</p>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">¿Ya habías clonado con el método equivocado?</p>
+<p>No hace falta volver a clonar. El método de autenticación lo decide la URL
+del remoto, y se puede cambiar:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w">                                              </span><span class="c1"># ver la actual</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:&lt;usuario&gt;/&lt;repositorio&gt;.git
+</span></code></pre></div>
+</div>
+<p>Con cualquiera de las dos, identifícate en Git antes del primer commit — el
+mismo correo que usaste en GitHub, para que los commits te aparezcan atribuidos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Tu Nombre&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;tu-correo@ejemplo.com&quot;</span>
+</span></code></pre></div>
 <h2 id="crear-un-repositorio">Crear un repositorio<a class="headerlink" href="#crear-un-repositorio" title="Permanent link">&para;</a></h2>
 <p>Haz clic en <strong>New</strong> (el botón verde en tu página de repositorios) y rellena:</p>
 <ul>
@@ -2045,7 +2157,7 @@ legible cualquier proyecto:</p>
 <thead>
 <tr>
 <th>Pestaña</th>
-<th>Qué encuentras ahí</th>
+<th></th>
 </tr>
 </thead>
 <tbody>

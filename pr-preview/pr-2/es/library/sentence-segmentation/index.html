@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Una guía para construir una biblioteca de PLN para Esperanto, y la biblioteca en sí">
+        <meta name="description" content="Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí">
       
       
         <meta name="author" content="jparisu">
@@ -475,10 +475,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-regla" class="md-nav__link">
+  <a href="#la-regla-actual" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La regla
+        La regla actual
       
     </span>
   </a>
@@ -486,10 +486,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lo-que-no-hace" class="md-nav__link">
+  <a href="#mejoras" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lo que no hace
+        Mejoras
       
     </span>
   </a>
@@ -1573,7 +1573,7 @@
   <span class="md-ellipsis">
     
   
-    Vocabulario
+    Raíces comunes
   
 
     
@@ -1845,10 +1845,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-regla" class="md-nav__link">
+  <a href="#la-regla-actual" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La regla
+        La regla actual
       
     </span>
   </a>
@@ -1856,10 +1856,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lo-que-no-hace" class="md-nav__link">
+  <a href="#mejoras" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lo que no hace
+        Mejoras
       
     </span>
   </a>
@@ -1903,7 +1903,7 @@
 
 
 <h1 id="segmentacion-en-frases">Segmentación en frases<a class="headerlink" href="#segmentacion-en-frases" title="Permanent link">&para;</a></h1>
-<p>Dividir un texto en frases es el primer paso de casi cualquier pipeline de PLN.
+<p>Dividir un texto en frases es el primer paso de casi cualquier pipeline de NLP.
 <code>esperantilo</code> lo hace con
 <a href="../api/#esperantilo.nlp.sentence_tokenizer"><code>sentence_tokenizer</code></a>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">esperantilo</span><span class="w"> </span><span class="kn">import</span> <span class="n">sentence_tokenizer</span>
@@ -1911,43 +1911,22 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Mi lernas Esperanton. Ĉu vere? Jes!&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># [&#39;Mi lernas Esperanton.&#39;, &#39;Ĉu vere?&#39;, &#39;Jes!&#39;]</span>
 </span></code></pre></div>
-<h2 id="la-regla">La regla<a class="headerlink" href="#la-regla" title="Permanent link">&para;</a></h2>
-<p>Una frase termina en <code>.</code>, <code>!</code> o <code>?</code>. El carácter se queda con la frase que
-cierra, y los espacios que la rodean se eliminan. Las frases vacías se
-descartan, así que un texto de solo espacios devuelve <code>[]</code>.</p>
-<p>Qué caracteres terminan una frase es un argumento:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;!&quot;</span><span class="p">])</span>
+<h2 id="la-regla-actual">La regla actual<a class="headerlink" href="#la-regla-actual" title="Permanent link">&para;</a></h2>
+<p>Este tokenizador utiliza los carácteres dados como argumentos de entrada para dividir el texto en frases.
+Por defecto, son <code>.</code>, <code>!</code> y <code>?</code>.</p>
+<p>Un ejemplo utilizando carácteres específicos sería:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sentence_tokenizer</span><span class="p">(</span><span class="s2">&quot;Unua. Dua! Tria?&quot;</span><span class="p">,</span> <span class="n">end_of_sentence</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,))</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># [&#39;Unua. Dua!&#39;, &#39;Tria?&#39;]</span>
 </span></code></pre></div>
-<h2 id="lo-que-no-hace">Lo que no hace<a class="headerlink" href="#lo-que-no-hace" title="Permanent link">&para;</a></h2>
-<p>El tokenizador es deliberadamente ingenuo: cada terminador corta, sea cual sea
-su contexto:</p>
-<table>
-<thead>
-<tr>
-<th>Entrada</th>
-<th>Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>"Pi estas 3.14."</code></td>
-<td><code>['Pi estas 3.', '14.']</code></td>
-</tr>
-<tr>
-<td><code>"Vidu esperanto.net."</code></td>
-<td><code>['Vidu esperanto.', 'net.']</code></td>
-</tr>
-<tr>
-<td><code>"Dr. Zamenhof venis."</code></td>
-<td><code>['Dr.', 'Zamenhof venis.']</code></td>
-</tr>
-</tbody>
-</table>
-<p>Son el <code>ToDo</code> anotado en el docstring de la función, y están
-<a href="https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py">fijados con pruebas <code>xfail</code></a>
-que se convierten en fallos el día en que se arreglen. Hacerlo es exactamente el
-tipo de ejercicio para el que prepara la <a href="../../guide/">Guía</a>.</p>
+<h2 id="mejoras">Mejoras<a class="headerlink" href="#mejoras" title="Permanent link">&para;</a></h2>
+<p>Este tokenizador es una primera versión muy simplificada.
+Ciertas mejoras que convendría implementar son:</p>
+<ol>
+<li>Evitar cortar en abreviaturas como <code>Dr.</code> o <code>S-ro</code>.</li>
+<li>Evitar cortar en números decimales como <code>3.14</code> y otros casos de puntuación como <code>...</code> o <code>?!</code>.</li>
+<li>Evitar cortar en URLs, direcciones de correo electrónico y otros tokens que contienen <code>.</code> o <code>?</code>.</li>
+<li>etc.</li>
+</ol>
 <h2 id="vease-tambien">Véase también<a class="headerlink" href="#vease-tambien" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../api/">Referencia de la API</a> — la firma generada, los argumentos y los
