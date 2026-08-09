@@ -36,18 +36,25 @@ En Python, la limon oni tiras per konvencio kaj per `__all__`:
 - La listo `__all__` en modulo nomas ĝiajn **publikajn** objektojn. Ĝi dokumentas la
   celitan surfacon kaj regas kion alportas `from esperantilo import *`:
 
-<!-- TODO: this must be updated with the actual API surface, not with "future" methods. -->
+Jen kiel `esperantilo` faras tion hodiaŭ, kun sia publika API deklarita eksplicite en `__init__.py`:
 
 ```python
 # esperantilo/__init__.py
-from esperantilo.tokens import Doc, Token
-from esperantilo.pipeline import parse
+from esperantilo.nlp import sentence_tokenizer
+from esperantilo.wiki import WikiPage
 
-__all__ = ["parse", "Doc", "Token"]   # la publika API, deklarita eksplicite
+__version__ = "0.1.0"
+
+__all__ = ["__version__", "WikiPage", "sentence_tokenizer"]   # la publika API, deklarita eksplicite
 ```
 
-Kun ĉi tio, uzanto skribas `from esperantilo import Doc` kaj neniam devas scii en kiu
-interna modulo `Doc` vere vivas.
+Kun ĉi tio, uzanto skribas `from esperantilo import WikiPage` kaj neniam devas
+scii, ke la klaso vere vivas en `esperantilo.wiki.wiki`, nek ke ĉi tiu apogas
+sin sur privata modulo `esperantilo.wiki._wiki_api`, kiu povas ŝanĝiĝi sen
+averto.
+
+La kompleta listo, generita el la kodo mem, troviĝas en
+[Biblioteko → API-referenco](../../library/api.md).
 
 ## Dezajni bonan API-on
 

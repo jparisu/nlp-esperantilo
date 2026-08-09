@@ -28,10 +28,108 @@ Two early steps are worth doing well:
     work, an **SSH key** (added in **Settings → SSH and GPG keys**) avoids
     retyping anything. Either is fine — pick one and move on.
 
-<!-- TODO: Add more information on how to set up the local machine
-  Point at the GitHub pages with the instructions, and add step-by-step
-  instructions here for each case (in tabs if possible).
- -->
+### Set up authentication on your machine
+
+Pick one of the two tabs to authenticate. You do not need both.
+
+=== "PAT over HTTPS"
+
+    **1. Create the token.** On GitHub, **Settings → Developer settings →
+    Personal access tokens → Fine-grained tokens → Generate new token**. Give it
+    a name, an expiry date and, under **Repository access**, choose the
+    repositories it reaches. Under **Permissions → Repository permissions** you
+    need at least **Contents: Read and write**.
+
+    **2. Copy it now.** The token is shown once. If you lose it, you have to
+    generate another one.
+
+    **3. Clone over HTTPS.** Git will ask for a username and a password: paste
+    the token as the password, not your account one.
+
+    ```bash
+    git clone https://github.com/<user>/<repository>.git
+    ```
+
+    **4. Avoid repeating it on every push.** Store the credentials with a
+    *credential helper*:
+
+    ```bash
+    # Windows: ships with Git for Windows, encrypted
+    git config --global credential.helper manager
+
+    # macOS: stores them in the system keychain
+    git config --global credential.helper osxkeychain
+
+    # Linux: in plain text, in ~/.git-credentials
+    git config --global credential.helper store
+    ```
+
+    !!! warning "`store` keeps the token unencrypted"
+        On Linux, `store` leaves the token readable in `~/.git-credentials`.
+        That is fine on a personal machine; on a shared computer use
+        `credential.helper cache`, which only keeps it in memory for a while.
+
+    Official documentation:
+    [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+
+=== "SSH key"
+
+    **1. Generate the key pair.** Accept the path it suggests. The *passphrase*
+    is optional, but worth setting: it protects the key if someone reaches your
+    disk.
+
+    ```bash
+    ssh-keygen -t ed25519 -C "your-email@example.com"
+    ```
+
+    **2. Register the key with the agent**, so you do not type the passphrase on
+    every operation:
+
+    ```bash
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+    ```
+
+    **3. Copy the public key.** It is the one ending in `.pub`; the other never
+    leaves your machine.
+
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
+
+    **4. Add it to GitHub.** Under **Settings → SSH and GPG keys → New SSH
+    key**, paste the contents, give it a name that identifies the computer and
+    save.
+
+    **5. Check it and clone over SSH.** The first connection asks you to confirm
+    the server fingerprint.
+
+    ```bash
+    ssh -T git@github.com
+    git clone git@github.com:<user>/<repository>.git
+    ```
+
+    Official documentation:
+    [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+    and
+    [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+!!! tip "Already cloned with the wrong method?"
+    No need to clone again. The authentication method is decided by the remote
+    URL, and it can be changed:
+
+    ```bash
+    git remote -v                                          # see the current one
+    git remote set-url origin git@github.com:<user>/<repository>.git
+    ```
+
+With either of the two, identify yourself to Git before the first commit — the
+same address you used on GitHub, so that commits are attributed to you:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+```
 
 ## Create a repository
 

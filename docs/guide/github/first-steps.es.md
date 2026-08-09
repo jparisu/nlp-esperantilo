@@ -30,9 +30,107 @@ Dos pasos iniciales conviene hacerlos bien:
     GPG keys**) evita tener que reescribir nada. Cualquiera vale — elige una y
     sigue adelante.
 
-<!-- TODO: Agregar más información sobre cómo configurar el local
-  Dirigir a las páginas de github con instrucciones, y añadir aquí instrucciones paso a paso para cada caso (a poder ser en tabs).
- -->
+### Configurar la autenticación en tu máquina
+
+Elige una de las dos pestañas para autenticarte. No necesitas las dos.
+
+=== "PAT sobre HTTPS"
+
+    **1. Crea el token.** En GitHub, **Settings → Developer settings → Personal
+    access tokens → Fine-grained tokens → Generate new token**. Ponle un nombre,
+    una caducidad y, en **Repository access**, elige los repositorios a los que
+    da acceso. En **Permissions → Repository permissions** necesitas al menos
+    **Contents: Read and write**.
+
+    **2. Cópialo ahora.** El token se muestra una sola vez. Si lo pierdes, hay
+    que generar otro.
+
+    **3. Clona por HTTPS.** Git te pedirá usuario y contraseña: pega el token
+    como contraseña, no la de tu cuenta.
+
+    ```bash
+    git clone https://github.com/<usuario>/<repositorio>.git
+    ```
+
+    **4. Evita repetirlo en cada push.** Guarda las credenciales con un
+    *credential helper*:
+
+    ```bash
+    # Windows: viene con Git for Windows, cifrado
+    git config --global credential.helper manager
+
+    # macOS: las guarda en el llavero del sistema
+    git config --global credential.helper osxkeychain
+
+    # Linux: en texto plano, en ~/.git-credentials
+    git config --global credential.helper store
+    ```
+
+    !!! warning "`store` guarda el token sin cifrar"
+        En Linux, `store` deja el token legible en `~/.git-credentials`. Vale
+        para una máquina personal; en un ordenador compartido usa
+        `credential.helper cache`, que solo lo mantiene en memoria un rato.
+
+    Documentación oficial:
+    [Managing your personal access tokens](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+
+=== "Clave SSH"
+
+    **1. Genera el par de claves.** Acepta la ruta que propone. La *passphrase*
+    es opcional, pero conviene ponerla: protege la clave si alguien accede a tu
+    disco.
+
+    ```bash
+    ssh-keygen -t ed25519 -C "tu-correo@ejemplo.com"
+    ```
+
+    **2. Registra la clave en el agente**, para no escribir la passphrase en
+    cada operación:
+
+    ```bash
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+    ```
+
+    **3. Copia la clave pública.** Es la que termina en `.pub`; la otra no sale
+    nunca de tu máquina.
+
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
+
+    **4. Añádela a GitHub.** En **Settings → SSH and GPG keys → New SSH key**,
+    pega el contenido, ponle un nombre que identifique el ordenador y guarda.
+
+    **5. Comprueba y clona por SSH.** La primera conexión te pedirá confirmar la
+    huella del servidor.
+
+    ```bash
+    ssh -T git@github.com
+    git clone git@github.com:<usuario>/<repositorio>.git
+    ```
+
+    Documentación oficial:
+    [Generating a new SSH key](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+    y
+    [Adding a new SSH key to your GitHub account](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+!!! tip "¿Ya habías clonado con el método equivocado?"
+    No hace falta volver a clonar. El método de autenticación lo decide la URL
+    del remoto, y se puede cambiar:
+
+    ```bash
+    git remote -v                                              # ver la actual
+    git remote set-url origin git@github.com:<usuario>/<repositorio>.git
+    ```
+
+Con cualquiera de las dos, identifícate en Git antes del primer commit — el
+mismo correo que usaste en GitHub, para que los commits te aparezcan atribuidos:
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu-correo@ejemplo.com"
+```
 
 ## Crear un repositorio
 

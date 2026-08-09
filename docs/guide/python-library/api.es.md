@@ -38,18 +38,25 @@ En Python, la frontera se traza por convención y con `__all__`:
 - La lista `__all__` de un módulo nombra sus objetos **públicos**. Documenta la
   superficie prevista y controla qué trae `from esperantilo import *`:
 
-<!-- TODO: this must be updated with the actual API surface, not with "future" methods. -->
+Así es como lo hace hoy `esperantilo`, con su API pública declarada explícitamente en `__init__.py`:
 
 ```python
 # esperantilo/__init__.py
-from esperantilo.tokens import Doc, Token
-from esperantilo.pipeline import parse
+from esperantilo.nlp import sentence_tokenizer
+from esperantilo.wiki import WikiPage
 
-__all__ = ["parse", "Doc", "Token"]   # la API pública, declarada explícitamente
+__version__ = "0.1.0"
+
+__all__ = ["__version__", "WikiPage", "sentence_tokenizer"]   # la API pública, declarada explícitamente
 ```
 
-Con esto, un usuario escribe `from esperantilo import Doc` y nunca tiene que saber
-en qué módulo interno vive realmente `Doc`.
+Con esto, un usuario escribe `from esperantilo import WikiPage` y nunca tiene que
+saber que la clase vive realmente en `esperantilo.wiki.wiki`, ni que esta se
+apoya en un módulo privado `esperantilo.wiki._wiki_api` que puede cambiar sin
+aviso.
+
+La lista completa, generada desde el propio código, está en
+[Biblioteca → Referencia de la API](../../library/api.md).
 
 ## Cómo diseñar una buena API
 
