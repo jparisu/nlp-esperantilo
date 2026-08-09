@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esperantilo"
+version = "0.1.0"
+description = "A rule-based Natural Language Processing library for Esperanto"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "jparisu" }]
+keywords = ["nlp", "esperanto", "linguistics", "tokenizer", "lemmatizer", "wikipedia"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: Esperanto",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    # Used by `esperantilo.wiki` to reach the MediaWiki and Wikidata web APIs.
+    "requests>=2.25",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocs-static-i18n>=1.2",
+    "mkdocstrings-python>=1.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/jparisu/nlp-esperantilo"
+Documentation = "https://jparisu.github.io/nlp-esperantilo/"
+Repository = "https://github.com/jparisu/nlp-esperantilo"
+Issues = "https://github.com/jparisu/nlp-esperantilo/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.codespell]
+# Settings live here rather than in a `.codespellrc` at the root: codespell only
+# auto-discovers `setup.cfg`, `.codespellrc` and `pyproject.toml`, so a config in
+# its own directory would force `codespell --config …` on every run. The word
+# list, which is the part that actually grows, lives in `.codespell/`.
+#
+# Paths that must not be spell checked. codespell only knows English, so the
+# translated pages (`<page>.<locale>.md`) are skipped: ordinary Spanish and
+# Esperanto words get reported as English typos, which cannot be fixed, only
+# ignored. Same for ./resources/esperanto/books, which holds verbatim
+# public-domain texts.
+skip = "./.git,./.devs,./site,./.venv,./venv,./build,./dist,*.egg-info,./LICENSE,*.svg,*.pdf,*.lock,./resources/esperanto/books,*.es.md,*.eo.md"
+# Project-specific vocabulary (Esperanto words, proper names, technical terms).
+ignore-words = ".codespell/ignore-words.txt"
+# Only report words the checker is confident about.
+builtin = "clear,rare"
+check-filenames = true
+
+[tool.pytest.ini_options]
+# Put `src/` on sys.path for the test run. Without this, `pytest` on a fresh
+# clone fails with "No module named 'esperantilo'": the package lives under
+# `src/`, which Python does not search unless the project has been installed.
+# With it, `pytest` works straight after `git clone`, installed or not.
+pythonpath = ["src"]
+# `src` is a test path too: `--doctest-modules` runs the `>>>` examples of every
+# docstring, so the examples shown in the API reference are executed by CI and
+# cannot quietly go out of date.
+testpaths = ["tests", "src"]
+addopts = "-ra --doctest-modules"

@@ -1,0 +1,34 @@
+# Esperanto
+
+This section covers the Esperanto language itself — its history, grammar,
+vocabulary and learning resources. It is strongly oriented towards the
+linguistics and the regular rules of Esperanto, so that a rule-based NLP
+library can be implemented from it.
+
+The pages are ordered from context to data: the story of the language, then its
+rules, then the lists those rules produce. If you only need the linguistic data
+for the library, jump to [Grammar](grammar.md) and
+[Word lists](word-lists/index.md).
+
+<div class="grid cards" markdown>
+
+- [**1. History**](history.md) — creator, motivation and evolution.
+- [**2. Grammar**](grammar.md) — the regular rules the library encodes.
+- [**3. Common roots**](vocabulary.md) — a starter set of frequent roots.
+- [**4. Resources**](resources.md) — books, courses and websites.
+- [**Word lists**](word-lists/index.md) — the reference data, generated from `resources/`.
+- [**FAQ**](esperanto-faq.md) — quick answers to common doubts.
+
+</div>
+
+## Word lists
+
+The reference lists live as JSON files under `resources/` in the repository and
+are rendered here automatically, so the documentation can never drift from the
+data itself:
+
+- [Stop-words](word-lists/ignorindaj-vortoj.md) — 122 roots with their English
+  translation and grammatical category. Roots, not forms: see
+  [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
+
+See [all word lists](word-lists/index.md).

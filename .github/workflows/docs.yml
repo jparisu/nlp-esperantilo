@@ -1,0 +1,59 @@
+name: docs
+
+# Production documentation: builds the site and publishes it at the root of the
+# `gh-pages` branch, which GitHub Pages serves at
+# https://jparisu.github.io/nlp-esperantilo/
+#
+# Pull request previews are handled by docs-preview.yml, which publishes to
+# subdirectories of the same branch. That is why this workflow never wipes the
+# `pr-preview/` directory.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never let two deployments push to gh-pages at the same time.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: docs/requirements.txt
+
+      - name: Install documentation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+
+      - name: Build site
+        # --strict turns warnings (broken links, missing files) into errors.
+        run: mkdocs build --strict --site-dir site
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          branch: gh-pages
+          # Keep the pull request previews published by docs-preview.yml.
+          clean-exclude: pr-preview/
+          # Rebase instead of force-pushing, so a preview deployed meanwhile
+          # is not overwritten.
+          force: false

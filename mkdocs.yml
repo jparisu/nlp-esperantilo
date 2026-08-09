@@ -1,0 +1,278 @@
+site_name: NLP Esperantilo
+site_description: A guide to build an Esperanto NLP library, and the library itself
+site_author: jparisu
+# Overridden by the pull request preview workflow, so that canonical links and
+# the language switcher point at the preview instead of the production site.
+site_url: !ENV [SITE_URL, "https://jparisu.github.io/nlp-esperantilo/"]
+
+repo_name: jparisu/nlp-esperantilo
+repo_url: https://github.com/jparisu/nlp-esperantilo
+edit_uri: edit/main/docs/
+
+copyright: Licensed under the Apache License 2.0
+
+# Link validation. `mkdocs build --strict` (run in CI by docs.yml and
+# docs-preview.yml) already fails on links to missing pages; `anchors: warn`
+# additionally makes it fail on broken in-page anchors (#section), which
+# otherwise only print as info. This catches, for example, a cross-page
+# "[…](grammar.md#afiksoj)" whose target heading was renamed or mistranslated.
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - content.action.edit
+    - content.code.annotate
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    # navigation.instant is intentionally not enabled: it is incompatible with
+    # the language switcher of mkdocs-static-i18n.
+    #
+    # navigation.sections and navigation.expand are intentionally NOT enabled:
+    # both keep the whole navigation open at once. Leaving them off gives a
+    # collapsible tree where only the active section is expanded and the others
+    # stay collapsed to their titles.
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+# Generates the "Word lists" pages of the Esperanto section from resources/.
+# The hook lives inside docs/ because it is documentation tooling, not library
+# code — which means it also has to be kept out of the built site, see
+# `exclude_docs` below.
+hooks:
+  - docs/hooks/word_lists.py
+
+# Files under docs/ that are build inputs, not pages. Without this the hook's
+# source and the `__pycache__` Python writes next to it would be copied verbatim
+# into the published site.
+exclude_docs: |
+  hooks/
+
+plugins:
+  - search
+  # Enabled automatically by mkdocstrings; declared here only to configure it.
+  # `resolve_closest` matters because the site is built once per language: the
+  # same API identifiers exist in `/library/api/`, `/es/library/api/` and
+  # `/eo/library/api/`, and a reference must resolve to the copy in the reader's
+  # own language rather than to whichever was registered first.
+  - autorefs:
+      resolve_closest: true
+  # Builds the "Library → API reference" page from the docstrings of
+  # src/esperantilo/. The page holds only `::: esperantilo…` directives, so the
+  # reference and the code can never disagree.
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          # The package lives under src/, which is not on sys.path.
+          paths: [src]
+          options:
+            docstring_style: google
+            docstring_section_style: table
+            heading_level: 3
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            show_root_heading: true
+            show_root_full_path: true
+            show_signature_annotations: true
+            show_source: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+  # Internationalization: new languages are added here, and their pages as
+  # `<page>.<locale>.md` next to the English ones. Missing translations fall
+  # back to the English page, so translations can be added incrementally.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: es
+          name: Español
+          build: true
+          site_name: NLP Esperantilo
+          site_description: Una guía para construir una biblioteca de NLP para Esperanto, y la biblioteca en sí
+          nav_translations:
+            Home: Inicio
+            # The two parts of the site.
+            Library: Biblioteca
+            Sentence segmentation: Segmentación en frases
+            Reading Wikipedia: Leer Wikipedia
+            API reference: Referencia de la API
+            Guide: Guía
+            Git: Git
+            What is Git: Qué es Git
+            Organization: Organización
+            Commands: Comandos
+            Undoing changes: Deshacer cambios
+            Example: Ejemplo
+            GitHub: GitHub
+            What is GitHub: Qué es GitHub
+            First steps: Primeros pasos
+            Workflow: Flujo de trabajo
+            GitHub Actions: GitHub Actions
+            Repository configuration: Configuración del repositorio
+            GitHub Pages: GitHub Pages
+            Python Library: Biblioteca Python
+            What is a library: Qué es una biblioteca
+            Installation and usage: Instalación y uso
+            API: API
+            Testing: Pruebas
+            Esperanto: Esperanto
+            History: Historia
+            Grammar: Gramática
+            Common roots: Raíces comunes
+            Resources: Recursos
+            Word lists: Listas de palabras
+            FAQ: Preguntas frecuentes
+        - locale: eo
+          name: Esperanto
+          build: true
+          site_name: NLP Esperantilo
+          nav_translations:
+            Home: Hejmo
+            # The two parts of the site.
+            Library: Biblioteko
+            Sentence segmentation: Fraz-dividado
+            Reading Wikipedia: Legi Vikipedion
+            API reference: API-referenco
+            Guide: Gvidilo
+            Git: Git
+            GitHub: GitHub
+            Python Library: Python-Biblioteko
+            Esperanto: Esperanto
+            Common roots: Oftaj radikoj
+            Word lists: Vortlistoj
+            FAQ: Oftaj demandoj
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jparisu/nlp-esperantilo
+      name: NLP Esperantilo on GitHub
+
+# The site has exactly two parts, and the navigation says so:
+#
+#   Library — the reference manual of the `esperantilo` package itself: what it
+#             does today, and what every public name means. Its API page is
+#             generated from the source by mkdocstrings.
+#   Guide   — how a library like it is built and shipped: Git, GitHub, Python
+#             packaging and the Esperanto linguistics that go inside.
+#
+# Keep new pages on the right side of that line: a page describing *the
+# library's behaviour* belongs to Library, a page *teaching a technique* belongs
+# to Guide. The two parts cross-link freely.
+nav:
+  - Home: index.md
+  - Library:
+      - library/index.md
+      - Sentence segmentation: library/sentence-segmentation.md
+      - Reading Wikipedia: library/wikipedia.md
+      - API reference: library/api.md
+  - Guide:
+      - guide/index.md
+      - Git:
+          - guide/git/index.md
+          - What is Git: guide/git/git.md
+          - Organization: guide/git/organization.md
+          - Commands: guide/git/commands.md
+          - Undoing changes: guide/git/undoing-changes.md
+          - Example: guide/git/example.md
+          - FAQ: guide/git/git-faq.md
+      - GitHub:
+          - guide/github/index.md
+          - What is GitHub: guide/github/github.md
+          - First steps: guide/github/first-steps.md
+          - Workflow: guide/github/workflow.md
+          - GitHub Actions: guide/github/actions.md
+          - Repository configuration: guide/github/repository-configuration.md
+          - GitHub Pages: guide/github/pages.md
+          - FAQ: guide/github/github-faq.md
+      - Python Library:
+          - guide/python-library/index.md
+          - What is a library: guide/python-library/library.md
+          - Organization: guide/python-library/organization.md
+          - Installation and usage: guide/python-library/installation-and-usage.md
+          - API: guide/python-library/api.md
+          - Testing: guide/python-library/testing.md
+          - FAQ: guide/python-library/python-faq.md
+      - Esperanto:
+          - guide/esperanto/index.md
+          - History: guide/esperanto/history.md
+          - Grammar: guide/esperanto/grammar.md
+          - Common roots: guide/esperanto/vocabulary.md
+          - Resources: guide/esperanto/resources.md
+          - FAQ: guide/esperanto/esperanto-faq.md
