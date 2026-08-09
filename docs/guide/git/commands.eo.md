@@ -233,6 +233,15 @@ lastaj ŝanĝoj de viaj kunlaborantoj anstataŭ sur malaktuala kopio.
 | `git push` | Sendi commit-ojn al la remoto. |
 | `git pull` | Alporti commit-ojn de la remoto al la nuna branĉo. |
 
+## Aliaj utilaj komandoj
+
+- `git rebase <branch>` — reorganizi commit-ojn por igi la historion pli lineara.
+- `git fetch` — alporti commit-ojn de la remoto sen kunfandi ilin.
+- `git cherry-pick <hash>` — apliki unu specifan commit-on el alia branĉo.
+
+Aliaj komandoj por malfari ŝanĝojn estas traktataj en
+[Malfari ŝanĝojn](undoing-changes.md): `git restore`, `git reset`, `git stash`.
+
 ## La dosiero `.gitignore`
 
 Ne ĉiu dosiero apartenas al la deponejo. Kompilitaj artefaktoj, virtualaj medioj,

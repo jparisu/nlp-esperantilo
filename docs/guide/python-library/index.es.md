@@ -6,7 +6,7 @@ Vamos a usar como ejemplo `esperantilo`, el propio paquete que distribuye este p
 
 <!-- This comment is not required in English obviously -->
 !!! note "Librería"
-  Las bibliotecas también son conocidas como *librerías*, de la mala traducción del inglés *library*.
+    Las bibliotecas también son conocidas como *librerías*, de la mala traducción del inglés *library*.
 
 <div class="grid cards" markdown>
 

@@ -104,9 +104,38 @@ Bringing a branch back into `main` is a **merge**. There are two shapes:
 - **Fast-forward.** If `main` has not moved since the branch was created, Git
   can simply slide the `main` pointer forward to the branch's latest commit. No
   new commit is created; the history stays linear.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"
+```
+
 - **Merge commit.** If *both* branches gained commits (as in the diagram above),
   Git creates a new **merge commit** with **two parents**, tying the two lines
   of history back together.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"
+```
 
 When the two branches changed **the same lines** of the same file, Git cannot
 decide which version wins. This is a **merge conflict**: Git pauses and asks you

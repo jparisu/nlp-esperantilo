@@ -134,24 +134,6 @@ The everyday features you will reach for:
     tests keep passing through internal refactors and only fail when behaviour
     actually changes — which is the whole point.
 
-## Doctests: documentation that runs {#doctests}
-
-An `Examples:` block written as an interactive session is both documentation and
-a test. `--doctest-modules` makes pytest run those examples and compare the real
-output with the one written down; this project turns it on for `src/` in
-`pyproject.toml`:
-
-```toml
-[tool.pytest.ini_options]
-testpaths = ["tests", "src"]
-addopts = "-ra --doctest-modules"
-```
-
-Those examples are the ones published on the
-[API reference](../../library/api.md) page, so running them is what stops the
-documentation from quietly going out of date. Keep them short and illustrative —
-edge cases belong in `tests/`.
-
 ## Tests in continuous integration
 
 Running tests locally is good; running them **automatically on every change** is

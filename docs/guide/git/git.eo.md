@@ -2,8 +2,8 @@
 
 **Git** estas *versikontrola sistemo*: ilo, kiu registras la historion de aro da
 dosieroj, tiel ke ĉiun ŝanĝon eblas inspekti, kunhavigi kaj, se necese, malfari.
-Ĝi estas la norma maniero verki programaron hodiaŭ, kaj ĝi estas la fundamento sur
-kiu konstruiĝas GitHub, kunfandaj petoj (pull requests) kaj kontinua integrado.
+Ĝi estas la norma maniero verki programaron hodiaŭ, uzata de la plimulto de
+kompanioj kaj programistoj.
 
 Ĉi tiu paĝo klarigas de kie venas Git, kian problemon ĝi solvas, kaj la mensan
 modelon, kiun vi bezonas antaŭ ol lerni ajnan komandon.
@@ -59,9 +59,6 @@ vivi, kiam vi ilin havas:
 - **Kunlaboron sen surskribado.** Pluraj personoj povas labori pri la samaj
   dosieroj samtempe. Git kunfandas iliajn ŝanĝojn kaj, kiam du personoj redaktas la
   samajn liniojn, indikas ekzakte kie necesas homa decido.
-
-Por teama projekto kiel ĉi tiu, tiu lasta punkto estas la grava: la versikontrolo
-estas tio, kio ebligas al ĉiuj kontribui sen paŝi sur la laboron de aliaj.
 
 ## La tri zonoj
 

@@ -87,7 +87,7 @@ Poste aldonu tiun ŝlosilon duan fojon en GitHub, kiel **Signing Key**, en
 **Settings → SSH and GPG keys**.
 
 !!! note "Ĉu subskribado estas deviga?"
-    Por ĉi tiu projekto, subskribado estas *bone-havinda*, ne strikta postulo.
+    Por ĉi tiu projekto, subskribado estas bona praktiko, ne strikta postulo.
     Komprenu kion signifas la insigno `Verified` kaj kiel ĝin aktivigi; teamo povas
     poste decidi ĉu postuli ĝin (vidu
     [Agordo de la deponejo](repository-configuration.md)).

@@ -7,7 +7,7 @@ biblioteko, kiun konstruas ĉi tiu gvidilo — estas unu: regul-bazita NLP-ilaro
 Esperanto, kiun kajero povas instali kaj uzi en kelkaj linioj.
 
 Ĉi tiu paĝo ordigas la vortprovizon, klarigas kion donas al vi biblioteko, kaj
-rigardas konatan ekzemplon por imiti.
+montras konatan ekzemplon por imiti.
 
 ## Modulo, pako, biblioteko, distribuaĵo
 

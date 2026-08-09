@@ -1,11 +1,8 @@
 # Python-Biblioteko
 
 Ĉi tiu sekcio klarigas kiel konstrui Python-bibliotekon: kiel organizi ĝin, kiel
-dezajni ĝian API-on, kiel testi ĝin, kaj kiel instali kaj uzi ĝin. La kuranta
-ekzemplo estas `esperantilo`, la propra pako, kiun distribuas ĉi tiu projekto.
-
-La paĝoj apogas sin unu sur la alia — strukturo, poste instalado, poste la dezajno
-de la API, poste testado — sed ĉiu staras memstare se vi jam konas la bazaĵojn.
+dezajni ĝian API-on, kiel testi ĝin, kaj kiel instali kaj uzi ĝin.
+Ni uzos kiel ekzemplon `esperantilo`, la propran pakon, kiun distribuas ĉi tiu projekto.
 
 <div class="grid cards" markdown>
 

@@ -7,6 +7,11 @@ agordo, sen mana klonado.
 
 ## Instali de GitHub
 
+!!! warning
+    Kiam vi instalas bibliotekon loke, indas uzi virtualajn mediojn, precipe kun bibliotekoj en evoluo.
+    Tio evitas, ke nia biblioteko instaliĝu tutsisteme, aŭ ke dependecoj de malsamaj bibliotekoj miksiĝu.
+    Legu [Instali loke](#instali-loke) por pli da informoj.
+
 `pip` povas instali pakon rekte de Git-deponejo. Ĝi estas la plej rapida maniero
 enmeti `esperantilo`-n en kajeron dum la biblioteko ankoraŭ moviĝas:
 
@@ -44,18 +49,6 @@ importu kaj uzu la bibliotekon:
 import esperantilo
 
 print(esperantilo.__version__)   # 0.1.0
-```
-
-Dum la biblioteko kreskas, la sama importo donas al vi ĝiajn publikajn objektojn —
-ekzemple la tipojn `Doc` kaj `Token` dezajnitajn en [la API-paĝo](api.md):
-
-```python
-# Ilustra: la cela API, ankoraŭ ne realigita.
-import esperantilo
-
-doc = esperantilo.parse("La rapida vulpo saltas.")
-for token in doc:
-    print(token.text, token.lemma, token.pos)
 ```
 
 !!! note "Restartigu la rultempon post la instalado"

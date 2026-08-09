@@ -2,8 +2,8 @@
 
 **Git** is a *version control system*: a tool that records the history of a set
 of files, so that every change can be inspected, shared and, if needed, undone.
-It is the standard way software is written today, and it is the foundation on
-top of which GitHub, pull requests and continuous integration are built.
+It is the standard way software is written today, used by most companies and
+developers.
 
 This page explains where Git comes from, what problem it solves, and the mental
 model you need before learning any command.
@@ -59,10 +59,6 @@ without once you have them:
 - **Collaboration without overwriting.** Several people can work on the same
   files at the same time. Git merges their changes together and, when two people
   edit the same lines, tells you exactly where a human decision is needed.
-
-For a team project like this one, that last point is the important one: version
-control is what makes it possible for everybody to contribute without stepping
-on each other's work.
 
 ## The three areas
 

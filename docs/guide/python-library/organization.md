@@ -12,32 +12,29 @@ packages:
 
 ```text
 nlp-esperantilo/
-├── pyproject.toml        # project metadata and build configuration
-├── README.md             # front page
-├── LICENSE               # licence text
-├── mkdocs.yml            # documentation configuration
-├── docs/                 # the documentation you are reading
-│   └── hooks/            #   build-time hooks that turn resources/ into pages
-├── resources/            # data files (word lists) and notebooks
-├── .github/workflows/    # continuous integration
 ├── src/
-│   └── esperantilo/      # the package itself
-│       ├── __init__.py   # the public API: re-exports and __all__
-│       ├── nlp/          # one subpackage per feature area
+│   └── esperantilo/       # the package itself
+│       ├── __init__.py    # the public API: re-exports and __all__
+│       ├── nlp/           # one subpackage per feature area
 │       │   └── tokenizer.py
-│       └── wiki/
-│           ├── wiki.py       # the public class
-│           └── _wiki_api.py  # private: the HTTP clients
-└── tests/
-    ├── test_package.py    # the package imports and exposes its public API
-    ├── test_resources.py  # validation of the data files
-    └── test_tokenizer.py  # one test module per source module
+│       └── ...            # other subpackages and modules
+└── tests/                 # test scripts for the library
+    ├── test_tokenizer.py  # one test module per source module
+    └── ...
+
+# Other auxiliary files and directories
+├── pyproject.toml         # project metadata and build configuration
+├── README.md              # front page
+├── LICENSE                # licence text
+├── mkdocs.yml             # documentation configuration
+├── docs/                  # the documentation you are reading
+├── resources/             # data files (word lists) and notebooks
+├── .github/workflows/     # continuous integration
 ```
 
 Note the pairing: `tokenizer.py` in `src/`, `test_tokenizer.py` in `tests/`. It
-scales without thinking — a new feature is a new module and a new test module —
-and it makes a missing test obvious. What that particular module does is
-documented in
+scales without thinking: a new feature is a new module and a new test module.
+What that particular module does is documented in
 [Library → Sentence segmentation](../../library/sentence-segmentation.md).
 
 Once a feature grows past a single module it becomes a **subpackage**: a
@@ -87,35 +84,13 @@ Three parts are worth understanding:
 
 - **`[project]`** — the identity of the library. `name` is what people
   `pip install`; `version` is what they pin; `dependencies` is what gets
-  installed *with* it (empty here, because the library is rule-based).
+  installed *with* it.
 - **`[project.optional-dependencies]`** — *extras*, installed on demand. `.[test]`
   adds `pytest`, `.[docs]` adds the MkDocs tools. Users of the library need
   neither; developers do.
 - **`[tool.*]`** — configuration for other tools kept in one place. Here
   `[tool.setuptools.packages.find]` tells the build where the package is, and
   `[tool.pytest.ini_options]` configures the test runner.
-
-### `requirements.txt`
-
-A plain list of dependencies, one per line, traditionally used with
-`pip install -r requirements.txt`. It overlaps with `pyproject.toml`, so which
-does what?
-
-- **`pyproject.toml`** declares what the *library* needs to run, as part of its
-  identity. This is the source of truth when someone installs `esperantilo`.
-- **`requirements.txt`** is a convenience list, often used to pin exact versions
-  for a reproducible *environment*.
-
-**This project has no root `requirements.txt`.** The library is rule-based and
-has no runtime dependency, so the file would hold nothing that
-`pyproject.toml` does not already say — and an empty file that looks meaningful
-is worse than no file. Development extras are declared as
-`[project.optional-dependencies]` and installed with `pip install -e ".[test]"`.
-
-The one place a pinned list *does* earn its keep is
-[`docs/requirements.txt`](https://github.com/jparisu/nlp-esperantilo/blob/main/docs/requirements.txt):
-it fixes exact versions of the documentation toolchain so that the
-[CI workflows](../github/actions.md) build the site the same way every time.
 
 ### `__init__.py`
 
@@ -134,10 +109,8 @@ __all__ = ["__version__"]
 ```
 
 For now it only exposes the version. As the library grows, this is where you
-would import and re-export the public classes and functions (the `Doc` and
-`Token` objects designed on [the API page](api.md)), so that users can write
-`from esperantilo import Doc` instead of reaching into internal modules. The
-`__all__` list is explained there too.
+would import and re-export the public classes and functions, so that users can
+import its pieces quickly and easily.
 
 ### `src/` — why the code is not at the root {#the-src-layout}
 
@@ -161,6 +134,13 @@ checks the package imports and exposes its version, and
 [`test_resources.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_resources.py)
 validates the data files under `resources/`. Testing has its own page:
 [Testing](testing.md).
+
+### `requirements.txt`
+
+In many cases this file is used as a plain list of dependencies, one per line,
+traditionally used with `pip install -r requirements.txt`.
+This is a traditional system for keeping compatibility, but it is redundant with
+`pyproject.toml`, which already holds the list of dependencies and their versions.
 
 ## Versioning
 

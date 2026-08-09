@@ -86,7 +86,7 @@ Then add that key a second time on GitHub, as a **Signing Key**, in
 **Settings → SSH and GPG keys**.
 
 !!! note "Is signing required?"
-    For this project, signing is a *good-to-have*, not a hard requirement.
+    For this project, signing is a good practice, not a hard requirement.
     Understand what the `Verified` badge means and how to enable it; a team can
     then decide whether to require it (see
     [Repository configuration](repository-configuration.md)).

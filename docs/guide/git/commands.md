@@ -233,6 +233,15 @@ teammates' latest changes rather than on a stale copy.
 | `git push` | Send commits to the remote. |
 | `git pull` | Bring remote commits into the current branch. |
 
+## Other useful commands
+
+- `git rebase <branch>` — reorganize commits to make the history more linear.
+- `git fetch` — bring remote commits without merging them.
+- `git cherry-pick <hash>` — apply one specific commit from another branch.
+
+Other commands for undoing changes are covered in
+[Undoing changes](undoing-changes.md): `git restore`, `git reset`, `git stash`.
+
 ## The `.gitignore` file
 
 Not every file belongs in the repository. Compiled artifacts, virtual

@@ -4,9 +4,7 @@
 ĝi. Ĉi tiu sama deponejo estas uzata kiel viva ekzemplo tra la tuta sekcio.
 
 Ĝi konstruiĝas rekte sur la [Git-sekcio](../git/index.md): certiĝu unue, ke vi
-sentas vin komforta kun commit-oj kaj branĉoj. La paĝoj estas ordigitaj tiel, ke ĉiu
-apogas sin sur la antaŭa — laborfluo, poste la aŭtomatigo kiu subtenas ĝin, kaj
-poste la agordoj kiuj ĝin altrudas.
+sentas vin komforta kun commit-oj kaj branĉoj.
 
 <div class="grid cards" markdown>
 

@@ -5,9 +5,6 @@ actually follows them. This page is about making them **enforced**: configuring
 the repository so that `main` cannot be broken by accident, and every change goes
 through a reviewed, tested pull request.
 
-This matters most in a team, where "please remember to open a pull request" is
-not a reliable safeguard.
-
 !!! info "Order matters"
     Protecting `main` only makes sense once branches, pull requests and CI checks
     exist — which is why this page comes after [Workflow](workflow.md) and

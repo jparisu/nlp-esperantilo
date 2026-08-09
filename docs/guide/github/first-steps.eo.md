@@ -27,6 +27,11 @@ Du fruajn paŝojn indas fari bone:
     (aldonita en **Settings → SSH and GPG keys**) evitas retajpi ion ajn. Ambaŭ
     taŭgas — elektu unu kaj daŭrigu.
 
+<!-- TODO: Add more information on how to set up the local machine
+  Point at the GitHub pages with the instructions, and add step-by-step
+  instructions here for each case (in tabs if possible).
+ -->
+
 ## Krei deponejon
 
 Klaku **New** (la verda butono sur via paĝo de deponejoj) kaj plenigu:
@@ -68,7 +73,7 @@ La plej grandan parton de via tempo en GitHub vi pasigas legante deponejojn *de
 aliaj personoj*. Ĉiu deponejo havas la samajn langetojn, kaj koni ilin igas legebla
 ajnan projekton:
 
-| Langeto | Kion vi trovas tie |
+| Langeto |  |
 | --- | --- |
 | **Code** | La dosierojn, la README, la branĉan elektilon kaj la historion de commit-oj. |
 | **Issues** | Raportitajn cimojn, taskojn kaj funkcio-petojn, malfermitajn kaj fermitajn. |

@@ -12,31 +12,29 @@ Python-pakoj:
 
 ```text
 nlp-esperantilo/
-├── pyproject.toml        # metadatenoj de la projekto kaj konstrua agordo
-├── README.md             # ĉefpaĝo
-├── LICENSE               # licenca teksto
-├── mkdocs.yml            # agordo de la dokumentaro
-├── docs/                 # la dokumentaro, kiun vi legas
-│   └── hooks/            #   hokoj, kiuj igas resources/ dokumentaj paĝoj
-├── resources/            # datumdosieroj (vortlistoj) kaj notlibroj
-├── .github/workflows/    # kontinua integrado
 ├── src/
-│   └── esperantilo/      # la pako mem
-│       ├── __init__.py   # la publika API: reeksportoj kaj __all__
-│       ├── nlp/          # unu subpako por ĉiu funkcia areo
+│   └── esperantilo/       # la pako mem
+│       ├── __init__.py    # la publika API: reeksportoj kaj __all__
+│       ├── nlp/           # unu subpako por ĉiu funkcia areo
 │       │   └── tokenizer.py
-│       └── wiki/
-│           ├── wiki.py       # la publika klaso
-│           └── _wiki_api.py  # privata: la HTTP-klientoj
-└── tests/
-    ├── test_package.py    # la pako importiĝas kaj eksponas sian publikan API-on
-    ├── test_resources.py  # validigo de la datumdosieroj
-    └── test_tokenizer.py  # unu testmodulo por ĉiu fontmodulo
+│       └── ...            # aliaj subpakoj kaj moduloj
+└── tests/                 # testskriptoj por la biblioteko
+    ├── test_tokenizer.py  # unu testmodulo por ĉiu fontmodulo
+    └── ...
+
+# Aliaj helpaj dosieroj kaj dosierujoj
+├── pyproject.toml         # metadatenoj de la projekto kaj konstrua agordo
+├── README.md              # ĉefpaĝo
+├── LICENSE                # licenca teksto
+├── mkdocs.yml             # agordo de la dokumentaro
+├── docs/                  # la dokumentaro, kiun vi legas
+├── resources/             # datumdosieroj (vortlistoj) kaj notlibroj
+├── .github/workflows/     # kontinua integrado
 ```
 
 Notu la parigon: `tokenizer.py` en `src/`, `test_tokenizer.py` en `tests/`. Ĝi
-skaliĝas senpense — nova funkcio estas nova modulo kaj nova testmodulo — kaj ĝi
-igas mankantan teston evidenta. Kion tiu specifa modulo faras, estas dokumentita
+skaliĝas senpense: nova funkcio estas nova modulo kaj nova testmodulo.
+Kion tiu specifa modulo faras, estas dokumentita
 en [Biblioteko → Fraz-dividado](../../library/sentence-segmentation.md).
 
 Kiam funkcio kreskas preter unu sola modulo, ĝi fariĝas **subpako**: dosierujo
@@ -86,33 +84,13 @@ Tri partojn indas kompreni:
 
 - **`[project]`** — la identeco de la biblioteko. `name` estas tio, kion oni
   `pip install`-as; `version` estas tio, kion oni fiksas; `dependencies` estas tio,
-  kio instaliĝas *kun* ĝi (malplena ĉi tie, ĉar la biblioteko estas regul-bazita).
+  kio instaliĝas *kun* ĝi.
 - **`[project.optional-dependencies]`** — *kromaĵoj*, instalataj laŭbezone. `.[test]`
   aldonas `pytest`, `.[docs]` aldonas la MkDocs-ilojn. La uzantoj de la biblioteko
   bezonas neniun; la programistoj jes.
 - **`[tool.*]`** — agordo por aliaj iloj tenata en unu loko. Ĉi tie
   `[tool.setuptools.packages.find]` diras al la konstruo kie estas la pako, kaj
   `[tool.pytest.ini_options]` agordas la testrulilon.
-
-### `requirements.txt`
-
-Simpla listo de dependecoj, unu por linio, tradicie uzata kun
-`pip install -r requirements.txt`. Ĝi interkovras kun `pyproject.toml`, do kion faras
-ĉiu?
-
-- **`pyproject.toml`** deklaras kion la *biblioteko* bezonas por funkcii, kiel parton
-  de sia identeco. Ĝi estas la fonto de vero, kiam iu instalas `esperantilo`.
-- **`requirements.txt`** estas oportuna listo, ofte uzata por fiksi precizajn versiojn
-  por reproduktebla *medio*.
-
-**Ĉi tiu projekto ne havas `requirements.txt` en la radiko.** La biblioteko estas
-regul-bazita kaj havas neniun rultempan dependecon, do la dosiero dirus nenion,
-kion `pyproject.toml` ne jam diras — kaj malplena dosiero, kiu aspektas grava,
-estas pli malbona ol neniu dosiero. La disvolvaj kromaĵoj estas deklaritaj en
-`[project.optional-dependencies]` kaj instalataj per `pip install -e ".[test]"`.
-
-La sola loko, kie fiksita listo **ja** valoras, estas `docs/requirements.txt`, kiu estas
-la dosiero, kiun uzas la [CI-laborfluoj](../github/actions.md).
 
 ### `__init__.py`
 
@@ -130,10 +108,8 @@ __all__ = ["__version__"]
 ```
 
 Nuntempe ĝi eksponas nur la version. Dum la biblioteko kreskas, ĉi tie vi importus kaj
-reeksportus la publikajn klasojn kaj funkciojn (la objektojn `Doc` kaj `Token`
-dezajnitajn en [la API-paĝo](api.md)), por ke la uzantoj povu skribi
-`from esperantilo import Doc` anstataŭ fosi en internaj moduloj. La listo `__all__`
-ankaŭ estas klarigita tie.
+reeksportus la publikajn klasojn kaj funkciojn, por ke la uzantoj povu importi
+ĝiajn erojn rapide kaj facile.
 
 ### `src/` — kial la kodo ne estas ĉe la radiko {#the-src-layout}
 
@@ -157,6 +133,13 @@ kontrolas ke la pako importiĝas kaj eksponas sian version, kaj
 [`test_resources.py`](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_resources.py)
 validigas la datumdosierojn sub `resources/`. La testado havas sian propran paĝon:
 [Testado](testing.md).
+
+### `requirements.txt`
+
+En multaj kazoj tiu ĉi dosiero estas uzata kiel simpla listo de dependecoj, unu
+por linio, tradicie uzata kun `pip install -r requirements.txt`.
+Tio estas tradicia sistemo por konservi kongruecon, sed ĝi montriĝas redunda kun
+`pyproject.toml`, kiu jam enhavas la liston de dependecoj kaj iliajn versiojn.
 
 ## Versiado
 

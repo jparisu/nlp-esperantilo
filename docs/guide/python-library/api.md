@@ -1,15 +1,13 @@
 # API
 
 The **API** (Application Programming Interface) of a library is its *public
-surface*: the objects, functions and methods that users are meant to touch.
+face*: the objects, functions and methods that users are meant to touch.
 Everything else is an implementation detail you are free to change. Designing
-that surface well is what separates a library people enjoy using from one they
+that *face* well is what separates a library people enjoy using from one they
 fight with.
 
 The `esperantilo` package exposes one class and one function so far, so most of this
-page is a **design target**: it shows what a clean NLP interface looks like —
-modelled on [spaCy](https://spacy.io/api) — so that the library's own
-`Doc` / `Token` interface can be built to imitate it.
+page is a **design target**: it shows what an NLP interface looks like.
 
 !!! tip "The part that already exists"
     Everything below is illustrated by real, shipped code:
@@ -37,6 +35,8 @@ In Python, the boundary is drawn by convention and by `__all__`:
   signal that users should not rely on them.
 - The `__all__` list in a module names its **public** objects. It documents the
   intended surface and controls what `from esperantilo import *` brings in:
+
+<!-- TODO: this must be updated with the actual API surface, not with "future" methods. -->
 
 ```python
 # esperantilo/__init__.py
@@ -151,9 +151,9 @@ relationships — see the [spaCy API documentation](https://spacy.io/api).
 
 ## Documenting the API automatically
 
-An API reference written by hand rots: someone renames a parameter and the page
-still shows the old one. The fix is to generate the page **from the docstrings**,
-so there is only ever one copy of the truth.
+An API reference written by hand goes stale quickly:
+someone renames a parameter and the page still shows the old one.
+The fix is to generate the page **from the docstrings**, so there is only ever one copy of the truth.
 
 [mkdocstrings](https://mkdocstrings.github.io/) does that for MkDocs. A page
 holding nothing but a directive:
@@ -176,7 +176,7 @@ Two habits make the generated page worth reading:
   shown above (`Args:`, `Returns:`, `Examples:`), declared once in
   `mkdocs.yml`.
 - **Put examples in `Examples:` blocks.** Written as `>>>` sessions they are both
-  documentation and [doctests](testing.md#doctests) — CI runs them, so they
+  documentation and [doctests](testing.md) — CI runs them, so they
   cannot silently go stale.
 
 ## Where to go next

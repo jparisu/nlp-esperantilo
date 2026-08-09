@@ -28,6 +28,11 @@ Two early steps are worth doing well:
     work, an **SSH key** (added in **Settings → SSH and GPG keys**) avoids
     retyping anything. Either is fine — pick one and move on.
 
+<!-- TODO: Add more information on how to set up the local machine
+  Point at the GitHub pages with the instructions, and add step-by-step
+  instructions here for each case (in tabs if possible).
+ -->
+
 ## Create a repository
 
 Click **New** (the green button on your repositories page) and fill in:
@@ -68,7 +73,7 @@ workflow and Actions are in place.
 Most of your time on GitHub is spent reading *other people's* repositories.
 Every repository has the same tabs, and knowing them makes any project readable:
 
-| Tab | What you find there |
+| Tab |  |
 | --- | --- |
 | **Code** | The files, the README, the branch selector and the commit history. |
 | **Issues** | Reported bugs, tasks and feature requests, open and closed. |

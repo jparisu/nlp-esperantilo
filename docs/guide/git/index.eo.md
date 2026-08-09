@@ -5,8 +5,7 @@ dosierojn kaj versiojn, ĝian funkciadon kaj ĝiajn plej uzatajn komandojn.
 
 Git estas la fundamento de ĉio, kio sekvas: la kunlabora fluo de la
 [GitHub-sekcio](../github/index.md) konstruiĝas rekte sur la commit-oj kaj branĉoj
-prezentitaj ĉi tie. Se vi jam bone konas Git-on, vi povas salti antaŭen; alie, la
-paĝoj estas pensitaj por legado laŭ ordo.
+prezentitaj ĉi tie. Se vi jam bone konas Git-on, vi povas salti antaŭen.
 
 <div class="grid cards" markdown>
 

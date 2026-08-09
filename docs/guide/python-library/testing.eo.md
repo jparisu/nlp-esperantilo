@@ -131,24 +131,6 @@ La ĉiutagaj funkcioj, kiujn vi uzos:
     viaj testoj plu sukcesas tra internaj refaktorigoj kaj malsukcesas nur kiam la
     konduto vere ŝanĝiĝas — kio estas la tuta celo.
 
-## Dokumentteestoj: dokumentado, kiu ruliĝas {#doctests}
-
-`Examples:`-bloko verkita kiel interaga seanco estas samtempe dokumentado kaj
-testo. `--doctest-modules` igas pytest ruli tiujn ekzemplojn kaj kompari la
-realan eligon kun la skribita; ĉi tiu projekto ŝaltas ĝin por `src/` en
-`pyproject.toml`:
-
-```toml
-[tool.pytest.ini_options]
-testpaths = ["tests", "src"]
-addopts = "-ra --doctest-modules"
-```
-
-Tiuj ekzemploj estas tiuj publikigitaj sur la paĝo
-[API-referenco](../../library/api.md), do ruli ilin estas tio, kio malhelpas la
-dokumentaron silente malaktualiĝi. Tenu ilin mallongaj kaj ilustraj — randkazoj
-apartenas al `tests/`.
-
 ## Testoj en kontinua integrado
 
 Ruli la testojn loke estas bone; ruli ilin **aŭtomate ĉe ĉiu ŝanĝo** estas tio, kio

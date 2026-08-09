@@ -13,7 +13,7 @@ Every public name of `esperantilo`, with its signature, arguments and examples.
     by [mkdocstrings](https://mkdocstrings.github.io/) every time the site is
     built, so it cannot contradict the code. The `>>>` examples are executed by
     `pytest` too — see
-    [Guide → Testing](../guide/python-library/testing.md#doctests).
+    [Guide → Testing](../guide/python-library/testing.md).
 
     Every entry links to the exact lines it documents: expand *Source* to read
     them.

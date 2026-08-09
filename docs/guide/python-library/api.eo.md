@@ -1,15 +1,13 @@
 # API
 
 La **API** (Application Programming Interface, programad-interfaco de aplikaĵoj) de
-biblioteko estas ĝia *publika surfaco*: la objektoj, funkcioj kaj metodoj, kiujn la
+biblioteko estas ĝia *publika vizaĝo*: la objektoj, funkcioj kaj metodoj, kiujn la
 uzantoj estas destinitaj tuŝi. Ĉio alia estas realiga detalo, kiun vi rajtas ŝanĝi.
-Bone dezajni tiun surfacon estas tio, kio disigas bibliotekon, kiun oni ĝuas uzi, de
+Bone dezajni tiun *vizaĝon* estas tio, kio disigas bibliotekon, kiun oni ĝuas uzi, de
 tiu kontraŭ kiu oni batalas.
 
 La pako `esperantilo` eksponas ĝis nun unu klason kaj unu funkcion, do la plej granda parto
-de ĉi tiu paĝo estas **dezajna celo**: ĝi montras kiel aspektas pura
-NLP-interfaco — modelita laŭ [spaCy](https://spacy.io/api) — por ke la propra
-interfaco `Doc` / `Token` de la biblioteko povu esti konstruita imitante ĝin.
+de ĉi tiu paĝo estas **dezajna celo**: ĝi montras kiel aspektas NLP-interfaco.
 
 !!! tip "La parto, kiu jam ekzistas"
     Ĉio sube estas ilustrita de reala, eldonita kodo:
@@ -37,6 +35,8 @@ En Python, la limon oni tiras per konvencio kaj per `__all__`:
   signalo, ke la uzantoj ne dependu de ili.
 - La listo `__all__` en modulo nomas ĝiajn **publikajn** objektojn. Ĝi dokumentas la
   celitan surfacon kaj regas kion alportas `from esperantilo import *`:
+
+<!-- TODO: this must be updated with the actual API surface, not with "future" methods. -->
 
 ```python
 # esperantilo/__init__.py
@@ -149,9 +149,9 @@ inter objektoj — vidu la [API-dokumentadon de spaCy](https://spacy.io/api).
 
 ## Dokumenti la API-on aŭtomate
 
-Mane verkita API-referenco putras: iu renomas parametron kaj la paĝo plu montras
-la malnovan. La solvo estas generi la paĝon **el la dokumentĉenoj**, tiel ke
-ekzistu nur unu kopio de la vero.
+Mane verkita API-referenco rapide malaktualiĝas:
+iu renomas parametron kaj la paĝo plu montras la malnovan.
+La solvo estas generi la paĝon **el la dokumentĉenoj**, tiel ke ekzistu nur unu kopio de la vero.
 
 [mkdocstrings](https://mkdocstrings.github.io/) faras tion por MkDocs. Paĝo, kiu
 enhavas nenion krom direktivon:
@@ -174,7 +174,7 @@ Du kutimoj igas la generitan paĝon leginda:
   Google-stilon montritan supre (`Args:`, `Returns:`, `Examples:`), deklaritan
   unufoje en `mkdocs.yml`.
 - **Metu ekzemplojn en `Examples:`-blokojn.** Verkitaj kiel `>>>`-seancoj ili
-  estas samtempe dokumentado kaj [dokumentteestoj](testing.md#doctests) — la
+  estas samtempe dokumentado kaj [dokumentteestoj](testing.md) — la
   kontinua integrado rulas ilin, do ili ne povas silente malaktualiĝi.
 
 ## Kien iri poste

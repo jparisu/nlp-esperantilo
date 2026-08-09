@@ -7,6 +7,11 @@ no local setup, no cloning by hand.
 
 ## Install from GitHub
 
+!!! warning
+    When installing a library locally, it is worth using virtual environments, especially with libraries under development.
+    This keeps our library from being installed system-wide, and keeps the dependencies of different libraries from mixing.
+    Read [Install locally](#install-locally) for more information.
+
 `pip` can install a package directly from a Git repository. This is the quickest
 way to get `esperantilo` into a notebook while the library is still moving:
 
@@ -44,18 +49,6 @@ then import and use the library:
 import esperantilo
 
 print(esperantilo.__version__)   # 0.1.0
-```
-
-As the library grows, the same import gives you its public objects — for example
-the `Doc` and `Token` types designed on [the API page](api.md):
-
-```python
-# Illustrative: the target API, not yet implemented.
-import esperantilo
-
-doc = esperantilo.parse("La rapida vulpo saltas.")
-for token in doc:
-    print(token.text, token.lemma, token.pos)
 ```
 
 !!! note "Restart the runtime after installing"

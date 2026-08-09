@@ -6,7 +6,7 @@ public interface, and let any project install and import them. `esperantilo` —
 the library this guide builds — is one: a rule-based NLP toolkit for Esperanto
 that a notebook can install and use in a couple of lines.
 
-This page sorts out the vocabulary, explains what a library buys you, and looks
+This page sorts out the vocabulary, explains what a library buys you, and shows
 at a well-known example to imitate.
 
 ## Module, package, library, distribution

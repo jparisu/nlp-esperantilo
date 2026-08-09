@@ -112,7 +112,7 @@ __all__ = ["__version__"]
 
 Por ahora solo expone la versión. A medida que la biblioteca crezca, aquí es donde
 importarías y reexportarías las clases y funciones públicas, para que los usuarios puedan
-impportar sus elementos de forma rápida y sencilla.
+importar sus elementos de forma rápida y sencilla.
 
 ### `src/` — por qué el código no está en la raíz {#the-src-layout}
 

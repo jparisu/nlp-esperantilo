@@ -5,9 +5,6 @@ vere sekvas ilin. Ĉi tiu paĝo temas pri igi ilin **devigaj**: agordi la depone
 tiel, ke `main` ne povu esti rompita hazarde, kaj ke ĉiu ŝanĝo trairu reviziitan,
 testitan kunfandan peton.
 
-Ĉi tio gravas plej en teamo, kie "bonvolu memori malfermi kunfandan peton" ne estas
-fidinda gardo.
-
 !!! info "La ordo gravas"
     Protekti `main` havas sencon nur post kiam ekzistas branĉoj, kunfandaj petoj kaj
     CI-kontroloj — tial ĉi tiu paĝo venas post [Laborfluo](workflow.md) kaj

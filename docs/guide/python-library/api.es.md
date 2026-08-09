@@ -184,7 +184,7 @@ Dos hábitos hacen que la página generada merezca la pena:
   estilo Google mostrado arriba (`Args:`, `Returns:`, `Examples:`), declarado una
   sola vez en `mkdocs.yml`.
 - **Pon los ejemplos en bloques `Examples:`.** Escritos como sesiones `>>>` son a
-  la vez documentación y [doctests](testing.md#doctests) — la CI los ejecuta, así
+  la vez documentación y [doctests](testing.md) — la CI los ejecuta, así
   que no pueden quedarse desfasados en silencio.
 
 ## Adónde ir después

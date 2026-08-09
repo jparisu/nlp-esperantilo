@@ -103,9 +103,38 @@ Reintegrigi branĉon en `main` estas **kunfando** (*merge*). Estas du formoj:
 - **Fast-forward.** Se `main` ne moviĝis ekde la kreo de la branĉo, Git povas simple
   ŝovi la montrilon de `main` antaŭen ĝis la plej lasta commit de la branĉo. Neniu
   nova commit kreiĝas; la historio restas lineara.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    merge new-branch
+    commit id: "New commits in main"
+```
+
 - **Kunfanda commit.** Se *ambaŭ* branĉoj gajnis commit-ojn (kiel en la supra
   diagramo), Git kreas novan **kunfandan commit-on** kun **du gepatroj**, ligante la
   du liniojn de historio denove kune.
+
+```mermaid
+gitGraph
+    commit id: "Old commits in main"
+    commit id: "Last commit in main"
+    branch new-branch
+    commit id: "Commit 1 in new-branch"
+    commit id: "..."
+    commit id: "Commit N in new-branch"
+    checkout main
+    commit id: "Commit 1 in main"
+    merge new-branch
+    commit id: "Merge commit"
+    commit id: "New commits in main"
+```
 
 Kiam la du branĉoj ŝanĝis **la samajn liniojn** de la sama dosiero, Git ne povas
 decidi kiu versio venkas. Tio estas **kunfanda konflikto**: Git paŭzas kaj petas vin

@@ -1,11 +1,8 @@
 # Python Library
 
 This section explains how to build a Python library: how to organize it, how to
-design its API, how to test it, and how to install and use it. The running
-example is `esperantilo`, the very package this project ships.
-
-The pages build on each other — layout, then installation, then the API design,
-then testing — but each stands on its own if you already know the basics.
+design its API, how to test it, and how to install and use it.
+We will use `esperantilo`, the very package this project ships, as the example.
 
 <div class="grid cards" markdown>
 

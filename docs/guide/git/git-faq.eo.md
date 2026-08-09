@@ -7,7 +7,7 @@ traktata pli detale.
     **Git** estas la versikontrola ilo, kiu funkcias sur via komputilo kaj registras
     la historion de viaj dosieroj. **GitHub** estas retejo, kiu gastigas
     Git-deponejojn interrete por ke oni kunhavigu kaj kunlaboru. Vi povas uzi Git
-    tute sen GitHub; GitHub ĉiam uzas Git sube. Vidu [Kio estas Git](git.md) kaj la
+    sen GitHub, sed GitHub ĉiam uzas Git sube. Vidu [Kio estas Git](git.md) kaj la
     [GitHub-sekcion](../github/index.md).
 
 ??? question "Ĉu mi bezonas retkonekton por uzi Git?"

@@ -4,9 +4,7 @@ This section introduces GitHub and the collaborative workflow built around it.
 This very repository is used as a live example throughout.
 
 It builds directly on the [Git section](../git/index.md): make sure you are
-comfortable with commits and branches first. The pages are ordered so that each
-one relies on the previous — workflow, then the automation that supports it, then
-the settings that enforce it.
+comfortable with commits and branches first.
 
 <div class="grid cards" markdown>
 

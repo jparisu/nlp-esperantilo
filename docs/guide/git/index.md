@@ -5,8 +5,7 @@ versions, its way of working, and its most used commands.
 
 Git is the foundation of everything that follows: the collaborative workflow in
 the [GitHub section](../github/index.md) is built directly on top of the commits
-and branches introduced here. If you already know Git well, you can skip ahead;
-otherwise, the pages are meant to be read in order.
+and branches introduced here. If you already know Git well, you can skip ahead.
 
 <div class="grid cards" markdown>
 
