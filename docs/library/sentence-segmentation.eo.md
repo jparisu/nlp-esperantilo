@@ -11,33 +11,29 @@ sentence_tokenizer("Mi lernas Esperanton. Ĉu vere? Jes!")
 # ['Mi lernas Esperanton.', 'Ĉu vere?', 'Jes!']
 ```
 
-## La regulo
+## La nuna regulo
 
-Frazo finiĝas ĉe `.`, `!` aŭ `?`. La signo restas ĉe la frazo, kiun ĝi fermas,
-kaj la ĉirkaŭaj spacoj estas forigitaj. Malplenaj frazoj estas forĵetataj, do
-teksto el nuraj spacoj donas `[]`.
+Ĉi tiu dividilo uzas la signojn donitajn kiel eniga argumento por dividi la
+tekston en frazojn.
+Defaŭlte ili estas `.`, `!` kaj `?`.
 
-Kiuj signoj finas frazon estas argumento:
+Ekzemplo kun specifaj signoj estus:
 
 ```python
-sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=["!"])
+sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=("!",))
 # ['Unua. Dua!', 'Tria?']
 ```
 
-## Kion ĝi ne faras
+## Plibonigoj
 
-La dividilo estas intence naiva — ĉiu finigilo tranĉas, kio ajn ĝin ĉirkaŭas:
+Ĉi tiu dividilo estas tre simpligita unua versio.
+Kelkaj plibonigoj indaj je efektivigo estas:
 
-| Enigo | Rezulto |
-| --- | --- |
-| `"Pi estas 3.14."` | `['Pi estas 3.', '14.']` |
-| `"Vidu esperanto.net."` | `['Vidu esperanto.', 'net.']` |
-| `"Dr. Zamenhof venis."` | `['Dr.', 'Zamenhof venis.']` |
-
-Tiuj estas la `ToDo` notita en la dokumentĉeno de la funkcio, kaj ili estas
-[fiksitaj per `xfail`-testoj](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py),
-kiuj fariĝas malsukcesoj en la tago, kiam ili estos riparitaj. Fari tion estas
-ĝuste la speco de ekzerco, por kiu la [Gvidilo](../guide/index.md) preparas vin.
+1. Ne tranĉi ĉe mallongigoj kiel `D-ro` aŭ `S-ro`.
+2. Ne tranĉi ĉe dekumaj nombroj kiel `3.14`, nek ĉe aliaj interpunkciaj kazoj
+   kiel `...` aŭ `?!`.
+3. Ne tranĉi ĉe URL-oj, retpoŝtadresoj kaj aliaj vortoj enhavantaj `.` aŭ `?`.
+4. ktp.
 
 ## Vidu ankaŭ
 

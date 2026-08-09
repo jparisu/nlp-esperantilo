@@ -11,34 +11,27 @@ sentence_tokenizer("Mi lernas Esperanton. Ĉu vere? Jes!")
 # ['Mi lernas Esperanton.', 'Ĉu vere?', 'Jes!']
 ```
 
-## La regla
+## La regla actual
 
-Una frase termina en `.`, `!` o `?`. El carácter se queda con la frase que
-cierra, y los espacios que la rodean se eliminan. Las frases vacías se
-descartan, así que un texto de solo espacios devuelve `[]`.
+Este tokenizador utiliza los carácteres dados como argumentos de entrada para dividir el texto en frases.
+Por defecto, son `.`, `!` y `?`.
 
-Qué caracteres terminan una frase es un argumento:
+Un ejemplo utilizando carácteres específicos sería:
 
 ```python
-sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=["!"])
+sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=("!",))
 # ['Unua. Dua!', 'Tria?']
 ```
 
-## Lo que no hace
+## Mejoras
 
-El tokenizador es deliberadamente ingenuo: cada terminador corta, sea cual sea
-su contexto:
+Este tokenizador es una primera versión muy simplificada.
+Ciertas mejoras que convendría implementar son:
 
-| Entrada | Resultado |
-| --- | --- |
-| `"Pi estas 3.14."` | `['Pi estas 3.', '14.']` |
-| `"Vidu esperanto.net."` | `['Vidu esperanto.', 'net.']` |
-| `"Dr. Zamenhof venis."` | `['Dr.', 'Zamenhof venis.']` |
-
-Son el `ToDo` anotado en el docstring de la función, y están
-[fijados con pruebas `xfail`](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py)
-que se convierten en fallos el día en que se arreglen. Hacerlo es exactamente el
-tipo de ejercicio para el que prepara la [Guía](../guide/index.md).
+1. Evitar cortar en abreviaturas como `Dr.` o `S-ro`.
+2. Evitar cortar en números decimales como `3.14` y otros casos de puntuación como `...` o `?!`.
+3. Evitar cortar en URLs, direcciones de correo electrónico y otros tokens que contienen `.` o `?`.
+4. etc.
 
 ## Véase también
 

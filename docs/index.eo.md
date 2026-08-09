@@ -1,7 +1,8 @@
 # NLP Esperantilo
 
-**NLP Esperantilo** estas du aferoj samtempe, kaj ĉi tiu paĝaro estas dividita
-laŭ tio.
+**NLP Esperantilo** estas projekto kun eduka celo, kiu helpas konstrui
+bibliotekon por komputila lingvistiko (NLP) en Esperanto.
+La projekto havas 2 partojn:
 
 <div class="grid cards" markdown>
 
@@ -17,8 +18,8 @@ laŭ tio.
 
     ---
 
-    Kiel oni konstruas kaj eldonas tian bibliotekon: Git, GitHub, Python-pakado
-    kaj testado, kaj la Esperanta lingvoscio, kiu iras internen.
+    Kiel oni konstruas kaj eldonas tian bibliotekon: Git, GitHub, pakado kaj
+    Esperanta lingvoscio.
 
 </div>
 
@@ -36,22 +37,8 @@ esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
 ```
 
 !!! warning "La biblioteko estas intence malgranda"
-    `esperantilo` estas ĉe versio `0.1.0` kaj havas unu solan funkcion:
-    [fraz-dividado](library/sentence-segmentation.md). Vortoj (*tokens*),
-    lemoj kaj afiksa analizo ankoraŭ estas
-    [dezajna celo](guide/python-library/api.md), ne eldonita kodo. Konstrui la
-    ceteron estas ĝuste la ekzerco, por kiu ĉi tiu paĝaro preparas vin.
-
-## Por kiu ĝi estas
-
-Universitataj studentoj, kiuj devas konstrui sian propran Esperantan
-NLP-bibliotekon. Oni atendas, ke la leganto havas ian teknikan fonon, sed ne
-nepre sperton pri la specifaj iloj kaj temoj ĉi tie klarigataj.
-
-Du temoj estas intence lasitaj ekster la gvidilo, ĉar ili estas instruataj en la
-kurslecionoj: **retĉerpado kaj konsumo de API-oj**, kaj **teksto-minado kaj
-klasifiko per maŝinlernado**. Vidu
-[Gvidilo → kion ĝi ne kovras](guide/index.md#kion-gi-ne-kovras).
+    `esperantilo` estas projekto kun eduka celo; ĝi ne provas esti kompleta kaj
+    preta-por-produktado biblioteko.
 
 ## Konstrui ĉi tiun paĝaron loke
 

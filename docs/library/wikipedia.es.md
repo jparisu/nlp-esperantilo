@@ -78,6 +78,22 @@ argumentos lo descarga todo dos veces.
 El texto de Wikipedia es **CC BY-SA**. Si republicas lo que obtengas, conserva
 la atribución y la licencia; `page.url` es el enlace que hay que citar.
 
+## Idiomas
+
+Esta es una lista de algunos de los idiomas más utilizados, y sus códigos de Wikipedia:
+
+| Idioma | Código |
+| --- | --- |
+| Esperanto | `eo` |
+| Inglés | `en` |
+| Español | `es` |
+| Francés | `fr` |
+| Alemán | `de` |
+| ... | ... |
+
+La lista completa de códigos está en [Wikipedia:Lista de códigos de idioma](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+
+
 ## Véase también
 
 - [Referencia de la API](api.md#esperantilo.wiki.WikiPage) — la firma generada,

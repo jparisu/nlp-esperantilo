@@ -1,14 +1,11 @@
 # Biblioteko
 
-**`esperantilo`** estas regul-bazita biblioteko por komputila lingvistiko (NLP)
-en Esperanto. Ĉi tiu sekcio estas ĝia *referenca manlibro*: kion ĝi faras
-hodiaŭ, kiel instali ĝin, kaj kion signifas ĉiu publika nomo.
+**`esperantilo`** estas regul-bazita biblioteko por komputila lingvistiko (NLP) en Esperanto.
+Ĉi tiu sekcio estas ĝia *referenca manlibro*: kion ĝi faras, kiel instali ĝin, kaj kion signifas ĉiu publika nomo.
 
 !!! info "Referenco, ne lernilo"
-    Ĉi tiuj paĝoj dokumentas la bibliotekon **tia, kia ĝi estas**. La
-    [Gvidilo](../guide/index.md) estas la alia duono de ĉi tiu paĝaro: ĝi
-    instruas, kiel oni konstruas, eldonas kaj testas tian bibliotekon. Se vi
-    venas por lerni la ilaron, komencu tie.
+    Ĉi tiuj paĝoj dokumentas la bibliotekon **tia, kia ĝi estas**.
+    La gvidilon vi trovos [ĉi tie](../guide/index.md).
 
 !!! warning "Nur du funkcioj ĝis nun"
     La biblioteko estas ĉe versio `0.1.0` kaj havas du aferojn: legadon de
@@ -42,19 +39,17 @@ troviĝas en
 ```python
 import esperantilo
 
-# Analizi tekston jam havatan.
-esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
-# ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
-
-# Aŭ unue havigi ĝin el Vikipedio.
+# Havigi Vikipedian artikolon en Esperanto.
 page = esperantilo.WikiPage.look_up("Esperanto", language="eo")
-esperantilo.sentence_tokenizer(page.section(page.title))
+
+# Dividi la tekston en frazojn.
+sentences = esperantilo.sentence_tokenizer(page.full_text())
 ```
 
 ## La publika API
 
 Ĉio, kion la biblioteko promesas teni stabila, estas importebla rekte el la
-ĉefa modulo `esperantilo`, kaj estas listigita en ĝia `__all__`:
+ĉefa modulo `esperantilo`:
 
 | Nomo | Speco | Kio ĝi estas |
 | --- | --- | --- |
@@ -62,12 +57,7 @@ esperantilo.sentence_tokenizer(page.section(page.title))
 | [`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer) | funkcio | Dividas tekston en frazojn. |
 | [`__version__`](api.md#esperantilo.__version__) | konstanto | La instalita versio. |
 
-Kio ne estas en tiu listo — ĉiu privata helpfunkcio, ĉiu interna modulo — estas
-efektiviga detalo kaj povas ŝanĝiĝi sen averto. Kial tiu limo gravas, kaj kiel
-oni desegnas ĝin en Python, estas klarigita en
-[Gvidilo → API](../guide/python-library/api.md).
-
-## Kie loĝas la partoj
+## Strukturo
 
 ```text
 src/esperantilo/

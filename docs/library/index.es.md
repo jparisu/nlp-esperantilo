@@ -1,14 +1,11 @@
 # Biblioteca
 
-**`esperantilo`** es una biblioteca de Procesamiento del Lenguaje Natural basada
-en reglas para el Esperanto. Esta sección es su *manual de referencia*: qué hace
-hoy, cómo se instala y qué significa cada nombre público.
+**`esperantilo`** es una biblioteca de Procesamiento del Lenguaje Natural basada en reglas para el Esperanto.
+Esta sección es su *manual de referencia*: qué hace, cómo se instala y qué significa cada nombre público.
 
 !!! info "Referencia, no tutorial"
-    Estas páginas documentan la biblioteca **tal como es**. La
-    [Guía](../guide/index.md) es la otra mitad de este sitio: enseña cómo se
-    construye, se publica y se prueba una biblioteca como esta. Si vienes a
-    aprender las herramientas, empieza allí.
+    Estas páginas documentan la biblioteca **tal como es**.
+    La guía la encontrarás [aquí](../guide/index.md).
 
 !!! warning "Dos funciones por ahora"
     La biblioteca está en la versión `0.1.0` y ofrece dos cosas: la lectura de
@@ -42,19 +39,17 @@ están en
 ```python
 import esperantilo
 
-# Analizar texto que ya se tiene.
-esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
-# ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
-
-# O bien obtenerlo primero de Wikipedia.
+# Obtén un artículo de Wikipedia en Esperanto.
 page = esperantilo.WikiPage.look_up("Esperanto", language="eo")
-esperantilo.sentence_tokenizer(page.section(page.title))
+
+# Divide el texto en frases.
+sentences = esperantilo.sentence_tokenizer(page.full_text())
 ```
 
 ## La API pública
 
 Todo lo que la biblioteca se compromete a mantener estable se importa
-directamente del módulo `esperantilo` y aparece listado en su `__all__`:
+directamente del módulo `esperantilo`:
 
 | Nombre | Tipo | Qué es |
 | --- | --- | --- |
@@ -62,12 +57,7 @@ directamente del módulo `esperantilo` y aparece listado en su `__all__`:
 | [`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer) | función | Divide un texto en frases. |
 | [`__version__`](api.md#esperantilo.__version__) | constante | La versión instalada. |
 
-Lo que no está en esa lista —cada función auxiliar privada, cada módulo interno—
-es un detalle de implementación y puede cambiar sin aviso. Por qué importa esa
-frontera, y cómo se traza en Python, se explica en
-[Guía → API](../guide/python-library/api.md).
-
-## Dónde vive cada pieza
+## Estructura
 
 ```text
 src/esperantilo/

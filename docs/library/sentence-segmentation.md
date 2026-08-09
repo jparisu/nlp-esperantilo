@@ -11,34 +11,29 @@ sentence_tokenizer("Mi lernas Esperanton. Ĉu vere? Jes!")
 # ['Mi lernas Esperanton.', 'Ĉu vere?', 'Jes!']
 ```
 
-## The rule
+## The current rule
 
-A sentence ends at `.`, `!` or `?`. The character stays with the sentence it
-closes, and surrounding whitespace is stripped. Empty sentences are dropped, so
-a text of only whitespace gives `[]`.
+This tokenizer uses the characters given as an input argument to split the text
+into sentences.
+By default, they are `.`, `!` and `?`.
 
-Which characters end a sentence is an argument:
+An example using specific characters would be:
 
 ```python
-sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=["!"])
+sentence_tokenizer("Unua. Dua! Tria?", end_of_sentence=("!",))
 # ['Unua. Dua!', 'Tria?']
 ```
 
-## What it does not do
+## Improvements
 
-The tokenizer is deliberately naive — every terminator cuts, whatever surrounds
-it:
+This tokenizer is a very simplified first version.
+Some improvements worth implementing are:
 
-| Input | Result |
-| --- | --- |
-| `"Pi estas 3.14."` | `['Pi estas 3.', '14.']` |
-| `"Vidu esperanto.net."` | `['Vidu esperanto.', 'net.']` |
-| `"Dr. Zamenhof venis."` | `['Dr.', 'Zamenhof venis.']` |
-
-These are the `ToDo` recorded in the function's docstring, and they are
-[pinned by `xfail` tests](https://github.com/jparisu/nlp-esperantilo/blob/main/tests/test_tokenizer.py)
-that turn into failures the day they are fixed. Doing it is exactly the kind of
-exercise the [Guide](../guide/index.md) prepares you for.
+1. Do not cut on abbreviations such as `Dr.` or `S-ro`.
+2. Do not cut on decimal numbers such as `3.14`, or on other punctuation cases
+   such as `...` or `?!`.
+3. Do not cut on URLs, e-mail addresses and other tokens that contain `.` or `?`.
+4. etc.
 
 ## See also
 

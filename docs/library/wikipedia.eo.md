@@ -78,6 +78,22 @@ La teksto de Vikipedio estas **CC BY-SA**. Se vi reeldonas tion, kion vi
 havigas, konservu la atribuon kaj la permesilon; `page.url` estas la ligilo por
 citi.
 
+## Lingvoj
+
+Jen listo de kelkaj el la plej uzataj lingvoj, kun iliaj Vikipediaj kodoj:
+
+| Lingvo | Kodo |
+| --- | --- |
+| Esperanto | `eo` |
+| Angla | `en` |
+| Hispana | `es` |
+| Franca | `fr` |
+| Germana | `de` |
+| ... | ... |
+
+La kompleta listo de kodoj troviĝas en
+[Wikipedia:List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+
 ## Vidu ankaŭ
 
 - [API-referenco](api.md#esperantilo.wiki.WikiPage) — la generita signaturo, la

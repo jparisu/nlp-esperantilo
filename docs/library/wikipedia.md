@@ -77,6 +77,22 @@ same arguments fetches everything twice.
 Wikipedia text is **CC BY-SA**. If you republish what you fetch, keep the
 attribution and the licence; `page.url` is the link to credit.
 
+## Languages
+
+Here is a list of some of the most used languages, with their Wikipedia codes:
+
+| Language | Code |
+| --- | --- |
+| Esperanto | `eo` |
+| English | `en` |
+| Spanish | `es` |
+| French | `fr` |
+| German | `de` |
+| ... | ... |
+
+The full list of codes is in
+[Wikipedia:List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+
 ## See also
 
 - [API reference](api.md#esperantilo.wiki.WikiPage) — the generated signature,

@@ -1,14 +1,11 @@
 # Library
 
-**`esperantilo`** is a rule-based Natural Language Processing library for
-Esperanto. This section is its *reference manual*: what it does today, how to
-install it, and what every public name means.
+**`esperantilo`** is a rule-based Natural Language Processing library for Esperanto.
+This section is its *reference manual*: what it does, how to install it, and what every public name means.
 
 !!! info "Reference, not tutorial"
-    These pages document the library **as it is**. The
-    [Guide](../guide/index.md) is the other half of this site: it teaches how a
-    library like this one is built, shipped and tested. If you are here to
-    learn the tooling, start there.
+    These pages document the library **as it is**.
+    You will find the guide [here](../guide/index.md).
 
 !!! warning "Two features so far"
     The library is at version `0.1.0` and ships two things: reading Wikipedia
@@ -41,19 +38,17 @@ Step-by-step instructions, including virtual environments and notebooks, are in
 ```python
 import esperantilo
 
-# Analyse text you already have.
-esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
-# ['Zamenhof kreis Esperanton.', 'Ĉu vere?', 'Jes!']
-
-# Or fetch it from Wikipedia first.
+# Fetch a Wikipedia article in Esperanto.
 page = esperantilo.WikiPage.look_up("Esperanto", language="eo")
-esperantilo.sentence_tokenizer(page.section(page.title))
+
+# Split the text into sentences.
+sentences = esperantilo.sentence_tokenizer(page.full_text())
 ```
 
 ## The public API
 
 Everything the library promises to keep stable is importable directly from the
-top-level `esperantilo` module, and is listed in its `__all__`:
+top-level `esperantilo` module:
 
 | Name | Kind | What it is |
 | --- | --- | --- |
@@ -61,12 +56,7 @@ top-level `esperantilo` module, and is listed in its `__all__`:
 | [`sentence_tokenizer`](api.md#esperantilo.nlp.sentence_tokenizer) | function | Splits a text into sentences. |
 | [`__version__`](api.md#esperantilo.__version__) | constant | The installed version. |
 
-Anything not in that list — every module-private helper, every internal
-module — is an implementation detail and may change without notice. Why that
-boundary matters, and how it is drawn in Python, is explained in
-[Guide → API](../guide/python-library/api.md).
-
-## Where the pieces live
+## Structure
 
 ```text
 src/esperantilo/

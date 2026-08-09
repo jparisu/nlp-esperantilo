@@ -1,6 +1,7 @@
 # NLP Esperantilo
 
-**NLP Esperantilo** is two things at once, and this site is split accordingly.
+**NLP Esperantilo** is an educational project that helps you build a Natural Language Processing (NLP) library for Esperanto.
+The project has 2 parts:
 
 <div class="grid cards" markdown>
 
@@ -16,8 +17,8 @@
 
     ---
 
-    How a library like it is built and shipped: Git, GitHub, Python packaging
-    and testing, and the Esperanto linguistics that go inside.
+    How a library like it is built and shipped: Git, GitHub, packaging and
+    Esperanto linguistics.
 
 </div>
 
@@ -35,22 +36,8 @@ esperantilo.sentence_tokenizer("Zamenhof kreis Esperanton. Ĉu vere? Jes!")
 ```
 
 !!! warning "The library is deliberately small"
-    `esperantilo` is at version `0.1.0` and ships one feature:
-    [sentence segmentation](library/sentence-segmentation.md). Tokens, lemmas
-    and affix analysis are still a
-    [design target](guide/python-library/api.md), not shipped code. Building the
-    rest is the exercise this site prepares you for.
-
-## Who this is for
-
-University students who have to build their own Esperanto NLP library. Readers
-are expected to have a technical background, but not necessarily experience with
-the specific tools and topics explained here.
-
-Two topics are deliberately left out of the guide, because they are taught in
-the course lectures: **web scraping and API consumption**, and **text-mining and
-Machine-Learning classification**. See
-[Guide → what it does not cover](guide/index.md#what-this-guide-does-not-cover).
+    `esperantilo` is an educational project; it does not try to be a complete,
+    production-ready library.
 
 ## Building this site locally
 

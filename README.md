@@ -4,8 +4,8 @@
 [![tests](https://github.com/jparisu/nlp-esperantilo/actions/workflows/tests.yml/badge.svg)](https://github.com/jparisu/nlp-esperantilo/actions/workflows/tests.yml)
 [![spellcheck](https://github.com/jparisu/nlp-esperantilo/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/jparisu/nlp-esperantilo/actions/workflows/spellcheck.yml)
 
-This repository contains a collection of tools and resources for natural language processing (NLP) in Esperanto.
-The goal is to provide a comprehensive suite of tools for researchers, developers, and enthusiasts working with the Esperanto language.
+**NLP Esperantilo** is an educational project that helps you build a Natural Language Processing (NLP) library for Esperanto.
+The goal is to provide a simple and comprehensive suite of tools for researchers, developers, and enthusiasts working with the Esperanto language.
 It also hosts a guide on how to build a similar NLP toolchain, for educational purposes.
 
 📖 **Documentation:** <https://jparisu.github.io/nlp-esperantilo/>
@@ -13,13 +13,13 @@ It also hosts a guide on how to build a similar NLP toolchain, for educational p
 The documentation has two parts:
 
 - **[Library](https://jparisu.github.io/nlp-esperantilo/library/)** — the reference
-  manual of the `esperantilo` package: what it does today, and what every public
+  manual of the `esperantilo` example package: a what it does today, and what every public
   name means. Its
   [API reference](https://jparisu.github.io/nlp-esperantilo/library/api/) is
   generated from the docstrings in `src/`.
 - **[Guide](https://jparisu.github.io/nlp-esperantilo/guide/)** — how a library
-  like it is built and shipped: Git, GitHub, Python packaging and testing, and
-  the Esperanto linguistics that go inside.
+  like it is built and shipped: Git, GitHub, packaging and Esperanto
+  linguistics.
 
 ## Repository structure
 
@@ -110,13 +110,6 @@ write, no navigation entry to add. The pages are English only.
 Every word lives once in [`resources/esperanto/vortoj.json`](resources/esperanto/vortoj.json); each
 list in [`resources/esperanto/listoj.json`](resources/esperanto/listoj.json) is a filter over it, so
 a preposition that is also a stop-word is stored once and shown by both lists.
-
-| List | Entries |
-| --- | --- |
-| Stop-words | 250 |
-| Prepositions | 34 |
-| Correlatives | 59 |
-| Numbers | 27 |
 
 ### Spell check
 
