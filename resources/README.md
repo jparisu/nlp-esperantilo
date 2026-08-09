@@ -117,8 +117,14 @@ three endings — so the derived forms are left out and generated instead:
 | ordinals (`unua`, `dua`, …) | the cardinal | [Grammar § Numbers](../docs/guide/esperanto/grammar.md) |
 | conjugated verbs (`estas`, `havis`, …) | the infinitive | [Grammar § Verb system](../docs/guide/esperanto/grammar.md) |
 | all 45 correlatives, and their `-n` / `-jn` forms | 5 prefixes × 9 endings | [Grammar § Correlatives](../docs/guide/esperanto/grammar.md) |
-| affixed words (`malantaŭ`, `sinjorino`, `supren`) | root + affix | [Vocabulary § Affixes](../docs/guide/esperanto/vocabulary.md) |
-| abbreviations (`s-ro`, `bv`, `k`, …) | *nothing* — a closed table | [Vocabulary § Abbreviations](../docs/guide/esperanto/vocabulary.md) |
+| affixed words (`malantaŭ`, `sinjorino`, `supren`) | root + affix | [Grammar § Affixes](../docs/guide/esperanto/grammar.md) |
+| abbreviations (`s-ro`, `bv`, `k`, …) | *nothing* — a closed table | nowhere: see the note below |
+
+!!! warning "Abbreviations have no home"
+    `s-ro`, `bv`, `d-ro`, `ekz`, `f-no`, `k` and `s-no` cannot be rebuilt from a
+    root plus a rule, and they are not in the lexicon either. The table that
+    listed them lived on the *Vocabulary* page, which no longer exists. A
+    pipeline that wants to expand them has to carry its own table.
 
 Two consequences worth knowing before editing this file:
 

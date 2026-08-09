@@ -67,7 +67,7 @@ Para saber dónde aprenderla y leerla de verdad, véase [Recursos](resources.md)
 ## Por qué importa aquí
 
 La historia no es solo trasfondo: es la razón por la que este proyecto puede ser
-*basado en reglas* en absoluto. Una lengua deliberadamente diseñada para la
+*basado en reglas* en su totalidad. Una lengua deliberadamente diseñada para la
 regularidad puede tokenizarse, lematizarse y etiquetarse morfosintácticamente con
 reglas escritas a mano hasta un grado que sería imposible para, digamos, el inglés.
 La página siguiente convierte esa regularidad en las reglas concretas que codifica

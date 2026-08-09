@@ -55,7 +55,7 @@ For looking up roots, affixes and meanings:
     For feeding the library, prefer sources that offer a **structured export**
     (ReVo's data files, word lists) over prose dictionaries. They can be
     converted into the JSON format described in
-    [Vocabulary § Format](vocabulary.md#format).
+    [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md).
 
 ## Corpora
 

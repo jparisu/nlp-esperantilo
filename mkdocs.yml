@@ -163,7 +163,7 @@ plugins:
             Esperanto: Esperanto
             History: Historia
             Grammar: Gramática
-            Vocabulary: Vocabulario
+            Common roots: Raíces comunes
             Resources: Recursos
             Word lists: Listas de palabras
             FAQ: Preguntas frecuentes
@@ -183,6 +183,7 @@ plugins:
             GitHub: GitHub
             Python Library: Python-Biblioteko
             Esperanto: Esperanto
+            Common roots: Oftaj radikoj
             Word lists: Vortlistoj
             FAQ: Oftaj demandoj
 
@@ -272,6 +273,6 @@ nav:
           - guide/esperanto/index.md
           - History: guide/esperanto/history.md
           - Grammar: guide/esperanto/grammar.md
-          - Vocabulary: guide/esperanto/vocabulary.md
+          - Common roots: guide/esperanto/vocabulary.md
           - Resources: guide/esperanto/resources.md
           - FAQ: guide/esperanto/esperanto-faq.md

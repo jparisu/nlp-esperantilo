@@ -7,13 +7,14 @@ library can be implemented from it.
 
 The pages are ordered from context to data: the story of the language, then its
 rules, then the lists those rules produce. If you only need the linguistic data
-for the library, jump to [Grammar](grammar.md) and [Vocabulary](vocabulary.md).
+for the library, jump to [Grammar](grammar.md) and
+[Word lists](word-lists/index.md).
 
 <div class="grid cards" markdown>
 
 - [**1. History**](history.md) — creator, motivation and evolution.
 - [**2. Grammar**](grammar.md) — the regular rules the library encodes.
-- [**3. Vocabulary**](vocabulary.md) — stop-words, affixes and common roots.
+- [**3. Common roots**](vocabulary.md) — a starter set of frequent roots.
 - [**4. Resources**](resources.md) — books, courses and websites.
 - [**Word lists**](word-lists/index.md) — the reference data, generated from `resources/`.
 - [**FAQ**](esperanto-faq.md) — quick answers to common doubts.
@@ -28,6 +29,6 @@ data itself:
 
 - [Stop-words](word-lists/ignorindaj-vortoj.md) — 122 roots with their English
   translation and grammatical category. Roots, not forms: see
-  [Vocabulary § Roots only](vocabulary.md#roots-only).
+  [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 See [all word lists](word-lists/index.md).

@@ -23,7 +23,7 @@ Kutimaj demandoj pri Esperanto kaj pri transformi ĝin en datumojn por la biblio
     Senŝeligu la gramatikajn finaĵojn kaj afiksojn de vorto por atingi ĝian radikon,
     poste remetu la vortklasan vokalon. `malsanulejojn` → forigu `-n`, `-j`, `-o`,
     poste `-ej-`, `-ul-`, `mal-` → radiko `san-`. Ĉiu paŝo estas serĉo en tabelo. Vidu
-    [Vortprovizo § Afiksoj](vocabulary.md#afiksoj).
+    [Gramatiko § Afiksoj](grammar.md#afiksoj).
 
 ??? question "Kio estas la korelativoj?"
     Regula 5 × 9-krado de 45 oftaj vortoj (kiu/tiu/iu/ĉiu/neniu × -o/-u/-a/-e/-am…),
@@ -46,12 +46,12 @@ Kutimaj demandoj pri Esperanto kaj pri transformi ĝin en datumojn por la biblio
     konjunkcioj kaj oftaj adverboj — plejparte fermitaj klasoj, do la listo estas finia.
     Ĉi tiu projekto distribuas 122 el ili — nur *radikojn*, ĉar la fleksiitajn
     formojn generas reguloj. Vidu
-    [Vortprovizo § Nur radikoj](vocabulary.md#nur-radikoj).
+    [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 ??? question "De kie la biblioteko prenas siajn vortlistojn?"
     El JSON-dosieroj sub `resources/`, kiuj estas la sola fonto de vero: la dokumentaro
     prezentas ilin konstrutempe kaj la biblioteko legos la samajn dosierojn rultempe, do
-    ili neniam povas malkonsenti. Vidu [Vortprovizo § Formato](vocabulary.md#formato).
+    ili neniam povas malkonsenti. Vidu [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md).
 
 ??? question "Kie mi povas trovi realan Esperantan tekston por testi la bibliotekon?"
     En korpusoj kiel la [Tekstaro de Esperanto](https://tekstaro.com), la Esperanta

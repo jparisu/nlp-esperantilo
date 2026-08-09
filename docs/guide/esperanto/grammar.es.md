@@ -55,7 +55,7 @@ Las letras `q`, `w`, `x`, `y` **no** forman parte del alfabeto.
     Un tokenizador robusto debería **normalizar** la entrada a una única forma
     canónica (Unicode NFC, diacríticos reales) antes de aplicar cualquier otra
     regla. Los archivos de datos de este proyecto conservan los diacríticos reales
-    y nunca el sistema x (véase [Vocabulario § Formato](vocabulary.md#formato)).
+    y nunca el sistema x (véase [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md)).
 
 ## Terminaciones de clase de palabra
 
@@ -71,9 +71,7 @@ gramatical**.
 | `-i` | verbo (infinitivo) | `kanti` | `kant-` | cantar |
 
 De una sola raíz obtienes toda la familia: `muziko` (música), `muzika` (musical),
-`muzike` (musicalmente). Para **lematizar**, quita la terminación gramatical (y
-cualquier flexión de abajo) para recuperar la raíz, y luego vuelve a añadir la
-vocal de clase para obtener la forma de diccionario.
+`muzike` (musicalmente).
 
 ## Flexiones gramaticales
 
@@ -123,7 +121,7 @@ sin plural, sin género, sin caso:
 
 **No hay artículo indeterminado**: `libro` significa tanto "un libro" como
 simplemente "libro". `la` es una palabra vacía natural (véase
-[Vocabulario](vocabulary.md#palabras-vacias)).
+[Palabras vacías](word-lists/ignorindaj-vortoj.md)).
 
 ## Pronombres personales
 
@@ -185,12 +183,7 @@ Los 45 son palabras vacías, y esta tabla es el único sitio donde el proyecto l
 guarda: `resources/esperanto/vortoj.json` contiene raíces, no formas, así que se
 espera que un lematizador genere la rejilla a partir de los dos ejes de arriba en
 lugar de buscar las palabras. Véase
-[Vocabulario § Solo raíces](vocabulary.md#solo-raices).
-
-!!! tip "Un ejercicio para la rejilla"
-    [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
-    recorre la tabla celda por celda con frases de ejemplo — la forma más rápida
-    de dejar de leerla como 45 palabras sueltas.
+[`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 ## Afijos
 
@@ -289,7 +282,7 @@ etiquetador basado en reglas puede verificar y aprovechar.
 
 ## Adónde ir después
 
-- [Vocabulario](vocabulary.md) — las listas de afijos y palabras vacías completas,
-  listas para alimentar la biblioteca.
+- [Listas de palabras](word-lists/index.md) — la lista de palabras vacías completa,
+  generada desde los datos que lee la biblioteca.
 - [Biblioteca Python § API](../python-library/api.md) — cómo estas reglas se
   convierten en una interfaz `Doc` / `Token`.

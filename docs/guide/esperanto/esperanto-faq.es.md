@@ -25,7 +25,7 @@ biblioteca. Cada respuesta enlaza a la página donde el tema se trata en detalle
     Pela las terminaciones gramaticales y los afijos de una palabra hasta llegar a
     su raíz, luego vuelve a añadir la vocal de clase. `malsanulejojn` → quita `-n`,
     `-j`, `-o`, luego `-ej-`, `-ul-`, `mal-` → raíz `san-`. Cada paso es una
-    búsqueda en una tabla. Véase [Vocabulario § Afijos](vocabulary.md#afijos).
+    búsqueda en una tabla. Véase [Gramática § Afijos](grammar.md#afijos).
 
 ??? question "¿Qué son los correlativos?"
     Una rejilla regular de 5 × 9 con 45 palabras comunes (este/ese/cuál/algún/todo/
@@ -50,13 +50,13 @@ biblioteca. Cada respuesta enlaza a la página donde el tema se trata en detalle
     preposiciones, conjunciones y adverbios comunes — en su mayoría clases cerradas,
     así que la lista es finita. Este proyecto distribuye 122 de ellas — solo
     *raíces*, ya que las formas flexionadas se generan por regla. Véase
-    [Vocabulario § Solo raíces](vocabulary.md#solo-raices).
+    [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 ??? question "¿De dónde saca la biblioteca sus listas de palabras?"
     De archivos JSON bajo `resources/`, que son la única fuente de verdad: la
     documentación los renderiza en tiempo de construcción y la biblioteca leerá
     esos mismos archivos en tiempo de ejecución, de modo que nunca pueden
-    discrepar. Véase [Vocabulario § Formato](vocabulary.md#formato).
+    discrepar. Véase [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md).
 
 ??? question "¿Dónde encuentro texto real en Esperanto para probar la biblioteca?"
     En corpus como el [Tekstaro de Esperanto](https://tekstaro.com), la Wikipedia

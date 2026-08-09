@@ -52,7 +52,7 @@ La literoj `q`, `w`, `x`, `y` **ne** apartenas al la alfabeto.
     Fortika tokenizilo devus **normigi** la enigon al unu sola kanona formo (Unikoda
     NFC, realaj diakritaj signoj) antaŭ ol apliki ajnan alian regulon. La datumdosieroj
     de ĉi tiu projekto konservas la realajn diakritajn signojn kaj neniam la x-sistemon
-    (vidu [Vortprovizo § Formato](vocabulary.md#formato)).
+    (vidu [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md)).
 
 ## Vortklasaj finaĵoj
 
@@ -116,7 +116,7 @@ genro, sen kazo:
 - `la libro`, `la libroj`, `la bona libro`.
 
 **Ne ekzistas nedifinita artikolo**: `libro` signifas kaj "libro" kaj "unu libro". `la`
-estas natura ignorinda vorto (vidu [Vortprovizo](vocabulary.md#ignorindaj-vortoj)).
+estas natura ignorinda vorto (vidu [Ignorindaj vortoj](word-lists/ignorindaj-vortoj.md)).
 
 ## Personaj pronomoj
 
@@ -175,7 +175,7 @@ marki direkton (`tien`, `kien`). La aliaj kvin finaĵoj estas neflekseblaj.
 Ĉiuj 45 estas ignorindaj vortoj, kaj ĉi tiu tabelo estas la sola loko kie la
 projekto konservas ilin: `resources/esperanto/vortoj.json` enhavas radikojn, ne
 formojn, do lematizilo devas generi la kradon el la du aksoj supre anstataŭ serĉi
-la vortojn. Vidu [Vortprovizo § Nur radikoj](vocabulary.md#nur-radikoj).
+la vortojn. Vidu [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 !!! tip "Ekzercilo por la krado"
     [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
@@ -274,7 +274,7 @@ kontroli kaj ekspluati.
 
 ## Kien iri poste
 
-- [Vortprovizo](vocabulary.md) — la afiksaj kaj ignorindaj listoj plene, pretaj por
-  nutri la bibliotekon.
+- [Vortlistoj](word-lists/index.md) — la ignorinda listo plene, generita el la
+  datumoj, kiujn legas la biblioteko.
 - [Python-Biblioteko § API](../python-library/api.md) — kiel ĉi tiuj reguloj fariĝas
   interfaco `Doc` / `Token`.

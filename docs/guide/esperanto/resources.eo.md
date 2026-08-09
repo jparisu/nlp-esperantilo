@@ -53,7 +53,7 @@ Por serĉi radikojn, afiksojn kaj signifojn:
     Por nutri la bibliotekon, preferu fontojn, kiuj ofertas **strukturitan
     eksportaĵon** (la datumdosieroj de ReVo, vortlistoj) super vortaroj en prozo. Ilin
     eblas konverti al la JSON-formato priskribita en
-    [Vortprovizo § Formato](vocabulary.md#formato).
+    [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md).
 
 ## Korpusoj
 

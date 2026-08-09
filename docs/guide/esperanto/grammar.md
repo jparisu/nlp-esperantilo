@@ -51,7 +51,7 @@ The letters `q`, `w`, `x`, `y` are **not** part of the alphabet.
     A robust tokenizer should **normalise** input to a single canonical form
     (Unicode NFC, real diacritics) before applying any other rule. This
     project's data files keep the real diacritics and never the x-system (see
-    [Vocabulary § Format](vocabulary.md#format)).
+    [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md)).
 
 ## Word-class endings
 
@@ -115,7 +115,7 @@ plural, no gender, no case:
 - `la libro` (the book), `la libroj` (the books), `la bona libro` (the good book).
 
 There is **no indefinite article**: `libro` means both "a book" and simply
-"book". `la` is a natural stop-word (see [Vocabulary](vocabulary.md#stop-words)).
+"book". `la` is a natural stop-word (see [Stop-words](word-lists/ignorindaj-vortoj.md)).
 
 ## Personal pronouns
 
@@ -176,7 +176,7 @@ mark direction (`tien`, `kien`). The other five endings are invariable.
 All 45 are stop-words, and this table is the only place the project stores them:
 `resources/esperanto/vortoj.json` holds roots, not forms, so a lemmatizer is
 expected to generate the grid from the two axes above rather than look words up.
-See [Vocabulary § Roots only](vocabulary.md#roots-only).
+See [`resources/README.md` § Roots, not forms](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md#roots-not-forms).
 
 !!! tip "A drill for the grid"
     [esperanto12.net/en/tabelvortoj](https://esperanto12.net/en/tabelvortoj/)
@@ -277,7 +277,7 @@ tagger can verify and exploit.
 
 ## Where to go next
 
-- [Vocabulary](vocabulary.md) — the affix and stop-word lists in full, ready to
-  feed the library.
+- [Word lists](word-lists/index.md) — the stop-word list in full, generated from
+  the data the library reads.
 - [Python Library § API](../python-library/api.md) — how these rules become a
   `Doc` / `Token` interface.

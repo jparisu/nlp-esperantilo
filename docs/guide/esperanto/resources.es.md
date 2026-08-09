@@ -57,7 +57,7 @@ Para buscar raíces, afijos y significados:
     Para alimentar la biblioteca, prefiere fuentes que ofrezcan una **exportación
     estructurada** (los archivos de datos de ReVo, listas de palabras) frente a los
     diccionarios en prosa. Pueden convertirse al formato JSON descrito en
-    [Vocabulario § Formato](vocabulary.md#formato).
+    [`resources/README.md`](https://github.com/jparisu/nlp-esperantilo/blob/main/resources/README.md).
 
 ## Corpus
 
